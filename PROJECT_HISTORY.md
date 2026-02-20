@@ -106,4 +106,29 @@ C:\Users\USER\AppData\Local\GitHubDesktop\app-3.5.5\resources\app\git\cmd\git.ex
 
 ---
 
+## 📋 TODO / 내일 할 일 (미완료)
+
+### 1. FormSubmit 문의 폼 활성화
+- **상태**: "Check Your Email" 메시지 표시됨
+- **해야 할 일**: 
+  1. connectsell01@gmail.com (또는 폼에 설정된 이메일) 메일함 확인
+  2. FormSubmit에서 보낸 **"Activate Form"** 링크 클릭
+  3. 활성화 완료 후 문의 폼이 정상 작동
+- **참고**: FormSubmit은 무료 폼 서비스, 이메일로 문의 내용 전달
+
+### 2. 텍스트 수정
+| 위치 | 현재 | 수정 |
+|------|------|------|
+| #1 섹션 제목 | ConnectSell? | ConnectSell (물음표 제거) |
+| #1 설명 | 브랜드와웰니스 (붙어있음) | 브랜드와 웰니스 (띄어쓰기) |
+
+**브랜드와웰니스 수정 위치**: index.html 71번 줄  
+`</span><span class="mobile-only">` → `</span> <span class="mobile-only">` (공백 추가)
+
+### 3. 기타 개선 (선택)
+- SEO 메타 태그, Open Graph 추가
+- 문의 폼 제출 후 성공/실패 메시지
+
+---
+
 *마지막 업데이트: 2026년 2월*
