@@ -1567,7 +1567,7 @@ body {
 .process-video-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.82);
+    background: rgba(255, 255, 255, 0.65);
     z-index: 1;
 }
 
@@ -1933,19 +1933,6 @@ body {
     .nav a {
         padding: 1rem 0;
         border-bottom: 1px solid rgba(255,255,255,0.1);
-        color: #fff !important;
-    }
-    .nav-logo {
-        margin-top: auto;
-        padding-top: 2rem;
-        display: flex;
-        gap: 0.25rem;
-        align-items: baseline;
-    }
-    .nav-logo-connect,
-    .nav-logo-sell {
-        font-size: 1.35rem;
-        font-weight: 800;
         color: #fff !important;
     }
     .header.nav-open .nav {
