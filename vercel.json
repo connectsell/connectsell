@@ -1,3 +1,11 @@
 {
-  "version": 2
+  "version": 2,
+  "headers": [
+    {
+      "source": "/sample/landing.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    }
+  ]
 }
