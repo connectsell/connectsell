@@ -220,6 +220,11 @@ body {
     line-height: 1.5;
 }
 
+.sample-footer-simple p {
+    font-size: 0.8rem;
+    color: #95a5a6;
+}
+
 @media (max-width: 480px) {
     .sample-page {
         padding: 1.5rem 1rem;

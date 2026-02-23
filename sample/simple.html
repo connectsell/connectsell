@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>샘플 신청 | ConnectSell</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sample.css">
+</head>
+<body>
+    <main class="sample-page sample-simple">
+        <header class="sample-header">
+            <a href="https://www.connectsell.co.kr/" class="sample-logo">ConnectSell</a>
+        </header>
+
+        <section class="sample-hero">
+            <h1 class="sample-title">샘플 신청</h1>
+            <p class="sample-desc">협업 제안을 받으신 크리에이터님, 아래 폼을 작성해 주시면 빠르게 연락드리겠습니다.</p>
+        </section>
+
+        <section class="sample-form-section">
+            <form class="sample-form" id="sample-form" action="https://formsubmit.co/connectsell01@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="[ConnectSell] 샘플 신청">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="https://www.connectsell.co.kr/sample/thanks.html">
+
+                <div class="form-row">
+                    <label for="name">이름 / 닉네임</label>
+                    <input type="text" id="name" name="name" placeholder="인플루언서명" required>
+                </div>
+                <div class="form-row">
+                    <label for="phone">연락처</label>
+                    <input type="tel" id="phone" name="phone" placeholder="010-1234-5678" required>
+                </div>
+                <div class="form-row">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                </div>
+                <div class="form-row">
+                    <label for="channel">채널</label>
+                    <select id="channel" name="channel">
+                        <option value="">선택</option>
+                        <option value="instagram">Instagram</option>
+                        <option value="youtube">YouTube</option>
+                        <option value="blog">블로그</option>
+                        <option value="tiktok">TikTok</option>
+                        <option value="etc">기타</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="channel_url">채널 URL</label>
+                    <input type="url" id="channel_url" name="channel_url" placeholder="https://instagram.com/...">
+                </div>
+                <div class="form-row">
+                    <label for="followers">팔로워 수 (선택)</label>
+                    <input type="text" id="followers" name="followers" placeholder="예: 5만">
+                </div>
+                <div class="form-row">
+                    <label for="category">관심 카테고리</label>
+                    <input type="text" id="category" name="category" placeholder="예: 뷰티, 건강, 육아">
+                </div>
+                <div class="form-row">
+                    <label for="message">메모 (선택)</label>
+                    <textarea id="message" name="message" rows="3" placeholder="추가로 전달하고 싶은 내용이 있으시면 적어주세요."></textarea>
+                </div>
+                <button type="submit" class="sample-submit">신청하기</button>
+            </form>
+        </section>
+
+        <footer class="sample-footer sample-footer-simple">
+            <p>© 2026 ConnectSell. All rights reserved.</p>
+        </footer>
+    </main>
+</body>
+</html>
