@@ -53,6 +53,69 @@ body {
     color: #7f8c8d;
 }
 
+.sample-about {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    text-align: center;
+}
+
+.sample-about-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #4CAF50;
+    margin-bottom: 0.25rem;
+}
+
+.sample-about-sub {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+}
+
+.sample-about-desc {
+    font-size: 0.95rem;
+    color: #2c3e50;
+    line-height: 1.7;
+}
+
+.sample-trust {
+    background: #f0f8f0;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.sample-trust-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 2rem;
+}
+
+.sample-trust-list li {
+    font-size: 0.9rem;
+    color: #2c3e50;
+    font-weight: 500;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+.sample-trust-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 6px;
+    height: 6px;
+    background: #4CAF50;
+    border-radius: 50%;
+}
+
 .sample-form-section {
     background: #fff;
     border-radius: 12px;
@@ -125,10 +188,36 @@ body {
 }
 
 .sample-footer {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
     text-align: center;
-    font-size: 0.8rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.sample-footer-brand {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.sample-footer-connect {
+    color: #2c3e50;
+}
+
+.sample-footer-sell {
+    color: #4CAF50;
+}
+
+.sample-footer-copy {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin-bottom: 0.5rem;
+}
+
+.sample-footer-info {
+    font-size: 0.75rem;
     color: #95a5a6;
+    line-height: 1.5;
 }
 
 @media (max-width: 480px) {
