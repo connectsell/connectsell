@@ -12,6 +12,10 @@ connectsell/
 ├── styles.css          # 스타일
 ├── script.js           # 스크립트
 ├── vercel.json         # Vercel 배포 설정
+├── sample/             # 샘플신청 랜딩페이지 (인플루언서용)
+│   ├── index.html      # 샘플 신청 폼
+│   ├── sample.css      # 스타일
+│   └── thanks.html     # 신청 완료 페이지
 ├── images/             # 이미지 (rolling, influencer, partners, service 등)
 ├── video/              # 동영상
 │   ├── 25_02_06_완료 (8).mp4   # 메인 히어로 영상
@@ -29,6 +33,7 @@ connectsell/
 | 항목 | 값 |
 |------|-----|
 | **URL** | https://www.connectsell.co.kr |
+| **샘플신청** | https://www.connectsell.co.kr/sample/ |
 | **GitHub** | https://github.com/connectsell/connectsell |
 | **배포** | Vercel (GitHub 연동 자동 배포) |
 | **도메인** | 가비아 (connectsell.co.kr) |
