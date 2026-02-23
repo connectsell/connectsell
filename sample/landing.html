@@ -6,16 +6,21 @@
 <title>샘플 신청 | ConnectSell</title>
 </head>
 <body style="margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f8f6f3;color:#3d4f42;">
-<!-- 상단: 파란 배경 + 이미지 + 브랜드 로고 (Kakkuki) -->
-<div style="width:100%;min-height:200px;background:linear-gradient(135deg,#4a90d9 0%,#5ba3e8 100%);display:flex;align-items:center;justify-content:space-between;padding:24px 32px;box-sizing:border-box;">
-  <span style="font-size:1.4rem;font-weight:700;color:#fff;letter-spacing:0.02em;">Kakkuki</span>
-  <div style="flex:1;max-width:400px;margin:0 24px;border-radius:8px;overflow:hidden;">
-    <img src="https://www.connectsell.co.kr/sample/hero-bg.png" alt="" style="width:100%;height:auto;display:block;vertical-align:top;">
+<!-- 상단: 스프링시그널 스타일 - 웰니스 라이프 히어로 -->
+<div style="width:100%;min-height:45vh;position:relative;overflow:hidden;background:#e5e8e4;">
+  <img src="https://www.connectsell.co.kr/sample/hero-bg.png" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
+  <div style="position:absolute;inset:0;background:rgba(90,122,106,0.25);display:flex;align-items:center;justify-content:center;">
+    <p style="margin:0;font-size:2.5rem;font-weight:600;color:#fff;letter-spacing:-0.02em;text-shadow:0 2px 20px rgba(0,0,0,0.3);">Kakkuki</p>
   </div>
-  <div style="width:120px;"></div>
 </div>
 
-<!-- 메인: 왼쪽 샘플상품 (참고 이미지 빨간영역 비율) | 오른쪽 신청 폼 -->
+<!-- 브랜드 소개 (리복 영역) -->
+<div style="max-width:1200px;margin:0 auto;padding:40px 24px 32px;">
+  <h2 style="margin:0 0 8px 0;font-size:1.5rem;font-weight:700;color:#3d4f42;">Kakkuki</h2>
+  <p style="margin:0;font-size:0.95rem;color:#6b7c6e;line-height:1.7;">언제, 어디서나 나를 위해 가꾸기</p>
+</div>
+
+<!-- 메인: 왼쪽 샘플상품 | 오른쪽 신청 폼 -->
 <div style="max-width:1200px;margin:0 auto;padding:40px 24px 60px;display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;">
   <!-- 왼쪽: 약 55% 폭, 전체 높이 (참고 빨간영역) -->
   <div style="flex:1.2;min-width:320px;max-width:55%;">
@@ -37,8 +42,7 @@
 
   <!-- 오른쪽: 샘플 신청 폼 (약 45%) -->
   <div style="flex:0.9;min-width:300px;max-width:420px;">
-    <p style="margin:0 0 8px 0;font-size:1.2rem;font-weight:600;color:#3d4f42;line-height:1.6;">가꾸기 다이어트 쉐이크</p>
-    <p style="margin:0 0 28px 0;font-size:0.9rem;color:#6b7c6e;line-height:1.5;">언제, 어디서나 나를 위해 가꾸기. 일상에 즐거움을 더해 줄 웰니스 샘플을 만나보세요.</p>
+    <p style="margin:0 0 24px 0;font-size:0.9rem;color:#6b7c6e;">아래 정보를 남겨주시면 샘플을 보내드립니다</p>
 
     <form action="https://formsubmit.co/connectsell01@gmail.com" method="POST">
       <input type="hidden" name="_subject" value="[ConnectSell] 샘플 신청">
