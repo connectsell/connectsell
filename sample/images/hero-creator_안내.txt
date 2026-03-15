@@ -1,0 +1,14 @@
+hero-creator.png 이미지 안내
+========================
+
+landing.html, landing-v3.html은 이메일 v2·v3와 같은 방식으로
+이미지를 고정 도메인 절대 URL로 불러옵니다.
+
+  https://www.connectsell.co.kr/sample/images/hero-creator.png
+
+→ Netlify 등이 pause 되어도 connectsell.co.kr만 살아 있으면 엑박 없음.
+
+필수: hero-creator.png를 connectsell.co.kr 서버의
+  /sample/images/hero-creator.png
+경로에 업로드해 두어야 히어로 이미지가 보입니다.
+(권장 크기: 840x560px 이상, 가로형)
