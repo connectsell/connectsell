@@ -4,73 +4,93 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>샘플 신청 | ConnectSell</title>
+<meta name="description" content="브랜드와 크리에이터를 연결해 지속 가능한 공동구매를 만듭니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ConnectSell">
+<meta property="og:description" content="브랜드와 크리에이터를 연결해 지속 가능한 공동구매를 만듭니다.">
+<meta property="og:image" content="https://www.connectsell.co.kr/sample/og-image.png">
+<meta property="og:url" content="https://www.connectsell.co.kr/sample/landing.html">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ConnectSell">
+<meta name="twitter:description" content="브랜드와 크리에이터를 연결해 지속 가능한 공동구매를 만듭니다.">
+<meta name="twitter:image" content="https://www.connectsell.co.kr/sample/og-image.png">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
+<style>
+*{box-sizing:border-box;}
+body{margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#1a1d23;color:#e8eaed;min-height:100vh;padding:24px 16px;}
+.v2-card{max-width:420px;margin:0 auto;padding-top:0;background:#252830;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.4);}
+.v2-top-img{width:100%;height:280px;position:relative;overflow:hidden;background:#2d3139;}
+.v2-top-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.v2-top-img .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,0.7) 100%);pointer-events:none;z-index:1;}
+.v2-top-img .hero-txt{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:2;text-align:center;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.6);}
+.v2-top-img .hero-txt p:first-child{margin:0 0 4px 0;font-size:1.05rem;font-weight:500;letter-spacing:0.08em;opacity:0.95;white-space:nowrap;}
+.v2-top-img .hero-txt p:last-child{margin:0;font-size:2rem;font-weight:700;}
+.v2-body{padding:28px 28px 36px;}
+.v2-headline{margin:0 0 2px 0;font-size:1.1rem;font-weight:700;line-height:1.5;color:#fff;}
+.v2-headline-spacer{margin:0 0 20px 0;}
+.v2-desc{margin:0 0 24px 0;font-size:0.9rem;color:#9ca3af;line-height:1.6;}
+.v2-form label{display:block;margin-bottom:8px;font-size:0.8rem;font-weight:500;color:#9ca3af;}
+.v2-form input,.v2-form textarea{width:100%;padding:12px 14px;border:1px solid #3d4048;border-radius:8px;font-size:1rem;background:#1a1d23;color:#e8eaed;box-sizing:border-box;margin-bottom:20px;font-family:inherit;}
+.v2-form textarea{rows:3;resize:vertical;}
+.v2-form input::placeholder,.v2-form textarea::placeholder{color:#6b7280;}
+.v2-btn{width:100%;padding:16px;background:#3F51B5;color:#fff;border:none;border-radius:8px;font-size:0.95rem;font-weight:500;cursor:pointer;}
+.v2-btn:hover{background:#5c6bc0;}
+@media (max-width:480px){
+  .v2-top-img{height:240px;}
+  .v2-body{padding:24px 20px 32px;}
+}
+</style>
+<link rel="stylesheet" href="styles.css">
 </head>
-<body style="margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f8f6f3;color:#3d4f42;">
-<!-- 상단: 스프링시그널 스타일 - 웰니스 라이프 히어로 -->
-<div style="width:100%;height:280px;position:relative;overflow:hidden;background:#e5e8e4;">
-  <img src="https://www.connectsell.co.kr/sample/hero-bg.png" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;">
-  <div style="position:absolute;inset:0;background:rgba(90,122,106,0.25);display:flex;align-items:center;justify-content:center;">
-    <p style="margin:0;font-size:2.5rem;font-weight:600;color:#fff;letter-spacing:-0.02em;text-shadow:0 2px 20px rgba(0,0,0,0.3);">Kakkuki</p>
-  </div>
-</div>
-
-<!-- 브랜드 소개 (리복 영역) -->
-<div style="max-width:1200px;margin:0 auto;padding:40px 24px 32px;">
-  <h2 style="margin:0 0 8px 0;font-size:1.5rem;font-weight:700;color:#3d4f42;">Kakkuki</h2>
-  <p style="margin:0;font-size:0.95rem;color:#6b7c6e;line-height:1.7;">언제, 어디서나 나를 위해 가꾸기</p>
-</div>
-
-<!-- 메인: 왼쪽 샘플상품 | 오른쪽 신청 폼 -->
-<div style="max-width:1200px;margin:0 auto;padding:40px 24px 60px;display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;">
-  <!-- 왼쪽: 약 55% 폭, 전체 높이 (참고 빨간영역) -->
-  <div style="flex:1.2;min-width:320px;max-width:55%;">
-    <div style="width:100%;border-radius:8px;margin-bottom:20px;overflow:hidden;background:#f5f5f0;">
-      <img src="images/product-main.png" alt="가꾸기 다이어트 쉐이크 초코맛" style="width:100%;height:auto;display:block;vertical-align:top;">
-    </div>
-    <div style="display:flex;gap:16px;">
-      <div style="flex:1;flex-basis:0;aspect-ratio:1;border-radius:8px;overflow:hidden;background:#f0f0f0;">
-        <img src="https://www.connectsell.co.kr/sample/images/product-2.png" alt="칼로리 비교" style="width:100%;height:100%;object-fit:cover;display:block;">
-      </div>
-      <div style="flex:1;flex-basis:0;aspect-ratio:1;border-radius:8px;overflow:hidden;background:#f0f0f0;">
-        <img src="https://www.connectsell.co.kr/sample/images/product-3.png" alt="가꾸기 다이어트 쉐이크 3종" style="width:100%;height:100%;object-fit:cover;display:block;">
-      </div>
-      <div style="flex:1;flex-basis:0;aspect-ratio:1;border-radius:8px;overflow:hidden;background:#f0f0f0;">
-        <img src="https://www.connectsell.co.kr/sample/images/product-4.png" alt="쉐이크 레이어드" style="width:100%;height:100%;object-fit:cover;display:block;">
-      </div>
+<body>
+<div class="v2-card">
+  <div class="v2-top-img">
+    <img src="images/hero-creator.jpg" alt="ConnectSell - Wellness Creator Commerce">
+    <div class="hero-overlay"></div>
+    <div class="hero-txt">
+      <p>Wellness&nbsp;Creator&nbsp;Commerce</p>
+      <p>ConnectSell</p>
     </div>
   </div>
-
-  <!-- 오른쪽: 샘플 신청 폼 (약 45%) -->
-  <div style="flex:0.9;min-width:300px;max-width:420px;">
-    <p style="margin:0 0 24px 0;font-size:0.9rem;color:#6b7c6e;">아래 정보를 남겨주시면 샘플을 보내드립니다</p>
-
-    <form action="https://formsubmit.co/connectsell01@gmail.com" method="POST">
+  <div class="v2-body">
+    <p class="v2-headline">당신의 경험이, 브랜드의 첫 문장이 됩니다.</p>
+    <p class="v2-headline v2-headline-spacer">그 시작을 ConnectSell이 함께합니다.</p>
+    <p class="v2-desc" style="margin-bottom:24px;">아래 정보를 남겨주시면,<br>브랜드를 먼저 경험하실 수 있도록 준비하겠습니다.</p>
+    <iframe name="form-frame" id="form-frame" style="display:none;"></iframe>
+    <form class="v2-form" id="sample-form" action="https://formsubmit.co/connectsell01@gmail.com" method="POST" target="form-frame">
       <input type="hidden" name="_subject" value="[ConnectSell] 샘플 신청">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://www.connectsell.co.kr/sample/thanks.html">
-
-      <div style="margin-bottom:20px;">
-        <label style="display:block;margin-bottom:8px;font-size:0.8rem;font-weight:500;color:#4a5d52;">채널명 *</label>
-        <input type="text" name="channel" placeholder="유튜브/인스타그램 채널명" required style="width:100%;padding:12px 14px;border:1px solid #e0e4df;border-radius:8px;font-size:1rem;background:#fff;color:#3d4f42;box-sizing:border-box;">
-      </div>
-      <div style="margin-bottom:20px;">
-        <label style="display:block;margin-bottom:8px;font-size:0.8rem;font-weight:500;color:#4a5d52;">이름 *</label>
-        <input type="text" name="name" placeholder="본명" required style="width:100%;padding:12px 14px;border:1px solid #e0e4df;border-radius:8px;font-size:1rem;background:#fff;color:#3d4f42;box-sizing:border-box;">
-      </div>
-      <div style="margin-bottom:20px;">
-        <label style="display:block;margin-bottom:8px;font-size:0.8rem;font-weight:500;color:#4a5d52;">전화번호 *</label>
-        <input type="tel" name="phone" placeholder="010-0000-0000" required style="width:100%;padding:12px 14px;border:1px solid #e0e4df;border-radius:8px;font-size:1rem;background:#fff;color:#3d4f42;box-sizing:border-box;">
-      </div>
-      <div style="margin-bottom:28px;">
-        <label style="display:block;margin-bottom:8px;font-size:0.8rem;font-weight:500;color:#4a5d52;">샘플 받을 주소 (선택)</label>
-        <input type="text" name="address" placeholder="주소를 입력해주세요" style="width:100%;padding:12px 14px;border:1px solid #e0e4df;border-radius:8px;font-size:1rem;background:#fff;color:#3d4f42;box-sizing:border-box;">
-      </div>
-      <button type="submit" style="width:100%;padding:16px;background:#5a7a6a;color:#fff;border:none;border-radius:8px;font-size:0.95rem;font-weight:500;cursor:pointer;">샘플 신청하기</button>
+      <input type="hidden" name="_next" value="">
+      <label for="channel">채널명 <strong>*</strong></label>
+      <input type="text" id="channel" name="channel" placeholder="유튜브/인스타그램 채널명" required>
+      <label for="name">이름 <strong>*</strong></label>
+      <input type="text" id="name" name="name" placeholder="본명" required>
+      <label for="phone">전화번호 <strong>*</strong></label>
+      <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
+      <label for="address">샘플을 받으실 주소 (선택)</label>
+      <input type="text" id="address" name="address" placeholder="주소를 입력해주세요">
+      <label for="inquiry">문의사항 (선택)</label>
+      <textarea id="inquiry" name="inquiry" placeholder="문의사항을 입력해주세요"></textarea>
+      <button type="submit" class="v2-btn" id="submit-btn">샘플 신청하기</button>
     </form>
   </div>
 </div>
+<script>
+(function(){
+  var form = document.getElementById('sample-form');
+  var btn = document.getElementById('submit-btn');
+  if (!form || !btn) return;
+  form.addEventListener('submit', function() {
+    btn.disabled = true;
+    btn.textContent = '전송 중...';
+    setTimeout(function() {
+      window.location.href = 'thanks.html';
+    }, 800);
+  });
+})();
+</script>
 </body>
 </html>
