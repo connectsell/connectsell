@@ -32,7 +32,8 @@ body{margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-s
 .v2-headline-spacer{margin:0 0 20px 0;}
 .v2-desc{margin:0 0 24px 0;font-size:0.9rem;color:#9ca3af;line-height:1.6;}
 .v2-form label{display:block;margin-bottom:8px;font-size:0.8rem;font-weight:500;color:#9ca3af;}
-.v2-form input,.v2-form textarea{width:100%;padding:12px 14px;border:1px solid #3d4048;border-radius:8px;font-size:1rem;background:#1a1d23;color:#e8eaed;box-sizing:border-box;margin-bottom:20px;font-family:inherit;}
+.v2-form input,.v2-form select,.v2-form textarea{width:100%;padding:12px 14px;border:1px solid #3d4048;border-radius:8px;font-size:1rem;background:#1a1d23;color:#e8eaed;box-sizing:border-box;margin-bottom:20px;font-family:inherit;}
+.v2-form select{cursor:pointer;appearance:auto;}
 .v2-form textarea{rows:3;resize:vertical;}
 .v2-form input::placeholder,.v2-form textarea::placeholder{color:#6b7280;}
 .v2-btn{width:100%;padding:16px;background:#3F51B5;color:#fff;border:none;border-radius:8px;font-size:0.95rem;font-weight:500;cursor:pointer;}
@@ -60,12 +61,21 @@ body{margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-s
     <p class="v2-desc" style="margin-bottom:24px;">아래 정보를 남겨주시면,<br>브랜드를 먼저 경험하실 수 있도록 준비하겠습니다.</p>
     <iframe name="form-frame" id="form-frame" style="display:none;"></iframe>
     <form class="v2-form" id="sample-form" action="https://formsubmit.co/connectsell01@gmail.com" method="POST" target="form-frame">
-      <input type="hidden" name="_subject" value="[ConnectSell] 샘플 신청">
+      <input type="hidden" name="_subject" id="form-subject" value="[샘플신청]">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_next" value="">
-      <label for="channel">채널명 <strong>*</strong></label>
-      <input type="text" id="channel" name="channel" placeholder="유튜브/인스타그램 채널명" required>
+      <label for="product">상품명 <strong>*</strong></label>
+      <input type="text" id="product" name="product" placeholder="예: 바비놀라" required autocomplete="off">
+      <label for="channel_type">채널 유형 <strong>*</strong></label>
+      <select id="channel_type" name="channel_type" required>
+        <option value="" disabled selected>채널 유형을 선택해 주세요</option>
+        <option value="인스타그램">인스타그램</option>
+        <option value="유튜브">유튜브</option>
+        <option value="틱톡">틱톡</option>
+      </select>
+      <label for="channel">채널 ID <strong>*</strong></label>
+      <input type="text" id="channel" name="channel" placeholder="@핸들 또는 채널명" required>
       <label for="name">이름 <strong>*</strong></label>
       <input type="text" id="name" name="name" placeholder="본명" required>
       <label for="phone">전화번호 <strong>*</strong></label>
@@ -82,8 +92,32 @@ body{margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-s
 (function(){
   var form = document.getElementById('sample-form');
   var btn = document.getElementById('submit-btn');
+  var subjectEl = document.getElementById('form-subject');
   if (!form || !btn) return;
+
+  function fillProductFromQuery() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var p = params.get('product');
+      if (!p) return;
+      var el = document.getElementById('product');
+      if (!el) return;
+      var decoded = decodeURIComponent(p.replace(/\+/g, ' ')).trim();
+      if (decoded) el.value = decoded;
+    } catch (e) {}
+  }
+  fillProductFromQuery();
+
   form.addEventListener('submit', function() {
+    var productEl = document.getElementById('product');
+    var channelTypeEl = document.getElementById('channel_type');
+    var channelEl = document.getElementById('channel');
+    var product = (productEl && productEl.value.trim()) ? productEl.value.trim() : '(미입력)';
+    var channelType = channelTypeEl && channelTypeEl.value ? channelTypeEl.value : '(미입력)';
+    var channelId = (channelEl && channelEl.value.trim()) ? channelEl.value.trim() : '(미입력)';
+    if (subjectEl) {
+      subjectEl.value = '[샘플신청] ' + product + ' / ' + channelType + ' / ' + channelId;
+    }
     btn.disabled = true;
     btn.textContent = '전송 중...';
     setTimeout(function() {

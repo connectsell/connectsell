@@ -1,7 +1,95 @@
 [build]
   publish = "."
 
+# 샘플 신청 단일 폼: /form?product=... → landing (쿼리 유지)
+[[redirects]]
+  from = "/form"
+  to = "/sample/landing.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/form/"
+  to = "/sample/landing.html"
+  status = 200
+  force = true
+
+# /connectsell/sample1 로 랜딩 페이지 접근
+[[redirects]]
+  from = "/connectsell/sample1"
+  to = "/sample/landing.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/connectsell/sample1/"
+  to = "/sample/landing.html"
+  status = 200
+  force = true
+
+# 연결된 이미지·리소스 경로
+[[redirects]]
+  from = "/connectsell/sample1/*"
+  to = "/sample/:splat"
+  status = 200
+  force = true
+
+# 공동구매 제안서: connectsell/email/kakkukishake
+[[redirects]]
+  from = "/connectsell/email/kakkukishake"
+  to = "/email/kakkukishake.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/connectsell/email/kakkukishake/"
+  to = "/email/kakkukishake.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/connectsell/email/kakkukishake/*"
+  to = "/email/:splat"
+  status = 200
+  force = true
+
+# 이메일용 HTML (connectsell 붙은 주소로 들어와도 실제 파일 경로로 연결)
+[[redirects]]
+  from = "/connectsell/email/kakkukishake-email.html"
+  to = "/email/kakkukishake-email.html"
+  status = 200
+  force = true
+
+# V2 이메일: /kakkukishake-email-v2.html 로 접속해도 /email/ 경로에서 서빙
+[[redirects]]
+  from = "/kakkukishake-email-v2.html"
+  to = "/email/kakkukishake-email-v2.html"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/kakkukishake-email-v2"
+  to = "/email/kakkukishake-email-v2.html"
+  status = 200
+  force = true
+
+# /connectsell/email/... 또는 V2 대문자로 들어와도 v2 이메일로 연결
+[[redirects]]
+  from = "/connectsell/email/kakkukishake-email-v2.html"
+  to = "/email/kakkukishake-email-v2.html"
+  status = 200
+  force = true
+[[redirects]]
+  from = "/connectsell/email/kakkukishake-email-V2.html"
+  to = "/email/kakkukishake-email-v2.html"
+  status = 200
+  force = true
+
 [[headers]]
   for = "/sample/landing.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/email/kakkukishake.html"
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
