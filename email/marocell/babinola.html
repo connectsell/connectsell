@@ -171,7 +171,7 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   /* v2 모바일: 챕터 바 패딩 (섹션 타이틀은 본문보다 한 단계 작게 유지) */
   table[style*="border-bottom:1px solid #d0d9d2"] td { padding: 8px 10px !important; }
   /* v2 모바일: 본문 패딩 */
-  .babinola-email-body { padding: 16px 12px 32px !important; }
+  .babinola-email-body { padding: 16px 16px 32px !important; }
   /* v2 모바일: div·테이블 최대 너비 */
   .babinola-email-body table,
   .babinola-email-body div { max-width: 100% !important; }
@@ -183,12 +183,37 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   /* table/div는 100%로 키우지 않음 - 기존 max-width:600px 유지 */
   /* v2 모바일: 히어로 하단 박스 패딩 축소 */
   table[style*="background:#e5ede6"][style*="border-radius:0 0 12px"] td { padding: 24px 16px !important; }
+  /* v2 모바일: 상단 메인 타이틀 바 높이 축소 */
+  .babinola-hero-bar td { padding: 10px 16px !important; }
+  .babinola-hero-brand { line-height: 1.2 !important; }
   .babinola-body-text { text-align: left !important; }
   .babinola-body-text.babinola-brand-caption { text-align: justify !important; }
   .babinola-email-body p.babinola-body-text {
     font-size: 1.0625rem !important;
     line-height: 1.75 !important;
   }
+
+  /* v2 모바일: Chapter 1 이미지 2장 동일비율 + gap + radius */
+  .babinola-chapter1-media { width: 100% !important; border-collapse: separate !important; border-spacing: 10px 0 !important; }
+  .babinola-chapter1-media .kakkuki-two-img-left,
+  .babinola-chapter1-media .kakkuki-two-img-right {
+    display: table-cell !important;
+    width: 50% !important;
+    max-width: 50% !important;
+    padding: 0 !important;
+    vertical-align: top !important;
+  }
+  .babinola-chapter1-media img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    border-radius: 8px !important;
+    object-fit: cover !important;
+  }
+  /* v2 모바일: 제품 기본정보 표 가운데 정렬 + 패딩/라인하이트 통일 */
+  .babinola-email-body .babinola-info-table { margin-left: auto !important; margin-right: auto !important; }
+  .babinola-email-body .babinola-info-table td { text-align: center !important; padding: 12px 14px !important; line-height: 1.6 !important; }
 }
 /* 상단 히어로~본문: 한 컬럼에서 동일 가로폭 강제 (뷰어·메일 클라이언트 정렬) */
 .babinola-mail-column {
@@ -212,7 +237,7 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   .babinola-email-body {
     width: 100% !important;
     max-width: 100% !important;
-    padding: 0.875rem 0.5rem 1.75rem !important;
+    padding: 0.875rem 1rem 1.75rem !important;
     box-sizing: border-box !important;
   }
   .babinola-email-body table,
@@ -252,6 +277,9 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
     background: #ffffff !important;
   }
   .babinola-email-body .babinola-info-table tr:first-child .babinola-info-label { padding-top: 14px !important; }
+  /* 링크로 열었을 때 모바일: 제품 기본정보 표 가운데 정렬 + 패딩/라인하이트 통일 */
+  .babinola-email-body .babinola-info-table { margin-left: auto !important; margin-right: auto !important; }
+  .babinola-email-body .babinola-info-table td { text-align: center !important; padding: 12px 14px !important; line-height: 1.6 !important; }
   .babinola-email-body .babinola-check-card .babinola-check-icon { padding: 16px 0 16px 16px !important; width: 36px !important; }
   .babinola-email-body .babinola-check-card .babinola-check-text { padding: 16px 16px 16px 8px !important; }
   .babinola-email-body .babinola-ref-card .babinola-ref-icon { padding: 16px 0 16px 16px !important; width: 30px !important; }
@@ -282,7 +310,7 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
 <tr>
 <td style="padding:0;background:#f8f6f3;width:600px;max-width:100%;box-sizing:border-box;">
   <!-- 상단: Wellness Creator Commerce -->
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;background:#2d3e50;border-radius:12px 12px 0 0;">
+  <table role="presentation" class="babinola-hero-bar" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;background:#2d3e50;border-radius:12px 12px 0 0;">
     <tr>
       <td align="center" style="text-align:center;padding:1rem 1.75rem;">
         <p class="babinola-hero-brand">Wellness Creator Commerce</p>
@@ -339,7 +367,7 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   </table>
   <div class="babinola-block-spacer-md"></div>
   <!-- 핫키워드 이미지 2열 -->
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="kakkuki-two-img-card babinola-media-flat" style="width:100%;max-width:600px;margin:0 auto;border-collapse:collapse;table-layout:fixed;background:#fff;border-radius:8px;overflow:hidden;">
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="kakkuki-two-img-card babinola-media-flat babinola-chapter1-media" style="width:100%;max-width:600px;margin:0 auto;border-collapse:collapse;table-layout:fixed;background:transparent;border-radius:0;overflow:visible;">
     <tr>
       <td width="50%" class="kakkuki-two-img-left" style="padding:0 6px 0 0;vertical-align:top;background:#fff;">
         <img src="https://www.connectsell.co.kr/email/images/babinola-hotword-left.png" alt="바비놀라 재료와 풍미" width="300" height="300" style="width:100%;height:300px;max-width:100%;object-fit:cover;display:block;">
