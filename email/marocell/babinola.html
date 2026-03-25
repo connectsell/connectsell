@@ -183,9 +183,16 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   /* table/div는 100%로 키우지 않음 - 기존 max-width:600px 유지 */
   /* v2 모바일: 히어로 하단 박스 패딩 축소 */
   table[style*="background:#e5ede6"][style*="border-radius:0 0 12px"] td { padding: 24px 16px !important; }
-  /* v2 모바일: 상단 메인 타이틀 바 높이 축소 (기본) */
-  .babinola-hero-bar td { padding: 10px 16px !important; }
-  .babinola-hero-brand { line-height: 1.2 !important; }
+  /* v2 모바일: 상단 메인 타이틀 강제 축소 */
+  body .babinola-mail-column .babinola-hero-bar td {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+  body .babinola-mail-column .babinola-hero-bar td p.babinola-hero-brand {
+    font-size: 22px !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.2px !important;
+  }
   .babinola-body-text { text-align: left !important; }
   .babinola-body-text.babinola-brand-caption { text-align: justify !important; }
   .babinola-email-body p.babinola-body-text {
@@ -205,11 +212,11 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
 /* ===== Babinola: Mobile hard overrides (<=480px) ===== */
 @media (max-width: 480px) {
   /* [1] Hero title: 반드시 눈에 띄게 작게 */
-  .babinola-hero-bar td {
+  body .babinola-mail-column .babinola-hero-bar td {
     padding-top: 12px !important;
     padding-bottom: 12px !important;
   }
-  .babinola-hero-brand {
+  body .babinola-mail-column .babinola-hero-bar td p.babinola-hero-brand {
     font-size: 22px !important;
     line-height: 1.25 !important;
     letter-spacing: -0.2px !important;
