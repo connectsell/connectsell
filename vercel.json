@@ -1,5 +1,9 @@
 {
   "version": 2,
+  "rewrites": [
+    { "source": "/form", "destination": "/sample/landing.html" },
+    { "source": "/form/", "destination": "/sample/landing.html" }
+  ],
   "headers": [
     {
       "source": "/sample/landing.html",
