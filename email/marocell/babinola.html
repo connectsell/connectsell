@@ -183,7 +183,7 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   /* table/div는 100%로 키우지 않음 - 기존 max-width:600px 유지 */
   /* v2 모바일: 히어로 하단 박스 패딩 축소 */
   table[style*="background:#e5ede6"][style*="border-radius:0 0 12px"] td { padding: 24px 16px !important; }
-  /* v2 모바일: 상단 메인 타이틀 바 높이 축소 */
+  /* v2 모바일: 상단 메인 타이틀 바 높이 축소 (기본) */
   .babinola-hero-bar td { padding: 10px 16px !important; }
   .babinola-hero-brand { line-height: 1.2 !important; }
   .babinola-body-text { text-align: left !important; }
@@ -193,27 +193,58 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
     line-height: 1.75 !important;
   }
 
-  /* v2 모바일: Chapter 1 이미지 2장 동일비율 + gap + radius */
-  .babinola-chapter1-media { width: 100% !important; border-collapse: separate !important; border-spacing: 10px 0 !important; }
-  .babinola-chapter1-media .kakkuki-two-img-left,
-  .babinola-chapter1-media .kakkuki-two-img-right {
-    display: table-cell !important;
-    width: 50% !important;
-    max-width: 50% !important;
-    padding: 0 !important;
-    vertical-align: top !important;
-  }
-  .babinola-chapter1-media img {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    display: block !important;
-    border-radius: 8px !important;
-    object-fit: cover !important;
-  }
   /* v2 모바일: 제품 기본정보 표 가운데 정렬 + 패딩/라인하이트 통일 */
   .babinola-email-body .babinola-info-table { margin-left: auto !important; margin-right: auto !important; }
   .babinola-email-body .babinola-info-table td { text-align: center !important; padding: 12px 14px !important; line-height: 1.6 !important; }
+}
+
+/* ===== Babinola: Mobile hard overrides (<=480px) ===== */
+@media (max-width: 480px) {
+  /* [1] Hero title: 반드시 눈에 띄게 작게 */
+  .babinola-hero-bar td {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+  .babinola-hero-brand {
+    font-size: 22px !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.2px !important;
+  }
+
+  /* [2] Chapter 1 images: 2장이 붙어서 하나의 세로 카드처럼 */
+  /* 기존 2열 이미지 테이블 숨기고, 모바일 전용 세로 카드 노출 */
+  .kakkuki-two-img-card.babinola-media-flat { display: none !important; }
+  .babinola-ch1-mobile {
+    width: fit-content !important;
+    margin: 0 auto 16px auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+  .babinola-ch1-mobile img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 240px !important;
+    height: auto !important;
+  }
+  .babinola-ch1-mobile img.babinola-ch1-img--top { border-radius: 12px 12px 0 0 !important; }
+  .babinola-ch1-mobile img.babinola-ch1-img--bottom { border-radius: 0 0 12px 12px !important; }
+
+  /* [3] Chapter 1 info table: max-width 360 + center + padding 강제 */
+  .babinola-info-table {
+    max-width: 360px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  .babinola-info-table td {
+    padding: 12px 10px !important;
+    text-align: center !important;
+  }
+  .babinola-info-label,
+  .babinola-info-value { text-align: center !important; }
+
+  /* [4] 모바일 여백 16px 통일 */
+  .babinola-email-body { padding-left: 16px !important; padding-right: 16px !important; }
 }
 /* 상단 히어로~본문: 한 컬럼에서 동일 가로폭 강제 (뷰어·메일 클라이언트 정렬) */
 .babinola-mail-column {
@@ -394,6 +425,10 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   </table>
   <div class="babinola-block-spacer-md"></div>
   <!-- 제품 이미지 2열 -->
+  <div class="babinola-ch1-mobile" style="display:none;">
+    <img class="babinola-ch1-img--top" src="https://www.connectsell.co.kr/email/images/babinola-chapter1-left.png" alt="바비놀라 그래놀라 제품 패키지" width="240" style="width:100%;max-width:240px;height:auto;display:block;border:0;">
+    <img class="babinola-ch1-img--bottom" src="https://www.connectsell.co.kr/email/images/babinola-chapter1-right.png" alt="바비놀라 그래놀라와 우유" width="240" style="width:100%;max-width:240px;height:auto;display:block;border:0;">
+  </div>
   <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="kakkuki-two-img-card babinola-media-flat" style="width:100%;max-width:600px;margin:0 auto;border-collapse:collapse;table-layout:fixed;background:#fff;border-radius:8px;overflow:hidden;">
     <tr>
       <td width="50%" class="kakkuki-two-img-left" style="padding:0 6px 0 0;vertical-align:top;background:#fff;">
