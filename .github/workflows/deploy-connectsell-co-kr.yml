@@ -1,0 +1,28 @@
+name: Deploy babinola email to connectsell.co.kr
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - "email/marocell/babinola.html"
+      - ".github/workflows/deploy-connectsell-co-kr.yml"
+  workflow_dispatch: {}
+
+jobs:
+  sftp_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Upload babinola.html via SFTP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.CONNECTSELL_FTP_HOST }}
+          username: ${{ secrets.CONNECTSELL_FTP_USER }}
+          password: ${{ secrets.CONNECTSELL_FTP_PASSWORD }}
+          port: ${{ secrets.CONNECTSELL_FTP_PORT }}
+          source: "email/marocell/babinola.html"
+          target: ${{ secrets.CONNECTSELL_FTP_WEBROOT }}
+          overwrite: true
+
