@@ -8,6 +8,39 @@
 <style>
 /* rem 기준 (링크·브라우저에서 iOS 자동 확대 완화, 16px=1rem) */
 html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+/* === Babinola 가독성 UI (PC·모바일 공통) === */
+.babinola-hero-brand { margin: 0; font-size: 1.75rem; font-weight: 700; letter-spacing: 0.04em; color: #ffffff; line-height: 1.35; }
+.babinola-hero-kicker { margin: 0 0 0.75rem 0; font-size: 0.8125rem; font-weight: 500; color: #9e9e9e; letter-spacing: 0.12em; line-height: 1.5; }
+.babinola-hero-subtitle { margin: 0; font-size: 1.375rem; font-weight: 600; color: #2d3e50; letter-spacing: -0.02em; line-height: 1.45; word-wrap: break-word; }
+.babinola-chapter-bar { width: 100%; max-width: 600px; margin: 2.5rem auto 0; border-collapse: collapse; table-layout: fixed; border-top: 1px solid #d0d9d2; border-bottom: 1px solid #d0d9d2; }
+.babinola-chapter-bar td { padding: 0.875rem 1rem; vertical-align: middle; }
+.babinola-chapter-bar .babinola-chapter-label { font-size: 0.75rem; font-weight: 700; color: #1a1a1a; }
+.babinola-chapter-bar .babinola-chapter-title { font-size: 1.25rem; font-weight: 600; color: #2d3e50; line-height: 1.45; text-align: center; }
+.babinola-chapter-bar .babinola-chapter-title--accent { font-weight: 600; color: #c62828; }
+.babinola-body-text {
+  margin: 0 0 1.375rem 0;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #3d4f42;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+.babinola-body-text.babinola-brand-caption { text-align: justify; }
+.babinola-body-text--standalone { margin-bottom: 1.5rem; font-weight: 600; color: #2d3e50; }
+.babinola-plain-list { margin: 0; padding: 0 0.25rem; max-width: 600px; box-sizing: border-box; }
+.babinola-plain-list p { margin: 0 0 1rem 0; font-size: 1.0625rem; line-height: 1.75; color: #3d4f42; padding-bottom: 0.75rem; border-bottom: 1px solid #e8ebe9; }
+.babinola-plain-list p:last-child { margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
+.babinola-list-minimal { margin: 0; padding: 0 0 0 1.125rem; list-style: disc; color: #3d4f42; font-size: 1.0625rem; line-height: 1.75; }
+.babinola-list-minimal li { margin: 0 0 0.75rem 0; padding-left: 0.25rem; }
+.babinola-list-minimal li:last-child { margin-bottom: 0; }
+.babinola-media-flat { width: 100%; max-width: 600px; margin: 0 auto; border-collapse: collapse; background: #fff; }
+.babinola-media-flat td { padding: 0; vertical-align: top; }
+.babinola-block-spacer-sm { height: 1rem; line-height: 1rem; font-size: 0; }
+.babinola-block-spacer-md { height: 1.5rem; line-height: 1rem; font-size: 0; }
 .kakkuki-slogan-text .kakkuki-line1,
 .kakkuki-slogan-text .kakkuki-line2 { display: block; }
 .kakkuki-slogan-text .kakkuki-line2 { margin-top: 0.2em; }
@@ -98,18 +131,10 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   table[style*="background:#e5ede6"][style*="border-radius:0 0 12px"] td { padding: 24px 16px !important; }
   .babinola-body-text { text-align: left !important; }
   .babinola-body-text.babinola-brand-caption { text-align: justify !important; }
-  /* 네이버·모바일 메일 웹뷰: 본문 가독성 (15px 인라인보다 한 단계 크게) */
   .babinola-email-body p.babinola-body-text {
-    font-size: 18px !important;
-    line-height: 1.72 !important;
+    font-size: 1.0625rem !important;
+    line-height: 1.75 !important;
   }
-}
-/* 본문: 줄바꿈(br) 대신 자연 줄꿈 + 양쪽 정렬로 가독·균형 */
-.babinola-body-text {
-  text-align: justify;
-  word-break: keep-all;
-  overflow-wrap: break-word;
-  letter-spacing: -0.02em;
 }
 /* 상단 히어로~본문: 한 컬럼에서 동일 가로폭 강제 (뷰어·메일 클라이언트 정렬) */
 .babinola-mail-column {
@@ -121,7 +146,6 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   border-collapse: collapse !important;
 }
 .babinola-mail-column > tbody > tr > td { width: 100% !important; max-width: 600px !important; box-sizing: border-box !important; }
-/* 브랜드 배너 하단 문단: 가로 폭 채워 오른쪽 빈 여백 완화 */
 .babinola-brand-caption { text-align: justify !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; }
 
 /* 링크로 열었을 때(브라우저) 모바일: 600px 캡 안에서 가로 100%, 이미지 유동·rem 본문 */
@@ -147,8 +171,9 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
     font-size: 1.125rem !important;
     line-height: 1.72 !important;
   }
-  .babinola-email-body .kakkuki-chapter1-info span,
-  .babinola-email-body div[style*="display:flex"] span { font-size: 0.9375rem !important; }
+  .babinola-email-body .babinola-plain-list p,
+  .babinola-email-body .babinola-list-minimal,
+  .babinola-email-body .babinola-list-minimal li { font-size: 1.0625rem !important; }
   .babinola-email-body a[style*="inline-block"] { font-size: 1rem !important; }
   /* 콘텐츠 이미지만 가로 100% (아이콘 제외 — 텍스트는 HTML 유지) */
   .babinola-email-body img:not([src*="icon-diamond"]):not([src*="icon-check"]),
@@ -176,61 +201,63 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   <!-- 상단: Wellness Creator Commerce -->
   <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;background:#2d3e50;border-radius:12px 12px 0 0;">
     <tr>
-      <td align="center" style="text-align:center;padding:14px 28px;">
-        <p style="margin:0;font-size:1.05rem;font-weight:700;letter-spacing:0.05em;color:#ffffff;">Wellness Creator Commerce</p>
+      <td align="center" style="text-align:center;padding:1rem 1.75rem;">
+        <p class="babinola-hero-brand">Wellness Creator Commerce</p>
       </td>
     </tr>
   </table>
   <!-- 하단: by ConnectSell (테이블에 padding 금지 → td만 패딩, 본문 28px과 동일) -->
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;background:#e5ede6;border-radius:0 0 12px 12px;box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;background:#e5ede6;border-radius:0 0 12px 12px;">
     <tr>
-      <td align="center" style="text-align:center;padding:48px 28px;">
-        <p style="margin:0 0 16px 0;font-size:13px;font-weight:500;color:#9e9e9e;letter-spacing:0.12em;">by ConnectSell</p>
-        <p style="margin:0;font-size:20px;font-weight:700;color:#2d3e50;letter-spacing:-0.02em;word-wrap:break-word;">ConnectSell이 제안하는 협업</p>
+      <td align="center" style="text-align:center;padding:2.5rem 2rem;">
+        <p class="babinola-hero-kicker">by ConnectSell</p>
+        <p class="babinola-hero-subtitle">ConnectSell이 제안하는 협업</p>
       </td>
     </tr>
   </table>
 </td>
 </tr>
 <tr>
-<td class="babinola-email-body" style="padding:28px 28px 40px;width:600px;max-width:100%;min-width:0;background:#ffffff;box-sizing:border-box;vertical-align:top;">
-  <p class="babinola-body-text" style="margin:0 0 16px 0;font-size:15px;line-height:1.8;color:#3d4f42;word-wrap:break-word;text-align:left;">안녕하세요.<br><strong>ConnectSell 크리에이터 매칭팀입니다.</strong><br>크리에이터의 콘텐츠 방향성을 존중하며, 진정성 있는 협업이 될 수 있는 브랜드만 선별해 제안드리고 있습니다.</p>
-  <p class="babinola-body-text" style="margin:0;font-size:15px;line-height:1.8;color:#3d4f42;word-wrap:break-word;">식단 관리할 때 가장 어려운 건 사실 '무엇을 먹느냐'보다 <strong>'지속하는 것'</strong>이라고 생각합니다. 저당, 저칼로리 제품을 구매해도 막상 손이 잘 가지 않거나 며칠 지나지 않아 질려버린 경험, 있으시지 않으셨을까요?</p>
-  <p class="babinola-body-text" style="margin:20px 0 0 0;font-size:15px;line-height:1.8;color:#3d4f42;word-wrap:break-word;">결국 식단이 무너지는 순간은 참고 참다가 갑자기 입이 터지는 순간이라고 생각합니다. 그래서 요즘은 '참는 다이어트'보다 <strong>'계속 먹을 수 있는 루틴'</strong>이 더 중요해졌습니다.</p>
-  <p class="babinola-body-text" style="margin:20px 0 0 0;font-size:15px;line-height:1.8;color:#3d4f42;word-wrap:break-word;">이번에 소개해드리는 <strong>바비놀라(Babinola)</strong>는 일상 속 간편한 한 끼 또는 간식으로 부담 없이 이어갈 수 있도록 기획된 그래놀라 제품입니다. 평소 식단, 간식, 자기관리 루틴을 중심으로 공감대를 형성해온 콘텐츠 흐름과도 잘 맞을 것 같아 자연스럽게 풀어낼 수 있는 공동구매 협업을 제안드리고자 연락드렸습니다.</p>
+<td class="babinola-email-body" style="padding:2rem 2rem 2.5rem;width:600px;max-width:100%;min-width:0;background:#ffffff;box-sizing:border-box;vertical-align:top;">
+  <p class="babinola-body-text">안녕하세요.</p>
+  <p class="babinola-body-text babinola-body-text--standalone"><strong>ConnectSell 크리에이터 매칭팀입니다.</strong></p>
+  <p class="babinola-body-text">크리에이터의 콘텐츠 방향성을 존중하며, <strong>진정성 있는 협업</strong>이 될 수 있는 브랜드만 선별해 제안드리고 있습니다.</p>
+  <p class="babinola-body-text">식단 관리할 때 가장 어려운 건 사실 <strong>'무엇을 먹느냐'</strong>보다 <strong>'지속하는 것'</strong>이라고 생각합니다.</p>
+  <p class="babinola-body-text">저당·저칼로리 제품을 구매해도 막상 손이 잘 가지 않거나, 며칠 지나지 않아 질려버린 경험 있으시지 않으셨을까요?</p>
+  <p class="babinola-body-text">결국 식단이 무너지는 순간은 참다 참다가 갑자기 입이 터지는 순간이라고 생각합니다.</p>
+  <p class="babinola-body-text">그래서 요즘은 <strong>'참는 다이어트'</strong>보다 <strong>'계속 먹을 수 있는 루틴'</strong>이 더 중요해졌습니다.</p>
+  <p class="babinola-body-text">이번에 소개해드리는 <strong>바비놀라(Babinola)</strong>는 일상 속 간편한 한 끼 또는 간식으로 부담 없이 이어갈 수 있도록 기획된 <strong>그래놀라</strong> 제품입니다.</p>
+  <p class="babinola-body-text">평소 식단·간식·자기관리 루틴을 중심으로 공감대를 형성해온 콘텐츠 흐름과도 잘 맞을 것 같아, 자연스럽게 풀어낼 수 있는 <strong>공동구매 협업</strong>을 제안드리고자 연락드렸습니다.</p>
 
-  <!-- 챕터 칸: Brand | 바비놀라 -->
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;max-width:600px;margin:40px auto 0;border-collapse:collapse;table-layout:fixed;border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;">
+  <!-- Brand -->
+  <table role="presentation" class="babinola-chapter-bar" cellpadding="0" cellspacing="0" border="0" width="100%">
     <tr>
-      <td style="padding:14px 16px;vertical-align:middle;background:#ffffff;width:26%;white-space:nowrap;">
-        <span style="font-size:10px;line-height:1;color:#1a1a1a;">■</span><span style="padding-left:8px;font-size:14px;font-weight:700;color:#1a1a1a;">Brand</span>
-      </td>
-      <td align="center" style="padding:14px 16px;vertical-align:middle;background:#e5ede6;width:74%;font-size:13px;font-weight:700;color:#2d3e50;line-height:1.45;text-align:center;">유튜버 히밥 × 마로셀 공동개발 바비놀라</td>
+      <td style="width:26%;background:#ffffff;white-space:nowrap;"><span class="babinola-chapter-label">■ Brand</span></td>
+      <td align="center" style="width:74%;background:#e5ede6;"><span class="babinola-chapter-title">유튜버 히밥 × 마로셀 공동개발 바비놀라</span></td>
     </tr>
   </table>
-  <div style="height:24px;"></div>
-  <!-- 브랜드 배너 (단일 이미지) -->
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="babinola-brand-banner" style="width:100%;max-width:600px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+  <div class="babinola-block-spacer-md"></div>
+  <!-- 브랜드 배너 -->
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="babinola-brand-banner" style="width:100%;max-width:600px;margin:0 auto;background:#fff;border-radius:8px;overflow:hidden;">
     <tr>
       <td style="padding:0;vertical-align:top;background:#fff;">
         <img src="https://www.connectsell.co.kr/email/images/babinola-brand-banner.png" alt="유튜버 히밥 × 마로셀 공동개발 바비놀라" width="600" style="width:100%;max-width:600px;height:auto;display:block;border:0;">
       </td>
     </tr>
   </table>
-  <p class="babinola-body-text babinola-brand-caption" style="margin:16px 0 0 0;padding:0;width:100%;max-width:100%;box-sizing:border-box;font-size:15px;line-height:1.75;color:#3d4f42;word-wrap:break-word;text-align:justify;">바비놀라는 크리에이터 히밥과 함께 맛과 구성에 대한 고민을 바탕으로 기획된 그래놀라 제품입니다. 일상에서 부담 없이 즐길 수 있는 맛과 지속 가능한 식단 구성을 고려해 만들어진 점이 특징입니다.</p>
-  <div style="height:16px;"></div>
+  <p class="babinola-body-text babinola-brand-caption" style="margin-top:1rem;">바비놀라는 크리에이터 <strong>히밥</strong>과 함께 맛과 구성에 대한 고민을 바탕으로 기획된 그래놀라 제품입니다.</p>
+  <p class="babinola-body-text babinola-brand-caption"><strong>일상에서 부담 없이 즐길 수 있는 맛</strong>과 지속 가능한 식단 구성을 고려해 만들어진 점이 특징입니다.</p>
+  <div class="babinola-block-spacer-md"></div>
   <!-- Hot Word -->
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;max-width:600px;margin:0 auto;border-collapse:collapse;table-layout:fixed;border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;">
+  <table role="presentation" class="babinola-chapter-bar" cellpadding="0" cellspacing="0" border="0" width="100%">
     <tr>
-      <td style="padding:14px 16px;vertical-align:middle;background:#ffffff;width:26%;white-space:nowrap;">
-        <span style="font-size:10px;line-height:1;color:#1a1a1a;">■</span><span style="padding-left:8px;font-size:14px;font-weight:700;color:#1a1a1a;">Hot Word</span>
-      </td>
-      <td align="center" style="padding:14px 16px;vertical-align:middle;background:#e5ede6;width:74%;font-size:13px;font-weight:600;color:#c62828;line-height:1.45;text-align:center;">3無 원칙(설탕·밀가루·팜유 ZERO)</td>
+      <td style="width:26%;background:#ffffff;white-space:nowrap;"><span class="babinola-chapter-label">■ Hot Word</span></td>
+      <td align="center" style="width:74%;background:#e5ede6;"><span class="babinola-chapter-title babinola-chapter-title--accent">3無 원칙(설탕·밀가루·팜유 ZERO)</span></td>
     </tr>
   </table>
-  <div style="height:16px;"></div>
-  <!-- 핫키워드: 좌·우 이미지 (Chapter 1과 동일 2열) -->
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="kakkuki-two-img-card" style="width:100%;max-width:600px;margin:0 auto;border-collapse:collapse;table-layout:fixed;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+  <div class="babinola-block-spacer-md"></div>
+  <!-- 핫키워드 이미지 2열 -->
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="kakkuki-two-img-card babinola-media-flat" style="width:100%;max-width:600px;margin:0 auto;border-collapse:collapse;table-layout:fixed;background:#fff;border-radius:8px;overflow:hidden;">
     <tr>
       <td width="50%" class="kakkuki-two-img-left" style="padding:0 6px 0 0;vertical-align:top;background:#fff;">
         <img src="https://www.connectsell.co.kr/email/images/babinola-hotword-left.png" alt="바비놀라 재료와 풍미" width="300" height="300" style="width:100%;height:300px;max-width:100%;object-fit:cover;display:block;">
@@ -242,24 +269,22 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   </table>
 
   <!-- 핫키워드 이미지 아래 본문 -->
-  <p class="babinola-body-text" style="margin:24px 0 0 0;font-size:15px;line-height:1.8;color:#3d4f42;word-wrap:break-word;">바비놀라는 ‘3無 원칙(설탕·밀가루·팜유 ZERO)’을 기준으로 불필요한 첨가 없이 만들어진 그래놀라입니다.</p>
-  <p class="babinola-body-text" style="margin:20px 0 0 0;font-size:15px;line-height:1.8;color:#3d4f42;word-wrap:break-word;">100% 캐나다산 귀리와 유기 현미를 베이스로, 피칸·캐슈넛·아몬드·해바라기씨를 더해 바삭한 식감과 고소한 풍미를 함께 살렸습니다.</p>
-  <p class="babinola-body-text" style="margin:20px 0 0 0;font-size:15px;line-height:1.8;color:#3d4f42;word-wrap:break-word;">튀기지 않고 오븐에 구워내는 전통 수제 방식으로 제작되어 부담 없이 가볍게 즐길 수 있는 점도 특징입니다.</p>
-  <p class="babinola-body-text" style="margin:20px 0 0 0;font-size:15px;line-height:1.8;color:#3d4f42;word-wrap:break-word;">또한 일반 시리얼 대비 당류는 낮추고(4g), 단백질은 충분히 담아(15g) 간편한 한 끼로도 포만감을 느낄 수 있도록 구성되어 있습니다.</p>
-  <p class="babinola-body-text" style="margin:20px 0 0 0;font-size:15px;line-height:1.8;color:#3d4f42;word-wrap:break-word;">팜유를 사용하지 않고 견과류 기반의 지방으로 채워 트랜스지방 없이 보다 균형 잡힌 원료로 설계된 제품입니다.</p>
+  <p class="babinola-body-text" style="margin-top:1.5rem;">바비놀라는 <strong>‘3無 원칙(설탕·밀가루·팜유 ZERO)’</strong>을 기준으로 불필요한 첨가 없이 만들어진 그래놀라입니다.</p>
+  <p class="babinola-body-text"><strong>100% 캐나다산 귀리</strong>와 유기 현미를 베이스로, 피칸·캐슈넛·아몬드·해바라기씨를 더해 바삭한 식감과 고소한 풍미를 살렸습니다.</p>
+  <p class="babinola-body-text">튀기지 않고 오븐에 구워내는 <strong>전통 수제 방식</strong>으로 제작되어 부담 없이 가볍게 즐길 수 있습니다.</p>
+  <p class="babinola-body-text">일반 시리얼 대비 <strong>당류는 낮추고(4g)</strong>, <strong>단백질은 충분히(15g)</strong> 담아 간편한 한 끼로도 포만감을 느낄 수 있도록 구성되어 있습니다.</p>
+  <p class="babinola-body-text"><strong>팜유</strong>를 사용하지 않고 견과류 기반의 지방으로 채워 <strong>트랜스지방 없이</strong> 균형 잡힌 원료로 설계되었습니다.</p>
 
-  <!-- Chapter 1 | 제품 기본정보 (제품 이미지 위 브랜드 영역) -->
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;max-width:600px;margin:48px auto 0;border-collapse:collapse;table-layout:fixed;border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;">
+  <!-- Chapter 1 -->
+  <table role="presentation" class="babinola-chapter-bar" cellpadding="0" cellspacing="0" border="0" width="100%">
     <tr>
-      <td style="padding:14px 16px;vertical-align:middle;background:#ffffff;width:26%;white-space:nowrap;">
-        <span style="font-size:10px;line-height:1;color:#1a1a1a;">■</span><span style="padding-left:8px;font-size:14px;font-weight:700;color:#1a1a1a;">Chapter 1</span>
-      </td>
-      <td align="center" style="padding:14px 16px;vertical-align:middle;background:#e5ede6;width:74%;font-size:14px;font-weight:700;color:#2d3e50;line-height:1.5;text-align:center;">제품 기본정보</td>
+      <td style="width:26%;background:#ffffff;white-space:nowrap;"><span class="babinola-chapter-label">■ Chapter 1</span></td>
+      <td align="center" style="width:74%;background:#e5ede6;"><span class="babinola-chapter-title">제품 기본정보</span></td>
     </tr>
   </table>
-  <div style="height:24px;"></div>
-  <!-- 제품 라인업: 좌 바비놀라 패키지 | 우 그래놀라 볼 -->
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="kakkuki-two-img-card" style="width:100%;max-width:600px;margin:0 auto;border-collapse:collapse;table-layout:fixed;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+  <div class="babinola-block-spacer-md"></div>
+  <!-- 제품 이미지 2열 -->
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="kakkuki-two-img-card babinola-media-flat" style="width:100%;max-width:600px;margin:0 auto;border-collapse:collapse;table-layout:fixed;background:#fff;border-radius:8px;overflow:hidden;">
     <tr>
       <td width="50%" class="kakkuki-two-img-left" style="padding:0 6px 0 0;vertical-align:top;background:#fff;">
         <img src="https://www.connectsell.co.kr/email/images/babinola-chapter1-left.png" alt="바비놀라 그래놀라 제품 패키지" width="300" height="300" style="width:100%;height:300px;max-width:100%;object-fit:cover;display:block;">
@@ -269,149 +294,91 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
       </td>
     </tr>
     <tr>
-      <td colspan="2" class="kakkuki-chapter1-info" style="padding:12px 18px 12px 28px;">
-        <div style="margin-bottom:8px;padding:12px 16px;background:#f5f5f5;border-radius:8px;display:flex;align-items:flex-start;gap:12px;">
-          <img src="https://www.connectsell.co.kr/email/images/icon-diamond-blue.png" alt="" width="24" height="24" class="chapter1-diamond-icon" style="display:block;width:24px;height:24px;flex-shrink:0;margin-top:2px;">
-          <span style="font-size:0.95rem;color:#3d4f42;font-weight:700;flex:1;line-height:1.5;"><strong>제품명:</strong> 바비놀라(Babinola) 그래놀라</span>
-        </div>
-        <div style="margin-bottom:8px;padding:12px 16px;background:#f5f5f5;border-radius:8px;display:flex;align-items:flex-start;gap:12px;">
-          <img src="https://www.connectsell.co.kr/email/images/icon-diamond-blue.png" alt="" width="24" height="24" class="chapter1-diamond-icon" style="display:block;width:24px;height:24px;flex-shrink:0;margin-top:2px;">
-          <span style="font-size:0.95rem;color:#3d4f42;font-weight:700;flex:1;line-height:1.5;"><strong>제품유형:</strong> 곡물가공품 (그래놀라)</span>
-        </div>
-        <div style="margin-bottom:8px;padding:12px 16px;background:#f5f5f5;border-radius:8px;display:flex;align-items:flex-start;gap:12px;">
-          <img src="https://www.connectsell.co.kr/email/images/icon-diamond-blue.png" alt="" width="24" height="24" class="chapter1-diamond-icon" style="display:block;width:24px;height:24px;flex-shrink:0;margin-top:2px;">
-          <span style="font-size:0.95rem;color:#3d4f42;font-weight:700;flex:1;line-height:1.5;"><strong>구성:</strong> 300g</span>
-        </div>
-        <div style="margin-bottom:8px;padding:12px 16px;background:#f5f5f5;border-radius:8px;display:flex;align-items:flex-start;gap:12px;">
-          <img src="https://www.connectsell.co.kr/email/images/icon-diamond-blue.png" alt="" width="24" height="24" class="chapter1-diamond-icon" style="display:block;width:24px;height:24px;flex-shrink:0;margin-top:2px;">
-          <span style="font-size:0.95rem;color:#3d4f42;font-weight:700;flex:1;line-height:1.5;"><strong>주요원료:</strong> 캐나다산 귀리, 유기 현미, 피칸, 캐슈넛, 아몬드, 해바라기씨</span>
-        </div>
-        <div style="margin-bottom:8px;padding:12px 16px;background:#f5f5f5;border-radius:8px;display:flex;align-items:flex-start;gap:12px;">
-          <img src="https://www.connectsell.co.kr/email/images/icon-diamond-blue.png" alt="" width="24" height="24" class="chapter1-diamond-icon" style="display:block;width:24px;height:24px;flex-shrink:0;margin-top:2px;">
-          <span style="font-size:0.95rem;color:#3d4f42;font-weight:700;flex:1;line-height:1.5;"><strong>제품특징:</strong> 100% 홈메이드 수제 방식</span>
-        </div>
-        <div style="padding:12px 16px;background:#f5f5f5;border-radius:8px;display:flex;align-items:flex-start;gap:12px;">
-          <img src="https://www.connectsell.co.kr/email/images/icon-diamond-blue.png" alt="" width="24" height="24" class="chapter1-diamond-icon" style="display:block;width:24px;height:24px;flex-shrink:0;margin-top:2px;">
-          <span style="font-size:0.95rem;color:#3d4f42;font-weight:700;flex:1;line-height:1.5;"><strong>영양정보:</strong> 당류 4g / 단백질 15g / 트랜스지방 0g (100g 기준)</span>
+      <td colspan="2" class="kakkuki-chapter1-info" style="padding:1.25rem 0.5rem 0 0.5rem;">
+        <div class="babinola-plain-list">
+          <p><strong>제품명</strong> 바비놀라(Babinola) 그래놀라</p>
+          <p><strong>제품유형</strong> 곡물가공품 (그래놀라)</p>
+          <p><strong>구성</strong> 300g</p>
+          <p><strong>주요원료</strong> 캐나다산 귀리, 유기 현미, 피칸, 캐슈넛, 아몬드, 해바라기씨</p>
+          <p><strong>제품특징</strong> 100% 홈메이드 수제 방식</p>
+          <p><strong>영양정보</strong> 당류 4g / 단백질 15g / 트랜스지방 0g (100g 기준)</p>
         </div>
       </td>
     </tr>
   </table>
 
-  <!-- Chapter 2 | Check Point -->
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;max-width:600px;margin:48px auto 0;border-collapse:collapse;table-layout:fixed;border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;">
+  <!-- Chapter 2 -->
+  <table role="presentation" class="babinola-chapter-bar" cellpadding="0" cellspacing="0" border="0" width="100%">
     <tr>
-      <td style="padding:14px 16px;vertical-align:middle;background:#ffffff;width:26%;white-space:nowrap;">
-        <span style="font-size:10px;line-height:1;color:#1a1a1a;">■</span><span style="padding-left:8px;font-size:14px;font-weight:700;color:#1a1a1a;">Chapter 2</span>
-      </td>
-      <td align="center" style="padding:14px 16px;vertical-align:middle;background:#e5ede6;width:74%;font-size:14px;font-weight:700;color:#2d3e50;line-height:1.5;text-align:center;">Check Point</td>
+      <td style="width:26%;background:#ffffff;white-space:nowrap;"><span class="babinola-chapter-label">■ Chapter 2</span></td>
+      <td align="center" style="width:74%;background:#e5ede6;"><span class="babinola-chapter-title">Check Point</span></td>
     </tr>
   </table>
-  <div style="height:24px;"></div>
-  <!-- 바비놀라 비주얼 + 영양 인포그래픽 + 체크 리스트 -->
-  <div style="margin:0 auto;width:100%;max-width:600px;box-sizing:border-box;background:#f8f6f3;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06);">
-    <div style="width:100%;max-width:600px;margin:0 auto;">
-      <img src="https://www.connectsell.co.kr/email/images/babinola-chapter2-checkpoint.png?v=20260325" alt="바비놀라 단백질 함량 UP 칼로리 부담 DOWN" width="600" style="width:100%;max-width:600px;height:auto;display:block;">
-    </div>
-    <div style="background:#fff;padding:28px 32px;">
-    <div style="margin-bottom:12px;padding:14px 18px;background:#f5f5f5;border-radius:8px;display:flex;align-items:flex-start;gap:12px;">
-      <img src="https://www.connectsell.co.kr/email/images/icon-check-purple.png" alt="" width="32" height="32" style="display:block;width:32px;height:32px;flex-shrink:0;margin-top:2px;">
-      <span style="font-size:0.95rem;color:#3d4f42;font-weight:700;flex:1;line-height:1.5;">100% 수제 시리얼 고품질 원재료</span>
-    </div>
-    <div style="margin-bottom:12px;padding:14px 18px;background:#f5f5f5;border-radius:8px;display:flex;align-items:flex-start;gap:12px;">
-      <img src="https://www.connectsell.co.kr/email/images/icon-check-purple.png" alt="" width="32" height="32" style="display:block;width:32px;height:32px;flex-shrink:0;margin-top:2px;">
-      <span style="font-size:0.95rem;color:#3d4f42;font-weight:700;flex:1;line-height:1.5;">캐나다산 진한 메이플 시럽의 풍미와 바삭한 식감</span>
-    </div>
-    <div style="margin-bottom:12px;padding:14px 18px;background:#f5f5f5;border-radius:8px;display:flex;align-items:flex-start;gap:12px;">
-      <img src="https://www.connectsell.co.kr/email/images/icon-check-purple.png" alt="" width="32" height="32" style="display:block;width:32px;height:32px;flex-shrink:0;margin-top:2px;">
-      <span style="font-size:0.95rem;color:#3d4f42;font-weight:700;flex:1;line-height:1.5;">고단백, 칼로리 부담 ZERO</span>
-    </div>
-    <div style="margin-bottom:12px;padding:14px 18px;background:#f5f5f5;border-radius:8px;display:flex;align-items:flex-start;gap:12px;">
-      <img src="https://www.connectsell.co.kr/email/images/icon-check-purple.png" alt="" width="32" height="32" style="display:block;width:32px;height:32px;flex-shrink:0;margin-top:2px;">
-      <span style="font-size:0.95rem;color:#3d4f42;font-weight:700;flex:1;line-height:1.5;">NO! 설탕 NO!밀가루 NO!합성첨가물 NO!정제설탕</span>
-    </div>
-    <div style="padding:14px 18px;background:#f5f5f5;border-radius:8px;display:flex;align-items:flex-start;gap:12px;">
-      <img src="https://www.connectsell.co.kr/email/images/icon-check-purple.png" alt="" width="32" height="32" style="display:block;width:32px;height:32px;flex-shrink:0;margin-top:2px;">
-      <span style="font-size:0.95rem;color:#3d4f42;font-weight:700;flex:1;line-height:1.5;">HACCP 안전관리인증 기준 위생적인 제조</span>
-    </div>
-  </div>
+  <div class="babinola-block-spacer-md"></div>
+  <div style="margin:0 auto;width:100%;max-width:600px;box-sizing:border-box;">
+    <img src="https://www.connectsell.co.kr/email/images/babinola-chapter2-checkpoint.png?v=20260325" alt="바비놀라 단백질 함량 UP 칼로리 부담 DOWN" width="600" style="width:100%;max-width:600px;height:auto;display:block;border-radius:8px;">
+    <ul class="babinola-list-minimal" style="margin-top:1.25rem;padding-left:1.25rem;">
+      <li><strong>100% 수제 시리얼</strong> 고품질 원재료</li>
+      <li><strong>캐나다산 메이플 시럽</strong> 풍미와 바삭한 식감</li>
+      <li><strong>고단백</strong>, 칼로리 부담 ZERO</li>
+      <li><strong>NO</strong> 설탕 · 밀가루 · 합성첨가물 · 정제설탕</li>
+      <li><strong>HACCP</strong> 안전관리인증 기준 위생적인 제조</li>
+    </ul>
   </div>
 
-  <!-- Chapter 3 | 스토어 리뷰 평점 4.75/5 -->
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;max-width:600px;margin:24px auto 0;border-collapse:collapse;table-layout:fixed;border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;">
+  <!-- Chapter 3 -->
+  <table role="presentation" class="babinola-chapter-bar" cellpadding="0" cellspacing="0" border="0" width="100%">
     <tr>
-      <td style="padding:14px 16px;vertical-align:middle;background:#ffffff;width:26%;white-space:nowrap;">
-        <span style="font-size:10px;line-height:1;color:#1a1a1a;">■</span><span style="padding-left:8px;font-size:14px;font-weight:700;color:#1a1a1a;">Chapter 3</span>
-      </td>
-      <td align="center" style="padding:14px 16px;vertical-align:middle;background:#e5ede6;width:74%;font-size:14px;font-weight:700;color:#2d3e50;line-height:1.5;text-align:center;">스토어 리뷰 평점 4.75/5</td>
+      <td style="width:26%;background:#ffffff;white-space:nowrap;"><span class="babinola-chapter-label">■ Chapter 3</span></td>
+      <td align="center" style="width:74%;background:#e5ede6;"><span class="babinola-chapter-title">스토어 리뷰 평점 4.75/5</span></td>
     </tr>
   </table>
-
-  <div style="width:100%;max-width:600px;">
-    <p style="margin:16px 0 0 0;padding:0;text-align:center;"><img src="https://www.connectsell.co.kr/email/images/babinola-store-review.png" alt="바비놀라 상품리뷰 평점 4.75" width="560" style="width:100%;max-width:560px;height:auto;display:block;margin:0 auto;padding:0;border:0;border-radius:8px;"></p>
+  <div class="babinola-block-spacer-md"></div>
+  <div style="width:100%;max-width:600px;margin:0 auto;">
+    <p style="margin:0;padding:0;text-align:center;"><img src="https://www.connectsell.co.kr/email/images/babinola-store-review.png" alt="바비놀라 상품리뷰 평점 4.75" width="560" style="width:100%;max-width:560px;height:auto;display:block;margin:0 auto;border:0;border-radius:8px;"></p>
   </div>
 
-  <p class="babinola-body-text" style="margin:40px 0 0 0;font-size:15px;line-height:1.8;color:#3d4f42;word-wrap:break-word;">체험 후 콘텐츠는 크리에이터님의 일상 속 식단 루틴에 맞춰 자연스럽게 녹여 소개해주셔도 좋습니다.</p>
-  <p class="babinola-body-text" style="margin:20px 0 0 0;font-size:15px;line-height:1.8;color:#3d4f42;word-wrap:break-word;">요거트, 우유와 함께하는 간편한 아침 루틴, 간식 대체, 식단 관리 브이로그 등 실제 생활 속에서 활용되는 모습으로 풀어주시면 더 높은 공감과 반응을 이끌어낼 수 있습니다.</p>
-  <p class="babinola-body-text" style="margin:20px 0 0 0;font-size:15px;line-height:1.8;color:#3d4f42;word-wrap:break-word;">간단한 레시피(요거트볼, 과일 토핑 등) 형태로도 확장 가능한 제품이라 콘텐츠 방향에 맞춰 자유롭게 활용 가능하며, 필요 시 협업 가이드는 별도로 전달드릴 예정입니다.</p>
+  <p class="babinola-body-text" style="margin-top:2rem;">체험 후 콘텐츠는 크리에이터님의 <strong>일상 속 식단 루틴</strong>에 맞춰 자연스럽게 녹여 소개해주셔도 좋습니다.</p>
+  <p class="babinola-body-text">요거트·우유와 함께하는 <strong>간편한 아침 루틴</strong>, 간식 대체, 식단 관리 브이로그 등 실제 생활 속 모습으로 풀어주시면 공감과 반응을 이끌어낼 수 있습니다.</p>
+  <p class="babinola-body-text">요거트볼·과일 토핑 등 <strong>간단한 레시피</strong>로도 확장 가능하며, 필요 시 <strong>협업 가이드</strong>는 별도로 전달드릴 예정입니다.</p>
 
-  <!-- Chapter 4 | 콘텐츠 래퍼런스 -->
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;max-width:600px;margin:40px auto 0;border-collapse:collapse;table-layout:fixed;border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;">
+  <!-- Chapter 4 -->
+  <table role="presentation" class="babinola-chapter-bar" cellpadding="0" cellspacing="0" border="0" width="100%">
     <tr>
-      <td style="padding:14px 16px;vertical-align:middle;background:#ffffff;width:26%;white-space:nowrap;">
-        <span style="font-size:10px;line-height:1;color:#1a1a1a;">■</span><span style="padding-left:8px;font-size:14px;font-weight:700;color:#1a1a1a;">Chapter 4</span>
-      </td>
-      <td align="center" style="padding:14px 16px;vertical-align:middle;background:#e5ede6;width:74%;font-size:14px;font-weight:700;color:#2d3e50;line-height:1.5;text-align:center;">콘텐츠 래퍼런스</td>
+      <td style="width:26%;background:#ffffff;white-space:nowrap;"><span class="babinola-chapter-label">■ Chapter 4</span></td>
+      <td align="center" style="width:74%;background:#e5ede6;"><span class="babinola-chapter-title">콘텐츠 래퍼런스</span></td>
     </tr>
   </table>
-  <div style="height:12px;"></div>
-  <!-- 콘텐츠 예시 -->
-  <div style="margin:0 auto;width:100%;max-width:600px;box-sizing:border-box;background:#fff;border-radius:12px;padding:16px 32px 16px 32px;box-shadow:0 1px 3px rgba(0,0,0,0.06);overflow:hidden;">
-    <div style="margin:0 0 16px 0;width:100%;max-width:100%;">
-      <img src="https://www.connectsell.co.kr/email/images/babinola-chapter4-reference.png" alt="바비놀라 그래놀라에 우유 붓기" width="600" style="width:100%;max-width:600px;height:auto;display:block;border-radius:8px;border:0;">
-    </div>
-    <div style="margin-bottom:12px;padding:14px 18px;background:#f5f5f5;border-radius:8px;display:flex;align-items:flex-start;gap:12px;">
-      <img src="https://www.connectsell.co.kr/email/images/icon-check-purple.png" alt="" width="32" height="32" style="display:block;width:32px;height:32px;flex-shrink:0;margin-top:2px;">
-      <span style="font-size:0.95rem;color:#3d4f42;font-weight:700;flex:1;line-height:1.5;">아침 요거트볼 한 끼 루틴 콘텐츠</span>
-    </div>
-    <div style="margin-bottom:12px;padding:14px 18px;background:#f5f5f5;border-radius:8px;display:flex;align-items:flex-start;gap:12px;">
-      <img src="https://www.connectsell.co.kr/email/images/icon-check-purple.png" alt="" width="32" height="32" style="display:block;width:32px;height:32px;flex-shrink:0;margin-top:2px;">
-      <span style="font-size:0.95rem;color:#3d4f42;font-weight:700;flex:1;line-height:1.5;">간식 대체 / 입터짐 방지 간식 콘텐츠</span>
-    </div>
-    <div style="margin-bottom:12px;padding:14px 18px;background:#f5f5f5;border-radius:8px;display:flex;align-items:flex-start;gap:12px;">
-      <img src="https://www.connectsell.co.kr/email/images/icon-check-purple.png" alt="" width="32" height="32" style="display:block;width:32px;height:32px;flex-shrink:0;margin-top:2px;">
-      <span style="font-size:0.95rem;color:#3d4f42;font-weight:700;flex:1;line-height:1.5;">식단 관리 브이로그 (하루 식단 기록)</span>
-    </div>
-    <div style="margin-bottom:12px;padding:14px 18px;background:#f5f5f5;border-radius:8px;display:flex;align-items:flex-start;gap:12px;">
-      <img src="https://www.connectsell.co.kr/email/images/icon-check-purple.png" alt="" width="32" height="32" style="display:block;width:32px;height:32px;flex-shrink:0;margin-top:2px;">
-      <span style="font-size:0.95rem;color:#3d4f42;font-weight:700;flex:1;line-height:1.5;">다이어트 중 간편하게 챙겨먹는 루틴</span>
-    </div>
-    <div style="padding:14px 18px;background:#f5f5f5;border-radius:8px;display:flex;align-items:flex-start;gap:12px;">
-      <img src="https://www.connectsell.co.kr/email/images/icon-check-purple.png" alt="" width="32" height="32" style="display:block;width:32px;height:32px;flex-shrink:0;margin-top:2px;">
-      <span style="font-size:0.95rem;color:#3d4f42;font-weight:700;flex:1;line-height:1.5;">요거트·우유·과일 토핑 레시피 콘텐츠</span>
-    </div>
+  <div class="babinola-block-spacer-md"></div>
+  <div style="margin:0 auto;width:100%;max-width:600px;box-sizing:border-box;">
+    <img src="https://www.connectsell.co.kr/email/images/babinola-chapter4-reference.png" alt="바비놀라 그래놀라에 우유 붓기" width="600" style="width:100%;max-width:600px;height:auto;display:block;border-radius:8px;">
+    <ul class="babinola-list-minimal" style="margin-top:1.25rem;padding-left:1.25rem;">
+      <li>아침 <strong>요거트볼</strong> 한 끼 루틴 콘텐츠</li>
+      <li>간식 대체 · <strong>입터짐 방지</strong> 간식 콘텐츠</li>
+      <li><strong>식단 관리 브이로그</strong> (하루 식단 기록)</li>
+      <li>다이어트 중 <strong>간편 루틴</strong></li>
+      <li>요거트·우유·과일 <strong>토핑 레시피</strong> 콘텐츠</li>
+    </ul>
   </div>
 
-  <!-- Special Price | 다이어트 특별기획 구성 (4개 상품 카드 위) -->
-  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;max-width:600px;margin:16px auto 0;border-collapse:collapse;table-layout:fixed;border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;">
+  <!-- Special Price -->
+  <table role="presentation" class="babinola-chapter-bar" cellpadding="0" cellspacing="0" border="0" width="100%">
     <tr>
-      <td style="padding:14px 16px;vertical-align:middle;background:#ffffff;width:26%;white-space:nowrap;">
-        <span style="font-size:10px;line-height:1;color:#1a1a1a;">■</span><span style="padding-left:8px;font-size:14px;font-weight:700;color:#1a1a1a;">Special Price</span>
-      </td>
-      <td align="center" style="padding:14px 16px;vertical-align:middle;background:#e5ede6;width:74%;font-size:14px;font-weight:700;color:#2d3e50;line-height:1.5;text-align:center;">다이어트 특별기획 구성</td>
+      <td style="width:26%;background:#ffffff;white-space:nowrap;"><span class="babinola-chapter-label">■ Special Price</span></td>
+      <td align="center" style="width:74%;background:#e5ede6;"><span class="babinola-chapter-title">다이어트 특별기획 구성</span></td>
     </tr>
   </table>
 
-  <p class="babinola-body-text" style="margin:24px 0 0 0;font-size:15px;line-height:1.8;color:#3d4f42;word-wrap:break-word;">바비놀라는 단순 체험이 아닌 콘텐츠 흐름에 맞춰 자연스럽게 풀어낼 수 있는 구조로 공동구매 기획이 가능하도록 준비되어 있습니다.</p>
-  <p class="babinola-body-text" style="margin:20px 0 0 0;font-size:15px;line-height:1.8;color:#3d4f42;word-wrap:break-word;">크리에이터님의 콘텐츠 방향과 타겟에 맞춰 구성 및 조건은 유연하게 맞춰드리고 있으며, 기존 공구 대비 메리트 있는 방향으로 제안드릴 예정입니다.</p>
-  <p class="babinola-body-text" style="margin:20px 0 0 0;font-size:15px;line-height:1.8;color:#3d4f42;word-wrap:break-word;">관심 있으시면 간단히 회신 주시면 상세 구성과 조건 안내드리겠습니다.</p>
-  <p style="margin:40px 0 0 0;text-align:center;">
-    <a href="https://www.connectsell.co.kr/sample/landing.html" style="display:inline-block;padding:14px 32px;background:#2d3e50;color:#fff;font-size:1rem;font-weight:700;text-decoration:none;border-radius:8px;">샘플체험 신청</a>
+  <p class="babinola-body-text" style="margin-top:1.5rem;">바비놀라는 단순 체험이 아닌 <strong>콘텐츠 흐름</strong>에 맞춰 자연스럽게 풀어낼 수 있는 구조로 <strong>공동구매</strong> 기획이 가능하도록 준비되어 있습니다.</p>
+  <p class="babinola-body-text">크리에이터님의 콘텐츠 방향과 타겟에 맞춰 <strong>구성·조건</strong>은 유연하게 맞춰드리며, 기존 공구 대비 <strong>메리트 있는 방향</strong>으로 제안드릴 예정입니다.</p>
+  <p class="babinola-body-text babinola-body-text--standalone">관심 있으시면 간단히 회신 주시면 상세 구성과 조건 안내드리겠습니다.</p>
+  <p style="margin:2rem 0 0 0;text-align:center;">
+    <a href="https://www.connectsell.co.kr/sample/landing.html" style="display:inline-block;padding:0.875rem 2rem;background:#2d3e50;color:#fff;font-size:1rem;font-weight:700;text-decoration:none;border-radius:8px;">샘플체험 신청</a>
   </p>
-  <p style="margin:48px 0 6px 0;font-size:0.9rem;line-height:1.6;color:#3d4f42;text-align:center;font-weight:700;"><strong>ConnectSell</strong> | <a href="https://www.connectsell.co.kr" style="color:#2d3e50;text-decoration:none;font-weight:700;">https://www.connectsell.co.kr</a></p>
-  <p style="margin:0 0 6px 0;font-size:0.9rem;line-height:1.6;color:#1a1a1a;text-align:center;"><span style="color:#000000;">서울특별시 마포구 마포대로52, 13층 1328호</span></p>
-  <p style="margin:0 0 4px 0;font-size:0.85rem;line-height:1.5;color:#3d4f42;text-align:center;">© 2026 ConnectSell. All rights reserved.</p>
-  <p style="margin:0 0 32px 0;font-size:0.85rem;line-height:1.5;color:#3d4f42;text-align:center;">Created by ConnectSell</p>
+  <p style="margin:2.5rem 0 0.375rem 0;font-size:0.9375rem;line-height:1.65;color:#3d4f42;text-align:center;font-weight:700;"><strong>ConnectSell</strong> | <a href="https://www.connectsell.co.kr" style="color:#2d3e50;text-decoration:none;font-weight:700;">https://www.connectsell.co.kr</a></p>
+  <p style="margin:0 0 0.375rem 0;font-size:0.9375rem;line-height:1.65;color:#1a1a1a;text-align:center;"><span style="color:#000000;">서울특별시 마포구 마포대로52, 13층 1328호</span></p>
+  <p style="margin:0 0 0.25rem 0;font-size:0.8125rem;line-height:1.5;color:#3d4f42;text-align:center;">© 2026 ConnectSell. All rights reserved.</p>
+  <p style="margin:0 0 2rem 0;font-size:0.8125rem;line-height:1.5;color:#3d4f42;text-align:center;">Created by ConnectSell</p>
 </td></tr>
 </table>
 </td></tr></table>
