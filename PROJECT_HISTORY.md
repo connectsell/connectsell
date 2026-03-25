@@ -76,6 +76,40 @@ connectsell/
 
 ---
 
+### 2026-03-13: 홈페이지 동영상 로딩 개선 + 이메일 템플릿 v4 (브이롭티 TEA)
+
+#### 1. 메인 동영상 늦게 뜨는 현상 수정
+- **원인**: script.js에서 `heroVideo.load()` 재호출 시 진행 중인 로드가 abort되어 지연 발생
+- **수정**:
+  - `index.html`: `<link rel="preload" href="video/25_02_06_완료%20(8).mp4" as="video">` 추가
+  - `script.js`: 초기 `heroVideo.src`, `heroVideo.load()` 호출 제거 (브라우저가 HTML source로 자동 로드)
+
+#### 2. 이메일 템플릿 v4 생성
+- **파일**: `email/kakkukishake-email-v4.html`
+- **기반**: v3 복사 (파일명만 v4로 변경)
+
+#### 3. 이메일 v4 - 브이롭티 TEA 전환
+- **본문 텍스트 교체**: 단백질 쉐이크 → [가꾸기] 브이롭티 TEA
+  - 붓기 관리, 컨디션 관리, 웰니스 루틴 TEA
+  - 아침 루틴, 배달음식·불규칙 생활 패턴 등
+  - "000님의 라이프스타일 · 루틴 콘텐츠 흐름과도 자연스럽게 연결될 수 있을 것" + "같아 공동구매 협업을 제안드리고자 연락드렸습니다." (줄바꿈 조정)
+- **굵게 처리**: "붓기 관리와 컨디션 관리를 함께 할 수 있도록 기획된 웰니스 루틴 TEA입니다." / "아침 루틴으로 가볍게 한잔, 붓기 관리에 집중할 수 있는 제품입니다."
+
+#### 4. 이메일 v4 - 이미지 교체
+| 파일 | 교체 내용 |
+|------|-----------|
+| `email/images/store-review.png` | 상품리뷰 새 스크린샷 (포토&동영상 2,406건, 전체 3,378건) |
+| `email/images/gakkuki-product-left.png` | 브이롭티 TEA (손에 든 보라색 티백) |
+| `email/images/gakkuki-product.png` | 브이롭티 TEA (액체 흘러나오는 티백) |
+| alt 텍스트 | "가꾸기 브이롭티 TEA" |
+
+#### 5. 배포
+- **배포**: Netlify `npx netlify-cli deploy --dir=. --prod`
+- **사이트**: profound-cranachan-73021b.netlify.app
+- **참고**: v4 이미지 반영을 위해 connectsell 폴더 전체 재배포 필요
+
+---
+
 ## 🛠 수정 시 참고
 
 ### 동영상 교체
@@ -136,4 +170,4 @@ C:\Users\USER\AppData\Local\GitHubDesktop\app-3.5.5\resources\app\git\cmd\git.ex
 
 ---
 
-*마지막 업데이트: 2026년 2월*
+*마지막 업데이트: 2026년 3월 13일*

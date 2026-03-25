@@ -1,0 +1,22 @@
+■ 가비아에 샘플 페이지 올리는 방법 (로그인 된 상태에서)
+
+1. 가비아에서 [호스팅 관리] → [파일관리자] 또는 [웹 FTP] 들어가기
+
+2. 웹 루트 폴더로 이동 (이름: public_html 또는 www 등)
+
+3. 먼저 "sample" 폴더 만들기
+   (폴더 없으면 [새 폴더] / [폴더 만들기] → 이름: sample)
+
+4. sample 폴더 안으로 들어가기
+
+5. [업로드] 버튼 클릭 후 이 파일 올리기:
+   C:\Users\USER\connectsell\sample_for_gabia.zip
+
+6. sample_for_gabia.zip 을 선택한 뒤
+   [압축 풀기] / [Unzip] / [압축해제] 실행
+   → sample 폴더 안에 landing.html, images 등이 생깁니다
+
+7. 브라우저에서 확인:
+   https://www.connectsell.co.kr/sample/landing.html
+
+※ 압축 풀기 후 sample_for_gabia.zip 은 삭제해도 됨 (용량 아끼기)

@@ -6,6 +6,7 @@ desktop.ini
 # IDE
 .vscode/
 .idea/
+.cursor/
 *.swp
 *.swo
 
@@ -13,3 +14,7 @@ desktop.ini
 *.log
 .env
 .env.local
+.vercel
+
+# Local Netlify folder
+.netlify

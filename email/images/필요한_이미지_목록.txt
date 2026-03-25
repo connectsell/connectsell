@@ -1,0 +1,25 @@
+아래 이미지 파일들을 이 폴더(connectsell/email/images/)에 넣어주세요.
+
+■ v2·v3 이메일 이미지가 안 보일 때 (중요)
+  v2·v3는 https://www.connectsell.co.kr/email/images/ 경로를 사용합니다.
+  이 경로가 404라면 → connectsell 폴더 전체를 Netlify에 다시 배포해 주세요.
+  (Netlify Deploys → "Drag and drop" 칸에 connectsell 폴더 통째로 드래그)
+  배포 후 https://www.connectsell.co.kr/email/images/gakkuki-product.png 가 열리면 정상입니다.
+
+필요한 파일:
+- hero-main.png          (상단 히어로)
+- gakkuki-product.png    (가꾸기 단백질 쉐이크)
+- gakkuki-product-left.png (브랜드 영역 왼쪽)
+- naver-datalab.png     (네이버 데이터랩)
+- gakkuki-lineup.png    (가꾸기 다이어트 쉐이크 3종)
+- calorie-comparison.png (칼로리 비교)
+- store-review.png      (상품리뷰)
+- background-shake.png   (쉐이크 연출 - 스페셜 프라이스 카드)
+- product-lineup.png    (다이어트 쉐이크 4종)
+- chapter1-left.png     (챕터1 왼쪽 이미지)
+- chapter1-right.png    (챕터1 오른쪽 이미지)
+- icon-diamond-blue.png (챕터1 제품정보 아이콘)
+- icon-check-purple.png (챕터2·챕터4 체크 아이콘)
+
+이미지가 있던 다른 폴더(예: 바탕화면, 다운로드)에서 위 파일들을
+이 폴더로 복사한 뒤, Netlify에 다시 배포(Deploy)해 주세요.

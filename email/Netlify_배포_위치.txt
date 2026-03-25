@@ -1,0 +1,24 @@
+============================================
+  Netlify Deploys 화면에서 배포하는 법
+============================================
+
+■ "Trigger deploy" / "Clear cache" 가 안 보일 때
+
+1. Deploys 페이지에서 위·아래로 스크롤해 보기
+   → "Trigger deploy" 버튼은 보통 맨 위 오른쪽에 있음
+   → 또는 "Need to update your site? Drag and drop your site output folder here"
+      라는 긴 칸이 위쪽이나 아래쪽에 있음
+
+2. 그 "Drag and drop your site output folder here" 칸 찾기
+   → 회색 점선 테두리 큰 박스
+   → 그 안에 connectsell 폴더 통째로 끌어다 놓기
+
+3. 캐시 없이 배포만 해도 됨
+   → "Clear cache and deploy" 를 못 찾아도 괜찮음
+   → 그냥 connectsell 폴더를 드래그해서 놓기만 하면
+      새 파일이 올라가서 220px 적용된 페이지가 나옴
+
+■ 정리
+  Deploys 탭에서 → "Drag and drop" 적힌 큰 칸 찾기 → connectsell 폴더 끌어다 놓기
+
+============================================

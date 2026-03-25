@@ -1,0 +1,7 @@
+# 샘플 랜딩
+/connectsell/sample1    /sample/landing.html    200
+/connectsell/sample1/   /sample/landing.html    200
+
+# 공동구매 제안서 (가꾸기 쉐이크)
+/connectsell/email/kakkukishake    /email/kakkukishake.html    200
+/connectsell/email/kakkukishake/   /email/kakkukishake.html    200

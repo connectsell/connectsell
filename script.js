@@ -262,15 +262,10 @@ if (heroVideo) {
         }
     }
 
-    // 첫 번째 소스로 시작
+    // HTML의 <source>가 이미 있으므로 브라우저가 자동 로드함. load() 재호출 시 진행 중인 로드가 abort되어 지연 발생하므로 호출하지 않음.
     if (videoSources.length > 0) {
-        // 첫 번째 소스의 src를 직접 설정
-        const firstSource = videoSources[0];
-        console.log('첫 번째 비디오 소스 시도:', firstSource.src);
-        heroVideo.src = firstSource.src;
-        heroVideo.load();
-        
-        // 강제로 재생 시도
+        console.log('비디오 소스 감지됨, 브라우저 자동 로드 대기:', videoSources[0].src);
+        // autoplay가 있으나 일부 브라우저에서 재생 트리거가 필요할 수 있음
         setTimeout(function() {
             const playPromise = heroVideo.play();
             if (playPromise !== undefined) {
@@ -278,10 +273,9 @@ if (heroVideo) {
                     console.log('비디오 재생 성공:', heroVideo.src);
                 }).catch(function(error) {
                     console.log('초기 재생 시도 실패:', error);
-                    console.log('비디오 URL:', heroVideo.src);
                 });
             }
-        }, 500);
+        }, 100);
     } else {
         console.log('비디오 소스를 찾을 수 없습니다.');
     }

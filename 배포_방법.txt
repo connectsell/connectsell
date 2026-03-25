@@ -1,0 +1,37 @@
+============================================
+  ★ 배포 한 줄 요약 ★
+============================================
+
+  Netlify 들어가서 → Deploys 탭 → connectsell 폴더 통째로 끌어다 놓기
+
+============================================
+
+■ 1단계: Netlify 열기
+  브라우저에서 https://app.netlify.com 접속 후 로그인
+
+■ 2단계: 사이트 선택
+  사이트 이름 "sweet-paletas-75c804" (또는 ConnectSell 사이트) 클릭
+
+■ 3단계: Deploys 탭
+  위쪽 메뉴에서 "Deploys" 클릭
+
+■ 4단계: 폴더 드래그
+  화면에 나오는
+    "Drag and drop your site output folder here"
+  칸에 아래 폴더 **통째로** 끌어다 놓기:
+
+    C:\Users\USER\connectsell
+
+  (connectsell 폴더 자체를 드래그. 안에 있는 파일만 드래그하면 안 됨.)
+
+■ 5단계: 기다리기
+  "Uploading..." → "Published" 나올 때까지 1~2분 대기
+
+■ 6단계: 확인
+  아래 주소로 접속해서 화면 나오는지 확인:
+
+  https://sweet-paletas-75c804.netlify.app/email/kakkukishake-email.html
+
+============================================
+  이렇게 하면 수정한 내용이 사이트에 반영됩니다.
+============================================

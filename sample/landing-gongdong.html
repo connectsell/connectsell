@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>공동구매 신청 | ConnectSell</title>
+<meta name="description" content="가꾸기 단백질 쉐이크 공동구매에 참여하세요. ConnectSell이 연결합니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="공동구매 신청 | ConnectSell">
+<meta property="og:description" content="가꾸기 단백질 쉐이크 공동구매에 참여하세요.">
+<meta property="og:locale" content="ko_KR">
+<style>
+*{box-sizing:border-box;}
+body{margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#1a1d23;color:#e8eaed;min-height:100vh;padding:24px 16px;}
+.gong-card{max-width:480px;margin:0 auto;background:#252830;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.4);}
+.gong-hero{width:100%;height:200px;position:relative;overflow:hidden;background:#2d3139;}
+.gong-hero img{width:100%;height:100%;object-fit:cover;display:block;}
+.gong-hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,0.75) 100%);pointer-events:none;}
+.gong-hero .txt{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);text-align:center;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,0.6);}
+.gong-hero .txt p:first-child{margin:0 0 4px 0;font-size:0.95rem;font-weight:500;letter-spacing:0.06em;opacity:0.95;}
+.gong-hero .txt p:last-child{margin:0;font-size:1.6rem;font-weight:700;}
+.gong-body{padding:28px 28px 36px;}
+.gong-title{margin:0 0 8px 0;font-size:1.1rem;font-weight:700;color:#fff;}
+.gong-desc{margin:0 0 24px 0;font-size:0.9rem;color:#9ca3af;line-height:1.6;}
+.gong-form label{display:block;margin-bottom:8px;font-size:0.8rem;font-weight:500;color:#9ca3af;}
+.gong-form input,.gong-form textarea{width:100%;padding:12px 14px;border:1px solid #3d4048;border-radius:8px;font-size:1rem;background:#1a1d23;color:#e8eaed;box-sizing:border-box;margin-bottom:20px;font-family:inherit;}
+.gong-form textarea{rows:3;resize:vertical;}
+.gong-form input::placeholder,.gong-form textarea::placeholder{color:#6b7280;}
+.gong-btn{width:100%;padding:16px;background:#5a7a6a;color:#fff;border:none;border-radius:8px;font-size:0.95rem;font-weight:500;cursor:pointer;}
+.gong-btn:hover{background:#6b8b7b;}
+@media (max-width:480px){
+  .gong-hero{height:180px;}
+  .gong-body{padding:24px 20px 32px;}
+}
+</style>
+</head>
+<body>
+<div class="gong-card">
+  <div class="gong-hero">
+    <img src="../email/images/gakkuki-product.png" alt="가꾸기 단백질 쉐이크">
+    <div class="overlay"></div>
+    <div class="txt">
+      <p>kakkuki : 가꾸기</p>
+      <p>가꾸기 단백질 쉐이크</p>
+    </div>
+  </div>
+  <div class="gong-body">
+    <p class="gong-title">ConnectSell이 제안하는 협업</p>
+    <p class="gong-desc">일상의 루틴 속에서 부담 없이 자기관리를 이어갈 수 있도록 기획된 제품입니다.<br>아래 정보를 남겨주시면 공동구매 참여 안내를 드리겠습니다.</p>
+    <form class="gong-form" action="https://formsubmit.co/connectsell01@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="[ConnectSell] 공동구매 신청">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://www.connectsell.co.kr/sample/thanks-gongdong.html">
+      <label for="channel">채널명 <strong>*</strong></label>
+      <input type="text" id="channel" name="channel" placeholder="유튜브/인스타그램 채널명" required>
+      <label for="name">이름 <strong>*</strong></label>
+      <input type="text" id="name" name="name" placeholder="본명" required>
+      <label for="phone">전화번호 <strong>*</strong></label>
+      <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
+      <label for="address">배송 주소 (선택)</label>
+      <input type="text" id="address" name="address" placeholder="주소를 입력해주세요">
+      <label for="inquiry">문의사항 (선택)</label>
+      <textarea id="inquiry" name="inquiry" placeholder="문의사항을 입력해주세요"></textarea>
+      <button type="submit" class="gong-btn">공동구매 신청하기</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

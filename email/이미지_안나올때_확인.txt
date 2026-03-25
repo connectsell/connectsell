@@ -1,0 +1,40 @@
+========================================
+메일에서 이미지가 안 나올 때 확인 사항
+========================================
+
+[원인 1] 이미지 파일이 Netlify에 없음 (가장 흔함)
+----------------------------------------
+현재 connectsell/email/images/ 폴더에 아래 파일들이 있어야 합니다.
+없다면 이 폴더에 넣은 뒤, Netlify에 다시 배포해야 메일에서 이미지가 보입니다.
+
+필요한 파일 (이 폴더에 넣기: connectsell/email/images/)
+  - hero-main.png
+  - gakkuki-product.png
+  - naver-datalab.png
+  - gakkuki-lineup.png
+  - calorie-comparison.png
+  - store-review.png
+  - background-shake.png
+  - product-lineup.png
+
+※ 바탕화면, 다운로드 등 다른 곳에 이미지가 있다면
+  connectsell/email/images/ 로 복사한 뒤
+  Netlify 대시보드에서 connectsell 폴더 전체를 드래그해서 다시 배포하세요.
+
+
+[원인 2] 메일 클라이언트가 외부 이미지 차단
+----------------------------------------
+Gmail·네이버메일은 보안상 "외부 이미지"를 기본으로 막는 경우가 많습니다.
+
+• Gmail: 메일 상단에 "이미지 표시" / "Display images" 클릭
+• 네이버 메일: "이미지 보기" 또는 "차단된 콘텐츠 표시" 클릭
+
+위 작업을 해도 이미지가 안 보이면 → 원인 1(파일 없음/미배포)을 먼저 확인하세요.
+
+
+[배포 후 확인]
+----------------------------------------
+브라우저에서 아래 주소로 접속했을 때 이미지가 보이면 정상 배포된 것입니다.
+  https://sweet-paletas-75c804.netlify.app/email/images/gakkuki-product.png
+
+이 주소에서 이미지가 안 열리면 → images 폴더에 파일을 넣고 다시 배포하세요.

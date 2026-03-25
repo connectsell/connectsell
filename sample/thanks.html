@@ -7,22 +7,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="sample.css">
     <style>
-        .thanks-box { text-align: center; padding: 3rem 2rem; }
-        .thanks-box h1 { font-size: 1.5rem; margin-bottom: 0.75rem; color: #2c3e50; }
-        .thanks-box p { color: #7f8c8d; margin-bottom: 1.5rem; }
-        .thanks-box a { color: #4CAF50; font-weight: 600; text-decoration: none; }
-        .thanks-box a:hover { text-decoration: underline; }
+        * { box-sizing: border-box; }
+        body { margin: 0; padding: 0; font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif; background: #1a1d23; color: #e8eaed; min-height: 100vh; padding: 24px 16px; display: flex; align-items: center; justify-content: center; }
+        .thanks-page { max-width: 420px; width: 100%; }
+        .thanks-box { background: #252830; border-radius: 16px; padding: 2.5rem 1.75rem; box-shadow: 0 8px 32px rgba(0,0,0,0.4); text-align: center; }
+        .thanks-box .thanks-title { margin: 0 0 1.25rem 0; font-size: 1.25rem; font-weight: 700; color: #fff; text-align: center; }
+        .thanks-box p { margin: 0 0 0.75rem 0; font-size: 0.9rem; line-height: 1.65; color: #9ca3af; text-align: center; }
+        .thanks-box p:last-of-type { margin-bottom: 0; }
+        .thanks-box .thanks-end { margin-top: 1rem; font-weight: 600; font-size: 1rem; color: #e8eaed; }
+        .thanks-footer { margin-top: 1.5rem; text-align: center; }
+        .thanks-footer a { color: #7986cb; font-weight: 600; text-decoration: none; }
+        .thanks-footer a:hover { text-decoration: underline; color: #5c6bc0; }
     </style>
 </head>
 <body>
-    <main class="sample-page">
-        <section class="sample-form-section thanks-box">
-            <h1>신청이 완료되었습니다</h1>
-            <p>빠른 시일 내에 연락드리겠습니다.</p>
+    <main class="thanks-page">
+        <div class="thanks-box">
+            <p class="thanks-title">신청이 완료되었습니다</p>
+            <p>입력해주신 정보를 확인한 후, 샘플 발송 및<br>협업 관련 안내를 순차적으로 전달드릴 예정입니다.</p>
+            <p>좋은 경험이 될 수 있도록 준비하겠습니다.</p>
+            <p class="thanks-end">감사합니다.</p>
+        </div>
+        <footer class="thanks-footer">
             <a href="https://www.connectsell.co.kr/">ConnectSell 홈으로</a>
-        </section>
+        </footer>
     </main>
 </body>
 </html>
