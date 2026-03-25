@@ -2,10 +2,12 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <title>공동구매 제안서 (기본2) | ConnectSell</title>
 <style>
+/* rem 기준 (링크·브라우저에서 iOS 자동 확대 완화, 16px=1rem) */
+html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 .kakkuki-slogan-text .kakkuki-line1,
 .kakkuki-slogan-text .kakkuki-line2 { display: block; }
 .kakkuki-slogan-text .kakkuki-line2 { margin-top: 0.2em; }
@@ -121,6 +123,47 @@
 .babinola-mail-column > tbody > tr > td { width: 100% !important; max-width: 600px !important; box-sizing: border-box !important; }
 /* 브랜드 배너 하단 문단: 가로 폭 채워 오른쪽 빈 여백 완화 */
 .babinola-brand-caption { text-align: justify !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; }
+
+/* 링크로 열었을 때(브라우저) 모바일: 600px 캡 안에서 가로 100%, 이미지 유동·rem 본문 */
+@media screen and (max-width: 600px) {
+  body { margin: 0 !important; padding: 0 !important; width: 100% !important; min-width: 0 !important; box-sizing: border-box !important; }
+  body > table { width: 100% !important; max-width: 100% !important; table-layout: fixed !important; }
+  body > table > tbody > tr > td { width: 100% !important; max-width: 100% !important; padding-left: 0 !important; padding-right: 0 !important; box-sizing: border-box !important; }
+  .babinola-mail-column { width: 100% !important; max-width: 600px !important; margin-left: auto !important; margin-right: auto !important; }
+  .babinola-mail-column > tbody > tr > td { width: 100% !important; max-width: 600px !important; min-width: 0 !important; box-sizing: border-box !important; }
+  .babinola-email-body {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0.875rem 0.5rem 1.75rem !important;
+    box-sizing: border-box !important;
+  }
+  .babinola-email-body table,
+  .babinola-email-body > table { width: 100% !important; max-width: 600px !important; box-sizing: border-box !important; }
+  .babinola-email-body div[style*="max-width:600px"],
+  .babinola-email-body div[style*="max-width: 600px"] { width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; }
+  /* 본문·캡션: rem (인라인 px 덮어씀) */
+  .babinola-email-body p.babinola-body-text,
+  .babinola-email-body p.babinola-body-text.babinola-brand-caption {
+    font-size: 1.125rem !important;
+    line-height: 1.72 !important;
+  }
+  .babinola-email-body .kakkuki-chapter1-info span,
+  .babinola-email-body div[style*="display:flex"] span { font-size: 0.9375rem !important; }
+  .babinola-email-body a[style*="inline-block"] { font-size: 1rem !important; }
+  /* 콘텐츠 이미지만 가로 100% (아이콘 제외 — 텍스트는 HTML 유지) */
+  .babinola-email-body img:not([src*="icon-diamond"]):not([src*="icon-check"]),
+  .babinola-brand-banner img { width: 100% !important; max-width: 100% !important; height: auto !important; min-height: 0 !important; display: block !important; }
+  .kakkuki-two-img-card img:not([src*="icon"]) { width: 100% !important; max-width: 100% !important; height: auto !important; object-fit: contain !important; }
+  .kakkuki-two-img-card .kakkuki-two-img-left,
+  .kakkuki-two-img-card .kakkuki-two-img-right { display: block !important; width: 100% !important; max-width: 100% !important; padding: 0 !important; height: auto !important; }
+  .kakkuki-two-img-card tr:first-of-type td { display: block !important; width: 100% !important; }
+  .babinola-email-body img[src*="icon-diamond"] { width: 18px !important; height: 18px !important; max-width: 18px !important; display: block !important; }
+  .babinola-email-body img[src*="icon-check"] { width: 28px !important; height: 28px !important; max-width: 32px !important; display: block !important; }
+  .babinola-email-body .kakkuki-chapter1-info { padding: 0.625rem 0.5rem !important; }
+  .babinola-email-body div[style*="background:#fff"][style*="padding:28px"] { padding: 1rem 0.75rem !important; }
+  .babinola-email-body div[style*="padding:16px 32px"] { padding: 0.75rem !important; }
+  table[style*="background:#e5ede6"][style*="border-radius:0 0 12px"] td { padding: 1.25rem 0.75rem !important; }
+}
 </style>
 </head>
 <body style="margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f8f6f3;color:#3d4f42;-webkit-text-size-adjust:100%;">
