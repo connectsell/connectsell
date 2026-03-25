@@ -91,6 +91,8 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
 .babinola-point-list .babinola-point-body { font-weight: 500; padding-right: 8px; word-break: keep-all; overflow-wrap: break-word; }
 .babinola-media-flat { width: 100%; max-width: 600px; margin: 0 auto; border-collapse: collapse; background: #fff; }
 .babinola-media-flat td { padding: 0; vertical-align: top; }
+.babinola-ch1-mobile { display: block !important; }
+.kakkuki-two-img-card.babinola-media-flat { display: none !important; }
 .babinola-block-spacer-sm { height: 1rem; line-height: 1rem; font-size: 0; }
 .babinola-block-spacer-md { height: 1.5rem; line-height: 1rem; font-size: 0; }
 .kakkuki-slogan-text .kakkuki-line1,
@@ -204,9 +206,6 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   .babinola-email-body .babinola-info-table { margin-left: auto !important; margin-right: auto !important; }
   .babinola-email-body .babinola-info-table td { text-align: center !important; padding: 12px 14px !important; line-height: 1.6 !important; }
 
-  /* Chapter 1 이미지: 모바일에서는 세로 카드만 노출 */
-  .babinola-ch1-mobile { display: block !important; }
-  .kakkuki-two-img-card.babinola-media-flat { display: none !important; }
 }
 
 /* ===== Babinola: Mobile hard overrides (<=480px) ===== */
@@ -223,8 +222,6 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   }
 
   /* [2] Chapter 1 images: 2장이 붙어서 하나의 세로 카드처럼 */
-  /* 기존 2열 이미지 테이블 숨기고, 모바일 전용 세로 카드 노출 */
-  .kakkuki-two-img-card.babinola-media-flat { display: none !important; }
   .babinola-ch1-mobile {
     width: fit-content !important;
     margin: 0 auto 16px auto !important;
@@ -323,8 +320,6 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   /* 링크로 열었을 때 모바일: 제품 기본정보 표 가운데 정렬 + 패딩/라인하이트 통일 */
   .babinola-email-body .babinola-info-table { margin-left: auto !important; margin-right: auto !important; }
   .babinola-email-body .babinola-info-table td { text-align: center !important; padding: 12px 14px !important; line-height: 1.6 !important; }
-  .babinola-ch1-mobile { display: block !important; }
-  .kakkuki-two-img-card.babinola-media-flat { display: none !important; }
   .babinola-email-body .babinola-check-card .babinola-check-icon { padding: 16px 0 16px 16px !important; width: 36px !important; }
   .babinola-email-body .babinola-check-card .babinola-check-text { padding: 16px 16px 16px 8px !important; }
   .babinola-email-body .babinola-ref-card .babinola-ref-icon { padding: 16px 0 16px 16px !important; width: 30px !important; }
