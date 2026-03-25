@@ -32,11 +32,38 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
 .babinola-body-text.babinola-brand-caption { text-align: justify; }
 .babinola-body-text--standalone { margin-bottom: 1.5rem; font-weight: 600; color: #2d3e50; }
 /* 제품 기본정보 — 라벨/값 테이블 (본문과 구분되는 정보형 레이아웃) */
-.babinola-info-table { width: 100%; max-width: 600px; border-collapse: collapse; margin: 0; background: #f7f9f7; border: 1px solid #dfe8e4; border-radius: 0 0 8px 8px; overflow: hidden; box-sizing: border-box; }
-.babinola-info-table td { padding: 14px 20px; vertical-align: middle; font-size: 1.0625rem; line-height: 1.55; color: #3d4f42; word-break: keep-all; overflow-wrap: break-word; box-sizing: border-box; }
+.babinola-info-table {
+  width: 100%;
+  max-width: 600px;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0;
+  background: #ffffff;
+  border: 1px solid #dfe8e4;
+  border-radius: 0 0 10px 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.babinola-info-table td {
+  padding: 16px 20px;
+  vertical-align: middle;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: #3d4f42;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
 .babinola-info-table tr:not(:last-child) td { border-bottom: 1px solid #e8ebe9; }
-.babinola-info-label { width: 24%; min-width: 7rem; font-weight: 600; color: #2d3e50; padding-right: 14px; }
-.babinola-info-value { font-weight: 500; color: #3d4f42; }
+.babinola-info-label {
+  width: 25%;
+  min-width: 7rem;
+  font-weight: 600;
+  color: #2d3e50;
+  background: #f3f6f4;
+  border-right: 1px solid #e8ebe9;
+}
+.babinola-info-value { font-weight: 450; color: #3d4f42; background: #ffffff; }
 /* Check Point — 카드형 체크리스트 */
 .babinola-check-stack { width: 100%; max-width: 600px; margin: 0 auto; border-collapse: collapse; box-sizing: border-box; }
 .babinola-check-stack td { padding: 0; vertical-align: top; }
@@ -202,12 +229,26 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   .babinola-email-body .babinola-ref-card .babinola-ref-text,
   .babinola-email-body .babinola-point-list td { font-size: 1.0625rem !important; line-height: 1.55 !important; }
   .babinola-email-body .babinola-info-table td.babinola-info-label { font-weight: 600 !important; }
-  .babinola-email-body .babinola-info-table td.babinola-info-value { font-weight: 500 !important; }
+  .babinola-email-body .babinola-info-table td.babinola-info-value { font-weight: 450 !important; }
   /* 좁은 화면: 제품정보 라벨/값 세로 분리로 붙어 보이는 현상 완화 */
   .babinola-email-body .babinola-info-table tr:not(:last-child) td { border-bottom: none !important; }
   .babinola-email-body .babinola-info-table tr:not(:last-child) .babinola-info-value { border-bottom: 1px solid #e8ebe9 !important; }
-  .babinola-email-body .babinola-info-table .babinola-info-label { display: block !important; width: 100% !important; padding: 14px 14px 4px 14px !important; box-sizing: border-box !important; }
-  .babinola-email-body .babinola-info-table .babinola-info-value { display: block !important; width: 100% !important; padding: 0 14px 14px 14px !important; box-sizing: border-box !important; }
+  .babinola-email-body .babinola-info-table .babinola-info-label {
+    display: block !important;
+    width: 100% !important;
+    padding: 14px 14px 6px 14px !important;
+    box-sizing: border-box !important;
+    border-right: none !important;
+    border-bottom: none !important;
+    background: #f3f6f4 !important;
+  }
+  .babinola-email-body .babinola-info-table .babinola-info-value {
+    display: block !important;
+    width: 100% !important;
+    padding: 0 14px 14px 14px !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+  }
   .babinola-email-body .babinola-info-table tr:first-child .babinola-info-label { padding-top: 14px !important; }
   .babinola-email-body .babinola-check-card .babinola-check-icon { padding: 16px 0 16px 16px !important; width: 36px !important; }
   .babinola-email-body .babinola-check-card .babinola-check-text { padding: 16px 16px 16px 8px !important; }
@@ -259,15 +300,14 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
 </tr>
 <tr>
 <td class="babinola-email-body" style="padding:2rem 2rem 2.5rem;width:600px;max-width:100%;min-width:0;background:#ffffff;box-sizing:border-box;vertical-align:top;">
-  <p class="babinola-body-text">안녕하세요.</p>
-  <p class="babinola-body-text babinola-body-text--standalone"><strong>ConnectSell 크리에이터 매칭팀입니다.</strong></p>
-  <p class="babinola-body-text">크리에이터의 콘텐츠 방향성을 존중하며, <strong>진정성 있는 협업</strong>이 될 수 있는 브랜드만 선별해 제안드리고 있습니다.</p>
-  <p class="babinola-body-text">식단 관리할 때 가장 어려운 건 사실 <strong>'무엇을 먹느냐'</strong>보다 <strong>'지속하는 것'</strong>이라고 생각합니다.</p>
+  <p class="babinola-body-text babinola-body-text--standalone"><strong>안녕하세요, ConnectSell 크리에이터 매칭팀입니다.</strong></p>
+  <p class="babinola-body-text">크리에이터의 콘텐츠 방향성을 존중하며, 진정성 있는 협업이 될 수 있는 브랜드만 선별해 제안드리고 있습니다.</p>
+  <p class="babinola-body-text">식단 관리에서 가장 어려운 건 무엇을 먹느냐보다, 꾸준히 이어가는 것이라고 생각합니다.</p>
   <p class="babinola-body-text">저당·저칼로리 제품을 구매해도 막상 손이 잘 가지 않거나, 며칠 지나지 않아 질려버린 경험 있으시지 않으셨을까요?</p>
   <p class="babinola-body-text">결국 식단이 무너지는 순간은 참다 참다가 갑자기 입이 터지는 순간이라고 생각합니다.</p>
-  <p class="babinola-body-text">그래서 요즘은 <strong>'참는 다이어트'</strong>보다 <strong>'계속 먹을 수 있는 루틴'</strong>이 더 중요해졌습니다.</p>
-  <p class="babinola-body-text">이번에 소개해드리는 <strong>바비놀라(Babinola)</strong>는 일상 속 간편한 한 끼 또는 간식으로 부담 없이 이어갈 수 있도록 기획된 <strong>그래놀라</strong> 제품입니다.</p>
-  <p class="babinola-body-text">평소 식단·간식·자기관리 루틴을 중심으로 공감대를 형성해온 콘텐츠 흐름과도 잘 맞을 것 같아, 자연스럽게 풀어낼 수 있는 <strong>공동구매 협업</strong>을 제안드리고자 연락드렸습니다.</p>
+  <p class="babinola-body-text">그래서 요즘은 참는 다이어트보다, 계속 먹을 수 있는 루틴이 더 중요해졌습니다.</p>
+  <p class="babinola-body-text">이번에 소개해드리는 바비놀라(Babinola)는 일상 속 간편한 한 끼 또는 간식으로 부담 없이 이어갈 수 있도록 기획된 그래놀라 제품입니다.</p>
+  <p class="babinola-body-text">평소 식단·간식·자기관리 루틴을 중심으로 공감대를 형성해온 콘텐츠 흐름과도 잘 맞을 것 같아, 자연스럽게 풀어낼 수 있는 공동구매 협업을 제안드리고자 연락드렸습니다.</p>
 
   <!-- Brand -->
   <table role="presentation" class="babinola-chapter-bar" cellpadding="0" cellspacing="0" border="0" width="100%">
