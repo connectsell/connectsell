@@ -58,8 +58,7 @@ body{margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-s
   <div class="v2-body">
     <p class="v2-headline">당신의 경험이, 브랜드의 첫 문장이 됩니다.</p>
     <p class="v2-headline v2-headline-spacer">그 시작을 ConnectSell이 함께합니다.</p>
-    <p class="v2-desc" style="margin-bottom:12px;">아래 정보만 남겨주시면 1차 확인 후 빠르게 연락드릴게요.<br>상세한 내용은 이후 답장으로 간단히 확인하겠습니다.</p>
-    <div class="v2-desc" style="margin:0 0 20px 0;padding:12px 14px;border:1px solid #3d4048;border-radius:10px;background:#1a1d23;">
+    <div class="v2-desc" style="margin:0 0 16px 0;padding:12px 14px;border:1px solid #3d4048;border-radius:10px;background:#1a1d23;">
       <span style="color:#9ca3af;">신청 상품:</span>
       <strong id="product-display" style="margin-left:6px;color:#e8eaed;">(미지정)</strong>
     </div>
@@ -87,6 +86,8 @@ body{margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-s
       <input type="email" id="email" name="_replyto" placeholder="example@email.com" required autocomplete="email">
       <!-- 관리자 메일 본문에도 email 키로 함께 포함 -->
       <input type="hidden" id="email_copy" name="email" value="">
+      <label for="inquiry">문의하기 (선택)</label>
+      <textarea id="inquiry" name="inquiry" placeholder="제안서 요청 / 공구 문의 / 기타 전달사항이 있으면 작성해주세요"></textarea>
       <button type="submit" class="v2-btn" id="submit-btn">샘플 신청하기</button>
     </form>
   </div>
