@@ -58,15 +58,19 @@ body{margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-s
   <div class="v2-body">
     <p class="v2-headline">당신의 경험이, 브랜드의 첫 문장이 됩니다.</p>
     <p class="v2-headline v2-headline-spacer">그 시작을 ConnectSell이 함께합니다.</p>
-    <p class="v2-desc" style="margin-bottom:24px;">아래 정보를 남겨주시면,<br>브랜드를 먼저 경험하실 수 있도록 준비하겠습니다.</p>
+    <p class="v2-desc" style="margin-bottom:12px;">아래 정보만 남겨주시면 1차 확인 후 빠르게 연락드릴게요.<br>상세한 내용은 이후 답장으로 간단히 확인하겠습니다.</p>
+    <div class="v2-desc" style="margin:0 0 20px 0;padding:12px 14px;border:1px solid #3d4048;border-radius:10px;background:#1a1d23;">
+      <span style="color:#9ca3af;">신청 상품:</span>
+      <strong id="product-display" style="margin-left:6px;color:#e8eaed;">(미지정)</strong>
+    </div>
     <iframe name="form-frame" id="form-frame" style="display:none;"></iframe>
     <form class="v2-form" id="sample-form" action="https://formsubmit.co/connectsell01@gmail.com" method="POST" target="form-frame">
       <input type="hidden" name="_subject" id="form-subject" value="[샘플신청]">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_next" value="">
-      <label for="product">상품명 <strong>*</strong></label>
-      <input type="text" id="product" name="product" placeholder="예: 바비놀라" required autocomplete="off">
+      <!-- product는 URL 파라미터로 자동 입력 (사용자 입력 최소화) -->
+      <input type="hidden" id="product" name="product" value="">
       <label for="channel_type">채널 유형 <strong>*</strong></label>
       <select id="channel_type" name="channel_type" required>
         <option value="" disabled selected>채널 유형을 선택해 주세요</option>
@@ -74,16 +78,15 @@ body{margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-s
         <option value="유튜브">유튜브</option>
         <option value="틱톡">틱톡</option>
       </select>
-      <label for="channel">채널 ID <strong>*</strong></label>
-      <input type="text" id="channel" name="channel" placeholder="@핸들 또는 채널명" required>
       <label for="name">이름 <strong>*</strong></label>
       <input type="text" id="name" name="name" placeholder="본명" required>
-      <label for="phone">전화번호 <strong>*</strong></label>
-      <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
-      <label for="address">샘플을 받으실 주소 (선택)</label>
-      <input type="text" id="address" name="address" placeholder="주소를 입력해주세요">
-      <label for="inquiry">문의사항 (선택)</label>
-      <textarea id="inquiry" name="inquiry" placeholder="문의사항을 입력해주세요"></textarea>
+      <label for="channel_id">채널 아이디 <strong>*</strong></label>
+      <input type="text" id="channel_id" name="channel_id" placeholder="@핸들 또는 채널명" required autocomplete="off">
+      <label for="email">이메일 <strong>*</strong></label>
+      <!-- FormSubmit: Reply-To를 위해 _replyto 사용 -->
+      <input type="email" id="email" name="_replyto" placeholder="example@email.com" required autocomplete="email">
+      <!-- 관리자 메일 본문에도 email 키로 함께 포함 -->
+      <input type="hidden" id="email_copy" name="email" value="">
       <button type="submit" class="v2-btn" id="submit-btn">샘플 신청하기</button>
     </form>
   </div>
@@ -93,17 +96,28 @@ body{margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-s
   var form = document.getElementById('sample-form');
   var btn = document.getElementById('submit-btn');
   var subjectEl = document.getElementById('form-subject');
+  var productDisplayEl = document.getElementById('product-display');
   if (!form || !btn) return;
 
   function fillProductFromQuery() {
     try {
       var params = new URLSearchParams(window.location.search);
       var p = params.get('product');
-      if (!p) return;
       var el = document.getElementById('product');
       if (!el) return;
+      if (!p) {
+        el.value = '';
+        if (productDisplayEl) productDisplayEl.textContent = '(미지정)';
+        return;
+      }
       var decoded = decodeURIComponent(p.replace(/\+/g, ' ')).trim();
-      if (decoded) el.value = decoded;
+      if (decoded) {
+        el.value = decoded;
+        if (productDisplayEl) productDisplayEl.textContent = decoded;
+      } else {
+        el.value = '';
+        if (productDisplayEl) productDisplayEl.textContent = '(미지정)';
+      }
     } catch (e) {}
   }
   fillProductFromQuery();
@@ -111,13 +125,17 @@ body{margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-s
   form.addEventListener('submit', function() {
     var productEl = document.getElementById('product');
     var channelTypeEl = document.getElementById('channel_type');
-    var channelEl = document.getElementById('channel');
-    var product = (productEl && productEl.value.trim()) ? productEl.value.trim() : '(미입력)';
+    var channelIdEl = document.getElementById('channel_id');
+    var emailEl = document.getElementById('email');
+    var emailCopyEl = document.getElementById('email_copy');
+    var product = (productEl && productEl.value.trim()) ? productEl.value.trim() : '(미지정)';
     var channelType = channelTypeEl && channelTypeEl.value ? channelTypeEl.value : '(미입력)';
-    var channelId = (channelEl && channelEl.value.trim()) ? channelEl.value.trim() : '(미입력)';
+    var channelId = (channelIdEl && channelIdEl.value.trim()) ? channelIdEl.value.trim() : '(미입력)';
+    var email = (emailEl && emailEl.value.trim()) ? emailEl.value.trim() : '(미입력)';
     if (subjectEl) {
       subjectEl.value = '[샘플신청] ' + product + ' / ' + channelType + ' / ' + channelId;
     }
+    if (emailCopyEl) emailCopyEl.value = email;
     btn.disabled = true;
     btn.textContent = '전송 중...';
     setTimeout(function() {

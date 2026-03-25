@@ -5,7 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>샘플 신청 | ConnectSell (v3)</title>
 <meta name="description" content="브랜드와 크리에이터를 연결해 지속 가능한 공동구매를 만듭니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ConnectSell">
+<meta property="og:description" content="브랜드와 크리에이터를 연결해 지속 가능한 공동구매를 만듭니다.">
+<meta property="og:image" content="https://www.connectsell.co.kr/sample/og-image.png">
 <meta property="og:url" content="https://www.connectsell.co.kr/sample/landing-v3.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ConnectSell">
+<meta name="twitter:description" content="브랜드와 크리에이터를 연결해 지속 가능한 공동구매를 만듭니다.">
+<meta name="twitter:image" content="https://www.connectsell.co.kr/sample/og-image.png">
 <style>
 *{box-sizing:border-box;}
 body{margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#1a1d23;color:#e8eaed;min-height:100vh;padding:24px 16px;}
@@ -21,7 +29,8 @@ body{margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-s
 .v3-headline-spacer{margin:0 0 20px 0;}
 .v3-desc{margin:0 0 24px 0;font-size:0.9rem;color:#9ca3af;line-height:1.6;}
 .v3-form label{display:block;margin-bottom:8px;font-size:0.8rem;font-weight:500;color:#9ca3af;}
-.v3-form input,.v3-form textarea{width:100%;padding:12px 14px;border:1px solid #3d4048;border-radius:8px;font-size:1rem;background:#1a1d23;color:#e8eaed;box-sizing:border-box;margin-bottom:20px;font-family:inherit;}
+.v3-form input,.v3-form select,.v3-form textarea{width:100%;padding:12px 14px;border:1px solid #3d4048;border-radius:8px;font-size:1rem;background:#1a1d23;color:#e8eaed;box-sizing:border-box;margin-bottom:20px;font-family:inherit;}
+.v3-form select{cursor:pointer;appearance:auto;}
 .v3-form textarea{rows:3;resize:vertical;}
 .v3-form input::placeholder,.v3-form textarea::placeholder{color:#6b7280;}
 .v3-btn{width:100%;padding:16px;background:#3F51B5;color:#fff;border:none;border-radius:8px;font-size:0.95rem;font-weight:500;cursor:pointer;}
@@ -35,7 +44,7 @@ body{margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-s
 <body>
 <div class="v3-card">
   <div class="v3-top-img">
-    <img src="images/hero-creator.jpg" alt="ConnectSell - Wellness Creator Commerce">
+    <img src="/sample/images/hero-creator.jpg" alt="ConnectSell - Wellness Creator Commerce" width="840" height="560" decoding="async">
     <div class="hero-overlay"></div>
     <div class="hero-txt">
       <p>Wellness Creator Commerce</p>
@@ -45,25 +54,89 @@ body{margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-s
   <div class="v3-body">
     <p class="v3-headline">당신의 경험이, 브랜드의 첫 문장이 됩니다.</p>
     <p class="v3-headline v3-headline-spacer">그 시작을 ConnectSell이 함께합니다.</p>
-    <p class="v3-desc" style="margin-bottom:24px;">아래 정보를 남겨주시면,<br>브랜드를 먼저 경험하실 수 있도록 준비하겠습니다.</p>
-    <form class="v3-form" action="https://formsubmit.co/connectsell01@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="[ConnectSell] 샘플 신청">
+    <p class="v3-desc" style="margin-bottom:12px;">아래 정보만 남겨주시면 1차 확인 후 빠르게 연락드릴게요.<br>상세한 내용은 이후 답장으로 간단히 확인하겠습니다.</p>
+    <div class="v3-desc" style="margin:0 0 20px 0;padding:12px 14px;border:1px solid #3d4048;border-radius:10px;background:#1a1d23;">
+      <span style="color:#9ca3af;">신청 상품:</span>
+      <strong id="product-display" style="margin-left:6px;color:#e8eaed;">(미지정)</strong>
+    </div>
+    <iframe name="form-frame" id="form-frame" style="display:none;"></iframe>
+    <form class="v3-form" id="sample-form" action="https://formsubmit.co/connectsell01@gmail.com" method="POST" target="form-frame">
+      <input type="hidden" name="_subject" id="form-subject" value="[샘플신청]">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://www.connectsell.co.kr/sample/thanks.html">
-      <label for="channel">채널명 <strong>*</strong></label>
-      <input type="text" id="channel" name="channel" placeholder="유튜브/인스타그램 채널명" required>
+      <input type="hidden" name="_next" value="">
+      <input type="hidden" id="product" name="product" value="">
+      <label for="channel_type">채널 유형 <strong>*</strong></label>
+      <select id="channel_type" name="channel_type" required>
+        <option value="" disabled selected>채널 유형을 선택해 주세요</option>
+        <option value="인스타그램">인스타그램</option>
+        <option value="유튜브">유튜브</option>
+        <option value="틱톡">틱톡</option>
+      </select>
       <label for="name">이름 <strong>*</strong></label>
       <input type="text" id="name" name="name" placeholder="본명" required>
-      <label for="phone">전화번호 <strong>*</strong></label>
-      <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
-      <label for="address">샘플을 받으실 주소 (선택)</label>
-      <input type="text" id="address" name="address" placeholder="주소를 입력해주세요">
-      <label for="inquiry">문의사항 (선택)</label>
-      <textarea id="inquiry" name="inquiry" placeholder="문의사항을 입력해주세요"></textarea>
-      <button type="submit" class="v3-btn">샘플 신청하기</button>
+      <label for="channel_id">채널 아이디 <strong>*</strong></label>
+      <input type="text" id="channel_id" name="channel_id" placeholder="@핸들 또는 채널명" required autocomplete="off">
+      <label for="email">이메일 <strong>*</strong></label>
+      <input type="email" id="email" name="_replyto" placeholder="example@email.com" required autocomplete="email">
+      <input type="hidden" id="email_copy" name="email" value="">
+      <button type="submit" class="v3-btn" id="submit-btn">샘플 신청하기</button>
     </form>
   </div>
 </div>
+<script>
+(function(){
+  var form = document.getElementById('sample-form');
+  var btn = document.getElementById('submit-btn');
+  var subjectEl = document.getElementById('form-subject');
+  var productDisplayEl = document.getElementById('product-display');
+  if (!form || !btn) return;
+
+  function fillProductFromQuery() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var p = params.get('product');
+      var el = document.getElementById('product');
+      if (!el) return;
+      if (!p) {
+        el.value = '';
+        if (productDisplayEl) productDisplayEl.textContent = '(미지정)';
+        return;
+      }
+      var decoded = decodeURIComponent(p.replace(/\+/g, ' ')).trim();
+      if (decoded) {
+        el.value = decoded;
+        if (productDisplayEl) productDisplayEl.textContent = decoded;
+      } else {
+        el.value = '';
+        if (productDisplayEl) productDisplayEl.textContent = '(미지정)';
+      }
+    } catch (e) {}
+  }
+  fillProductFromQuery();
+
+  form.addEventListener('submit', function() {
+    var productEl = document.getElementById('product');
+    var channelTypeEl = document.getElementById('channel_type');
+    var channelIdEl = document.getElementById('channel_id');
+    var emailEl = document.getElementById('email');
+    var emailCopyEl = document.getElementById('email_copy');
+
+    var product = (productEl && productEl.value.trim()) ? productEl.value.trim() : '(미지정)';
+    var channelType = channelTypeEl && channelTypeEl.value ? channelTypeEl.value : '(미입력)';
+    var channelId = (channelIdEl && channelIdEl.value.trim()) ? channelIdEl.value.trim() : '(미입력)';
+    var email = (emailEl && emailEl.value.trim()) ? emailEl.value.trim() : '(미입력)';
+
+    if (subjectEl) subjectEl.value = '[샘플신청] ' + product + ' / ' + channelType + ' / ' + channelId;
+    if (emailCopyEl) emailCopyEl.value = email;
+
+    btn.disabled = true;
+    btn.textContent = '전송 중...';
+    setTimeout(function() {
+      window.location.href = '/sample/thanks.html';
+    }, 800);
+  });
+})();
+</script>
 </body>
 </html>
