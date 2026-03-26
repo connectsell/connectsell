@@ -3,8 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- /form → landing 리라이트 시에도 ./images·./styles 가 /sample/ 기준으로 해석되도록 -->
-<base href="/sample/">
 <title>샘플 신청 | ConnectSell</title>
 <meta name="description" content="브랜드와 크리에이터를 연결해 지속 가능한 공동구매를 만듭니다.">
 <meta property="og:type" content="website">
@@ -45,12 +43,28 @@ body{margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-s
   .v2-body{padding:24px 20px 32px;}
 }
 </style>
-<link rel="stylesheet" href="./styles.css">
+<link id="landing-styles" rel="stylesheet" href="./styles.css">
+<script>
+(function(){
+  var p = location.pathname || '';
+  if (p !== '/form' && p !== '/form/') return;
+  var el = document.getElementById('landing-styles');
+  if (el) el.href = '/sample/styles.css';
+})();
+</script>
 </head>
 <body>
 <div class="v2-card">
   <div class="v2-top-img">
-    <img src="./images/hero-creator.jpg" alt="ConnectSell - Wellness Creator Commerce" width="840" height="560" decoding="async">
+    <img id="hero-landing" src="./images/hero-creator.jpg" alt="ConnectSell - Wellness Creator Commerce" width="840" height="560" decoding="async">
+<script>
+(function(){
+  var p = location.pathname || '';
+  if (p !== '/form' && p !== '/form/') return;
+  var img = document.getElementById('hero-landing');
+  if (img) img.src = '/sample/images/hero-creator.jpg';
+})();
+</script>
     <div class="hero-overlay"></div>
     <div class="hero-txt">
       <p>Wellness&nbsp;Creator&nbsp;Commerce</p>
