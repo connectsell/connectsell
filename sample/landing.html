@@ -150,10 +150,13 @@ body{margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-s
       subjectEl.value = '[샘플신청] ' + product + ' / ' + channelId + ' / ' + applicantName;
     }
     if (emailCopyEl) emailCopyEl.value = email;
+    var thanksUrl = new URL('thanks.html', window.location.href).href;
+    var nextEl = form.querySelector('input[name="_next"]');
+    if (nextEl) nextEl.value = thanksUrl;
     btn.disabled = true;
     btn.textContent = '전송 중...';
     setTimeout(function() {
-      window.location.href = '/sample/thanks.html';
+      window.location.href = thanksUrl;
     }, 800);
   });
 })();
