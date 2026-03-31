@@ -1,3 +1,17 @@
+# connectsell.co.kr (가비아 등) 반영용 배포
+#
+# [이전 실패 원인] appleboy/scp-action 은 SSH(SCP) 전용입니다. 호스트·계정이 FTP(21)·FTPS인 경우
+# SSH 인증이 되지 않아 job 이 실패합니다 (authentication / connection refused / wrong protocol).
+#
+# [필요한 GitHub Secrets — Repository → Settings → Secrets and variables → Actions]
+#   CONNECTSELL_FTP_HOST      FTP 서버 주소 (예: ftp.connectsell.co.kr 또는 가비아 안내 호스트)
+#   CONNECTSELL_FTP_USER      FTP 아이디
+#   CONNECTSELL_FTP_PASSWORD  FTP 비밀번호
+#   CONNECTSELL_FTP_WEBROOT   원격에서 email/marocell/ 폴더까지의 절대 경로, 반드시 / 로 끝남
+#                             예: /home/아이디/public_html/email/marocell/
+#
+# [프로토콜] 기본은 ftps + security loose (가비아 FTPS). 일반 FTP만 허용하면 아래 step 의 protocol 을 ftp 로 바꾸세요.
+
 name: Deploy babinola email to connectsell.co.kr
 
 on:
@@ -5,24 +19,33 @@ on:
     branches: [ "main" ]
     paths:
       - "email/marocell/babinola.html"
+      - "email/images/babinola*"
       - ".github/workflows/deploy-connectsell-co-kr.yml"
   workflow_dispatch: {}
 
 jobs:
-  sftp_deploy:
+  ftp_deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Upload babinola.html via SFTP
-        uses: appleboy/scp-action@v0.1.7
+      - name: Stage babinola.html for FTP upload
+        run: |
+          mkdir -p _ftp_publish
+          cp email/marocell/babinola.html _ftp_publish/babinola.html
+
+      - name: Upload babinola.html via FTP/FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          host: ${{ secrets.CONNECTSELL_FTP_HOST }}
+          server: ${{ secrets.CONNECTSELL_FTP_HOST }}
           username: ${{ secrets.CONNECTSELL_FTP_USER }}
           password: ${{ secrets.CONNECTSELL_FTP_PASSWORD }}
-          port: ${{ secrets.CONNECTSELL_FTP_PORT }}
-          source: "email/marocell/babinola.html"
-          target: ${{ secrets.CONNECTSELL_FTP_WEBROOT }}
-          overwrite: true
-
+          port: 21
+          protocol: ftps
+          security: loose
+          local-dir: ./_ftp_publish/
+          server-dir: ${{ secrets.CONNECTSELL_FTP_WEBROOT }}
+          dangerous-clean-slate: false
+          log-level: verbose
+          timeout: 120000
