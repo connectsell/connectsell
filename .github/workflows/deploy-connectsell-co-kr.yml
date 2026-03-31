@@ -10,6 +10,7 @@
 #   CONNECTSELL_FTP_HOST      FTP 호스트 (예: ftp.xxx.co.kr)
 #   CONNECTSELL_FTP_USER      FTP 아이디
 #   CONNECTSELL_FTP_PASSWORD  FTP 비밀번호
+#   CONNECTSELL_FTP_PORT      (선택) 기본 21. 비우면 21.
 #   CONNECTSELL_FTP_WEBROOT   FTP 로그인 후 babinola.html 이 올라갈 디렉터리 (끝에 / 필수)
 #                             예: public_html/email/marocell/  (가비아 홈 기준 상대경로)
 #                             또는 호스트가 절대경로를 요구하면 /home/.../public_html/email/marocell/
@@ -56,11 +57,19 @@ jobs:
           FTP_USER: ${{ secrets.CONNECTSELL_FTP_USER }}
           FTP_PASS: ${{ secrets.CONNECTSELL_FTP_PASSWORD }}
           FTP_HOST: ${{ secrets.CONNECTSELL_FTP_HOST }}
+          FTP_PORT: ${{ secrets.CONNECTSELL_FTP_PORT }}
           FTP_DIR: ${{ secrets.CONNECTSELL_FTP_WEBROOT }}
         run: |
           set -euxo pipefail
-          REMOTE_URL="ftp://${FTP_HOST}${FTP_DIR}babinola.html"
-          echo "Upload target: ${FTP_DIR}babinola.html on ${FTP_HOST}"
+          # ftp://HOST/PATH — HOST 와 WEBROOT 사이에 반드시 / 필요 (누락 시 host가 "hostpublic_html" 로 붙어 530/연결 실패)
+          PORT="${FTP_PORT:-21}"
+          DIR="${FTP_DIR#/}"
+          if [ "$PORT" = "21" ]; then
+            REMOTE_URL="ftp://${FTP_HOST}/${DIR}babinola.html"
+          else
+            REMOTE_URL="ftp://${FTP_HOST}:${PORT}/${DIR}babinola.html"
+          fi
+          echo "Upload target: ${FTP_DIR}babinola.html on ${FTP_HOST} (port ${PORT})"
           # 1) 일반 FTP  2) 실패 시 FTPS(명시적 TLS) — 가비아 설정에 맞는 쪽이 성공
           curl --fail --verbose \
             -T _ftp_publish/babinola.html \
