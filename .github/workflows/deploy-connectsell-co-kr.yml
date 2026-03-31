@@ -61,22 +61,71 @@ jobs:
           FTP_DIR: ${{ secrets.CONNECTSELL_FTP_WEBROOT }}
         run: |
           set -euxo pipefail
-          # ftp://HOST/PATH — HOST 와 WEBROOT 사이에 반드시 / 필요 (누락 시 host가 "hostpublic_html" 로 붙어 530/연결 실패)
+          # 호스트에 ftp:// 가 들어가면 ftp://ftp://... 이 되므로 제거
+          H="${FTP_HOST#ftp://}"
+          H="${H#ftps://}"
+          H="${H%/}"
           PORT="${FTP_PORT:-21}"
           DIR="${FTP_DIR#/}"
           if [ "$PORT" = "21" ]; then
-            REMOTE_URL="ftp://${FTP_HOST}/${DIR}babinola.html"
+            REMOTE_URL="ftp://${H}/${DIR}babinola.html"
           else
-            REMOTE_URL="ftp://${FTP_HOST}:${PORT}/${DIR}babinola.html"
+            REMOTE_URL="ftp://${H}:${PORT}/${DIR}babinola.html"
           fi
-          echo "Upload target: ${FTP_DIR}babinola.html on ${FTP_HOST} (port ${PORT})"
-          # 1) 일반 FTP  2) 실패 시 FTPS(명시적 TLS) — 가비아 설정에 맞는 쪽이 성공
-          curl --fail --verbose \
+          echo "Upload target: ${FTP_DIR}babinola.html on ${H} (port ${PORT})"
+          export FTP_HOST="$H"
+          export FTP_PORT="$PORT"
+          # 1) 일반 FTP  2) FTPS(명시적 TLS)  3) Python ftplib (일부 curl/패시브 이슈 우회)
+          curl --fail --verbose --connect-timeout 45 \
+            --ftp-skip-pasv-ip \
             -T _ftp_publish/babinola.html \
             --user "${FTP_USER}:${FTP_PASS}" \
             "${REMOTE_URL}" \
-          || curl --fail --verbose \
+          || curl --fail --verbose --connect-timeout 45 \
+            --ftp-skip-pasv-ip \
             --ftp-ssl --ssl-reqd \
             -T _ftp_publish/babinola.html \
             --user "${FTP_USER}:${FTP_PASS}" \
-            "${REMOTE_URL}"
+            "${REMOTE_URL}" \
+          || python3 << 'PY'
+          import os, sys
+          from ftplib import FTP, FTP_TLS
+
+          host = os.environ["FTP_HOST"]
+          user = os.environ["FTP_USER"]
+          password = os.environ["FTP_PASS"]
+          port = int(os.environ.get("FTP_PORT") or "21")
+          webroot = os.environ["FTP_DIR"].rstrip("/")
+
+          def cwd_path(ftp, path: str) -> None:
+              if path.startswith("/"):
+                  try:
+                      ftp.cwd("/")
+                  except Exception:
+                      pass
+              for part in [p for p in path.split("/") if p]:
+                  ftp.cwd(part)
+
+          last_err = None
+          for use_tls, label in ((False, "FTP"), (True, "FTP_TLS")):
+              try:
+                  if use_tls:
+                      ftp = FTP_TLS()
+                      ftp.connect(host, port, timeout=60)
+                      ftp.login(user, password)
+                      ftp.prot_p()
+                  else:
+                      ftp = FTP()
+                      ftp.connect(host, port, timeout=60)
+                      ftp.login(user, password)
+                  cwd_path(ftp, webroot)
+                  with open("_ftp_publish/babinola.html", "rb") as f:
+                      ftp.storbinary("STOR babinola.html", f)
+                  ftp.quit()
+                  print(f"OK ({label})")
+                  sys.exit(0)
+              except Exception as e:
+                  last_err = e
+                  print(f"{label} failed: {e!r}", flush=True)
+          raise SystemExit(last_err)
+          PY
