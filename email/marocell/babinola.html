@@ -5,17 +5,98 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <title>공동구매 제안서 (기본2) | ConnectSell</title>
+<meta property="og:title" content="공동구매 제안서 (기본2) | ConnectSell">
+<meta name="twitter:title" content="공동구매 제안서 (기본2) | ConnectSell">
 <style>
-/* rem 기준 (링크·브라우저에서 iOS 자동 확대 완화, 16px=1rem) */
+/* 단일 레이아웃(PC·모바일 공통, 미디어쿼리 없음) — 600px 카드 중앙 정렬 */
 html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #f5f5f5;
+  font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+  color: #3d4f42;
+  -webkit-text-size-adjust: 100%;
+}
+table { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
 
-/* === Babinola 가독성 UI (PC·모바일 공통) === */
-.babinola-proposal-title { text-align: center; font-size: 16px; font-weight: 600; margin: 0 0 16px 0; color: #2d3e50; }
-.babinola-chapter-bar { width: 100%; max-width: 320px; margin: 24px auto 0; border-collapse: collapse; table-layout: fixed; border-top: 1px solid #d0d9d2; border-bottom: 1px solid #d0d9d2; }
+.babinola-outer { width: 100%; background-color: #f5f5f5; }
+.babinola-outer > tbody > tr > td { padding: 0; }
+
+/* 본문 카드: max-width 600px, 중앙 */
+.babinola-mail-column {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  table-layout: fixed;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+.babinola-mail-column > tbody > tr > td {
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+}
+
+.babinola-email-body {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px 20px 32px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  vertical-align: top;
+  line-height: 1.6;
+  font-size: 14px;
+  color: #333;
+}
+
+/* 콘텐츠 이미지: 블록 + 유동 높이 (아이콘 제외) */
+.babinola-email-body img:not([src*="icon-check"]):not([src*="icon-diamond"]) {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: 0;
+}
+.babinola-email-body img[src*="icon-check"] {
+  width: 28px;
+  height: 28px;
+  max-width: 32px;
+  display: block;
+}
+.babinola-email-body img[src*="icon-diamond"] {
+  width: 18px;
+  height: 18px;
+  max-width: 18px;
+  display: block;
+}
+
+.babinola-proposal-title {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  color: #2d3e50;
+  background: #e5ede6;
+  padding: 12px 10px;
+  border-radius: 8px;
+}
+.babinola-chapter-bar {
+  width: 100%;
+  max-width: 600px;
+  margin: 24px auto 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+  border-top: 1px solid #d0d9d2;
+  border-bottom: 1px solid #d0d9d2;
+}
 .babinola-chapter-bar td { padding: 0.6rem 0.85rem; vertical-align: middle; }
 .babinola-chapter-bar .babinola-chapter-label { font-size: 0.8125rem; font-weight: 700; color: #1a1a1a; letter-spacing: -0.02em; }
-.babinola-chapter-bar .babinola-chapter-title { font-size: 1.0625rem; font-weight: 600; color: #2d3e50; line-height: 1.45; text-align: center; }
+.babinola-chapter-bar .babinola-chapter-title { font-size: 1rem; font-weight: 600; color: #2d3e50; line-height: 1.45; text-align: center; }
 .babinola-chapter-bar .babinola-chapter-title--accent { font-weight: 600; color: #c62828; }
+
 .babinola-body-text {
   margin: 0 0 12px 0;
   font-size: 14px;
@@ -29,10 +110,10 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
 }
 .babinola-body-text.babinola-brand-caption { text-align: justify; }
 .babinola-body-text--standalone { margin-bottom: 1.5rem; font-weight: 600; color: #2d3e50; }
-/* 제품 기본정보 — 라벨/값 테이블 (본문과 구분되는 정보형 레이아웃) */
+
 .babinola-info-table {
   width: 100%;
-  max-width: 320px;
+  max-width: 600px;
   border-collapse: separate;
   border-spacing: 0;
   margin: 0 auto;
@@ -64,7 +145,7 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   text-align: center;
 }
 .babinola-info-value { font-weight: 450; color: #3d4f42; background: #ffffff; }
-/* Check Point — 카드형 체크리스트 */
+
 .babinola-check-stack { width: 100%; max-width: 600px; margin: 0 auto; border-collapse: collapse; box-sizing: border-box; }
 .babinola-check-stack td { padding: 0; vertical-align: top; }
 .babinola-check-card { width: 100%; border-collapse: collapse; background: #f7f9f7; border: 1px solid #dfe8e4; border-radius: 8px; overflow: hidden; }
@@ -72,7 +153,7 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
 .babinola-check-card .babinola-check-icon { width: 40px; padding: 16px 0 16px 20px; vertical-align: middle; }
 .babinola-check-card .babinola-check-icon img { display: block; }
 .babinola-check-card .babinola-check-text { padding: 16px 20px 16px 10px; font-size: 1.0625rem; line-height: 1.55; font-weight: 500; color: #3d4f42; word-break: keep-all; overflow-wrap: break-word; }
-/* 콘텐츠 래퍼런스 — Check Point와 동일 톤의 카드형 리스트 */
+
 .babinola-ref-stack { width: 100%; max-width: 600px; margin: 1.25rem auto 0; border-collapse: collapse; box-sizing: border-box; }
 .babinola-ref-stack td { padding: 0; vertical-align: top; }
 .babinola-ref-card { width: 100%; border-collapse: collapse; background: #f7f9f7; border: 1px solid #dfe8e4; border-radius: 8px; overflow: hidden; }
@@ -81,202 +162,37 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
 .babinola-ref-card .babinola-ref-icon img { display: block; }
 .babinola-ref-card .babinola-ref-text { padding: 16px 20px 16px 10px; font-size: 1.0625rem; line-height: 1.55; font-weight: 500; color: #3d4f42; word-break: keep-all; overflow-wrap: break-word; }
 
-/* 이미지 아래 핵심 포인트 — 다이아 + 텍스트 행 (레거시) */
 .babinola-point-list { width: 100%; max-width: 600px; margin: 1.25rem auto 0; border-collapse: collapse; box-sizing: border-box; padding: 0 4px; }
 .babinola-point-list td { padding: 0 0 13px 0; vertical-align: top; font-size: 1.0625rem; line-height: 1.55; color: #3d4f42; }
 .babinola-point-list tr:last-child td { padding-bottom: 0; }
 .babinola-point-list .babinola-point-glyph { width: 28px; padding: 2px 10px 0 0; vertical-align: top; }
 .babinola-point-list .babinola-point-glyph img { display: block; }
 .babinola-point-list .babinola-point-body { font-weight: 500; padding-right: 8px; word-break: keep-all; overflow-wrap: break-word; }
+
 .babinola-media-flat { width: 100%; max-width: 600px; margin: 0 auto; border-collapse: collapse; background: #fff; }
 .babinola-media-flat td { padding: 0; vertical-align: top; }
+
 .babinola-ch1-legacy { display: none !important; }
 .babinola-block-spacer-sm { height: 1rem; line-height: 1rem; font-size: 0; }
 .babinola-block-spacer-md { height: 1.5rem; line-height: 1rem; font-size: 0; }
-.kakkuki-slogan-text .kakkuki-line1,
-.kakkuki-slogan-text .kakkuki-line2 { display: block; }
-.kakkuki-slogan-text .kakkuki-line2 { margin-top: 0.2em; }
-.br-show-mobile { display: none !important; }
-@media (max-width: 768px) {
-  .br-show-mobile { display: block !important; }
-  .br-hide-mobile { display: none !important; }
-  .red-highlight { font-size: 0.85rem !important; }
-  .kakkuki-card-left p { font-size: 0.85rem !important; }
-  .kakkuki-card-left p:first-child { font-size: 0.9rem !important; }
-  .kakkuki-slogan-text { font-size: 0.72rem !important; line-height: 1.45 !important; }
-  .kakkuki-slogan-text .kakkuki-line1,
-  .kakkuki-slogan-text .kakkuki-line2 { display: block !important; white-space: nowrap !important; }
-  .kakkuki-slogan-text .kakkuki-line2 { margin-top: 0.2em; }
-  .kakkuki-card-img-wrap { display: flex; align-items: center; justify-content: center; background: #fff; min-height: 200px; }
-  .kakkuki-card-img { object-fit: contain !important; height: auto !important; max-height: 220px; width: auto !important; max-width: 100%; }
-  .product-info-card { flex-direction: column !important; min-height: 0 !important; }
-  .product-info-card .product-info-card-img { flex: 0 0 auto !important; width: 100% !important; min-height: 200px !important; }
-  .product-info-card .product-info-card-img img { height: auto !important; max-height: 280px !important; object-fit: contain !important; }
-  .product-info-card .product-info-card-text { flex: 0 0 auto !important; width: 100% !important; }
-  .diet-plan-section { padding: 20px 14px !important; }
-  .diet-plan-section > p { font-size: 0.9rem !important; margin-bottom: 18px !important; letter-spacing: -0.02em; }
-  .diet-plan-card { flex-direction: column !important; padding: 12px 10px !important; align-items: stretch !important; }
-  .diet-plan-card-imgs { width: 100% !important; max-width: 180px !important; height: 88px !important; flex: 0 0 auto !important; margin: 0 auto 10px !important; gap: 6px !important; }
-  .diet-plan-card-imgs .diet-plan-card-img { flex: 1 1 0 !important; min-width: 0 !important; }
-  .diet-plan-card-imgs img { max-height: 88px !important; }
-  .diet-plan-card-text { padding-left: 0 !important; padding-right: 0 !important; min-width: 0 !important; gap: 8px !important; min-height: 0 !important; }
-  .diet-plan-card-text > div:first-of-type { width: 100% !important; text-align: center !important; justify-content: center !important; }
-  .diet-plan-card-text > div:first-of-type p { font-size: 0.85rem !important; white-space: normal !important; line-height: 1.45 !important; letter-spacing: -0.02em !important; text-align: center !important; width: 100% !important; margin: 0 !important; }
-  .diet-plan-card-text p { font-size: 0.78rem !important; white-space: normal !important; line-height: 1.4 !important; letter-spacing: -0.01em; }
-  .diet-plan-card-text span { font-size: 0.72rem !important; letter-spacing: -0.01em; }
-  .diet-plan-card-text .diet-price { font-size: 1rem !important; letter-spacing: -0.02em !important; }
-  .diet-plan-card .diet-discount-badge { font-size: 0.72rem !important; padding: 4px 8px !important; }
-  .diet-plan-card .diet-best-main { width: 36px !important; height: 36px !important; font-size: 0.72rem !important; }
-  .diet-plan-card .diet-best-sub { top: 36px !important; padding: 2px 6px !important; font-size: 0.65rem !important; }
-  .diet-plan-card-imgs .diet-gift-overlay { display: none !important; }
-  .diet-gift-mobile { display: block !important; }
-  .diet-plan-card-text > div:nth-of-type(2):not(.diet-gift-mobile),
-  .diet-plan-card-text > div:nth-of-type(3),
-  .diet-plan-card-text > div:nth-of-type(4) { width: auto !important; max-width: 100% !important; margin-left: auto !important; margin-right: 0 !important; display: flex !important; justify-content: flex-end !important; align-items: baseline !important; gap: 10px !important; letter-spacing: -0.02em !important; }
-  .diet-plan-card-text .diet-normal-price-row { width: auto !important; margin-left: auto !important; margin-right: 0 !important; justify-content: flex-end !important; gap: 10px !important; }
-  .diet-plan-card-text .diet-gift-tag { letter-spacing: 0.02em !important; text-align: center !important; padding: 5px 10px !important; }
-  .diet-title-red-mobile { color: #333 !important; }
-  .diet-gift-tag-wrap { text-align: center !important; }
-  /* v2 모바일: 브랜드 영역 두 이미지만 반응형 (세로 배치 + 유동 이미지) */
-  .kakkuki-brand-two-img .kakkuki-two-img-left,
-  .kakkuki-brand-two-img .kakkuki-two-img-right { display: block !important; width: 100% !important; max-width: 100% !important; padding: 0 !important; }
-  .kakkuki-brand-two-img .kakkuki-two-img-left { margin-bottom: 8px !important; }
-  .kakkuki-brand-two-img img { max-width: 100% !important; width: 100% !important; height: auto !important; max-height: none !important; object-fit: contain !important; display: block !important; }
-  .babinola-brand-banner img { max-width: 100% !important; width: 100% !important; height: auto !important; display: block !important; }
-  /* v2 모바일: 본문 영역 이미지 유동 (체크·다이아 아이콘 제외) */
-  .babinola-email-body img:not([src*="icon-diamond"]):not([src*="icon-check"]),
-  .babinola-media-flat img { max-width: 100% !important; height: auto !important; }
-  div[style*="max-width:600px"] img:not([src*="icon-diamond"]):not([src*="icon-check"]),
-  div[style*="max-width:520px"] img:not([src*="icon-diamond"]):not([src*="icon-check"]) { max-width: 100% !important; height: auto !important; }
-  /* v2 모바일: 체크·다이아 아이콘 고정 크기 */
-  .babinola-email-body img[src*="icon-check"] { width: 28px !important; height: 28px !important; max-width: 32px !important; min-width: 28px !important; display: block !important; }
-  .babinola-email-body img[src*="icon-diamond"],
-  .kakkuki-chapter1-info img,
-  .chapter1-diamond-icon { width: 18px !important; height: 18px !important; max-width: 18px !important; min-width: 18px !important; display: block !important; }
-  /* v2 모바일: 스페셜 프라이스 (버전1 모바일 동일 - 가로 배치 유지, 이미지만 유동) */
-  .kakkuki-special-price-cards img { max-width: 100% !important; height: auto !important; }
-  .kakkuki-special-price-cards table table { width: 100% !important; }
-  /* Gmail 모바일 인라인: 오른쪽 열(할인율·추가증정) 잘림 방지 - 열 비율 조정 */
-  .kakkuki-special-price-cards td[width="32%"] { width: 28% !important; max-width: 28% !important; }
-  .kakkuki-special-price-cards td[width="53%"] { width: 54% !important; }
-  .kakkuki-special-price-cards td[width="15%"] { width: 18% !important; min-width: 72px !important; }
-  /* v2 모바일: 가로 스크롤 방지 */
-  body, body table { max-width: 100% !important; }
-  /* v2 모바일: 챕터 바 패딩 (섹션 타이틀은 본문보다 한 단계 작게 유지) */
-  table[style*="border-bottom:1px solid #d0d9d2"] td { padding: 8px 10px !important; }
-  /* v2 모바일: 본문 패딩 */
-  .babinola-email-body { padding: 16px 16px 32px !important; }
-  /* v2 모바일: div·테이블 최대 너비 */
-  .babinola-email-body table,
-  .babinola-email-body div { max-width: 100% !important; }
-  /* v2 모바일: 체크 리스트·제품정보 flex 줄바꿈 */
-  div[style*="display:flex"] { flex-wrap: wrap !important; }
-  /* v2 모바일: 스페셜 프라이스 wrapper 패딩 */
-  .kakkuki-special-price-cards { padding: 16px 12px !important; margin-top: 24px !important; }
-  /* v2 모바일: 버전1과 동일하게 콘텐츠 최대 600px 유지 (넓게 퍼지지 않음) */
-  /* table/div는 100%로 키우지 않음 - 기존 max-width:600px 유지 */
-  /* v2 모바일: 히어로 하단 박스 패딩 축소 */
-  table[style*="background:#e5ede6"][style*="border-radius:0 0 12px"] td { padding: 24px 16px !important; }
-  .babinola-body-text { text-align: left !important; }
-  .babinola-body-text.babinola-brand-caption { text-align: justify !important; }
-  .babinola-email-body p.babinola-body-text {
-    font-size: 1.0625rem !important;
-    line-height: 1.75 !important;
-  }
+.babinola-brand-caption { text-align: justify; width: 100%; max-width: 100%; box-sizing: border-box; }
 
-  /* v2 모바일: 제품 기본정보 표 가운데 정렬 + 패딩/라인하이트 통일 */
-  .babinola-email-body .babinola-info-table { max-width: 320px !important; margin-left: auto !important; margin-right: auto !important; }
-  .babinola-email-body .babinola-info-table th,
-  .babinola-email-body .babinola-info-table td { text-align: center !important; padding: 12px 10px !important; line-height: 1.6 !important; }
-}
-/* 상단 히어로~본문: 한 컬럼에서 동일 가로폭 강제 (뷰어·메일 클라이언트 정렬) */
-.babinola-mail-column {
-  width: 360px !important;
-  max-width: 100% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  table-layout: fixed !important;
-  border-collapse: collapse !important;
-}
-.babinola-mail-column > tbody > tr > td { width: 100% !important; max-width: 600px !important; box-sizing: border-box !important; }
-.babinola-brand-caption { text-align: justify !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; }
-
-/* 링크로 열었을 때(브라우저) 모바일: 600px 캡 안에서 가로 100%, 이미지 유동·rem 본문 */
-@media screen and (max-width: 600px) {
-  body { margin: 0 !important; padding: 0 !important; width: 100% !important; min-width: 0 !important; box-sizing: border-box !important; }
-  body > table { width: 100% !important; max-width: 100% !important; table-layout: fixed !important; }
-  body > table > tbody > tr > td { width: 100% !important; max-width: 100% !important; padding-left: 0 !important; padding-right: 0 !important; box-sizing: border-box !important; }
-  .babinola-mail-column { width: 100% !important; max-width: 360px !important; margin-left: auto !important; margin-right: auto !important; }
-  .babinola-mail-column > tbody > tr > td { width: 100% !important; max-width: 360px !important; min-width: 0 !important; box-sizing: border-box !important; }
-  .babinola-email-body {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 16px !important;
-    box-sizing: border-box !important;
-  }
-  .babinola-email-body table,
-  .babinola-email-body > table { width: 100% !important; max-width: 360px !important; box-sizing: border-box !important; }
-  .babinola-email-body div[style*="max-width:600px"],
-  .babinola-email-body div[style*="max-width: 600px"] { width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; }
-  /* 본문·캡션: rem (인라인 px 덮어씀) */
-  .babinola-email-body p.babinola-body-text,
-  .babinola-email-body p.babinola-body-text.babinola-brand-caption { font-size: 14px !important; line-height: 1.6 !important; }
-  .babinola-email-body .babinola-info-table td,
-  .babinola-email-body .babinola-check-card .babinola-check-text,
-  .babinola-email-body .babinola-ref-card .babinola-ref-text,
-  .babinola-email-body .babinola-point-list td { font-size: 1.0625rem !important; line-height: 1.55 !important; }
-  .babinola-email-body .babinola-info-table td.babinola-info-label { font-weight: 600 !important; }
-  .babinola-email-body .babinola-info-table td.babinola-info-value { font-weight: 450 !important; }
-  /* 좁은 화면: 제품정보 라벨/값 세로 분리로 붙어 보이는 현상 완화 */
-  .babinola-email-body .babinola-info-table tr:not(:last-child) td { border-bottom: none !important; }
-  .babinola-email-body .babinola-info-table tr:not(:last-child) .babinola-info-value { border-bottom: 1px solid #e8ebe9 !important; }
-  .babinola-email-body .babinola-info-table .babinola-info-label {
-    display: block !important;
-    width: 100% !important;
-    padding: 14px 14px 6px 14px !important;
-    box-sizing: border-box !important;
-    border-right: none !important;
-    border-bottom: none !important;
-    background: #f3f6f4 !important;
-    text-align: center !important;
-  }
-  .babinola-email-body .babinola-info-table .babinola-info-value {
-    display: block !important;
-    width: 100% !important;
-    padding: 0 14px 14px 14px !important;
-    box-sizing: border-box !important;
-    background: #ffffff !important;
-  }
-  .babinola-email-body .babinola-info-table tr:first-child .babinola-info-label { padding-top: 14px !important; }
-  /* 링크로 열었을 때 모바일: 제품 기본정보 표 가운데 정렬 + 패딩/라인하이트 통일 */
-  .babinola-email-body .babinola-info-table { margin-left: auto !important; margin-right: auto !important; }
-  .babinola-email-body .babinola-info-table td { text-align: center !important; padding: 12px 14px !important; line-height: 1.6 !important; }
-  .babinola-email-body .babinola-check-card .babinola-check-icon { padding: 16px 0 16px 16px !important; width: 36px !important; }
-  .babinola-email-body .babinola-check-card .babinola-check-text { padding: 16px 16px 16px 8px !important; }
-  .babinola-email-body .babinola-ref-card .babinola-ref-icon { padding: 16px 0 16px 16px !important; width: 30px !important; }
-  .babinola-email-body .babinola-ref-card .babinola-ref-text { padding: 16px 16px 16px 8px !important; }
-  .babinola-email-body .babinola-point-list { padding: 0 2px !important; }
-  .babinola-email-body a[style*="inline-block"] { font-size: 1rem !important; }
-  /* 콘텐츠 이미지만 가로 100% (아이콘 제외 — 텍스트는 HTML 유지) */
-  .babinola-email-body img:not([src*="icon-diamond"]):not([src*="icon-check"]),
-  .babinola-brand-banner img { width: 100% !important; max-width: 100% !important; height: auto !important; min-height: 0 !important; display: block !important; }
-  .babinola-media-flat img:not([src*="icon"]) { width: 100% !important; max-width: 100% !important; height: auto !important; object-fit: contain !important; }
-  .babinola-email-body img[src*="icon-diamond"] { width: 18px !important; height: 18px !important; max-width: 18px !important; display: block !important; }
-  .babinola-email-body img[src*="icon-check"] { width: 28px !important; height: 28px !important; max-width: 32px !important; display: block !important; }
-  .babinola-email-body .kakkuki-chapter1-info { padding: 0 !important; }
-  .babinola-email-body div[style*="background:#fff"][style*="padding:28px"] { padding: 1rem 0.75rem !important; }
-  .babinola-email-body div[style*="padding:16px 32px"] { padding: 0.75rem !important; }
-  table[style*="background:#e5ede6"][style*="border-radius:0 0 12px"] td { padding: 1.25rem 0.75rem !important; }
+/* Hot Word 2열: 동일 폭 유지, 이미지 높이 자동 */
+.babinola-chapter1-media img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: top;
 }
 </style>
 </head>
-<body style="margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;background:#f8f6f3;color:#3d4f42;-webkit-text-size-adjust:100%;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#f8f6f3" style="width:100%;max-width:100%;background:#f8f6f3;">
-<tr><td align="center" style="padding:0;background:#f8f6f3;width:100%;max-width:100%;">
-<!-- 본문 360px 컬럼 -->
-<table role="presentation" class="babinola-mail-column" cellpadding="0" cellspacing="0" border="0" width="600" align="center" style="width:600px;max-width:100%;margin:0 auto;border-collapse:collapse;table-layout:fixed;">
+<body>
+<table role="presentation" class="babinola-outer" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;background-color:#f5f5f5;">
+<tr><td align="center" style="padding:0;">
+<table role="presentation" class="babinola-mail-column" cellpadding="0" cellspacing="0" border="0" width="600" align="center" style="width:100%;max-width:600px;margin:0 auto;border-collapse:collapse;table-layout:fixed;background-color:#ffffff;">
 <tr>
-<td class="babinola-email-body" style="width:100%;max-width:360px;min-width:0;margin:0 auto;padding:16px;background:#ffffff;box-sizing:border-box;vertical-align:top;line-height:1.6;font-size:14px;color:#333;">
+<td class="babinola-email-body">
   <p class="babinola-proposal-title">ConnectSell이 제안하는 협업</p>
   <p class="babinola-body-text">안녕하세요,<br>웰니스·라이프스타일 카테고리를 중심으로<br>공동구매를 기획·운영하고 있는 ConnectSell입니다.</p>
   <p class="babinola-body-text">크리에이터님의 콘텐츠 방향성과 잘 맞는 제품이라 판단되어<br>협업 제안을 드리게 되었습니다.</p>
@@ -299,29 +215,29 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="babinola-brand-banner" style="width:100%;max-width:600px;margin:0 auto;background:#fff;border-radius:8px;overflow:hidden;">
     <tr>
       <td style="padding:0;vertical-align:top;background:#fff;">
-        <img src="https://www.connectsell.co.kr/email/images/babinola-brand-banner.png" alt="유튜버 히밥 × 마로셀 공동개발 바비놀라" width="600" style="width:100%;max-width:600px;height:auto;display:block;border:0;">
+        <img src="https://www.connectsell.co.kr/email/images/babinola-brand-banner.jpg" alt="유튜버 히밥 × 마로셀 공동개발 바비놀라" width="100%" style="max-width:100%;height:auto;display:block;border:0;">
       </td>
     </tr>
   </table>
   <p class="babinola-body-text babinola-brand-caption" style="margin-top:1rem;">바비놀라는 크리에이터 <strong>히밥</strong>과 함께 맛과 구성에 대한 고민을 바탕으로 기획된 그래놀라 제품입니다.</p>
   <p class="babinola-body-text babinola-brand-caption"><strong>일상에서 부담 없이 즐길 수 있는 맛</strong>과 지속 가능한 식단 구성을 고려해 만들어진 점이 특징입니다.</p>
   <div class="babinola-block-spacer-md"></div>
-  <!-- Hot Word -->
+  <!-- Hot Keyword -->
   <table role="presentation" class="babinola-chapter-bar" cellpadding="0" cellspacing="0" border="0" width="100%">
     <tr>
-      <td style="width:26%;background:#ffffff;white-space:nowrap;"><span class="babinola-chapter-label">■ Hot Word</span></td>
+      <td style="width:26%;background:#ffffff;white-space:nowrap;"><span class="babinola-chapter-label">■ Hot Keyword</span></td>
       <td align="center" style="width:74%;background:#e5ede6;"><span class="babinola-chapter-title babinola-chapter-title--accent">3無 원칙(설탕·밀가루·팜유 ZERO)</span></td>
     </tr>
   </table>
   <div class="babinola-block-spacer-md"></div>
-  <!-- 핫키워드 이미지 2열 -->
+  <!-- 핫키워드 이미지 2열 (모바일은 CSS로 1열 전환) -->
   <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="babinola-media-flat babinola-chapter1-media" style="width:100%;max-width:600px;margin:0 auto;border-collapse:collapse;table-layout:fixed;background:transparent;border-radius:0;overflow:visible;">
     <tr>
       <td width="50%" class="kakkuki-two-img-left" style="padding:0 6px 0 0;vertical-align:top;background:#fff;">
-        <img src="https://www.connectsell.co.kr/email/images/babinola-hotword-left.png" alt="바비놀라 재료와 풍미" width="300" height="300" style="width:100%;height:300px;max-width:100%;object-fit:cover;display:block;">
+        <img src="https://www.connectsell.co.kr/email/images/babinola-hotword-left.jpg" alt="바비놀라 재료와 풍미" width="280" style="width:100%;max-width:100%;height:auto;display:block;">
       </td>
       <td width="50%" class="kakkuki-two-img-right" style="padding:0 0 0 6px;vertical-align:top;background:#fff;">
-        <img src="https://www.connectsell.co.kr/email/images/babinola-hotword-right.png" alt="바비놀라 메이플 시럽과 바삭한 식감" width="300" height="300" style="width:100%;height:300px;max-width:100%;object-fit:cover;display:block;">
+        <img src="https://www.connectsell.co.kr/email/images/babinola-hotword-right.jpg" alt="바비놀라 메이플 시럽과 바삭한 식감" width="280" style="width:100%;max-width:100%;height:auto;display:block;">
       </td>
     </tr>
   </table>
@@ -342,7 +258,7 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   </table>
   <div class="babinola-block-spacer-md"></div>
   <!-- 제품 이미지 단일 -->
-  <img src="https://www.connectsell.co.kr/email/images/babinola-chapter1-left.png" alt="바비놀라 그래놀라 제품 패키지" style="display:block; width:100%; max-width:320px; margin:0 auto 16px auto; border-radius:12px;">
+  <img src="https://www.connectsell.co.kr/email/images/babinola-chapter1-left.jpg" alt="바비놀라 그래놀라 제품 패키지" width="560" style="width:100%;max-width:100%;height:auto;display:block;margin:0 auto 16px auto;border-radius:12px;">
   <table role="presentation" class="babinola-info-table" cellpadding="0" cellspacing="0" border="0" width="100%">
           <tr>
             <td class="babinola-info-label">제품명</td>
@@ -379,12 +295,12 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   </table>
   <div class="babinola-block-spacer-md"></div>
   <div style="margin:0 auto;width:100%;max-width:600px;box-sizing:border-box;">
-    <img src="https://www.connectsell.co.kr/email/images/babinola-chapter2-checkpoint.png?v=20260325" alt="바비놀라 단백질 함량 UP 칼로리 부담 DOWN" width="600" style="width:100%;max-width:600px;height:auto;display:block;border-radius:8px;">
+    <img src="https://www.connectsell.co.kr/email/images/babinola-chapter2-checkpoint.jpg?v=20260325" alt="바비놀라 단백질 함량 UP 칼로리 부담 DOWN" width="560" style="width:100%;max-width:100%;height:auto;display:block;border-radius:8px;">
     <table role="presentation" class="babinola-check-stack" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:1.25rem;">
       <tr><td style="padding-bottom:14px;">
         <table role="presentation" class="babinola-check-card" cellpadding="0" cellspacing="0" border="0" width="100%">
           <tr>
-            <td class="babinola-check-icon" width="40"><img src="https://www.connectsell.co.kr/email/images/icon-check-purple.png" alt="" width="28" height="28" style="display:block;width:28px;height:28px;border:0;"></td>
+            <td class="babinola-check-icon" width="40"><img src="https://www.connectsell.co.kr/email/images/icon-check-purple.png" alt="" width="28" height="28" style="display:block;border:0;"></td>
             <td class="babinola-check-text"><strong>100% 수제 시리얼</strong> 고품질 원재료</td>
           </tr>
         </table>
@@ -392,7 +308,7 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
       <tr><td style="padding-bottom:14px;">
         <table role="presentation" class="babinola-check-card" cellpadding="0" cellspacing="0" border="0" width="100%">
           <tr>
-            <td class="babinola-check-icon" width="40"><img src="https://www.connectsell.co.kr/email/images/icon-check-purple.png" alt="" width="28" height="28" style="display:block;width:28px;height:28px;border:0;"></td>
+            <td class="babinola-check-icon" width="40"><img src="https://www.connectsell.co.kr/email/images/icon-check-purple.png" alt="" width="28" height="28" style="display:block;border:0;"></td>
             <td class="babinola-check-text"><strong>캐나다산 메이플 시럽</strong> 풍미와 바삭한 식감</td>
           </tr>
         </table>
@@ -400,7 +316,7 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
       <tr><td style="padding-bottom:14px;">
         <table role="presentation" class="babinola-check-card" cellpadding="0" cellspacing="0" border="0" width="100%">
           <tr>
-            <td class="babinola-check-icon" width="40"><img src="https://www.connectsell.co.kr/email/images/icon-check-purple.png" alt="" width="28" height="28" style="display:block;width:28px;height:28px;border:0;"></td>
+            <td class="babinola-check-icon" width="40"><img src="https://www.connectsell.co.kr/email/images/icon-check-purple.png" alt="" width="28" height="28" style="display:block;border:0;"></td>
             <td class="babinola-check-text"><strong>고단백</strong>, 칼로리 부담 ZERO</td>
           </tr>
         </table>
@@ -408,7 +324,7 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
       <tr><td style="padding-bottom:14px;">
         <table role="presentation" class="babinola-check-card" cellpadding="0" cellspacing="0" border="0" width="100%">
           <tr>
-            <td class="babinola-check-icon" width="40"><img src="https://www.connectsell.co.kr/email/images/icon-check-purple.png" alt="" width="28" height="28" style="display:block;width:28px;height:28px;border:0;"></td>
+            <td class="babinola-check-icon" width="40"><img src="https://www.connectsell.co.kr/email/images/icon-check-purple.png" alt="" width="28" height="28" style="display:block;border:0;"></td>
             <td class="babinola-check-text"><strong>NO</strong> 설탕 · 밀가루 · 합성첨가물 · 정제설탕</td>
           </tr>
         </table>
@@ -416,7 +332,7 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
       <tr><td style="padding-bottom:0;">
         <table role="presentation" class="babinola-check-card" cellpadding="0" cellspacing="0" border="0" width="100%">
           <tr>
-            <td class="babinola-check-icon" width="40"><img src="https://www.connectsell.co.kr/email/images/icon-check-purple.png" alt="" width="28" height="28" style="display:block;width:28px;height:28px;border:0;"></td>
+            <td class="babinola-check-icon" width="40"><img src="https://www.connectsell.co.kr/email/images/icon-check-purple.png" alt="" width="28" height="28" style="display:block;border:0;"></td>
             <td class="babinola-check-text"><strong>HACCP</strong> 안전관리인증 기준 위생적인 제조</td>
           </tr>
         </table>
@@ -433,7 +349,7 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   </table>
   <div class="babinola-block-spacer-md"></div>
   <div style="width:100%;max-width:600px;margin:0 auto;">
-    <p style="margin:0;padding:0;text-align:center;"><img src="https://www.connectsell.co.kr/email/images/babinola-store-review.png" alt="바비놀라 상품리뷰 평점 4.75" width="560" style="width:100%;max-width:560px;height:auto;display:block;margin:0 auto;border:0;border-radius:8px;"></p>
+    <p style="margin:0;padding:0;text-align:center;"><img src="https://www.connectsell.co.kr/email/images/babinola-store-review.jpg" alt="바비놀라 상품리뷰 평점 4.75" width="560" style="width:100%;max-width:100%;height:auto;display:block;margin:0 auto;border:0;border-radius:8px;"></p>
   </div>
 
   <p class="babinola-body-text" style="margin-top:2rem;">체험 후 콘텐츠는 크리에이터님의 <strong>일상 속 식단 루틴</strong>에 맞춰 자연스럽게 녹여 소개해주셔도 좋습니다.</p>
@@ -449,12 +365,12 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   </table>
   <div class="babinola-block-spacer-md"></div>
   <div style="margin:0 auto;width:100%;max-width:600px;box-sizing:border-box;">
-    <img src="https://www.connectsell.co.kr/email/images/babinola-chapter4-reference.png" alt="바비놀라 그래놀라에 우유 붓기" width="600" style="width:100%;max-width:600px;height:auto;display:block;border-radius:8px;">
+    <img src="https://www.connectsell.co.kr/email/images/babinola-chapter4-reference.jpg" alt="바비놀라 콘텐츠 레퍼런스 이미지" width="560" style="width:100%;max-width:100%;height:auto;display:block;border-radius:8px;">
     <table role="presentation" class="babinola-ref-stack" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:1.25rem;">
       <tr><td style="padding-bottom:14px;">
         <table role="presentation" class="babinola-ref-card" cellpadding="0" cellspacing="0" border="0" width="100%">
           <tr>
-            <td class="babinola-ref-icon"><img src="https://www.connectsell.co.kr/email/images/icon-diamond-blue.png" alt="" width="18" height="18" style="display:block;width:18px;height:18px;border:0;"></td>
+            <td class="babinola-ref-icon"><img src="https://www.connectsell.co.kr/email/images/icon-diamond-blue.png" alt="" width="18" height="18" style="display:block;border:0;"></td>
             <td class="babinola-ref-text">아침 <strong>요거트볼</strong> 한 끼 루틴 콘텐츠</td>
           </tr>
         </table>
@@ -462,7 +378,7 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
       <tr><td style="padding-bottom:14px;">
         <table role="presentation" class="babinola-ref-card" cellpadding="0" cellspacing="0" border="0" width="100%">
           <tr>
-            <td class="babinola-ref-icon"><img src="https://www.connectsell.co.kr/email/images/icon-diamond-blue.png" alt="" width="18" height="18" style="display:block;width:18px;height:18px;border:0;"></td>
+            <td class="babinola-ref-icon"><img src="https://www.connectsell.co.kr/email/images/icon-diamond-blue.png" alt="" width="18" height="18" style="display:block;border:0;"></td>
             <td class="babinola-ref-text">간식 대체 · <strong>입터짐 방지</strong> 간식 콘텐츠</td>
           </tr>
         </table>
@@ -470,7 +386,7 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
       <tr><td style="padding-bottom:14px;">
         <table role="presentation" class="babinola-ref-card" cellpadding="0" cellspacing="0" border="0" width="100%">
           <tr>
-            <td class="babinola-ref-icon"><img src="https://www.connectsell.co.kr/email/images/icon-diamond-blue.png" alt="" width="18" height="18" style="display:block;width:18px;height:18px;border:0;"></td>
+            <td class="babinola-ref-icon"><img src="https://www.connectsell.co.kr/email/images/icon-diamond-blue.png" alt="" width="18" height="18" style="display:block;border:0;"></td>
             <td class="babinola-ref-text"><strong>식단 관리 브이로그</strong> (하루 식단 기록)</td>
           </tr>
         </table>
@@ -478,7 +394,7 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
       <tr><td style="padding-bottom:14px;">
         <table role="presentation" class="babinola-ref-card" cellpadding="0" cellspacing="0" border="0" width="100%">
           <tr>
-            <td class="babinola-ref-icon"><img src="https://www.connectsell.co.kr/email/images/icon-diamond-blue.png" alt="" width="18" height="18" style="display:block;width:18px;height:18px;border:0;"></td>
+            <td class="babinola-ref-icon"><img src="https://www.connectsell.co.kr/email/images/icon-diamond-blue.png" alt="" width="18" height="18" style="display:block;border:0;"></td>
             <td class="babinola-ref-text">다이어트 중 <strong>간편 루틴</strong></td>
           </tr>
         </table>
@@ -486,7 +402,7 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
       <tr><td style="padding-bottom:0;">
         <table role="presentation" class="babinola-ref-card" cellpadding="0" cellspacing="0" border="0" width="100%">
           <tr>
-            <td class="babinola-ref-icon"><img src="https://www.connectsell.co.kr/email/images/icon-diamond-blue.png" alt="" width="18" height="18" style="display:block;width:18px;height:18px;border:0;"></td>
+            <td class="babinola-ref-icon"><img src="https://www.connectsell.co.kr/email/images/icon-diamond-blue.png" alt="" width="18" height="18" style="display:block;border:0;"></td>
             <td class="babinola-ref-text">요거트·우유·과일 <strong>토핑 레시피</strong> 콘텐츠</td>
           </tr>
         </table>
@@ -495,7 +411,7 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   </div>
 
   <!-- Special Price -->
-  <table role="presentation" class="babinola-chapter-bar" cellpadding="0" cellspacing="0" border="0" width="100%">
+  <table role="presentation" class="babinola-chapter-bar babinola-special-bar" cellpadding="0" cellspacing="0" border="0" width="100%">
     <tr>
       <td style="width:26%;background:#ffffff;white-space:nowrap;"><span class="babinola-chapter-label">■ Special Price</span></td>
       <td align="center" style="width:74%;background:#e5ede6;"><span class="babinola-chapter-title">다이어트 특별기획 구성</span></td>
@@ -514,6 +430,7 @@ html { font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; 
   <p style="margin:0 0 2rem 0;font-size:0.8125rem;line-height:1.5;color:#3d4f42;text-align:center;">Created by ConnectSell</p>
 </td></tr>
 </table>
-</td></tr></table>
+</td></tr>
+</table>
 </body>
 </html>
