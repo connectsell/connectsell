@@ -35,15 +35,26 @@ jobs:
           mkdir -p _ftp_publish
           cp email/marocell/babinola.html _ftp_publish/babinola.html
 
-      - name: Upload babinola.html via FTP/FTPS
+      # CONNECTSELL_FTP_WEBROOT 는 SamKirkland 액션 요구사항대로 반드시 / 로 끝나야 함 (예: .../email/marocell/)
+      - name: Check remote path format
+        env:
+          WEBROOT: ${{ secrets.CONNECTSELL_FTP_WEBROOT }}
+        run: |
+          if [ -z "$WEBROOT" ]; then echo "::error::CONNECTSELL_FTP_WEBROOT secret is empty"; exit 1; fi
+          case "$WEBROOT" in
+            */) ;;
+            *) echo "::error::CONNECTSELL_FTP_WEBROOT must end with a slash (/). Current value length: ${#WEBROOT}"; exit 1 ;;
+          esac
+
+      # FTPS 가 실패하는 호스팅은 일반 FTP(암호화 없음)만 허용하는 경우가 많음 → protocol: ftp
+      - name: Upload babinola.html via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.CONNECTSELL_FTP_HOST }}
           username: ${{ secrets.CONNECTSELL_FTP_USER }}
           password: ${{ secrets.CONNECTSELL_FTP_PASSWORD }}
           port: 21
-          protocol: ftps
-          security: loose
+          protocol: ftp
           local-dir: ./_ftp_publish/
           server-dir: ${{ secrets.CONNECTSELL_FTP_WEBROOT }}
           dangerous-clean-slate: false
