@@ -1,16 +1,21 @@
-# connectsell.co.kr (가비아 등) 반영용 배포
+# connectsell.co.kr — 가비아 FTP 동기화 (선택)
 #
-# [이전 실패 원인] appleboy/scp-action 은 SSH(SCP) 전용입니다. 호스트·계정이 FTP(21)·FTPS인 경우
-# SSH 인증이 되지 않아 job 이 실패합니다 (authentication / connection refused / wrong protocol).
+# ■ 실제 공개 URL (https://www.connectsell.co.kr/...) 은 Vercel이 GitHub main 과 연동해 배포합니다.
+#   응답 헤더: Server: Vercel — HTML 반영은 main 푸시만으로도 됩니다.
 #
-# [필요한 GitHub Secrets — Repository → Settings → Secrets and variables → Actions]
-#   CONNECTSELL_FTP_HOST      FTP 서버 주소 (예: ftp.connectsell.co.kr 또는 가비아 안내 호스트)
+# ■ 이 워크플로는 "가비아 웹호스팅 FTP"에 babinola.html 을 한 번 더 올릴 때 사용합니다.
+#   이전 실패( run #10 ): appleboy/scp-action = SSH(SCP) 전용 → FTP(21) 계정으로는 인증 불가.
+#
+# ■ GitHub Secrets (Settings → Secrets → Actions)
+#   CONNECTSELL_FTP_HOST      FTP 호스트 (예: ftp.xxx.co.kr)
 #   CONNECTSELL_FTP_USER      FTP 아이디
 #   CONNECTSELL_FTP_PASSWORD  FTP 비밀번호
-#   CONNECTSELL_FTP_WEBROOT   원격에서 email/marocell/ 폴더까지의 절대 경로, 반드시 / 로 끝남
-#                             예: /home/아이디/public_html/email/marocell/
+#   CONNECTSELL_FTP_WEBROOT   FTP 로그인 후 babinola.html 이 올라갈 디렉터리 (끝에 / 필수)
+#                             예: public_html/email/marocell/  (가비아 홈 기준 상대경로)
+#                             또는 호스트가 절대경로를 요구하면 /home/.../public_html/email/marocell/
 #
-# [프로토콜] 기본은 ftps + security loose (가비아 FTPS). 일반 FTP만 허용하면 아래 step 의 protocol 을 ftp 로 바꾸세요.
+# ■ 로그 확인: Actions 탭 → 실패한 run → Upload 단계에서 curl 이 530(로그인 실패), 550(경로 오류),
+#   Connection refused 등을 출력합니다.
 
 name: Deploy babinola email to connectsell.co.kr
 
@@ -30,33 +35,39 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Stage babinola.html for FTP upload
+      - name: Stage babinola.html
         run: |
           mkdir -p _ftp_publish
           cp email/marocell/babinola.html _ftp_publish/babinola.html
 
-      # CONNECTSELL_FTP_WEBROOT 는 SamKirkland 액션 요구사항대로 반드시 / 로 끝나야 함 (예: .../email/marocell/)
-      - name: Check remote path format
+      - name: Validate secrets shape
         env:
           WEBROOT: ${{ secrets.CONNECTSELL_FTP_WEBROOT }}
         run: |
-          if [ -z "$WEBROOT" ]; then echo "::error::CONNECTSELL_FTP_WEBROOT secret is empty"; exit 1; fi
+          if [ -z "$WEBROOT" ]; then echo "::error::CONNECTSELL_FTP_WEBROOT is empty"; exit 1; fi
           case "$WEBROOT" in
             */) ;;
-            *) echo "::error::CONNECTSELL_FTP_WEBROOT must end with a slash (/). Current value length: ${#WEBROOT}"; exit 1 ;;
+            *) echo "::error::CONNECTSELL_FTP_WEBROOT must end with / (got length ${#WEBROOT})"; exit 1 ;;
           esac
 
-      # FTPS 가 실패하는 호스팅은 일반 FTP(암호화 없음)만 허용하는 경우가 많음 → protocol: ftp
-      - name: Upload babinola.html via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.CONNECTSELL_FTP_HOST }}
-          username: ${{ secrets.CONNECTSELL_FTP_USER }}
-          password: ${{ secrets.CONNECTSELL_FTP_PASSWORD }}
-          port: 21
-          protocol: ftp
-          local-dir: ./_ftp_publish/
-          server-dir: ${{ secrets.CONNECTSELL_FTP_WEBROOT }}
-          dangerous-clean-slate: false
-          log-level: verbose
-          timeout: 120000
+      # curl: FTP 업로드 + -v 로 실제 서버 응답(530/550 등)이 로그에 남음. 비밀번호는 GitHub 가 마스킹.
+      - name: Upload babinola.html via FTP (curl verbose)
+        env:
+          FTP_USER: ${{ secrets.CONNECTSELL_FTP_USER }}
+          FTP_PASS: ${{ secrets.CONNECTSELL_FTP_PASSWORD }}
+          FTP_HOST: ${{ secrets.CONNECTSELL_FTP_HOST }}
+          FTP_DIR: ${{ secrets.CONNECTSELL_FTP_WEBROOT }}
+        run: |
+          set -euxo pipefail
+          REMOTE_URL="ftp://${FTP_HOST}${FTP_DIR}babinola.html"
+          echo "Upload target: ${FTP_DIR}babinola.html on ${FTP_HOST}"
+          # 1) 일반 FTP  2) 실패 시 FTPS(명시적 TLS) — 가비아 설정에 맞는 쪽이 성공
+          curl --fail --verbose \
+            -T _ftp_publish/babinola.html \
+            --user "${FTP_USER}:${FTP_PASS}" \
+            "${REMOTE_URL}" \
+          || curl --fail --verbose \
+            --ftp-ssl --ssl-reqd \
+            -T _ftp_publish/babinola.html \
+            --user "${FTP_USER}:${FTP_PASS}" \
+            "${REMOTE_URL}"
