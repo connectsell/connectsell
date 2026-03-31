@@ -44,7 +44,13 @@ jobs:
       - name: Validate secrets shape
         env:
           WEBROOT: ${{ secrets.CONNECTSELL_FTP_WEBROOT }}
+          H: ${{ secrets.CONNECTSELL_FTP_HOST }}
+          U: ${{ secrets.CONNECTSELL_FTP_USER }}
+          P: ${{ secrets.CONNECTSELL_FTP_PASSWORD }}
         run: |
+          if [ -z "$H" ]; then echo "::error::CONNECTSELL_FTP_HOST is empty"; exit 1; fi
+          if [ -z "$U" ]; then echo "::error::CONNECTSELL_FTP_USER is empty"; exit 1; fi
+          if [ -z "$P" ]; then echo "::error::CONNECTSELL_FTP_PASSWORD is empty"; exit 1; fi
           if [ -z "$WEBROOT" ]; then echo "::error::CONNECTSELL_FTP_WEBROOT is empty"; exit 1; fi
           case "$WEBROOT" in
             */) ;;
@@ -89,8 +95,10 @@ jobs:
             "${REMOTE_URL}" \
           || python3 << 'PY'
           import os, sys
-          from ftplib import FTP, FTP_TLS
+          from ftplib import FTP
 
+          # stdlib FTP_TLS 는 암시적 TLS(연결부터 SSL)에 가깝고, 포트 21 AUTH TLS 서버와 맞지 않는 경우가 많음.
+          # 명시적 TLS는 위 curl --ftp-ssl 단계에 맡김.
           host = os.environ["FTP_HOST"]
           user = os.environ["FTP_USER"]
           password = os.environ["FTP_PASS"]
@@ -106,26 +114,16 @@ jobs:
               for part in [p for p in path.split("/") if p]:
                   ftp.cwd(part)
 
-          last_err = None
-          for use_tls, label in ((False, "FTP"), (True, "FTP_TLS")):
-              try:
-                  if use_tls:
-                      ftp = FTP_TLS()
-                      ftp.connect(host, port, timeout=60)
-                      ftp.login(user, password)
-                      ftp.prot_p()
-                  else:
-                      ftp = FTP()
-                      ftp.connect(host, port, timeout=60)
-                      ftp.login(user, password)
-                  cwd_path(ftp, webroot)
-                  with open("_ftp_publish/babinola.html", "rb") as f:
-                      ftp.storbinary("STOR babinola.html", f)
-                  ftp.quit()
-                  print(f"OK ({label})")
-                  sys.exit(0)
-              except Exception as e:
-                  last_err = e
-                  print(f"{label} failed: {e!r}", flush=True)
-          raise SystemExit(last_err)
+          try:
+              ftp = FTP()
+              ftp.connect(host, port, timeout=60)
+              ftp.login(user, password)
+              cwd_path(ftp, webroot)
+              with open("_ftp_publish/babinola.html", "rb") as f:
+                  ftp.storbinary("STOR babinola.html", f)
+              ftp.quit()
+              print("OK (ftplib FTP)")
+          except Exception as e:
+              print(f"ftplib failed: {e!r}", flush=True)
+              raise SystemExit(1) from e
           PY
