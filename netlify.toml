@@ -93,3 +93,13 @@
   for = "/email/kakkukishake.html"
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/email/marocell/babinola.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/email/kakkukishake-skin-probiotics.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
