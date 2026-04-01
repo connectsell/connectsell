@@ -41,19 +41,62 @@
   table.email-shell .section { max-width: 100% !important; width: 100% !important; box-sizing: border-box; }
   body.email-body .hero-intro,
   table.email-shell .hero-intro { padding: 24px 20px !important; }
-  body.email-body .section-title-inner,
-  table.email-shell .section-title-inner { padding: 0 8px !important; }
+  /* stack-header 내부 타이틀: PC의 96px 좌우 패딩 제거·모바일에서 대칭 */
+  body.email-body table.stack-header .section-title-inner,
+  table.email-shell table.stack-header .section-title-inner {
+    padding: 10px 12px !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+  /* Brand·Hot Word·Chapter·Special Price 헤더 래퍼: 600px 고정 해제 */
+  body.email-body table.stack-header-outer,
+  table.email-shell table.stack-header-outer {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  body.email-body td.stack-header-gutter,
+  table.email-shell td.stack-header-gutter {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+  body.email-body table.stack-header,
+  table.email-shell table.stack-header {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
   body.email-body .ch2-pad,
   table.email-shell .ch2-pad { padding: 20px 16px !important; }
   body.email-body .ch4-pad,
   table.email-shell .ch4-pad { padding: 16px 16px 24px 16px !important; }
   body.email-body .sell-card-dash td,
   table.email-shell .sell-card-dash td { font-size: 13px !important; }
-  /* 섹션 헤더 2열: 직계 tr>td만 스택(내부 중첩 td는 제외) */
+  /* 섹션 헤더 2열: 직계 tr>td만 스택(내부 중첩 td는 제외) — 본문 28px과 맞춤 좌우 16px */
   body.email-body table.stack-header > tbody > tr > td,
-  table.email-shell table.stack-header > tbody > tr > td { display: block !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; }
+  table.email-shell table.stack-header > tbody > tr > td {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
   body.email-body table.stack-header > tbody > tr > td:first-child,
-  table.email-shell table.stack-header > tbody > tr > td:first-child { border-bottom: 1px solid #d0d9d2; }
+  table.email-shell table.stack-header > tbody > tr > td:first-child {
+    border-bottom: 1px solid #d0d9d2;
+    text-align: center !important;
+  }
+  body.email-body table.stack-header > tbody > tr > td:nth-child(2),
+  table.email-shell table.stack-header > tbody > tr > td:nth-child(2) {
+    text-align: center !important;
+  }
   body.email-body a.cta-link,
   table.email-shell a.cta-link { display: inline-block !important; padding: 16px 28px !important; min-height: 44px; line-height: 1.4 !important; box-sizing: border-box; text-align: center !important; }
 }
@@ -89,8 +132,8 @@
 
 </table>
 <!-- Brand 헤더: 600px 안으로 초록 영역 잘림(overflow:hidden) -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
-<tr><td width="600" style="width:600px;min-width:600px;overflow:hidden;">
+<table role="presentation" class="stack-header-outer" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
+<tr><td class="stack-header-gutter" width="600" style="width:600px;min-width:600px;overflow:hidden;">
 <table role="presentation" class="stack-header" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;border-collapse:collapse;border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;">
 <tr>
 <td width="80" bgcolor="#ffffff" style="width:80px;max-width:80px;padding:14px 16px;vertical-align:middle;background-color:#ffffff;font-size:14px;font-weight:700;color:#1a1a1a;white-space:nowrap;">■ Brand</td>
@@ -106,8 +149,8 @@
 </td></tr></table>
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td style="width:600px;min-width:600px;padding:24px 0 0 0;font-size:0;line-height:0;">&#160;</td></tr></table>
 <!-- Hot Word: 600px 안으로 초록 영역 잘림 -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
-<tr><td width="600" style="width:600px;min-width:600px;overflow:hidden;">
+<table role="presentation" class="stack-header-outer" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
+<tr><td class="stack-header-gutter" width="600" style="width:600px;min-width:600px;overflow:hidden;">
 <table role="presentation" class="stack-header" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;border-collapse:collapse;border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;">
 <tr>
 <td width="80" bgcolor="#ffffff" style="width:80px;max-width:80px;padding:14px 16px;vertical-align:middle;background-color:#ffffff;font-size:14px;font-weight:700;color:#1a1a1a;white-space:nowrap;">■ Hot Word</td>
@@ -129,8 +172,8 @@
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;"><tr><td width="600" style="width:600px;min-width:600px;padding:14px 28px 0 28px;font-size:15px;line-height:1.7;color:#3d4f42;box-sizing:border-box;-webkit-box-sizing:border-box;">피부뿐 아니라 장 컨디션까지 같이 느껴지는 제품이다 보니,<br>한 번 드셔보신 분들이 자연스럽게 <span style="background-color:#dbeee3;font-weight:700;">재구매</span>로 이어지는 경우가 많은 제품입니다.</td></tr></table>
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td style="padding:32px 0 0 0;font-size:1px;line-height:1px;">&nbsp;</td></tr></table>
 <!-- Chapter 1 header: Brand와 동일 비율 80+520 -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
-<tr><td width="600" style="width:600px;min-width:600px;overflow:hidden;">
+<table role="presentation" class="stack-header-outer" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
+<tr><td class="stack-header-gutter" width="600" style="width:600px;min-width:600px;overflow:hidden;">
 <table role="presentation" class="stack-header" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;border-collapse:collapse;border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;">
 <tr>
 <td width="80" bgcolor="#ffffff" style="width:80px;max-width:80px;padding:14px 16px;vertical-align:middle;background-color:#ffffff;font-size:14px;font-weight:700;color:#1a1a1a;white-space:nowrap;">■ Chapter 1</td>
@@ -181,8 +224,8 @@
 </table>
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td style="padding:48px 0 0 0;font-size:1px;line-height:1px;">&nbsp;</td></tr></table>
 <!-- Chapter 2 header: Brand와 동일 비율 80+520 -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
-<tr><td width="600" style="width:600px;min-width:600px;overflow:hidden;">
+<table role="presentation" class="stack-header-outer" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
+<tr><td class="stack-header-gutter" width="600" style="width:600px;min-width:600px;overflow:hidden;">
 <table role="presentation" class="stack-header" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;border-collapse:collapse;border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;">
 <tr>
 <td width="80" bgcolor="#ffffff" style="width:80px;max-width:80px;padding:14px 16px;vertical-align:middle;background-color:#ffffff;font-size:14px;font-weight:700;color:#1a1a1a;white-space:nowrap;">■ Chapter 2</td>
@@ -372,8 +415,8 @@
 </table>
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td style="padding:24px 0 0 0;font-size:1px;line-height:1px;">&nbsp;</td></tr></table>
 <!-- Chapter 3 header: Brand와 동일 비율 80+520 -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
-<tr><td width="600" style="width:600px;min-width:600px;overflow:hidden;">
+<table role="presentation" class="stack-header-outer" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
+<tr><td class="stack-header-gutter" width="600" style="width:600px;min-width:600px;overflow:hidden;">
 <table role="presentation" class="stack-header" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;border-collapse:collapse;border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;">
 <tr>
 <td width="80" bgcolor="#ffffff" style="width:80px;max-width:80px;padding:14px 16px;vertical-align:middle;background-color:#ffffff;font-size:14px;font-weight:700;color:#1a1a1a;white-space:nowrap;">■ Chapter 3</td>
@@ -495,8 +538,8 @@
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td style="padding:20px 28px 0 28px;font-size:15px;line-height:1.7;color:#3d4f42;background-color:#ffffff;">실제 후기 기반으로 단순 체험이 아닌 <span style="background-color:#b8dcc5;font-weight:800;color:#142a22;">‘변화 중심 콘텐츠’</span>로 확장 가능한 구조입니다.</td></tr></table>
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td style="padding:28px 0 0 0;font-size:0;line-height:0;">&#160;</td></tr></table>
 <!-- Chapter 4 header: Brand와 동일 비율 80+520 -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
-<tr><td width="600" style="width:600px;min-width:600px;overflow:hidden;">
+<table role="presentation" class="stack-header-outer" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
+<tr><td class="stack-header-gutter" width="600" style="width:600px;min-width:600px;overflow:hidden;">
 <table role="presentation" class="stack-header" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;border-collapse:collapse;border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;">
 <tr>
 <td width="80" bgcolor="#ffffff" style="width:80px;max-width:80px;padding:14px 16px;vertical-align:middle;background-color:#ffffff;font-size:14px;font-weight:700;color:#1a1a1a;white-space:nowrap;">■ Chapter 4</td>
@@ -524,8 +567,8 @@
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td style="padding:24px 28px 0 28px;font-size:16px;line-height:1.8;color:#3d4f42;">체험 후 콘텐츠는 크리에이터님의 일상 속 루틴에 자연스럽게 녹여 소개해주셔도 좋습니다. 필요 시 협업 가이드는 별도 전달드립니다.</td></tr></table>
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td style="padding:40px 0 0 0;font-size:1px;line-height:1px;">&nbsp;</td></tr></table>
 <!-- Special Price header: 왼쪽 열 넓혀 텍스트가 흰 영역 안에 들어가도록 -->
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
-<tr><td width="600" style="width:600px;min-width:600px;overflow:hidden;">
+<table role="presentation" class="stack-header-outer" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
+<tr><td class="stack-header-gutter" width="600" style="width:600px;min-width:600px;overflow:hidden;">
 <table role="presentation" class="stack-header" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;border-collapse:collapse;border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;">
 <tr>
 <td width="100" bgcolor="#ffffff" style="width:100px;max-width:100px;padding:14px 12px 14px 16px;vertical-align:middle;background-color:#ffffff;font-size:14px;font-weight:700;color:#1a1a1a;white-space:nowrap;">■ Special Price</td>
