@@ -42,12 +42,15 @@
   table.email-shell .section { max-width: 100% !important; width: 100% !important; box-sizing: border-box; }
   body.email-body .hero-intro,
   table.email-shell .hero-intro { padding: 24px 20px !important; }
-  /* stack-header 내부 타이틀: PC의 96px 좌우 패딩 제거·모바일에서 대칭 */
+  /* stack-header 내부 타이틀: PC의 96px 좌우 패딩 제거·모바일에서 대칭 · 글자는 히어로 부제와 동일 크기 */
   body.email-body table.stack-header .section-title-inner,
   table.email-shell table.stack-header .section-title-inner {
     padding: 10px 12px !important;
     text-align: center !important;
     box-sizing: border-box !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
   }
   /* Brand·Hot Word·Chapter·Special Price 헤더 래퍼: 600px 고정 해제 */
   body.email-body table.stack-header-outer,
@@ -88,6 +91,9 @@
     box-sizing: border-box !important;
     padding-left: 16px !important;
     padding-right: 16px !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
   }
   body.email-body table.stack-header > tbody > tr > td:first-child,
   table.email-shell table.stack-header > tbody > tr > td:first-child {
