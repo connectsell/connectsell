@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<!-- Orara · Hyal · Vtea — Dark Crunch 다이어트 유산균(영문) 템플릿 복사본. 경로: email/orara/hyal/vtea. 이미지는 ./images/ 상대경로. 문구·폼·메타는 확정 시 수정 후 배포. -->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>[오라라] 히알브이티</title>
+<meta name="description" content="오라라 히알브이티 공동구매 제안 · ConnectSell">
+<!-- 링크 미리보기: 카카오 등은 og:image 절대 URL 권장 -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ConnectSell">
+<meta property="og:url" content="https://www.connectsell.co.kr/email/orara/hyal/vtea/index.html">
+<meta property="og:title" content="[오라라] 히알브이티">
+<meta property="og:description" content="오라라 히알브이티 공동구매 제안 · ConnectSell">
+<meta property="og:image" content="https://www.connectsell.co.kr/email/orara/hyal/vtea/images/orara-hot-keyword.png">
+<meta property="og:image:secure_url" content="https://www.connectsell.co.kr/email/orara/hyal/vtea/images/orara-hot-keyword.png">
+<meta property="og:image:alt" content="오라라 히알브이티 · Hot Keyword">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="[오라라] 히알브이티">
+<meta name="twitter:description" content="오라라 히알브이티 공동구매 제안 · ConnectSell">
+<meta name="twitter:image" content="https://www.connectsell.co.kr/email/orara/hyal/vtea/images/orara-hot-keyword.png">
+<style type="text/css">
+/* 레이아웃: 패딩이 가로폭에 더해져 깨지는 것 방지. stack-header td는 아래에서 content-box 유지 */
+*, *::before, *::after { box-sizing: border-box; }
+body.email-body { overflow-x: hidden; -webkit-text-size-adjust: 100%; }
+table.email-shell { box-sizing: border-box; max-width: 100%; }
+/* 상단 히어로: 600px 컨테이너 안에 정확히 맞춤(패딩은 폭에 포함). 인라인 min-width:600px 제거와 함께 사용 */
+table.hero-block { width: 100% !important; max-width: 600px !important; min-width: 0 !important; margin: 0 auto; border-collapse: collapse !important; table-layout: fixed !important; }
+td.hero-bar,
+td.hero-intro { width: 100% !important; max-width: 600px !important; min-width: 0 !important; box-sizing: border-box !important; }
+table.stack-header td,
+table.stack-header-outer > tbody > tr > td { box-sizing: content-box !important; }
+/* Hot Keyword만(PC): 118+482 열 — 모바일에서 482px 고정 시 제목 줄바꿈·폭 깨짐 */
+@media only screen and (min-width: 601px) {
+  table.stack-header-outer.stack-header-hotkeyword table.stack-header { width: 600px !important; max-width: 600px !important; }
+  table.stack-header-outer.stack-header-hotkeyword table.stack-header td:first-child { width: 118px !important; max-width: 118px !important; }
+  table.stack-header-outer.stack-header-hotkeyword table.stack-header td:nth-child(2) { width: 482px !important; max-width: 482px !important; }
+}
+.hot-keyword .section-title-inner,
+.hot-keyword .section-title-inner * {
+  white-space: normal !important;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+/* 레이아웃·섹션 폭은 인라인 유지. 전역 img { } 규칙 없음. */
+/* 정보형(Brand·Hot Word·Ch1·Ch2 인포 등): .section 내부 .info-img — height:auto, max-width 560px */
+.section { width:100%; max-width:560px; margin:0 auto; background-color:#ffffff; }
+/* Brand 카드: 부모 td에 흰 배경 — 내부 .section은 투명(Hot Word 카드와 동일 시각) */
+.section.section-card-inner { background-color: transparent !important; }
+.section .info-img { display:block; width:100%; max-width:100%; height:auto; border:0; }
+/* Chapter 2 공동구매 셀링 포인트: 카드 + 점선 서브박스(이메일 호환 인라인과 병행) */
+.sell-card-outer { border-collapse: separate !important; border-radius: 12px; background-color: #e8e8e8; border: 1px solid #dcdcdc; }
+.sell-card-dash { border-collapse: separate !important; border-radius: 8px; border: 1px dashed #b0b0b0 !important; background-color: #f4f4f4 !important; }
+/* 한글 본문: keep-all 우선, 칸을 넘길 때만 break-word로 줄바꿈(상위 overflow:hidden과 함께 쓰면 글자 잘림 발생) */
+.copy-ko { word-break: keep-all; overflow-wrap: break-word; }
+/* 협업(Special Price) 본문: 수동 줄바꿈 없이 한 줄이 컨테이너 폭까지 쓰이도록 */
+.copy-ko.copy-ko-collab { word-break: normal; overflow-wrap: break-word; }
+/* 모바일(뷰포트 ≤600px): min-width:600px 해제·이미지 축소·섹션 헤더 세로 스택. 데스크톱은 미적용. */
+@media only screen and (max-width: 600px) {
+  body.email-body { -webkit-text-size-adjust: 100%; word-wrap: break-word; overflow-wrap: break-word; }
+  /* 최상위 래퍼: 내부 600px 고정 폭이 뷰포트보다 넓어지며 scrollWidth>clientWidth 되는 것 방지 */
+  html {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  body.email-body > table:first-of-type {
+    width: 100% !important;
+    max-width: 100vw !important;
+    min-width: 0 !important;
+    table-layout: fixed !important;
+    box-sizing: border-box !important;
+  }
+  body.email-body > table:first-of-type > tbody > tr > td {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  body.email-body table,
+  table.email-shell,
+  table.email-shell table { width: 100% !important; min-width: 0 !important; max-width: 100% !important; }
+  body.email-body td,
+  table.email-shell td { min-width: 0 !important; }
+  body.email-body img,
+  body.email-body .info-img,
+  table.email-shell img { max-width: 100% !important; height: auto !important; }
+  body.email-body .section,
+  table.email-shell .section { max-width: 100% !important; width: 100% !important; box-sizing: border-box; }
+  body.email-body .hero-intro,
+  table.email-shell .hero-intro { padding: 24px 20px !important; }
+  /* 상단 히어로: 셸 폭 안에서만 표시(인라인 min-width:600px 무력화와 동일 효과) */
+  body.email-body table.hero-block,
+  table.email-shell table.hero-block {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  body.email-body td.hero-bar,
+  body.email-body td.hero-intro,
+  table.email-shell td.hero-bar,
+  table.email-shell td.hero-intro {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  /* stack-header 내부 타이틀: PC의 96px 좌우 패딩 제거·모바일에서 대칭 · 글자는 히어로 부제와 동일 크기 */
+  body.email-body table.stack-header .section-title-inner,
+  table.email-shell table.stack-header .section-title-inner {
+    padding: 10px 12px !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+  }
+  /* Hot Keyword만: 제목 열 폭·줄바꿈(다른 섹션과 동일 스택에서도 안전) */
+  body.email-body table.hot-keyword.stack-header-outer table.stack-header td:nth-child(2),
+  table.email-shell table.hot-keyword.stack-header-outer table.stack-header td:nth-child(2) {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  body.email-body table.hot-keyword .section-title-inner,
+  table.email-shell table.hot-keyword .section-title-inner,
+  body.email-body table.hot-keyword .section-title-inner *,
+  table.email-shell table.hot-keyword .section-title-inner * {
+    white-space: normal !important;
+    word-break: keep-all !important;
+    overflow-wrap: break-word !important;
+    max-width: 100% !important;
+  }
+  /* Brand·Hot Word·Chapter·Special Price 헤더 래퍼: 600px 고정 해제 */
+  body.email-body table.stack-header-outer,
+  table.email-shell table.stack-header-outer {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  body.email-body td.stack-header-gutter,
+  table.email-shell td.stack-header-gutter {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+  body.email-body table.stack-header,
+  table.email-shell table.stack-header {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  body.email-body .ch2-pad,
+  table.email-shell .ch2-pad { padding: 20px 16px !important; }
+  body.email-body .ch4-pad,
+  table.email-shell .ch4-pad { padding: 16px 16px 24px 16px !important; }
+  body.email-body .sell-card-dash td,
+  table.email-shell .sell-card-dash td { font-size: 13px !important; }
+  /* 섹션 헤더 2열: 직계 tr>td만 스택(내부 중첩 td는 제외) — 본문 28px과 맞춤 좌우 16px */
+  body.email-body table.stack-header > tbody > tr > td,
+  table.email-shell table.stack-header > tbody > tr > td {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+  }
+  body.email-body table.stack-header > tbody > tr > td:first-child,
+  table.email-shell table.stack-header > tbody > tr > td:first-child {
+    border-bottom: 1px solid #d0d9d2;
+    text-align: center !important;
+  }
+  body.email-body table.stack-header > tbody > tr > td:nth-child(2),
+  table.email-shell table.stack-header > tbody > tr > td:nth-child(2) {
+    text-align: center !important;
+  }
+  body.email-body a.cta-link,
+  table.email-shell a.cta-link { display: inline-block !important; padding: 16px 28px !important; min-height: 44px; line-height: 1.4 !important; box-sizing: border-box; text-align: center !important; }
+  body.email-body td.copy-ko,
+  table.email-shell td.copy-ko,
+  body.email-body .section.copy-ko,
+  table.email-shell .section.copy-ko {
+    word-break: keep-all !important;
+    overflow-wrap: break-word !important;
+  }
+  body.email-body td.copy-ko-collab,
+  table.email-shell td.copy-ko-collab {
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+  body.email-body .section.section-card-inner,
+  table.email-shell .section.section-card-inner {
+    background-color: transparent !important;
+  }
+  /* 인트로 본문: 좌우 28px → 16px (첫 행 상단 여백 전용 셀은 제외) */
+  body.email-body table.intro-block > tbody > tr:not(:first-child) > td,
+  table.email-shell table.intro-block > tbody > tr:not(:first-child) > td {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  /* Chapter 1 제품 정보 2열 표 → 모바일 1열 스택 */
+  body.email-body table.product-spec-table,
+  table.email-shell table.product-spec-table {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  body.email-body table.product-spec-table tr,
+  table.email-shell table.product-spec-table tr {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  body.email-body table.product-spec-table td,
+  table.email-shell table.product-spec-table td {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  body.email-body table.product-spec-table td[width="120"],
+  table.email-shell table.product-spec-table td[width="120"] {
+    border-bottom: none !important;
+    padding-bottom: 4px !important;
+  }
+  body.email-body table.product-spec-table tr td + td,
+  table.email-shell table.product-spec-table tr td + td {
+    border-top: none !important;
+    padding-top: 0 !important;
+    padding-bottom: 12px !important;
+  }
+  body.email-body td.ch1-spec-wrap,
+  table.email-shell td.ch1-spec-wrap {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  /* Chapter 4 하단 안내 문단 좌우 여백 */
+  body.email-body td.copy-ko.mobile-tight-x,
+  table.email-shell td.copy-ko.mobile-tight-x {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  /* 협업 본문: 좌우 28px → 16px, nowrap 구간은 줄바꿈 허용(가로 이탈 방지) */
+  body.email-body td.copy-ko-collab,
+  table.email-shell td.copy-ko-collab {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  body.email-body td.copy-ko-collab span[style*="nowrap"],
+  table.email-shell td.copy-ko-collab span[style*="nowrap"] {
+    white-space: normal !important;
+  }
+  /* 셀링 포인트 카드: 긴 제목 줄바꿈 */
+  body.email-body .sell-card-outer strong,
+  table.email-shell .sell-card-outer strong {
+    word-break: keep-all !important;
+    overflow-wrap: break-word !important;
+  }
+}
+</style>
+</head>
+<body class="email-body" style="margin:0;padding:0;font-family:'Malgun Gothic',Arial,sans-serif;background-color:#f8f6f3;color:#3d4f42;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;max-width:100%;">
+<tr><td align="center" style="width:100%;max-width:100%;padding:0;margin:0;">
+<table role="presentation" class="email-shell" cellpadding="0" cellspacing="0" border="0" width="600" align="center" style="width:600px;min-width:600px;max-width:100%;background-color:#f8f6f3;">
+<tr><td width="600" style="width:600px;min-width:600px;padding:0;background-color:#f8f6f3;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
+<tr><td width="600" style="width:600px;min-width:600px;padding:0;">
+<!-- 히어로: hero-block — 폭 100%/max 600px, 패딩은 border-box로 컨테이너 밖으로 나가지 않음 -->
+<table role="presentation" class="hero-block" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;max-width:600px;min-width:0;table-layout:fixed;border-collapse:collapse;overflow:hidden;">
+<tr><td align="center" class="hero-bar" style="width:100%;max-width:600px;min-width:0;padding:14px 24px;background-color:#2d3e50;font-size:17px;font-weight:700;letter-spacing:0.05em;color:#ffffff;text-align:center;">Wellness Creator Commerce</td></tr>
+<tr><td align="center" class="hero-intro" style="width:100%;max-width:600px;min-width:0;overflow:hidden;padding:28px 24px;background-color:#e5ede6;text-align:center;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" align="center" style="width:100%;max-width:100%;table-layout:fixed;margin:0 auto;">
+<tr><td align="center" style="padding:0 0 16px 0;font-size:13px;font-weight:500;color:#9e9e9e;letter-spacing:0.12em;text-align:center;">by ConnectSell</td></tr>
+<tr><td align="center" style="padding:0;font-size:20px;font-weight:700;color:#2d3e50;letter-spacing:-0.02em;text-align:center;">ConnectSell이 제안하는 협업</td></tr>
+</table>
+</td></tr>
+</table>
+<!-- 본문 인트로: 600px, 흰색 배경이 연락드렸습니다. 까지 연속 -->
+<table role="presentation" class="intro-block" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
+<tr><td width="600" style="width:600px;min-width:600px;padding:20px 0 40px 0;background-color:#ffffff;"></td></tr>
+<tr><td width="600" style="width:600px;min-width:600px;padding:0 28px 20px 28px;font-size:15px;line-height:1.7;color:#3d4f42;background-color:#ffffff;"><strong>안녕하세요,<br>ConnectSell 크리에이터 매칭팀입니다.</strong></td></tr>
+<tr><td width="600" class="copy-ko" style="width:600px;min-width:600px;padding:0 28px 20px 28px;font-size:15px;line-height:1.7;color:#3d4f42;background-color:#ffffff;">대표님께서 인스타그램 공동구매를 운영하시다 보면</td></tr>
+<tr><td width="600" style="width:600px;min-width:600px;padding:0 28px 20px 28px;background-color:#ffffff;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:separate;border-radius:10px;background-color:#f1f8f5;mso-padding-alt:20px 18px;">
+<tr><td style="padding:20px 18px;font-size:15px;line-height:1.65;color:#3d4f42;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
+<tr><td width="22" valign="top" style="width:22px;padding:0 10px 0 0;vertical-align:top;font-size:15px;line-height:1.65;color:#2d5c45;font-weight:700;">√</td><td valign="top" style="padding:0 0 10px 0;vertical-align:top;font-size:15px;line-height:1.65;color:#2d3e50;font-weight:600;">단발성으로 끝나는 제품이 많고</td></tr>
+<tr><td width="22" valign="top" style="width:22px;padding:0 10px 0 0;vertical-align:top;font-size:15px;line-height:1.65;color:#2d5c45;font-weight:700;">√</td><td valign="top" style="padding:0;vertical-align:top;font-size:15px;line-height:1.65;color:#2d3e50;font-weight:600;">재진행까지 이어지는 제품은 생각보다 많지 않다는 걸 이미 경험하고 계실 것 같습니다.</td></tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td width="600" class="copy-ko" style="width:600px;min-width:600px;padding:0 28px 20px 28px;font-size:15px;line-height:1.7;color:#3d4f42;background-color:#ffffff;">그래서 새로운 제품을 보실 때도 단순히 한 번의 판매보다는 재진행까지 이어질 수 있는지를 기준으로 보시게 되는 경우가 많으실 것 같아 해당 기준에 맞는 제품으로 제안드리고자 합니다.</td></tr>
+<tr><td width="600" class="copy-ko" style="width:600px;min-width:600px;padding:0 28px 20px 28px;font-size:15px;line-height:1.7;color:#3d4f42;background-color:#ffffff;">ConnectSell에서 제안드리는 <span style="background-color:#b8dcc5;font-weight:800;color:#142a22;">오라라 히알브이티</span>는 국내/해외 인플루언서를 통해 인스타그램 공동구매 채널 중심으로만 운영되며, 재진행율 82%로 시즌에 구매 없이 <span style="background-color:#b8dcc5;font-weight:800;color:#142a22;">연 3~4회 분기별 재진행</span>이 이어지는 제품입니다.</td></tr>
+<tr><td width="600" class="copy-ko" style="width:600px;min-width:600px;padding:0 28px 20px 28px;font-size:15px;line-height:1.7;color:#3d4f42;background-color:#ffffff;">진행 셀러를 제한하여 운영하고 있기 때문에 모든 셀러가 자유롭게 진행하는 방식이 아니라 각 채널에 맞는 상품으로 <span style="background-color:#b8dcc5;font-weight:800;color:#142a22;">팔로워분들께 차별화된 구성을 제안</span>하고 싶은 셀러분들께 적합한 품목입니다.</td></tr>
+
+</table>
+<!-- Brand 헤더: 600px 안으로 초록 영역 잘림(overflow:hidden) -->
+<table role="presentation" class="stack-header-outer" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
+<tr><td class="stack-header-gutter" width="600" style="width:600px;min-width:600px;overflow:hidden;">
+<table role="presentation" class="stack-header" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;border-collapse:collapse;border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;">
+<tr>
+<td width="80" bgcolor="#ffffff" style="width:80px;max-width:80px;padding:14px 16px;vertical-align:middle;background-color:#ffffff;font-size:14px;font-weight:700;color:#1a1a1a;white-space:nowrap;">■ Brand</td>
+<td width="520" bgcolor="#e5ede6" align="center" style="width:520px;max-width:520px;padding:14px 28px;vertical-align:middle;background-color:#e5ede6;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td align="center" class="section-title-inner" style="font-size:14px;font-weight:700;color:#2d3e50;line-height:1.5;text-align:center;padding:0 96px 0 6px;">뷰티&amp;이너뷰티 솔루션 ORARA</td></tr></table></td>
+</tr>
+</table>
+</td></tr>
+</table>
+<!-- Brand 본문: Hot Word와 동일(8px 흰 띠 + 단일 td 카드에 이미지·텍스트 통합) -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td style="width:600px;min-width:600px;padding:8px 0 0 0;font-size:0;line-height:0;background-color:#ffffff;">&#160;</td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
+<tr><td width="600" style="width:600px;min-width:600px;padding:8px 0 16px 0;background-color:#ffffff;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;"><tr><td align="center" style="padding:0;text-align:center;">
+<div class="section section-card-inner"><img src="./images/orara-brand.png" alt="ORARA 브랜드" width="560" class="info-img"></div>
+</td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;"><tr><td align="center" style="padding:20px 0 0 0;">
+<div class="section copy-ko section-card-inner" style="text-align:left;font-size:15px;line-height:1.75;color:#3d4f42;word-break:keep-all;overflow-wrap:break-word;">제품을 소싱하며 브랜드사와 미팅을 진행했을 때 인상 깊었던 부분이 있습니다.<br><br><table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:separate;border-radius:10px;background-color:#f1f8f5;mso-padding-alt:20px 18px;margin:0;border-spacing:0;"><tr><td style="padding:20px 18px;font-size:15px;line-height:1.65;color:#3d4f42;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;"><tr><td width="22" valign="top" style="width:22px;padding:0 10px 0 0;vertical-align:top;font-size:15px;line-height:1.65;color:#2d5c45;font-weight:700;">√</td><td valign="top" style="padding:0 0 10px 0;vertical-align:top;font-size:15px;line-height:1.65;color:#2d3e50;font-weight:600;">“저희는 먼저 셀러에게 제안을 드린 적이 없습니다.”</td></tr><tr><td width="22" valign="top" style="width:22px;padding:0 10px 0 0;vertical-align:top;font-size:15px;line-height:1.65;color:#2d5c45;font-weight:700;">√</td><td valign="top" style="padding:0;vertical-align:top;font-size:15px;line-height:1.65;color:#2d3e50;font-weight:600;">“별도의 마케팅 비용 없이 판매가 이루어지고 있습니다.”</td></tr></table></td></tr></table><br>오라라를 만든 브랜드사는 공동구매 초기 시장부터 다양한 제품을 다뤄온 경험을 바탕으로 셀러 채널에서 실제로 반응하는 포인트를 기준으로 제품을 기획해 온 기업입니다. 실제로 브랜드에서 먼저 제안을 하기보다 셀러 측에서 먼저 진행을 요청하며 이어져 온 경우가 많고 한 번 진행 이후에도 재진행으로 이어지는 흐름을 보이고 있습니다.<br><br>공동구매 시장 안에서 20~40대 여성타겟이 어떤 상품에 반응하는지, 그리고 어떤 포인트를 중심으로 소구해야 하는지를 이해한 브랜드사에서 기획한 제품입니다.</div>
+</td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td style="padding:32px 0 0 0;font-size:1px;line-height:1px;">&nbsp;</td></tr></table>
+</td></tr>
+</table>
+<!-- Hot Keyword: 라벨이 Brand보다 길어 80+520 고정 시 좌측 열이 밀림 → 118+482로만 조정 -->
+<table role="presentation" class="stack-header-outer stack-header-hotkeyword hot-keyword" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;max-width:600px;table-layout:fixed;">
+<tr><td class="stack-header-gutter" width="600" style="width:600px;min-width:600px;max-width:600px;overflow:hidden;">
+<table role="presentation" class="stack-header" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;max-width:600px;table-layout:fixed;border-collapse:collapse;border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;">
+<tr>
+<td width="118" bgcolor="#ffffff" style="width:118px;max-width:118px;padding:14px 16px;vertical-align:middle;background-color:#ffffff;font-size:14px;font-weight:700;color:#1a1a1a;white-space:nowrap;">■ Hot Keyword</td>
+<td width="482" bgcolor="#e5ede6" align="center" style="width:482px;max-width:482px;padding:14px 28px;vertical-align:middle;background-color:#e5ede6;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td align="center" class="section-title-inner" style="font-size:14px;font-weight:600;color:#2d3e50;text-align:center;padding:0 96px 0 6px;">붓기 · 체질개선 건강기능 TEA</td></tr></table></td>
+</tr>
+</table>
+</td></tr>
+</table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td style="width:600px;min-width:600px;padding:8px 0 0 0;font-size:0;line-height:0;background-color:#ffffff;">&#160;</td></tr></table>
+<!-- 이하 본문: 600px 고정, 폭 강제 -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
+<tr><td width="600" style="width:600px;min-width:600px;padding:8px 0 16px 0;background-color:#ffffff;">
+<!-- Hot Keyword: 대표 이미지 (.info-img 560px — 추후 교체) -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;"><tr><td align="center" style="padding:0;text-align:center;">
+<div class="section"><img src="./images/orara-hot-keyword.png" alt="붓기 · 체질개선 건강기능 TEA · Hot Keyword" width="560" class="info-img"></div>
+</td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;"><tr><td align="center" style="padding:20px 0 0 0;">
+<div class="section copy-ko" style="text-align:left;font-size:15px;line-height:1.7;color:#3d4f42;word-break:keep-all;overflow-wrap:break-word;">붓기/순환 TEA는 공동구매에서 꾸준히 진행되는 핵심 품목으로<br>이미 다양한 제품들이 판매되고 있는 카테고리입니다.<br><br>오라라 히알브이티는 단순 이뇨 작용 중심으로 붓기만 빠르게 제거하는 방식이 아니라 100% 자연 유래 원료를 기반으로 <span style="background-color:#b8dcc5;font-weight:800;color:#142a22;">체내 불필요한 나트륨과 독소를 배출해</span><br>체질을 개선하는 방향으로 기획된 제품입니다.<br><br>결국 몸 관리는 마시는 ‘물’에서부터 시작된다는 개념으로<br><span style="background-color:#b8dcc5;font-weight:800;color:#142a22;">몸이 순환되는 흐름을 만들어주면서 부종, 컨디션 저하, 식습관으로 인한 체내 불균형까지 함께 관리</span>할 수 있는 건강기능식품입니다.<br>정체되고 부어있는 몸을 가볍게 만들어주는 하루 루틴으로 가져가기 좋은 웰니스 TEA입니다.</div>
+</td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td style="padding:32px 0 0 0;font-size:1px;line-height:1px;">&nbsp;</td></tr></table>
+<!-- Chapter 1 header: Brand와 동일 비율 80+520 -->
+<table role="presentation" class="stack-header-outer" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
+<tr><td class="stack-header-gutter" width="600" style="width:600px;min-width:600px;overflow:hidden;">
+<table role="presentation" class="stack-header" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;border-collapse:collapse;border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;">
+<tr>
+<td width="80" bgcolor="#ffffff" style="width:80px;max-width:80px;padding:14px 16px;vertical-align:middle;background-color:#ffffff;font-size:14px;font-weight:700;color:#1a1a1a;white-space:nowrap;">■ Chapter 1</td>
+<td width="520" bgcolor="#e5ede6" align="center" style="width:520px;max-width:520px;padding:14px 28px;vertical-align:middle;background-color:#e5ede6;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td align="center" class="section-title-inner" style="font-size:14px;font-weight:700;color:#2d3e50;line-height:1.5;text-align:center;padding:0 96px 0 6px;">제품 기본 정보</td></tr></table></td>
+</tr>
+</table>
+</td></tr>
+</table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td style="padding:24px 0 0 0;font-size:1px;line-height:1px;">&nbsp;</td></tr></table>
+<!-- Chapter 1 이미지: Hot Word와 동일 규격 (.section · width 560 · .info-img) -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;"><tr><td align="center" style="padding:0;text-align:center;">
+<div class="section"><img src="./images/orara-chapter1.png" alt="오라라 히알 브이티 제품" width="560" class="info-img"></div>
+</td></tr></table>
+<!-- Chapter 1 product info: 2열 표 · 라벨(#f9f9f9) / 값(#fff) -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
+<tr><td class="ch1-spec-wrap" width="600" style="width:600px;min-width:600px;padding:12px 20px 0 20px;box-sizing:border-box;background-color:#ffffff;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" class="copy-ko product-spec-table" style="border-collapse:collapse;border:1px solid #e0e4e0;background-color:#ffffff;">
+<tr>
+<td width="120" style="width:120px;max-width:120px;padding:12px 10px 12px 14px;vertical-align:top;border-bottom:1px solid #e0e4e0;background-color:#f9f9f9;font-size:13px;line-height:1.5;color:#5c6d62;font-weight:600;font-family:'Malgun Gothic',Arial,sans-serif;">제품명</td>
+<td style="padding:12px 14px 12px 12px;vertical-align:top;border-bottom:1px solid #e0e4e0;background-color:#ffffff;font-size:15px;line-height:1.65;color:#2d3e50;font-weight:400;font-family:'Malgun Gothic',Arial,sans-serif;">오라라 히알 브이티 (ORARA HYAL V TEA)</td>
+</tr>
+<tr>
+<td width="120" style="width:120px;max-width:120px;padding:12px 10px 12px 14px;vertical-align:top;border-bottom:1px solid #e0e4e0;background-color:#f9f9f9;font-size:13px;line-height:1.5;color:#5c6d62;font-weight:600;font-family:'Malgun Gothic',Arial,sans-serif;">제품 유형</td>
+<td style="padding:12px 14px 12px 12px;vertical-align:top;border-bottom:1px solid #e0e4e0;background-color:#ffffff;font-size:15px;line-height:1.65;color:#2d3e50;font-weight:400;font-family:'Malgun Gothic',Arial,sans-serif;">건강기능식품 (순환·붓기 케어 TEA)</td>
+</tr>
+<tr>
+<td width="120" style="width:120px;max-width:120px;padding:12px 10px 12px 14px;vertical-align:top;border-bottom:1px solid #e0e4e0;background-color:#f9f9f9;font-size:13px;line-height:1.5;color:#5c6d62;font-weight:600;font-family:'Malgun Gothic',Arial,sans-serif;">핵심 컨셉</td>
+<td style="padding:12px 14px 12px 12px;vertical-align:top;border-bottom:1px solid #e0e4e0;background-color:#ffffff;font-size:15px;line-height:1.65;color:#2d3e50;font-weight:400;font-family:'Malgun Gothic',Arial,sans-serif;">단순 이뇨 중심 붓기 제거가 아닌 체내 순환을 기반으로 컨디션까지 함께 관리하는 설계</td>
+</tr>
+<tr>
+<td width="120" style="width:120px;max-width:120px;padding:12px 10px 12px 14px;vertical-align:top;border-bottom:1px solid #e0e4e0;background-color:#f9f9f9;font-size:13px;line-height:1.5;color:#5c6d62;font-weight:600;font-family:'Malgun Gothic',Arial,sans-serif;">핵심 원료</td>
+<td style="padding:12px 14px 12px 12px;vertical-align:top;border-bottom:1px solid #e0e4e0;background-color:#ffffff;font-size:15px;line-height:1.65;color:#2d3e50;font-weight:400;font-family:'Malgun Gothic',Arial,sans-serif;">히알루론산 60mg (1포 기준)<br>순환/배출 중심 식물 유래 원료 복합 배합</td>
+</tr>
+<tr>
+<td width="120" style="width:120px;max-width:120px;padding:12px 10px 12px 14px;vertical-align:top;border-bottom:1px solid #e0e4e0;background-color:#f9f9f9;font-size:13px;line-height:1.5;color:#5c6d62;font-weight:600;font-family:'Malgun Gothic',Arial,sans-serif;">주요 구성</td>
+<td style="padding:12px 14px 12px 12px;vertical-align:top;border-bottom:1px solid #e0e4e0;background-color:#ffffff;font-size:15px;line-height:1.65;color:#2d3e50;font-weight:400;font-family:'Malgun Gothic',Arial,sans-serif;">12종 순환 부원료 + 복합 허브 추출물</td>
+</tr>
+<tr>
+<td width="120" style="width:120px;max-width:120px;padding:12px 10px 12px 14px;vertical-align:top;border-bottom:1px solid #e0e4e0;background-color:#f9f9f9;font-size:13px;line-height:1.5;color:#5c6d62;font-weight:600;font-family:'Malgun Gothic',Arial,sans-serif;">섭취 방법</td>
+<td style="padding:12px 14px 12px 12px;vertical-align:top;border-bottom:1px solid #e0e4e0;background-color:#ffffff;font-size:15px;line-height:1.65;color:#2d3e50;font-weight:400;font-family:'Malgun Gothic',Arial,sans-serif;">하루 1~2회, 1포 섭취</td>
+</tr>
+<tr>
+<td width="120" style="width:120px;max-width:120px;padding:12px 10px 12px 14px;vertical-align:top;border-bottom:1px solid #e0e4e0;background-color:#f9f9f9;font-size:13px;line-height:1.5;color:#5c6d62;font-weight:600;font-family:'Malgun Gothic',Arial,sans-serif;">제품 형태</td>
+<td style="padding:12px 14px 12px 12px;vertical-align:top;border-bottom:1px solid #e0e4e0;background-color:#ffffff;font-size:15px;line-height:1.65;color:#2d3e50;font-weight:400;font-family:'Malgun Gothic',Arial,sans-serif;">스틱형 액상 TEA (간편 섭취)</td>
+</tr>
+<tr>
+<td width="120" style="width:120px;max-width:120px;padding:12px 10px 12px 14px;vertical-align:top;background-color:#f9f9f9;font-size:13px;line-height:1.5;color:#5c6d62;font-weight:600;font-family:'Malgun Gothic',Arial,sans-serif;">제품 포인트</td>
+<td style="padding:12px 14px 12px 12px;vertical-align:top;background-color:#ffffff;font-size:15px;line-height:1.65;color:#2d3e50;font-weight:400;font-family:'Malgun Gothic',Arial,sans-serif;">붓기·순환·컨디션을 함께 관리하는<br>루틴형 웰니스 TEA</td>
+</tr>
+</table>
+</td></tr>
+</table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td style="padding:48px 0 0 0;font-size:1px;line-height:1px;">&nbsp;</td></tr></table>
+<!-- Chapter 2 header: Brand와 동일 비율 80+520 -->
+<table role="presentation" class="stack-header-outer" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
+<tr><td class="stack-header-gutter" width="600" style="width:600px;min-width:600px;overflow:hidden;">
+<table role="presentation" class="stack-header" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;border-collapse:collapse;border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;">
+<tr>
+<td width="80" bgcolor="#ffffff" style="width:80px;max-width:80px;padding:14px 16px;vertical-align:middle;background-color:#ffffff;font-size:14px;font-weight:700;color:#1a1a1a;white-space:nowrap;">■ Chapter 2</td>
+<td width="520" bgcolor="#e5ede6" align="center" style="width:520px;max-width:520px;padding:14px 28px;vertical-align:middle;background-color:#e5ede6;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td align="center" class="section-title-inner" style="font-size:14px;font-weight:700;color:#2d3e50;line-height:1.5;text-align:center;padding:0 96px 0 6px;">컨텐츠 셀링 포인트</td></tr></table></td>
+</tr>
+</table>
+</td></tr>
+</table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td style="padding:24px 0 0 0;font-size:1px;line-height:1px;">&nbsp;</td></tr></table>
+<!-- Chapter 2: .section + .info-img · 컨텐츠 셀링 포인트(8항목) -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;"><tr><td align="center" style="padding:16px 0 0 0;text-align:center;">
+<div class="section"><img src="./images/orara-chapter2.png" alt="컨텐츠 셀링 포인트 — 주요 원료·효능 인포그래픽" width="560" class="info-img"></div>
+</td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;background-color:#f8f6f3;">
+<tr><td class="ch2-pad" style="padding:28px 32px;background-color:#ffffff;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" class="sell-card-outer" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;border-spacing:0;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">하루 1포 루틴형 TEA</strong>
+<table role="presentation" class="sell-card-dash" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 아침/저녁 루틴 콘텐츠에 자연스럽게 녹이기 쉬운 구조</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" class="sell-card-outer" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;border-spacing:0;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">단순 붓기 제거가 아닌 ‘순환’ 중심 포인트</strong>
+<table role="presentation" class="sell-card-dash" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 일시적 변화가 아닌 컨디션 관리 스토리로 확장 가능</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" class="sell-card-outer" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;border-spacing:0;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">히알루론산 60mg 함유</strong>
+<table role="presentation" class="sell-card-dash" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 피부 보습·탄력 케어까지 연결되는 콘텐츠 포인트 확보</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" class="sell-card-outer" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;border-spacing:0;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">피부 케어에 도움을 주는 히알루론산 + 항산화 원료 구성</strong>
+<table role="presentation" class="sell-card-dash" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 붓기 관리 + 피부 컨디션까지 함께 어필 가능</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" class="sell-card-outer" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;border-spacing:0;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">화학 첨가물 無 / 클린 포뮬라</strong>
+<table role="presentation" class="sell-card-dash" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 민감한 고객층 타겟 콘텐츠에 적합</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" class="sell-card-outer" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;border-spacing:0;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">액상 스틱형 (물 없이 섭취 가능)</strong>
+<table role="presentation" class="sell-card-dash" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 출근 전 / 외출 전 / 여행 루틴 콘텐츠 활용도 높음</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" class="sell-card-outer" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;border-spacing:0;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">새콤달콤 베리 맛</strong>
+<table role="presentation" class="sell-card-dash" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ ‘맛있는 다이어트 루틴’ 콘텐츠로 확장 가능</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:0;">
+<table role="presentation" class="sell-card-outer" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;border-spacing:0;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">1일 1~2포 반복 섭취 구조</strong>
+<table role="presentation" class="sell-card-dash" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 단발성이 아닌 루틴 콘텐츠 → 재구매 흐름까지 연결</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+</table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td style="padding:24px 0 0 0;font-size:1px;line-height:1px;">&nbsp;</td></tr></table>
+<!-- Chapter 3: 실제 리뷰로 보는 콘텐츠 활용 TIP -->
+<table role="presentation" class="stack-header-outer" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
+<tr><td class="stack-header-gutter" width="600" style="width:600px;min-width:600px;overflow:hidden;">
+<table role="presentation" class="stack-header" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;border-collapse:collapse;border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;">
+<tr>
+<td width="80" bgcolor="#ffffff" style="width:80px;max-width:80px;padding:14px 16px;vertical-align:middle;background-color:#ffffff;font-size:14px;font-weight:700;color:#1a1a1a;white-space:nowrap;">■ Chapter 3</td>
+<td width="520" bgcolor="#e5ede6" align="center" style="width:520px;max-width:520px;padding:14px 28px;vertical-align:middle;background-color:#e5ede6;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td align="center" class="section-title-inner" style="font-size:14px;font-weight:700;color:#2d3e50;line-height:1.5;text-align:center;padding:0 96px 0 6px;">실제 리뷰로 보는 콘텐츠 활용 TIP</td></tr></table></td>
+</tr>
+</table>
+</td></tr>
+</table>
+<!-- Chapter 3 이미지 -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td style="padding:24px 0 0 0;font-size:1px;line-height:1px;">&nbsp;</td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;"><tr><td align="center" style="padding:16px 0 0 0;text-align:center;">
+<div class="section"><img src="./images/orara-chapter3.png" alt="실제 리뷰·평점 요약" width="560" class="info-img"></div>
+</td></tr></table>
+<!-- Chapter 3 본문: 후기 → 콘텐츠 TIP 카드 -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;background-color:#f8f6f3;">
+<tr><td class="ch2-pad copy-ko" style="padding:28px 32px;background-color:#ffffff;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" class="sell-card-outer" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;border-spacing:0;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">“붓기 때문에 아침마다 얼굴이 무거웠는데 확실히 가벼워지는 느낌이에요”</strong>
+<table role="presentation" class="sell-card-dash" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 아침 붓기 관리 루틴 콘텐츠 활용 가능</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" class="sell-card-outer" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;border-spacing:0;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">“꾸준히 마시니까 몸이 덜 붓고 컨디션이 가벼워졌어요”</strong>
+<table role="presentation" class="sell-card-dash" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 단기 효과가 아닌 ‘루틴 변화’ 중심 콘텐츠 구성 가능</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" class="sell-card-outer" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;border-spacing:0;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">“피부가 푸석했는데 속건조가 덜한 느낌이에요”</strong>
+<table role="presentation" class="sell-card-dash" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 붓기 + 피부 컨디션 연결 스토리 콘텐츠 확장 가능</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" class="sell-card-outer" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;border-spacing:0;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">“속이 더부룩한 느낌이 줄고 몸이 편해졌어요”</strong>
+<table role="presentation" class="sell-card-dash" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 순환/배출 중심 체감 스토리 콘텐츠 활용 가능</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:0;">
+<table role="presentation" class="sell-card-outer" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;border-spacing:0;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">“맛이 상큼해서 부담 없이 계속 먹게 돼요”</strong>
+<table role="presentation" class="sell-card-dash" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 데일리 루틴 / 출근 전 / 외출 전 콘텐츠 자연스럽게 삽입 가능</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+</table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-top:8px;">
+<tr><td style="padding:8px 0 0 0;font-size:15px;line-height:1.75;color:#3d4f42;">실제 후기 기반으로 단순 체험이 아닌 <span style="background-color:#b8dcc5;font-weight:800;color:#142a22;">‘변화 중심 콘텐츠’</span>로 확장 가능한 구조입니다.<br><br>
+단발성 리뷰가 아닌 전/후 비교, 루틴 변화, 컨디션 변화 흐름으로 이어지며<br>
+아침 붓기 변화, 피부 컨디션 개선, 몸이 가벼워지는 체감 포인트를 중심으로<br>
+일상 속에서 자연스럽게 반복 노출되는 루틴형 콘텐츠로 연결하기 좋은 제품입니다.</td></tr>
+</table>
+</td></tr>
+</table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td style="padding:28px 0 0 0;font-size:0;line-height:0;">&#160;</td></tr></table>
+<!-- Chapter 4 header: Brand와 동일 비율 80+520 -->
+<table role="presentation" class="stack-header-outer" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
+<tr><td class="stack-header-gutter" width="600" style="width:600px;min-width:600px;overflow:hidden;">
+<table role="presentation" class="stack-header" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;border-collapse:collapse;border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;">
+<tr>
+<td width="80" bgcolor="#ffffff" style="width:80px;max-width:80px;padding:14px 16px;vertical-align:middle;background-color:#ffffff;font-size:14px;font-weight:700;color:#1a1a1a;white-space:nowrap;">■ Chapter 4</td>
+<td width="520" bgcolor="#e5ede6" align="center" style="width:520px;max-width:520px;padding:14px 28px;vertical-align:middle;background-color:#e5ede6;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td align="center" class="section-title-inner" style="font-size:14px;font-weight:700;color:#2d3e50;line-height:1.5;text-align:center;padding:0 96px 0 6px;">이런 고민 있는 팔로워분들에게 추천해주세요</td></tr></table></td>
+</tr>
+</table>
+</td></tr>
+</table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td style="padding:12px 0 0 0;font-size:1px;">&nbsp;</td></tr></table>
+<!-- Chapter 4 이미지 -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;"><tr><td align="center" style="padding:0;text-align:center;background-color:#ffffff;">
+<div class="section"><img src="./images/orara-chapter4.png" alt="오라라 히알 브이티 라이프스타일" width="560" class="info-img"></div>
+</td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;background-color:#ffffff;">
+<tr><td class="ch4-pad copy-ko" style="padding:16px 32px 28px 32px;background-color:#ffffff;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr><td style="padding:14px 18px;background-color:#f5f5f5;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td style="padding:0 16px 0 0;vertical-align:top;font-size:15px;line-height:1.7;color:#6d4ba8;font-weight:700;width:22px;">✔</td><td style="padding:0;font-size:15px;line-height:1.7;color:#3d4f42;font-weight:700;vertical-align:top;">붓기차 제품을 섭취하고 있는데 효과를 보지 못한 분</td></tr></table></td></tr>
+<tr><td style="padding:12px 0 0 0;font-size:1px;">&nbsp;</td></tr>
+<tr><td style="padding:14px 18px;background-color:#f5f5f5;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td style="padding:0 16px 0 0;vertical-align:top;font-size:15px;line-height:1.7;color:#6d4ba8;font-weight:700;width:22px;">✔</td><td style="padding:0;font-size:15px;line-height:1.7;color:#3d4f42;font-weight:700;vertical-align:top;">붓기 관리와 함께 피부 컨디션까지 함께 챙기고 싶은 분</td></tr></table></td></tr>
+<tr><td style="padding:12px 0 0 0;font-size:1px;">&nbsp;</td></tr>
+<tr><td style="padding:14px 18px;background-color:#f5f5f5;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td style="padding:0 16px 0 0;vertical-align:top;font-size:15px;line-height:1.7;color:#6d4ba8;font-weight:700;width:22px;">✔</td><td style="padding:0;font-size:15px;line-height:1.7;color:#3d4f42;font-weight:700;vertical-align:top;">순환이 잘 되지 않아 몸이 자주 붓거나 컨디션이 무거운 분</td></tr></table></td></tr>
+<tr><td style="padding:12px 0 0 0;font-size:1px;">&nbsp;</td></tr>
+<tr><td style="padding:14px 18px;background-color:#f5f5f5;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td style="padding:0 16px 0 0;vertical-align:top;font-size:15px;line-height:1.7;color:#6d4ba8;font-weight:700;width:22px;">✔</td><td style="padding:0;font-size:15px;line-height:1.7;color:#3d4f42;font-weight:700;vertical-align:top;">배달음식, 인스턴트 음식 섭취가 잦은 분</td></tr></table></td></tr>
+<tr><td style="padding:12px 0 0 0;font-size:1px;">&nbsp;</td></tr>
+<tr><td style="padding:14px 18px;background-color:#f5f5f5;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td style="padding:0 16px 0 0;vertical-align:top;font-size:15px;line-height:1.7;color:#6d4ba8;font-weight:700;width:22px;">✔</td><td style="padding:0;font-size:15px;line-height:1.7;color:#3d4f42;font-weight:700;vertical-align:top;">생리 전후로 붓기·컨디션 변화가 크게 느껴지는 분</td></tr></table></td></tr>
+<tr><td style="padding:12px 0 0 0;font-size:1px;">&nbsp;</td></tr>
+<tr><td style="padding:14px 18px;background-color:#f5f5f5;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td style="padding:0 16px 0 0;vertical-align:top;font-size:15px;line-height:1.7;color:#6d4ba8;font-weight:700;width:22px;">✔</td><td style="padding:0;font-size:15px;line-height:1.7;color:#3d4f42;font-weight:700;vertical-align:top;">손발이 차고, 몸이 자주 차갑게 느껴지는 분</td></tr></table></td></tr>
+</table>
+</td></tr>
+</table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td class="copy-ko mobile-tight-x" style="padding:24px 28px 0 28px;font-size:15px;line-height:1.75;color:#3d4f42;">체험 후 콘텐츠는 크리에이터님의 일상 속 루틴에 자연스럽게 녹여 부담 없이 공유해주셔도 좋습니다. 필요 시 콘텐츠 가이드는 별도로 전달드립니다.</td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td style="padding:40px 0 0 0;font-size:1px;line-height:1px;">&nbsp;</td></tr></table>
+<!-- Special Price header: 왼쪽 열 넓혀 텍스트가 흰 영역 안에 들어가도록 -->
+<table role="presentation" class="stack-header-outer" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;">
+<tr><td class="stack-header-gutter" width="600" style="width:600px;min-width:600px;overflow:hidden;">
+<table role="presentation" class="stack-header" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px;min-width:600px;table-layout:fixed;border-collapse:collapse;border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;">
+<tr>
+<td width="100" bgcolor="#ffffff" style="width:100px;max-width:100px;padding:14px 12px 14px 16px;vertical-align:middle;background-color:#ffffff;font-size:14px;font-weight:700;color:#1a1a1a;white-space:nowrap;">■ Special Price</td>
+<td width="500" bgcolor="#e5ede6" align="center" style="width:500px;max-width:500px;padding:14px 28px;vertical-align:middle;background-color:#e5ede6;"><table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td align="center" class="section-title-inner" style="font-size:14px;font-weight:700;color:#2d3e50;line-height:1.5;text-align:center;padding:0 96px 0 6px;">협업 제안 안내</td></tr></table></td>
+</tr>
+</table>
+</td></tr>
+</table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td style="padding:12px 0 0 0;font-size:1px;">&nbsp;</td></tr></table>
+<!-- 협업 섹션 본문 -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:100%;max-width:600px;"><tr><td class="copy-ko copy-ko-collab" style="width:100%;max-width:100%;box-sizing:border-box;padding:28px 28px 0 28px;font-size:15px;line-height:1.75;color:#3d4f42;">피부·웰니스 카테고리 특성상 루틴형 콘텐츠를 기반으로 반복 노출이 가능한 <span style="white-space:nowrap;">제품군으로</span> 공동구매에서도 안정적인 매출 흐름을 만들 수 있는 구조입니다.<br><br>
+현재는 <span style="background-color:#b8dcc5;font-weight:800;color:#142a22;">셀러를 제한적으로 선정하여</span> 협업을 진행하고 있으며,<br>
+콘텐츠 핏과 운영 방향이 맞는 분들 중심으로 함께하고 있습니다.<br><br>
+히알브이티 제품을 시작으로 오라라의 헤어·뷰티 라인까지 확장하여<br>
+지속적으로 선보일 수 있는 협업 기회도 함께 드리고 있습니다.<br><br>
+단발성이 아닌 재진행까지 이어지는 방향으로 장기적인 협업을 제안드립니다.<br>
+샘플 체험 및 상세 협업 조건은 회신 주시면 안내드리겠습니다.</td></tr></table>
+<!-- Closing: CTA + Footer -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td align="center" style="padding:40px 0 0 0;"><a class="cta-link" href="https://www.connectsell.co.kr/form?product=%EC%98%A4%EB%9D%BC%EB%9D%BC%20%ED%9E%88%EC%95%8C%20%EB%B8%8C%EC%9D%B4%ED%8B%B0" style="padding:14px 32px;background-color:#2d3e50;color:#fff;font-size:16px;font-weight:700;text-decoration:none;">샘플체험 신청</a></td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td align="center" style="padding:48px 0 6px 0;font-size:14px;line-height:1.6;color:#3d4f42;font-weight:700;"><strong>ConnectSell</strong> | <a href="https://www.connectsell.co.kr" style="color:#2d3e50;text-decoration:none;font-weight:700;">https://www.connectsell.co.kr</a></td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td align="center" style="padding:0 0 6px 0;font-size:14px;line-height:1.6;color:#1a1a1a;">서울특별시 마포구 마포대로52, 13층 1328호</td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td align="center" style="padding:0 0 4px 0;font-size:13px;line-height:1.5;color:#3d4f42;">© 2026 ConnectSell. All rights reserved.</td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600"><tr><td align="center" style="padding:0 0 32px 0;font-size:13px;line-height:1.5;color:#3d4f42;">Created by ConnectSell</td></tr></table>
+</td></tr>
+</table>
+</td></tr>
+</table>
+</body>
+</html>
