@@ -249,7 +249,7 @@ lines[143] = (
 )
 
 lines[151] = (
-    '<img src="https://www.connectsell.co.kr/email/images/babinola-chapter2-checkpoint.jpg?v=20260325" alt="'
+    '<img src="https://www.connectsell.co.kr/email/images/babinola-chapter2-checkpoint.png?v=20260331" alt="'
     + d(r"\ubc14\ube44\ub180\ub77c \ub2e8\ubc31\uc9c8 \uc591 UP \uce7c\ub85c\ub9ac \ubd80\ub2f4 DOWN")
     + '" width="560" style="width:100%;height:auto;display:block;border:0;border-radius:8px;">'
 )
