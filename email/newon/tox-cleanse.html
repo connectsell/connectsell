@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<!-- email/newon/tox-cleanse.html — assets: ../images/ (편집 후 배포 시 절대 URL로 바꿀 수 있음) -->
+<!-- email/newon/tox-cleanse.html — OG: ../images/tox-cleanse-og.png · 본문 이미지: tox-chapter-* -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<title>초코맛 그래놀라 신제품 출시! | ConnectSell</title>
+<title>48시간 공복 클렌즈 ABC 주스 | ConnectSell</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ConnectSell">
 <meta property="og:url" content="https://www.connectsell.co.kr/email/newon/tox-cleanse.html">
-<meta property="og:title" content="초코맛 그래놀라 신제품 출시!">
-<meta property="og:description" content="유튜버 히밥 × 마로셀 공동개발 바비놀라 초코맛 그래놀라 · ConnectSell">
-<meta property="og:image" content="../images/babinola-og-share.png?v=20260402h">
-<meta property="og:image:secure_url" content="../images/babinola-og-share.png?v=20260402h">
-<meta property="og:image:alt" content="바비놀라 초코 — 포장 이미지">
+<meta property="og:title" content="48시간 공복 클렌즈 ABC 주스">
+<meta property="og:description" content="웰니스 크리에이터 커머스 협업 제안 · 비우템 톡스클렌즈 48시간 ABC 주스">
+<meta property="og:image" content="../images/tox-cleanse-og.png?v=1">
+<meta property="og:image:secure_url" content="../images/tox-cleanse-og.png?v=1">
+<meta property="og:image:alt" content="48시간 공복 클렌즈 ABC 주스 — 비우템 병·재료">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="초코맛 그래놀라 신제품 출시!">
-<meta name="twitter:description" content="유튜버 히밥 × 마로셀 공동개발 바비놀라 초코맛 그래놀라 · ConnectSell">
-<meta name="twitter:image" content="../images/babinola-og-share.png?v=20260402g">
+<meta name="twitter:title" content="48시간 공복 클렌즈 ABC 주스">
+<meta name="twitter:description" content="웰니스 크리에이터 커머스 협업 제안 · 비우템 톡스클렌즈 48시간 ABC 주스">
+<meta name="twitter:image" content="../images/tox-cleanse-og.png?v=1">
 <style type="text/css">
 *, *::before, *::after { box-sizing: border-box; }
 body { margin: 0; padding: 0; }
@@ -29,9 +29,57 @@ img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: b
     height: auto !important;
     display: block !important;
   }
+  /* Ch4: 양 옆을 동일한 정사각(1:1) 타일로 — 참고: 마로셀 2칸 */
+  table.babinola-shell > tbody > tr:first-child > td.babinola-body table[data-babinola="tox-ch4-split"] img.tox-ch4-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    display: block !important;
+  }
+  table.babinola-shell > tbody > tr:first-child > td.babinola-body table[data-babinola="tox-ch4-split"] tr > td {
+    width: 50% !important;
+    vertical-align: top !important;
+  }
+  /* Chapter 1~3: 본문 — PC에서 좁은 컬럼(600px)으로 중앙 정렬, 줄 길이·가독성 */
+  table.babinola-shell > tbody > tr:first-child > td.babinola-body div.tox-ch-prose {
+    max-width: 600px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 16px !important;
+    line-height: 1.7 !important;
+    text-align: left !important;
+    box-sizing: border-box !important;
+  }
+  table.babinola-shell > tbody > tr:first-child > td.babinola-body div.tox-ch-prose p {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    line-height: 1.7 !important;
+  }
+  table.babinola-shell > tbody > tr:first-child > td.babinola-body div.tox-ch-prose > table[role="presentation"] > tr > td,
+  table.babinola-shell > tbody > tr:first-child > td.babinola-body div.tox-ch-prose > table[role="presentation"] > tbody > tr > td {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  table.babinola-shell > tbody > tr:first-child > td.babinola-body div.tox-ch-prose table table[role="presentation"] td {
+    line-height: 1.7 !important;
+  }
+  table.babinola-shell > tbody > tr:first-child > td.babinola-body div.tox-ch-prose > table[role="presentation"] table[role="presentation"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
 }
 @media screen and (max-width: 768px) {
   body { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+  /* Ch1~3 래퍼: 모바일에서 max-width/마진/패딩만 해제(자식 p·table 인라인 유지) */
+  table.babinola-shell > tbody > tr:first-child > td.babinola-body div.tox-ch-prose {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
   table.babinola-shell {
     width: 100% !important;
     min-width: 0 !important;
@@ -108,7 +156,7 @@ img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: b
     white-space: nowrap !important;
   }
   table.babinola-shell > tbody > tr:first-child > td.babinola-body td[data-babinola="chapter4-body"] {
-    padding: 14px 14px 22px 14px !important;
+    padding: 14px 14px 10px 14px !important;
   }
   table.babinola-shell > tbody > tr:first-child > td.babinola-body table[data-babinola="special-price-bar"] tr > td {
     display: table-cell !important;
@@ -129,6 +177,32 @@ img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: b
   }
   table.babinola-shell > tbody > tr:first-child > td.babinola-body table[data-babinola="special-price-bar"] td[style*="white-space:nowrap"] {
     white-space: nowrap !important;
+  }
+  table.babinola-shell > tbody > tr:first-child > td.babinola-body table[data-babinola="tox-ch4-split"] tr > td {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  table.babinola-shell > tbody > tr:first-child > td.babinola-body table[data-babinola="tox-ch4-split"] tr > td:first-child {
+    padding: 0 0 8px 0 !important;
+  }
+  table.babinola-shell > tbody > tr:first-child > td.babinola-body table[data-babinola="tox-ch4-split"] tr > td:nth-child(2) {
+    padding: 0 !important;
+  }
+  table.babinola-shell > tbody > tr:first-child > td.babinola-body table[data-babinola="tox-ch4-split"] tr > td {
+    height: auto !important;
+    vertical-align: top !important;
+  }
+  table.babinola-shell > tbody > tr:first-child > td.babinola-body table[data-babinola="tox-ch4-split"] tr > td img {
+    border-radius: 8px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+  }
+  table.babinola-shell > tbody > tr:first-child > td.babinola-body td.tox-ch4-outer {
+    padding: 0 16px !important;
   }
   img[width="960"], img[width="480"] {
     margin: 0 0 18px 0 !important;
@@ -165,528 +239,361 @@ img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: b
 </tr>
 </table>
 
-<p style="margin:0;padding:0 28px 12px 28px;font-size:14px;line-height:1.65;color:#333333;text-align:justify;">안녕하세요<br>웰니스·라이프스타일 카테고리를 중심으로<br>공동구매를 기획·운영하고 있는 ConnectSell입니다.</p>
-<p style="margin:0;padding:0 28px 12px 28px;font-size:14px;line-height:1.75;color:#333333;text-align:justify;">크리에이터님의 콘텐츠 방향성과 잘 맞는 제품이라 판단되어 협업 제안을 드리게 되었습니다. 초코를 좋아하는 분들이라면 한 번쯤 고민해보셨을 것 같아요.</p>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 14px 0;">
+<p style="margin:0;padding:0 28px 12px 28px;font-size:14px;line-height:1.65;color:#333333;text-align:left;">안녕하세요<br>웰니스·라이프스타일 카테고리를 중심으로<br>공동구매를 기획·운영하고 있는 ConnectSell입니다.</p>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:16px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0;">
 <tr>
-<td style="padding:0 24px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f0f0f0;border-radius:10px;border:1px solid #d8d8d8;">
+<td align="center" style="padding:0 24px;">
+<table role="presentation" align="center" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;width:100%;background-color:#f0f0f0;border-radius:10px;border:1px solid #d8d8d8;">
 <tr>
-<td style="padding:16px 20px;font-size:15px;line-height:1.65;color:#2d3e50;text-align:center;font-weight:600;">“다이어트 중인데, 이걸 먹어도 괜찮을까…?”</td>
+<td style="padding:16px 20px 16px 18px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td width="20" valign="top" style="width:20px;padding:0 8px 0 0;vertical-align:top;font-size:15px;line-height:1.75;color:#5c5c5c;">•</td>
+<td valign="top" style="padding:0 0 7px 0;vertical-align:top;font-size:14px;line-height:1.75;color:#3d3d3d;">웨딩 촬영</td>
+</tr>
+<tr>
+<td width="20" valign="top" style="width:20px;padding:0 8px 0 0;vertical-align:top;font-size:15px;line-height:1.75;color:#5c5c5c;">•</td>
+<td valign="top" style="padding:0 0 7px 0;vertical-align:top;font-size:14px;line-height:1.75;color:#3d3d3d;">중요한 일정</td>
+</tr>
+<tr>
+<td width="20" valign="top" style="width:20px;padding:0 8px 0 0;vertical-align:top;font-size:15px;line-height:1.75;color:#5c5c5c;">•</td>
+<td valign="top" style="padding:0 0 7px 0;vertical-align:top;font-size:14px;line-height:1.75;color:#3d3d3d;">여행 다녀온 직후</td>
+</tr>
+<tr>
+<td width="20" valign="top" style="width:20px;padding:0 8px 0 0;vertical-align:top;font-size:15px;line-height:1.75;color:#5c5c5c;">•</td>
+<td valign="top" style="padding:0 0 7px 0;vertical-align:top;font-size:14px;line-height:1.75;color:#3d3d3d;">작년에 입던 옷이 갑자기 안 맞을 때</td>
+</tr>
+<tr>
+<td width="20" valign="top" style="width:20px;padding:0 8px 0 0;vertical-align:top;font-size:15px;line-height:1.75;color:#5c5c5c;">•</td>
+<td valign="top" style="padding:0 0 7px 0;vertical-align:top;font-size:14px;line-height:1.75;color:#3d3d3d;">잦은 인스턴트, 배달음식으로 속이 더부룩할 때</td>
+</tr>
+<tr>
+<td width="20" valign="top" style="width:20px;padding:0 8px 0 0;vertical-align:top;font-size:15px;line-height:1.75;color:#5c5c5c;">•</td>
+<td valign="top" style="padding:0 0 7px 0;vertical-align:top;font-size:14px;line-height:1.75;color:#3d3d3d;">야식·배달 이후 다음날 붓고 무거운 컨디션</td>
+</tr>
+<tr>
+<td width="20" valign="top" style="width:20px;padding:0 8px 0 0;vertical-align:top;font-size:15px;line-height:1.75;color:#5c5c5c;">•</td>
+<td valign="top" style="padding:0;vertical-align:top;font-size:14px;line-height:1.75;color:#3d3d3d;">여행·외식 이후 무너진 식습관을 빠르게 정리하고 싶은 상황</td>
 </tr>
 </table>
 </td>
 </tr>
 </table>
-<p style="margin:0;padding:0 28px 12px 28px;font-size:14px;line-height:1.75;color:#333333;text-align:justify;">진하게 퍼지는 초코 풍미에 오독오독 씹히는 바삭한 식감까지! 이번에 바비놀라에서 초코맛 그래놀라 신제품이 출시되었습니다. 이제는 참지 않고, 입터짐 없이 부담은 줄이면서 즐길 수 있도록 초코를 좋아하는 분들을 위해 맛과 밸런스를 함께 담아낸 그래놀라입니다.</p>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
-
-<!-- Brand -->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;table-layout:fixed;">
-<tr>
-<td width="26%" style="padding:10px 12px;background-color:#ffffff;font-size:13px;font-weight:700;color:#1a1a1a;white-space:nowrap;">◆ Brand</td>
-<td width="74%" align="center" style="padding:10px 12px;background-color:#e5ede6;font-size:16px;font-weight:600;color:#2d3e50;line-height:1.45;">유튜버 히밥 × 마로셀 공동개발 바비놀라</td>
-</tr>
-</table>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;">
-<tr>
-<td width="100%" style="padding:0;width:100%;background-color:#ffffff;line-height:0;font-size:0;">
-<img class="babinola-hero" src="../images/babinola-brand-banner.png?v=20260402f" alt="유튜버 히밥 × 마로셀 공동개발 바비놀라 — 브랜드·후기" width="960" style="width:100%;height:auto;display:block;border:0;vertical-align:top;">
 </td>
 </tr>
 </table>
-<p style="margin:0;padding:16px 28px 12px 28px;font-size:14px;line-height:1.75;color:#333333;text-align:justify;">168만 구독자를 보유한 먹방 크리에이터 히밥과 마로셀이 함께 공동 개발한 바비놀라는 출시 이후 “다른 맛은 없나요?” “초코맛도 나오면 좋겠어요”라는 요청이 꾸준히 이어졌고, 그 결과, 진한 초코 풍미를 담은 초코 바비놀라 신제품이 출시되었습니다.</p>
-<p style="margin:0;padding:0 28px 12px 28px;font-size:14px;line-height:1.75;color:#333333;text-align:justify;">히밥이 직접 맛과 구성을 고민해 완성한 제품인 만큼 맛있게 즐기면서도 부담 없이 이어갈 수 있도록 설계된 그래놀라입니다.</p>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
-
-<!-- Hot Keyword -->
-<table data-babinola="keyword-bar" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;table-layout:fixed;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:16px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+<p style="margin:0;padding:0 28px 12px 28px;font-size:14px;line-height:1.75;color:#333333;text-align:left;">이럴 때는 길게 식단을 하기보다 짧게라도 빠르게 정리하는 루틴에 대한 니즈가 높아지면서<br>요즘 '비우는 루틴'이나 48시간 클렌즈 콘텐츠가 인스타그램, 유튜브 등에서 꾸준히 노출되고 있는 흐름입니다.</p>
+<p style="margin:0;padding:0 28px 12px 28px;font-size:14px;line-height:1.75;color:#333333;text-align:left;">이번에 제안드리는 제품은 이틀 동안 가볍게 비워내는 <strong style="color:#1b5e20;font-weight:800;">48시간 공복 클렌즈 ABC 주스</strong>로,<br>하루 4회, 물에 타서 마시는 방식으로 간편하게 관리할 수 있는 루틴형 제품입니다.</p>
+<p style="margin:0;padding:0 28px 8px 28px;font-size:14px;line-height:1.75;color:#333333;text-align:left;">특히</p>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr>
-<td width="26%" style="padding:10px 12px;background-color:#ffffff;font-size:13px;font-weight:700;color:#1a1a1a;white-space:nowrap;">◆ Hot Keyword</td>
-<td width="74%" align="center" style="padding:10px 12px;background-color:#e5ede6;font-size:16px;font-weight:600;color:#c62828;line-height:1.45;">3대 원칙(설탕·밀가루·팜유 ZERO)</td>
-</tr>
-</table>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;">
+<td align="center" style="padding:0 28px 10px 28px;">
+<table role="presentation" align="center" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;width:100%;">
 <tr>
-<td data-babinola="hotword-col" width="50%" style="width:50%;max-width:50%;padding:0 1px 0 0;vertical-align:top;background-color:#ffffff;line-height:0;font-size:0;">
-<img class="babinola-hero" src="../images/babinola-hotword-left.png?v=20260402d" alt="바비놀라 초코 — 원료·레시피 (오트, 아몬드, 초콜릿 등)" width="480" style="width:100%;max-width:100%;height:auto;display:block;border:0;vertical-align:top;">
-</td>
-<td data-babinola="hotword-col" width="50%" style="width:50%;max-width:50%;padding:0 0 0 1px;vertical-align:top;background-color:#ffffff;line-height:0;font-size:0;">
-<img class="babinola-hero" src="../images/babinola-hotword-right.png?v=20260402d" alt="바비놀라 초코 — CHECK POINT 고품질 원재료·고단백·무첨가" width="480" style="width:100%;max-width:100%;height:auto;display:block;border:0;vertical-align:top;">
+<td width="4" style="width:4px;min-width:4px;padding:0;font-size:0;line-height:0;background-color:#2d3e50;">&nbsp;</td>
+<td style="padding:12px 16px 14px 16px;background-color:#edf1f5;font-size:14px;line-height:1.75;color:#333333;">
+<strong style="color:#1b5e20;font-weight:800;">단기간(48시간) 집중 관리</strong><br><br>
+<strong style="color:#1b5e20;font-weight:800;">복잡한 식단 없이</strong> 간편하게 진행<br><br>
+촬영·약속 전 <strong style="color:#1b5e20;font-weight:800;">'급진급빠 루틴'</strong>으로 활용 가능
 </td>
 </tr>
 </table>
-
-<p style="margin:0;padding:24px 28px 12px 28px;font-size:14px;line-height:1.6;color:#333333;">바비놀라는 <strong>'3無 원칙(설탕·밀가루·팜유 ZERO)'</strong>을 기준으로 불필요한 첨가 없이 만들어진 그래놀라입니다.</p>
-<p style="margin:0;padding:0 28px 12px 28px;font-size:14px;line-height:1.6;color:#333333;"><strong>100% 캐나다산 귀리와 유기 현미</strong>를 베이스로, 피칸·캐슈넛·아몬드·해바라기씨를 더해 바삭한 식감과 고소한 풍미를 살렸습니다.</p>
-<p style="margin:0;padding:0 28px 12px 28px;font-size:14px;line-height:1.6;color:#333333;">튀기지 않고 오븐에 구워내는 전통 수제 방식으로 제작되어 부담 없이 가볍게 즐길 수 있습니다.</p>
-<p style="margin:0;padding:0 28px 12px 28px;font-size:14px;line-height:1.6;color:#333333;">일반 시리얼 대비 <strong>당류는 낮추고(4g), 단백질은 충분히(15g)</strong> 담아 간편한 한 끼로도 포만감을 느낄 수 있도록 구성되어 있습니다.</p>
-<p style="margin:0;padding:0 28px 12px 28px;font-size:14px;line-height:1.65;color:#333333;">팜유를 사용하지 않고 견과류 기반의 지방으로 채워 트랜스지방 없이 균형 잡힌 원료로 설계되었습니다. 이와 같은 원료·영양 설계를 유지한 오리지널에 이어, 진한 초코 풍미를 더한 바비놀라 초코맛 신제품이 최근 함께 출시되었습니다. <strong>오리지널과 초코맛을 취향에 따라 골라 즐기실 수 있도록 구성되어 있습니다.</strong></p>
+</td>
+</tr>
+</table>
+<p style="margin:0;padding:0 28px 12px 28px;font-size:14px;line-height:1.75;color:#333333;text-align:left;">이라는 점에서 콘텐츠로 풀었을 때 반응을 만들기 좋은 제품입니다.</p>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
 
-<!-- Chapter 1 -->
+<!-- Chapter 1 · WHAT IS ABC? -->
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;table-layout:fixed;">
 <tr>
 <td width="26%" style="padding:10px 12px;background-color:#ffffff;font-size:13px;font-weight:700;color:#1a1a1a;white-space:nowrap;">◆ Chapter 1</td>
-<td width="74%" align="center" style="padding:10px 12px;background-color:#e5ede6;font-size:16px;font-weight:700;color:#2d3e50;line-height:1.45;">제품 기본정보</td>
+<td width="74%" align="center" style="padding:10px 12px;background-color:#e5ede6;font-size:16px;font-weight:600;color:#2d3e50;line-height:1.45;">WHAT IS ABC?</td>
 </tr>
 </table>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;">
 <tr>
-<td width="100%" style="padding:0;width:100%;line-height:0;font-size:0;background-color:#ffffff;">
-<img class="babinola-hero" src="../images/babinola-chapter1.png?v=20260402" alt="바비놀라 초코맛 — Chapter 1 제품 기본정보" width="960" style="width:100%;height:auto;display:block;border:0;border-radius:8px;vertical-align:top;">
+<td width="100%" style="padding:0 28px;width:100%;line-height:0;font-size:0;background-color:#ffffff;">
+<img class="babinola-hero" src="../images/tox-chapter-1.png?v=3" alt="이틀간 건강하게 비우는, 비우템의 공복 클렌즈 48시간 ABC 주스 — 병과 ABC·푸룬 등 재료" width="960" style="width:100%;height:auto;display:block;border:0;border-radius:8px;vertical-align:top;">
 </td>
 </tr>
 </table>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #dfe8e4;border-radius:0 0 10px 10px;overflow:hidden;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:16px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+<div class="tox-ch-prose" style="text-align:left;">
+<p style="margin:0;padding:0 28px 12px 28px;font-size:14px;line-height:1.75;color:#333333;text-align:left;">사과, 비트, 당근을 베이스로 한 ABC조합은 클렌즈 주스에서 가장 기본이 되는 구성으로<br>식이섬유와 비타민, 미네랄을 함께 보충할 수 있는 조합입니다.</p>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr>
-<td width="25%" align="center" style="padding:12px 10px;font-size:17px;font-weight:600;color:#2d3e50;background-color:#f3f6f4;border-right:1px solid #e8ebe9;border-bottom:1px solid #e8ebe9;">품명</td>
-<td align="center" style="padding:12px 10px;font-size:17px;line-height:1.55;color:#3d4f42;background-color:#ffffff;border-bottom:1px solid #e8ebe9;">바비놀라(Babinola) 그래놀라 (오리지널 / 초코)</td>
+<td style="padding:0 28px 12px 28px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:100%;">
+<tr>
+<td width="22" valign="top" style="width:22px;padding:0 8px 0 0;vertical-align:top;font-size:15px;line-height:1.75;color:#1b5e20;font-weight:800;">✔</td>
+<td valign="top" style="padding:0 0 6px 0;vertical-align:top;font-size:14px;line-height:1.75;color:#3d3d3d;">사과 – 가볍게 비우는 기본 베이스</td>
 </tr>
 <tr>
-<td width="25%" align="center" style="padding:12px 10px;font-size:17px;font-weight:600;color:#2d3e50;background-color:#f3f6f4;border-right:1px solid #e8ebe9;border-bottom:1px solid #e8ebe9;">제품유형</td>
-<td align="center" style="padding:12px 10px;font-size:17px;line-height:1.55;color:#3d4f42;background-color:#ffffff;border-bottom:1px solid #e8ebe9;">곡물가공품 (그래놀라)</td>
+<td width="22" valign="top" style="width:22px;padding:0 8px 0 0;vertical-align:top;font-size:15px;line-height:1.75;color:#1b5e20;font-weight:800;">✔</td>
+<td valign="top" style="padding:0 0 6px 0;vertical-align:top;font-size:14px;line-height:1.75;color:#3d3d3d;">비트 – 컨디션 밸런스를 위한 영양 보충</td>
 </tr>
 <tr>
-<td width="25%" align="center" style="padding:12px 10px;font-size:17px;font-weight:600;color:#2d3e50;background-color:#f3f6f4;border-right:1px solid #e8ebe9;border-bottom:1px solid #e8ebe9;">구성</td>
-<td align="center" style="padding:12px 10px;font-size:17px;line-height:1.55;color:#3d4f42;background-color:#ffffff;border-bottom:1px solid #e8ebe9;">300g (오리지널 / 초코맛 선택 가능)</td>
+<td width="22" valign="top" style="width:22px;padding:0 8px 0 0;vertical-align:top;font-size:15px;line-height:1.75;color:#1b5e20;font-weight:800;">✔</td>
+<td valign="top" style="padding:0 0 6px 0;vertical-align:top;font-size:14px;line-height:1.75;color:#3d3d3d;">당근 – 부족한 영양을 채워주는 루틴 보완</td>
 </tr>
 <tr>
-<td width="25%" align="center" style="padding:12px 10px;font-size:17px;font-weight:600;color:#2d3e50;background-color:#f3f6f4;border-right:1px solid #e8ebe9;border-bottom:1px solid #e8ebe9;">주요원료</td>
-<td align="center" style="padding:12px 10px;font-size:17px;line-height:1.55;color:#3d4f42;background-color:#ffffff;border-bottom:1px solid #e8ebe9;">캐나다산 귀리, 스포트밀, 호두, 캐슈넛, 아몬드, 해바라기씨 등</td>
-</tr>
-<tr>
-<td width="25%" align="center" style="padding:12px 10px;font-size:17px;font-weight:600;color:#2d3e50;background-color:#f3f6f4;border-right:1px solid #e8ebe9;border-bottom:1px solid #e8ebe9;">제품특징</td>
-<td align="center" style="padding:12px 10px;font-size:17px;line-height:1.55;color:#3d4f42;background-color:#ffffff;border-bottom:1px solid #e8ebe9;">100% 핸드메이드 시리얼 제조 방식 / 초코 바비놀라 신제품 출시</td>
-</tr>
-<tr>
-<td width="25%" align="center" style="padding:12px 10px;font-size:17px;font-weight:600;color:#2d3e50;background-color:#f3f6f4;border-right:1px solid #e8ebe9;">영양정보</td>
-<td align="center" style="padding:12px 10px;font-size:17px;line-height:1.55;color:#3d4f42;background-color:#ffffff;">탄수화물 4g / 단백질 15g / 트랜스지방 0g (100g 기준)</td>
+<td width="22" valign="top" style="width:22px;padding:0 8px 0 0;vertical-align:top;font-size:15px;line-height:1.75;color:#1b5e20;font-weight:800;">✔</td>
+<td valign="top" style="padding:0;vertical-align:top;font-size:14px;line-height:1.75;color:#3d3d3d;">푸룬 – 식이섬유로 비우는 흐름 강화</td>
 </tr>
 </table>
+</td>
+</tr>
+</table>
+</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
 
-<!-- Chapter 2 · 컨텐츠 셀링 포인트 (오라라 히알브이티 카드 스타일) -->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;table-layout:fixed;">
+<!-- Chapter 2 · 푸룬 (keyword-bar) -->
+<table data-babinola="keyword-bar" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;table-layout:fixed;">
 <tr>
 <td width="26%" style="padding:10px 12px;background-color:#ffffff;font-size:13px;font-weight:700;color:#1a1a1a;white-space:nowrap;">◆ Chapter 2</td>
-<td width="74%" align="center" style="padding:10px 12px;background-color:#e5ede6;font-size:16px;font-weight:700;color:#2d3e50;line-height:1.45;">컨텐츠 셀링 포인트</td>
+<td width="74%" align="center" style="padding:10px 12px;background-color:#e5ede6;font-size:16px;font-weight:600;color:#2d3e50;line-height:1.45;">왜 '푸룬'이 들어가야 할까?</td>
 </tr>
 </table>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;">
 <tr>
-<td width="100%" style="padding:0;width:100%;line-height:0;font-size:0;">
-<img class="babinola-hero" src="../images/babinola-chapter2-checkpoint.png?v=20260331" alt="바비놀라 초코 — 칼로리 부담 DOWN, 진한 초코 풍미 UP" width="960" style="width:100%;height:auto;display:block;border:0;border-radius:8px;vertical-align:top;">
-</td>
-</tr>
-<tr>
-<td width="100%" style="padding:20px 20px 0 20px;width:100%;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td style="padding:0 0 14px 0;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
-<tr><td style="padding:14px 16px 16px 16px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr>
-<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
-<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
-</table>
-</td>
-<td style="padding:0;vertical-align:top;">
-<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">초코 덕후 공감형 콘텐츠</strong>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
-<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ “초코 못 끊는 사람들” 공감 스토리로 자연스럽게 유입 가능</td></tr>
-</table>
+<td width="100%" style="padding:0 28px;width:100%;line-height:0;font-size:0;background-color:#ffffff;">
+<img class="babinola-hero" src="../images/tox-chapter-2.png?v=1" alt="과일별 식이섬유 함유량 비교(100g당) — 푸룬 식이섬유 강조" width="960" style="width:100%;height:auto;display:block;border:0;border-radius:8px;vertical-align:top;">
 </td>
 </tr>
 </table>
-</td></tr>
-</table>
-</td></tr>
-<tr><td style="padding:0 0 14px 0;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
-<tr><td style="padding:14px 16px 16px 16px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr>
-<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
-<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
-</table>
-</td>
-<td style="padding:0;vertical-align:top;">
-<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">간식 vs 다이어트 갈등 구조</strong>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
-<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 먹고 싶지만 참는 상황 → 대체 간식 제안으로 전환 유도</td></tr>
-</table>
-</td>
-</tr>
-</table>
-</td></tr>
-</table>
-</td></tr>
-<tr><td style="padding:0 0 14px 0;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
-<tr><td style="padding:14px 16px 16px 16px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr>
-<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
-<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
-</table>
-</td>
-<td style="padding:0;vertical-align:top;">
-<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">디저트 대체 콘텐츠에 최적화</strong>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
-<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 초코 간식 대신 선택하는 루틴으로 콘텐츠 확장 가능</td></tr>
-</table>
-</td>
-</tr>
-</table>
-</td></tr>
-</table>
-</td></tr>
-<tr><td style="padding:0 0 14px 0;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
-<tr><td style="padding:14px 16px 16px 16px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr>
-<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
-<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
-</table>
-</td>
-<td style="padding:0;vertical-align:top;">
-<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">오독오독 씹히는 식감 강조 포인트</strong>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
-<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 먹는 ASMR / 리얼 반응 콘텐츠로 활용도 높음</td></tr>
-</table>
-</td>
-</tr>
-</table>
-</td></tr>
-</table>
-</td></tr>
-<tr><td style="padding:0 0 14px 0;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
-<tr><td style="padding:14px 16px 16px 16px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr>
-<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
-<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
-</table>
-</td>
-<td style="padding:0;vertical-align:top;">
-<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">‘죄책감 덜한 초코’ 메시지</strong>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
-<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 다이어트 중에도 먹을 수 있는 간식 포지션으로 설득 가능</td></tr>
-</table>
-</td>
-</tr>
-</table>
-</td></tr>
-</table>
-</td></tr>
-<tr><td style="padding:0 0 14px 0;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
-<tr><td style="padding:14px 16px 16px 16px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr>
-<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
-<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
-</table>
-</td>
-<td style="padding:0;vertical-align:top;">
-<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">히밥 공동개발 스토리 활용</strong>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
-<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 맛에 대한 신뢰 + 검증된 제품 스토리로 연결 가능</td></tr>
-</table>
-</td>
-</tr>
-</table>
-</td></tr>
-</table>
-</td></tr>
-<tr><td style="padding:0 0 14px 0;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
-<tr><td style="padding:14px 16px 16px 16px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr>
-<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
-<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
-</table>
-</td>
-<td style="padding:0;vertical-align:top;">
-<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">비교 콘텐츠 확장 가능</strong>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
-<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ “일반 초코 간식 vs 바비놀라 초코” 구조로 차별화 포인트 강조</td></tr>
-</table>
-</td>
-</tr>
-</table>
-</td></tr>
-</table>
-</td></tr>
-<tr><td style="padding:0;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
-<tr><td style="padding:14px 16px 16px 16px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr>
-<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
-<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
-</table>
-</td>
-<td style="padding:0;vertical-align:top;">
-<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">재구매/루틴형 콘텐츠 연결</strong>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
-<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 한 번이 아니라 계속 먹는 간식 루틴으로 자연스럽게 이어짐</td></tr>
-</table>
-</td>
-</tr>
-</table>
-</td></tr>
-</table>
-</td></tr>
-</table>
-</td>
-</tr>
-</table>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:16px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+<div class="tox-ch-prose" style="text-align:left;">
+<p style="margin:0;padding:0 28px 12px 28px;font-size:14px;line-height:1.75;color:#333333;text-align:left;">푸룬은 식이섬유가 풍부한 원료로 100g 기준 약 7g 이상의 식이섬유를 함유하고 있어<br>가볍게 비워내는 흐름을 도와주는 역할을 합니다.</p>
+<p style="margin:0;padding:0 28px 12px 28px;font-size:14px;line-height:1.75;color:#333333;text-align:left;">부담 없이 시작할 수 있는 클렌즈 루틴의 핵심 포인트입니다.</p>
+</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
 
-<!-- Chapter 3 · 실제 리뷰 콘텐츠 활용 TIP (오라라 히알브이티 카드 스타일) -->
+<!-- Chapter 3 · 섭취방법 -->
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;table-layout:fixed;">
 <tr>
 <td width="26%" style="padding:10px 12px;background-color:#ffffff;font-size:13px;font-weight:700;color:#1a1a1a;white-space:nowrap;">◆ Chapter 3</td>
-<td width="74%" align="center" style="padding:10px 12px;background-color:#e5ede6;font-size:16px;font-weight:700;color:#2d3e50;line-height:1.45;">실제 리뷰로 보는 콘텐츠 활용 TIP</td>
+<td width="74%" align="center" style="padding:10px 12px;background-color:#e5ede6;font-size:16px;font-weight:700;color:#2d3e50;line-height:1.45;">섭취방법</td>
 </tr>
 </table>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;">
 <tr>
-<td width="100%" style="padding:0;width:100%;line-height:0;font-size:0;">
-<img class="babinola-hero" src="../images/babinola-store-review.jpg" alt="바비놀라 제품리뷰 평점 4.75" width="960" style="width:100%;height:auto;display:block;border:0;border-radius:8px;vertical-align:top;">
-</td>
-</tr>
-<tr>
-<td width="100%" style="padding:20px 20px 0 20px;width:100%;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td style="padding:0 0 14px 0;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
-<tr><td style="padding:14px 16px 16px 16px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr>
-<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
-<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
-</table>
-</td>
-<td style="padding:0;vertical-align:top;">
-<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">&ldquo;한 번 먹으면 계속 손이 가요&rdquo;</strong>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
-<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 중독성 있는 맛 중심으로 간식 콘텐츠 활용 가능</td></tr>
-</table>
+<td width="100%" style="padding:0 28px;width:100%;line-height:0;font-size:0;background-color:#ffffff;">
+<img class="babinola-hero" src="../images/tox-chapter-3.png?v=5" alt="비우템이 추천하는 클렌즈 루틴 — 2DAYS PROGRAM, AM/PM 4회 일정" width="960" style="width:100%;height:auto;display:block;border:0;border-radius:8px;vertical-align:top;">
 </td>
 </tr>
 </table>
-</td></tr>
-</table>
-</td></tr>
-<tr><td style="padding:0 0 14px 0;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
-<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:16px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+<div class="tox-ch-prose" style="text-align:left;">
+<p style="margin:0;padding:0 28px 10px 28px;font-size:15px;line-height:1.6;color:#2d3e50;font-weight:700;text-align:left;">48시간 클렌즈 루틴, 이렇게 진행하세요</p>
+<p style="margin:0;padding:0 28px 12px 28px;font-size:14px;line-height:1.75;color:#333333;text-align:left;">하루 4회, 물에 타서 마시는 방식으로 간편하게 진행하는 클렌즈 루틴입니다.</p>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr>
-<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
-<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
-</table>
-</td>
-<td style="padding:0;vertical-align:top;">
-<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">&ldquo;초코 먹고 싶은데 이걸로 대체했어요&rdquo;</strong>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
-<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 다이어트 중 간식 대체 스토리 콘텐츠로 확장 가능</td></tr>
+<td style="padding:0 28px 12px 28px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:100%;">
+<tr>
+<td width="22" valign="top" style="width:22px;padding:0 8px 0 0;vertical-align:top;font-size:15px;line-height:1.75;color:#1b5e20;font-weight:800;">✔</td>
+<td valign="top" style="padding:0 0 6px 0;vertical-align:top;font-size:14px;line-height:1.75;color:#3d3d3d;">1회 1포를 물에 희석하여 섭취</td>
+</tr>
+<tr>
+<td width="22" valign="top" style="width:22px;padding:0 8px 0 0;vertical-align:top;font-size:15px;line-height:1.75;color:#1b5e20;font-weight:800;">✔</td>
+<td valign="top" style="padding:0 0 6px 0;vertical-align:top;font-size:14px;line-height:1.75;color:#3d3d3d;">하루 총 4회, 일정 간격으로 나누어 진행</td>
+</tr>
+<tr>
+<td width="22" valign="top" style="width:22px;padding:0 8px 0 0;vertical-align:top;font-size:15px;line-height:1.75;color:#1b5e20;font-weight:800;">✔</td>
+<td valign="top" style="padding:0;vertical-align:top;font-size:14px;line-height:1.75;color:#3d3d3d;">2일(48시간) 동안 집중 관리</td>
+</tr>
 </table>
 </td>
 </tr>
 </table>
-</td></tr>
-</table>
-</td></tr>
-<tr><td style="padding:0 0 14px 0;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
-<tr><td style="padding:14px 16px 16px 16px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+
+<!-- Chapter 4 · 제품 기본정보 -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;table-layout:fixed;">
 <tr>
-<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
-<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+<td width="26%" style="padding:10px 12px;background-color:#ffffff;font-size:13px;font-weight:700;color:#1a1a1a;white-space:nowrap;">◆ Chapter 4</td>
+<td width="74%" align="center" style="padding:10px 12px;background-color:#e5ede6;font-size:15px;font-weight:700;color:#2d3e50;line-height:1.45;">제품 기본정보</td>
+</tr>
 </table>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+<tr>
+<td class="tox-ch4-outer" style="padding:0 28px;background-color:#ffffff;">
+<table role="presentation" data-babinola="tox-ch4-split" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;max-width:100%;">
+<tr>
+<td width="50%" valign="top" style="width:50%;padding:0 2px 0 0;vertical-align:top;line-height:0;font-size:0;">
+<img class="babinola-hero tox-ch4-img" src="../images/tox-chapter-4-left.png?v=2" width="300" height="300" alt="비우템 48시간 ABC — 비타민·미네랄 등 영양 정리" style="width:100%;max-width:100%;height:auto;display:block;border:0;border-radius:6px;vertical-align:top;">
 </td>
-<td style="padding:0;vertical-align:top;">
-<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">&ldquo;오독오독 씹히는 식감이 너무 좋아요&rdquo;</strong>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
-<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 먹는 리액션 / ASMR 콘텐츠로 자연스럽게 연출 가능</td></tr>
+<td width="50%" valign="top" style="width:50%;padding:0 0 0 2px;vertical-align:top;line-height:0;font-size:0;">
+<img class="babinola-hero tox-ch4-img" src="../images/tox-chapter-4-right.png?v=2" width="300" height="300" alt="필요한 건 채우고 비울 건 비움 — 콜레스테롤·트랜스지방·보존료·착색료 ZERO" style="width:100%;max-width:100%;height:auto;display:block;border:0;border-radius:6px;vertical-align:top;">
+</td>
+</tr>
 </table>
 </td>
 </tr>
 </table>
-</td></tr>
-</table>
-</td></tr>
-<tr><td style="padding:0 0 14px 0;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
-<tr><td style="padding:14px 16px 16px 16px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<table data-babinola="product-spec" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #dfe8e4;border-radius:0 0 10px 10px;overflow:hidden;">
 <tr>
-<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
-<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
-</table>
-</td>
-<td style="padding:0;vertical-align:top;">
-<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">&ldquo;시리얼 안 좋아하는데 이건 계속 먹게 돼요&rdquo;</strong>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
-<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 일반 시리얼 대비 차별화 포인트 강조 콘텐츠 가능</td></tr>
-</table>
-</td>
+<td width="25%" align="left" valign="top" style="padding:12px 12px;font-size:16px;font-weight:600;color:#2d3e50;background-color:#f3f6f4;border-right:1px solid #e8ebe9;border-bottom:1px solid #e8ebe9;text-align:left;vertical-align:top;">품명</td>
+<td align="left" valign="top" style="padding:12px 14px;font-size:16px;line-height:1.7;color:#3d4f42;background-color:#ffffff;border-bottom:1px solid #e8ebe9;text-align:left;vertical-align:top;">비우템 톡스클렌즈 48시간 ABC 주스</td>
 </tr>
-</table>
-</td></tr>
-</table>
-</td></tr>
-<tr><td style="padding:0 0 14px 0;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
-<tr><td style="padding:14px 16px 16px 16px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr>
-<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
-<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
-</table>
-</td>
-<td style="padding:0;vertical-align:top;">
-<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">&ldquo;초코인데 많이 안 달아서 좋아요&rdquo;</strong>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
-<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 부담 없는 간식 / 데일리 간식 루틴 콘텐츠 연결 가능</td></tr>
-</table>
-</td>
+<td width="25%" align="left" valign="top" style="padding:12px 12px;font-size:16px;font-weight:600;color:#2d3e50;background-color:#f3f6f4;border-right:1px solid #e8ebe9;border-bottom:1px solid #e8ebe9;text-align:left;vertical-align:top;">제품유형</td>
+<td align="left" valign="top" style="padding:12px 14px;font-size:16px;line-height:1.7;color:#3d4f42;background-color:#ffffff;border-bottom:1px solid #e8ebe9;text-align:left;vertical-align:top;">과·채 가공음료 (클렌즈 주스)</td>
 </tr>
-</table>
-</td></tr>
-</table>
-</td></tr>
-<tr><td style="padding:0 0 14px 0;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
-<tr><td style="padding:14px 16px 16px 16px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr>
-<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
-<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
-</table>
-</td>
-<td style="padding:0;vertical-align:top;">
-<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">&ldquo;아이도 같이 잘 먹어요&rdquo;</strong>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
-<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 온가족 간식 / 아이 간식 콘텐츠로 확장 가능</td></tr>
-</table>
-</td>
+<td width="25%" align="left" valign="top" style="padding:12px 12px;font-size:16px;font-weight:600;color:#2d3e50;background-color:#f3f6f4;border-right:1px solid #e8ebe9;border-bottom:1px solid #e8ebe9;text-align:left;vertical-align:top;">구성</td>
+<td align="left" valign="top" style="padding:12px 14px;font-size:16px;line-height:1.7;color:#3d4f42;background-color:#ffffff;border-bottom:1px solid #e8ebe9;text-align:left;vertical-align:top;">48시간 클렌즈 프로그램 구성 (1일 4회 섭취 기준)</td>
 </tr>
-</table>
-</td></tr>
-</table>
-</td></tr>
-<tr><td style="padding:0 0 14px 0;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
-<tr><td style="padding:14px 16px 16px 16px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr>
-<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
-<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
-</table>
-</td>
-<td style="padding:0;vertical-align:top;">
-<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">&ldquo;요거트에 넣어 먹으니까 더 맛있어요&rdquo;</strong>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
-<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 간단 레시피 / 브런치 콘텐츠로 활용 가능</td></tr>
-</table>
-</td>
+<td width="25%" align="left" valign="top" style="padding:12px 12px;font-size:16px;font-weight:600;color:#2d3e50;background-color:#f3f6f4;border-right:1px solid #e8ebe9;border-bottom:1px solid #e8ebe9;text-align:left;vertical-align:top;">주요원료</td>
+<td align="left" valign="top" style="padding:12px 14px;font-size:16px;line-height:1.7;color:#3d4f42;background-color:#ffffff;border-bottom:1px solid #e8ebe9;text-align:left;vertical-align:top;">사과, 비트, 당근(ABC 조합), 푸룬 등</td>
 </tr>
-</table>
-</td></tr>
-</table>
-</td></tr>
-<tr><td style="padding:0;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
-<tr><td style="padding:14px 16px 16px 16px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr>
-<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
-<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
-</table>
-</td>
-<td style="padding:0;vertical-align:top;">
-<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">&ldquo;간식으로 먹다보니 계속 찾게 돼요&rdquo;</strong>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
-<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 반복 소비 / 재구매 유도 콘텐츠 흐름 연결 가능</td></tr>
-</table>
-</td>
+<td width="25%" align="left" valign="top" style="padding:12px 12px;font-size:16px;font-weight:600;color:#2d3e50;background-color:#f3f6f4;border-right:1px solid #e8ebe9;border-bottom:1px solid #e8ebe9;text-align:left;vertical-align:top;">제품특징</td>
+<td align="left" valign="top" style="padding:12px 14px;font-size:16px;line-height:1.7;color:#3d4f42;background-color:#ffffff;border-bottom:1px solid #e8ebe9;text-align:left;vertical-align:top;">48시간 집중 클렌즈 루틴 설계 / 물에 희석해 섭취하는 간편한 방식 /<br>과일·채소 기반으로 식이섬유 및 영양 보충 고려</td>
 </tr>
-</table>
-</td></tr>
-</table>
-</td></tr>
-</table>
-</td>
+<tr>
+<td width="25%" align="left" valign="top" style="padding:12px 12px;font-size:16px;font-weight:600;color:#2d3e50;background-color:#f3f6f4;border-right:1px solid #e8ebe9;text-align:left;vertical-align:top;">섭취방법</td>
+<td align="left" valign="top" style="padding:12px 14px;font-size:16px;line-height:1.7;color:#3d4f42;background-color:#ffffff;text-align:left;vertical-align:top;">1회 1포를 물에 희석하여 섭취 / 하루 4회 나누어 섭취 /<br>2일(48시간) 동안 진행하는 클렌즈 루틴</td>
 </tr>
 </table>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
 
-<!-- Chapter 4 (오라라 히알브이티: 추천 체크리스트 + 하단 안내) -->
+<!-- Chapter 5 (추천 체크리스트 + 하단 안내) -->
 <table data-babinola="chapter4-header" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;table-layout:fixed;">
 <tr>
-<td width="26%" style="padding:12px 14px;background-color:#ffffff;font-size:14px;font-weight:700;color:#1a1a1a;white-space:nowrap;vertical-align:middle;">◆ Chapter 4</td>
+<td width="26%" style="padding:12px 14px;background-color:#ffffff;font-size:14px;font-weight:700;color:#1a1a1a;white-space:nowrap;vertical-align:middle;">◆ Chapter 5</td>
 <td width="74%" align="center" style="padding:12px 20px;background-color:#e5ede6;font-size:14px;font-weight:700;color:#2d3e50;line-height:1.5;vertical-align:middle;">이런 분들께 추천드립니다</td>
 </tr>
 </table>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:12px 0 0 0;font-size:1px;line-height:1px;">&nbsp;</td></tr></table>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;">
 <tr>
-<td width="100%" style="padding:0;width:100%;line-height:0;font-size:0;">
-<img class="babinola-hero" src="../images/babinola-chapter4-reference.png?v=20260402e" alt="바비놀라 초코맛 — 먹는 법 추천 (우유·아이스크림·요거트·샐러드)" width="960" style="width:100%;height:auto;display:block;border:0;border-radius:8px;vertical-align:top;">
+<td width="100%" style="padding:0 28px;width:100%;line-height:0;font-size:0;background-color:#ffffff;">
+<img class="babinola-hero" src="../images/tox-chapter-5.png?v=3" alt="비우템 48시간 ABC — 추천 대상·활용 아이디어" width="960" style="width:100%;height:auto;display:block;border:0;border-radius:8px;vertical-align:top;">
 </td>
 </tr>
 <tr>
-<td data-babinola="chapter4-body" width="100%" style="padding:16px 32px 28px 32px;width:100%;background-color:#ffffff;">
+<td data-babinola="chapter4-body" width="100%" style="padding:20px 20px 12px 20px;width:100%;background-color:#ffffff;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td style="padding:14px 18px;background-color:#f5f5f5;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:0 16px 0 0;vertical-align:top;font-size:15px;line-height:1.7;color:#6d4ba8;font-weight:700;width:22px;">✔</td><td style="padding:0;font-size:15px;line-height:1.7;color:#3d4f42;font-weight:700;vertical-align:top;">다이어트 중에도 초코 간식을 포기하기 어려운 분</td></tr></table></td></tr>
-<tr><td style="padding:12px 0 0 0;font-size:1px;">&nbsp;</td></tr>
-<tr><td style="padding:14px 18px;background-color:#f5f5f5;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:0 16px 0 0;vertical-align:top;font-size:15px;line-height:1.7;color:#6d4ba8;font-weight:700;width:22px;">✔</td><td style="padding:0;font-size:15px;line-height:1.7;color:#3d4f42;font-weight:700;vertical-align:top;">군것질을 줄이고 건강한 간식으로 바꾸고 싶은 분</td></tr></table></td></tr>
-<tr><td style="padding:12px 0 0 0;font-size:1px;">&nbsp;</td></tr>
-<tr><td style="padding:14px 18px;background-color:#f5f5f5;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:0 16px 0 0;vertical-align:top;font-size:15px;line-height:1.7;color:#6d4ba8;font-weight:700;width:22px;">✔</td><td style="padding:0;font-size:15px;line-height:1.7;color:#3d4f42;font-weight:700;vertical-align:top;">식단 관리 중 간편하게 먹을 수 있는 간식을 찾는 분</td></tr></table></td></tr>
-<tr><td style="padding:12px 0 0 0;font-size:1px;">&nbsp;</td></tr>
-<tr><td style="padding:14px 18px;background-color:#f5f5f5;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:0 16px 0 0;vertical-align:top;font-size:15px;line-height:1.7;color:#6d4ba8;font-weight:700;width:22px;">✔</td><td style="padding:0;font-size:15px;line-height:1.7;color:#3d4f42;font-weight:700;vertical-align:top;">시리얼이나 과자 대신 부담 없이 먹을 수 있는 제품을 찾는 분</td></tr></table></td></tr>
-<tr><td style="padding:12px 0 0 0;font-size:1px;">&nbsp;</td></tr>
-<tr><td style="padding:14px 18px;background-color:#f5f5f5;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:0 16px 0 0;vertical-align:top;font-size:15px;line-height:1.7;color:#6d4ba8;font-weight:700;width:22px;">✔</td><td style="padding:0;font-size:15px;line-height:1.7;color:#3d4f42;font-weight:700;vertical-align:top;">요거트, 우유 등과 함께 간편하게 즐길 수 있는 식단을 원하는 분</td></tr></table></td></tr>
-<tr><td style="padding:12px 0 0 0;font-size:1px;">&nbsp;</td></tr>
-<tr><td style="padding:14px 18px;background-color:#f5f5f5;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:0 16px 0 0;vertical-align:top;font-size:15px;line-height:1.7;color:#6d4ba8;font-weight:700;width:22px;">✔</td><td style="padding:0;font-size:15px;line-height:1.7;color:#3d4f42;font-weight:700;vertical-align:top;">아이와 함께 먹을 수 있는 건강 간식을 찾는 분</td></tr></table></td></tr>
-<tr><td style="padding:12px 0 0 0;font-size:1px;">&nbsp;</td></tr>
-<tr><td style="padding:14px 18px;background-color:#f5f5f5;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:0 16px 0 0;vertical-align:top;font-size:15px;line-height:1.7;color:#6d4ba8;font-weight:700;width:22px;">✔</td><td style="padding:0;font-size:15px;line-height:1.7;color:#3d4f42;font-weight:700;vertical-align:top;">달달한 간식을 먹으면서도 당 부담은 줄이고 싶은 분</td></tr></table></td></tr>
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">&ldquo;여행, 외식 후 몸이 무겁게 느껴져&rdquo;</strong>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 짧은 기간으로 컨디션을 정리하고 싶은 분</td></tr>
 </table>
 </td>
 </tr>
 </table>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 28px 0 28px;font-size:15px;line-height:1.75;color:#3d4f42;">초코맛 바비놀라는 크리에이터의 일상 속 간식·식단 루틴 콘텐츠에 자연스럽게 녹여낼 수 있어 부담 없이 공유하면서도 공감도를 높이기 좋은 제품입니다.<br><br>필요 시 간식 루틴·식단 대체·레시피 활용 콘텐츠 가이드를 함께 전달드립니다.</td></tr></table>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:40px 0 0 0;font-size:1px;line-height:1px;">&nbsp;</td></tr></table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">&ldquo;중요한 일정(촬영, 약속, 여행 등)을 앞두고&rdquo;</strong>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 2~3일 집중 관리가 필요한 분</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">&ldquo;불규칙한 식습관으로&rdquo;</strong>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 가볍게 리셋하는 루틴이 필요한 분</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">&ldquo;식단을 갑자기 줄이기 부담스러워&rdquo;</strong>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 간편하게 시작할 수 있는 클렌즈를 찾는 분</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">&ldquo;장기간 관리보다는&rdquo;</strong>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 짧고 확실한 루틴을 선호하는 분</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+</table>
+</td>
+</tr>
+</table>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:8px 0 0 0;font-size:1px;line-height:1px;">&nbsp;</td></tr></table>
 
 <!-- Special Price (오라라 히알브이티: 협업 제안 안내) -->
 <table data-babinola="special-price-bar" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;table-layout:fixed;">
@@ -696,17 +603,12 @@ img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: b
 </tr>
 </table>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:12px 0 0 0;font-size:1px;line-height:1px;">&nbsp;</td></tr></table>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:28px 28px 0 28px;font-size:15px;line-height:1.75;color:#3d4f42;">바비놀라 초코맛은 <span style="white-space:nowrap;">‘간식 대체’와 ‘루틴형 소비’</span>가 가능한 제품으로, 단발성 노출보다 반복 소비로 이어지는 흐름을 만들기 좋은 제품입니다.<br><br>
-특히 다이어트 중 간식 니즈가 높은 타겟층에서 지속적으로 소비되는 카테고리로, 안정적인 매출 흐름을 기대할 수 있습니다.<br><br>
-현재는 <span style="background-color:#b8dcc5;font-weight:800;color:#142a22;">셀러를 선별적으로 제한하여</span> 협업을 진행하고 있으며, 콘텐츠 핏과 타겟층이 잘 맞는 분들 중심으로 운영하고 있습니다.<br><br>
-기존 오리지널 그래놀라에 이어 신규 초코맛 라인까지 함께 제안드리며, 취향에 따라 선택할 수 있는 구성으로 판매 확장도 가능합니다.<br><br>
-단발성이 아닌 재진행까지 이어지는 방향으로 장기적인 협업을 제안드립니다.<br><br>
-샘플 체험 및 상세 협업 조건은 하단 신청을 통해 안내드리고 있습니다.</td></tr></table>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:28px 28px 0 28px;font-size:15px;line-height:1.75;color:#1a1a1a;text-align:left;">현재 해당 제품은 시즌 수요가 집중되는 시점에 맞춰 공동구매 진행 시<br>메리트 있는 특가 조건으로 제안드리고 있습니다.<br><br>특히 클렌즈 제품 특성상 단기간 수요가 빠르게 몰리는 카테고리로, 타이밍에 맞춰 진행 시<br>집중도 높은 매출 흐름을 만들 수 있는 제품으로 추천드립니다.</td></tr></table>
 
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr>
 <td align="center" width="100%" style="padding:40px 28px 40px 28px;width:100%;">
-<a href="../../form?product=%EB%B0%94%EB%B9%84%EB%86%80%EB%9D%BC%20%EC%B4%88%EC%BD%94%EB%A7%9B" style="display:inline-block;padding:14px 32px;background-color:#2d3e50;color:#ffffff;font-size:16px;font-weight:700;text-decoration:none;border-radius:8px;">샘플체험 신청</a>
+<a href="../../form?product=%EB%B9%84%EC%9A%B0%ED%85%9C%20%ED%86%A1%EC%8A%A4%ED%81%AC%EB%A0%8C%EC%A6%88%2048%EC%8B%9C%EA%B0%84%20ABC%EC%A3%BC%EC%8A%A4" style="display:inline-block;padding:14px 32px;background-color:#2d3e50;color:#ffffff;font-size:16px;font-weight:700;text-decoration:none;border-radius:8px;">샘플체험 신청</a>
 </td>
 </tr>
 </table>
