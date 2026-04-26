@@ -29,15 +29,12 @@ img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: b
     height: auto !important;
     display: block !important;
   }
-  /* 제품 소개(다이어트·디톡스): PC 2열(좌우) + 각 카드 내 좌:텍스트 / 우:이미지 */
-  table.babinola-shell td.babinola-body table[data-bomi="product-pair"] { width: 100% !important; max-width: 100% !important; table-layout: fixed !important; }
-  table.babinola-shell td.babinola-body table[data-bomi="product-pair"] tr > td.bomi-pair-cell {
-    width: 50% !important; max-width: 50% !important; vertical-align: top !important; box-sizing: border-box !important;
-  }
-  table.babinola-shell td.babinola-body table.bomi-card-inner { width: 100% !important; max-width: 100% !important; table-layout: fixed !important; }
-  table.babinola-shell td.babinola-body table.bomi-card-inner tr > td.bomi-c-text { width: 50% !important; vertical-align: top !important; }
-  table.babinola-shell td.babinola-body table.bomi-card-inner tr > td.bomi-c-img { width: 50% !important; vertical-align: top !important; text-align: right !important; }
-  table.babinola-shell td.babinola-body table.bomi-card-inner tr > td.bomi-c-img img { max-width: 100% !important; width: 100% !important; height: auto !important; }
+  /* 보미 제품 소개(세로 2섹션): PC 각 카드=좌 이미지 / 우 텍스트 */
+  table.babinola-shell td.babinola-body table[data-bomi="product-stack"] { width: 100% !important; max-width: 100% !important; table-layout: fixed !important; }
+  table.babinola-shell td.babinola-body table.bomi-prod-sec { width: 100% !important; max-width: 100% !important; table-layout: fixed !important; }
+  table.babinola-shell td.babinola-body table.bomi-prod-sec tr > td.bomi-prod-img { width: 48% !important; vertical-align: top !important; }
+  table.babinola-shell td.babinola-body table.bomi-prod-sec tr > td.bomi-prod-txt { width: 52% !important; vertical-align: top !important; }
+  table.babinola-shell td.babinola-body table.bomi-prod-sec tr > td.bomi-prod-img img { max-width: 100% !important; width: 100% !important; height: auto !important; }
 }
 @media screen and (max-width: 768px) {
   body { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
@@ -142,23 +139,17 @@ img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: b
   img[width="960"], img[width="480"] {
     margin: 0 0 18px 0 !important;
   }
-  /* 제품 소개: 모바일 1열(제품1 → 제품2), 카드 내 텍스트 위·이미지 아래 */
-  table.babinola-shell td.babinola-body table[data-bomi="product-pair"] { max-width: 100% !important; width: 100% !important; table-layout: fixed !important; }
-  table.babinola-shell td.babinola-body table[data-bomi="product-pair"] tr > td.bomi-pair-cell {
-    display: block !important; width: 100% !important; max-width: 100% !important;
-    padding: 0 0 40px 0 !important; box-sizing: border-box !important;
-  }
-  table.babinola-shell td.babinola-body table[data-bomi="product-pair"] tr > td.bomi-pair-cell:last-child { padding-bottom: 0 !important; }
-  table.babinola-shell td.babinola-body table.bomi-card-inner { width: 100% !important; max-width: 100% !important; }
-  table.babinola-shell td.babinola-body table.bomi-card-inner tr > td.bomi-c-text,
-  table.babinola-shell td.babinola-body table.bomi-card-inner tr > td.bomi-c-img {
+  /* 보미 제품: 모바일 이미지 上·텍스트 下, 100% 폭(가로 스크롤 방지) */
+  table.babinola-shell td.babinola-body table[data-bomi="product-stack"] { table-layout: auto !important; max-width: 100% !important; }
+  table.babinola-shell td.babinola-body table[data-bomi="product-stack"] > tbody > tr > td { max-width: 100% !important; box-sizing: border-box !important; }
+  table.babinola-shell td.babinola-body table.bomi-prod-sec { table-layout: auto !important; max-width: 100% !important; width: 100% !important; }
+  table.babinola-shell td.babinola-body table.bomi-prod-sec tr > td.bomi-prod-img,
+  table.babinola-shell td.babinola-body table.bomi-prod-sec tr > td.bomi-prod-txt {
     display: block !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important;
   }
-  table.babinola-shell td.babinola-body table.bomi-card-inner tr > td.bomi-c-text { text-align: left !important; }
-  table.babinola-shell td.babinola-body table.bomi-card-inner tr > td.bomi-c-img {
-    text-align: center !important; padding: 20px 8px 0 8px !important;
-  }
-  table.babinola-shell td.babinola-body table.bomi-card-inner tr > td.bomi-c-img img { max-width: 100% !important; width: 100% !important; height: auto !important; }
+  table.babinola-shell td.babinola-body table.bomi-prod-sec tr > td.bomi-prod-img { text-align: center !important; padding: 16px 12px 20px 12px !important; }
+  table.babinola-shell td.babinola-body table.bomi-prod-sec tr > td.bomi-prod-txt { padding: 0 16px 20px 16px !important; text-align: left !important; }
+  table.babinola-shell td.babinola-body table.bomi-prod-sec tr > td.bomi-prod-img img { max-width: 100% !important; width: 100% !important; height: auto !important; }
 }
 </style>
 </head>
@@ -248,51 +239,16 @@ img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: b
 </tr>
 </table>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;">
+<!-- 제품 소개: 다이어트환 → 디톡스환 (PC: 각 섹션 좌=이미지/우=텍스트 · 모바일: 이미지→텍스트) -->
+<table data-bomi="product-stack" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:100%;table-layout:fixed;">
 <tr>
-<td width="100%" style="padding:0;width:100%;line-height:0;font-size:0;background-color:#ffffff;">
-<img class="babinola-hero" src="../images/babinola-chapter1.png?v=20260402" alt="바비놀라 초코맛 — Chapter 1 제품 기본정보" width="960" style="width:100%;height:auto;display:block;border:0;border-radius:8px;vertical-align:top;">
+<td style="padding:24px 12px 60px 12px; vertical-align:top; box-sizing:border-box;">
+<table class="bomi-prod-sec" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%; max-width:100%; border:1px solid #d8deda; border-radius:10px; overflow:hidden; background-color:#ffffff; table-layout:fixed;">
+<tr>
+<td class="bomi-prod-img" width="48%" style="padding:20px 14px 20px 16px; vertical-align:top; text-align:center; background-color:#f7faf8; box-sizing:border-box;">
+<img src="../images/bomi-diet-9kinds.png" alt="보미 다이어트환 9종" width="360" style="max-width:100%; width:100%; height:auto; display:block; margin:0 auto; border:0; border-radius:8px;">
 </td>
-</tr>
-</table>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #dfe8e4;border-radius:0 0 10px 10px;overflow:hidden;">
-<tr>
-<td width="25%" align="center" style="padding:12px 10px;font-size:17px;font-weight:600;color:#2d3e50;background-color:#f3f6f4;border-right:1px solid #e8ebe9;border-bottom:1px solid #e8ebe9;">품명</td>
-<td align="center" style="padding:12px 10px;font-size:17px;line-height:1.55;color:#3d4f42;background-color:#ffffff;border-bottom:1px solid #e8ebe9;">바비놀라(Babinola) 그래놀라 (오리지널 / 초코)</td>
-</tr>
-<tr>
-<td width="25%" align="center" style="padding:12px 10px;font-size:17px;font-weight:600;color:#2d3e50;background-color:#f3f6f4;border-right:1px solid #e8ebe9;border-bottom:1px solid #e8ebe9;">제품유형</td>
-<td align="center" style="padding:12px 10px;font-size:17px;line-height:1.55;color:#3d4f42;background-color:#ffffff;border-bottom:1px solid #e8ebe9;">곡물가공품 (그래놀라)</td>
-</tr>
-<tr>
-<td width="25%" align="center" style="padding:12px 10px;font-size:17px;font-weight:600;color:#2d3e50;background-color:#f3f6f4;border-right:1px solid #e8ebe9;border-bottom:1px solid #e8ebe9;">구성</td>
-<td align="center" style="padding:12px 10px;font-size:17px;line-height:1.55;color:#3d4f42;background-color:#ffffff;border-bottom:1px solid #e8ebe9;">300g (오리지널 / 초코맛 선택 가능)</td>
-</tr>
-<tr>
-<td width="25%" align="center" style="padding:12px 10px;font-size:17px;font-weight:600;color:#2d3e50;background-color:#f3f6f4;border-right:1px solid #e8ebe9;border-bottom:1px solid #e8ebe9;">주요원료</td>
-<td align="center" style="padding:12px 10px;font-size:17px;line-height:1.55;color:#3d4f42;background-color:#ffffff;border-bottom:1px solid #e8ebe9;">캐나다산 귀리, 스포트밀, 호두, 캐슈넛, 아몬드, 해바라기씨 등</td>
-</tr>
-<tr>
-<td width="25%" align="center" style="padding:12px 10px;font-size:17px;font-weight:600;color:#2d3e50;background-color:#f3f6f4;border-right:1px solid #e8ebe9;border-bottom:1px solid #e8ebe9;">제품특징</td>
-<td align="center" style="padding:12px 10px;font-size:17px;line-height:1.55;color:#3d4f42;background-color:#ffffff;border-bottom:1px solid #e8ebe9;">100% 핸드메이드 시리얼 제조 방식 / 초코 바비놀라 신제품 출시</td>
-</tr>
-<tr>
-<td width="25%" align="center" style="padding:12px 10px;font-size:17px;font-weight:600;color:#2d3e50;background-color:#f3f6f4;border-right:1px solid #e8ebe9;">영양정보</td>
-<td align="center" style="padding:12px 10px;font-size:17px;line-height:1.55;color:#3d4f42;background-color:#ffffff;">탄수화물 4g / 단백질 15g / 트랜스지방 0g (100g 기준)</td>
-</tr>
-</table>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
-
-<!-- 제품 소개: 다이어트환 / 디톡스환 (Chapter 1 직후 · 이미지: ../images/bomi-diet-9kinds.png, bomi-detox-3kinds.png) -->
-<table data-bomi="product-wrap" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:100%;">
-<tr>
-<td style="padding:40px 12px 0 12px; vertical-align:top; box-sizing:border-box;">
-<table data-bomi="product-pair" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:100%;table-layout:fixed;">
-<tr>
-<td class="bomi-pair-cell" width="50%" style="padding:0 6px 0 6px; vertical-align:top; box-sizing:border-box;">
-<table class="bomi-card-inner" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%; border:1px solid #d8deda; border-radius:10px; overflow:hidden; background-color:#ffffff;">
-<tr>
-<td class="bomi-c-text" width="50%" style="padding:20px 16px; vertical-align:top; text-align:left;">
+<td class="bomi-prod-txt" width="52%" style="padding:20px 20px 20px 10px; vertical-align:top; text-align:left; box-sizing:border-box;">
 <p style="margin:0 0 12px 0; font-size:18px; font-weight:700; color:#2d3e50; line-height:1.35;">보미 다이어트환 9종</p>
 <p style="margin:0 0 14px 0;"><span style="display:inline-block; padding:8px 16px; background-color:#c8ddcf; color:#1a1a1a; border-radius:24px; font-size:13px; font-weight:700;">효능 및 효과</span></p>
 <p style="margin:0; padding:0; font-size:14px; line-height:1.7; color:#333333; word-break:keep-all;">· 식욕조절(식욕 억제), 체질 개선</p>
@@ -305,16 +261,18 @@ img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: b
 <tr><td style="padding:14px 12px; font-size:14px; line-height:1.65; color:#1a1a1a; font-weight:600;">👉 식사 1~2시간 전 1포, 하루 2포</td></tr>
 </table>
 </td>
-<td class="bomi-c-img" width="50%" style="padding:12px; vertical-align:top; text-align:right; background-color:#f7faf8;">
-<img src="../images/bomi-diet-9kinds.png" alt="보미 다이어트환 9종" width="320" style="max-width:100%; width:100%; height:auto; display:block; margin:0 0 0 auto; border:0; border-radius:8px; vertical-align:top;">
-</td>
 </tr>
 </table>
 </td>
-<td class="bomi-pair-cell" width="50%" style="padding:0 6px 0 6px; vertical-align:top; box-sizing:border-box;">
-<table class="bomi-card-inner" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%; border:1px solid #d8deda; border-radius:10px; overflow:hidden; background-color:#ffffff;">
+</tr>
 <tr>
-<td class="bomi-c-text" width="50%" style="padding:20px 16px; vertical-align:top; text-align:left;">
+<td style="padding:0 12px 0 12px; vertical-align:top; box-sizing:border-box;">
+<table class="bomi-prod-sec" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%; max-width:100%; border:1px solid #d8deda; border-radius:10px; overflow:hidden; background-color:#ffffff; table-layout:fixed;">
+<tr>
+<td class="bomi-prod-img" width="48%" style="padding:20px 14px 20px 16px; vertical-align:top; text-align:center; background-color:#f7faf8; box-sizing:border-box;">
+<img src="../images/bomi-detox-3kinds.png" alt="보미 디톡스환 3종" width="360" style="max-width:100%; width:100%; height:auto; display:block; margin:0 auto; border:0; border-radius:8px;">
+</td>
+<td class="bomi-prod-txt" width="52%" style="padding:20px 20px 20px 10px; vertical-align:top; text-align:left; box-sizing:border-box;">
 <p style="margin:0 0 12px 0; font-size:18px; font-weight:700; color:#2d3e50; line-height:1.35;">보미 디톡스환 3종</p>
 <p style="margin:0 0 14px 0;"><span style="display:inline-block; padding:8px 16px; background-color:#c8ddcf; color:#1a1a1a; border-radius:24px; font-size:13px; font-weight:700;">효능 및 효과</span></p>
 <p style="margin:0; padding:0; font-size:14px; line-height:1.7; color:#333333; word-break:keep-all;">· 대변 활동, 숙변 제거</p>
@@ -325,12 +283,6 @@ img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: b
 <p style="margin:0; padding:8px 0 0 0; font-size:14px; line-height:1.7; color:#333333; border-top:1px solid #e8e8e8; word-break:keep-all;">· 장기복용 가능</p>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:16px; border-radius:8px; background-color:#f0f0f0; border:1px solid #d8d8d8;">
 <tr><td style="padding:14px 12px; font-size:14px; line-height:1.65; color:#1a1a1a; font-weight:600;">👉 저녁 식사 후 공복에 하루 1포</td></tr>
-</table>
-</td>
-<td class="bomi-c-img" width="50%" style="padding:12px; vertical-align:top; text-align:right; background-color:#f7faf8;">
-<img src="../images/bomi-detox-3kinds.png" alt="보미 디톡스환 3종" width="320" style="max-width:100%; width:100%; height:auto; display:block; margin:0 0 0 auto; border:0; border-radius:8px; vertical-align:top;">
-</td>
-</tr>
 </table>
 </td>
 </tr>
