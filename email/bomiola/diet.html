@@ -29,6 +29,15 @@ img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: b
     height: auto !important;
     display: block !important;
   }
+  /* 제품 소개(다이어트·디톡스): PC 2열(좌우) + 각 카드 내 좌:텍스트 / 우:이미지 */
+  table.babinola-shell td.babinola-body table[data-bomi="product-pair"] { width: 100% !important; max-width: 100% !important; table-layout: fixed !important; }
+  table.babinola-shell td.babinola-body table[data-bomi="product-pair"] tr > td.bomi-pair-cell {
+    width: 50% !important; max-width: 50% !important; vertical-align: top !important; box-sizing: border-box !important;
+  }
+  table.babinola-shell td.babinola-body table.bomi-card-inner { width: 100% !important; max-width: 100% !important; table-layout: fixed !important; }
+  table.babinola-shell td.babinola-body table.bomi-card-inner tr > td.bomi-c-text { width: 50% !important; vertical-align: top !important; }
+  table.babinola-shell td.babinola-body table.bomi-card-inner tr > td.bomi-c-img { width: 50% !important; vertical-align: top !important; text-align: right !important; }
+  table.babinola-shell td.babinola-body table.bomi-card-inner tr > td.bomi-c-img img { max-width: 100% !important; width: 100% !important; height: auto !important; }
 }
 @media screen and (max-width: 768px) {
   body { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
@@ -133,6 +142,23 @@ img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: b
   img[width="960"], img[width="480"] {
     margin: 0 0 18px 0 !important;
   }
+  /* 제품 소개: 모바일 1열(제품1 → 제품2), 카드 내 텍스트 위·이미지 아래 */
+  table.babinola-shell td.babinola-body table[data-bomi="product-pair"] { max-width: 100% !important; width: 100% !important; table-layout: fixed !important; }
+  table.babinola-shell td.babinola-body table[data-bomi="product-pair"] tr > td.bomi-pair-cell {
+    display: block !important; width: 100% !important; max-width: 100% !important;
+    padding: 0 0 40px 0 !important; box-sizing: border-box !important;
+  }
+  table.babinola-shell td.babinola-body table[data-bomi="product-pair"] tr > td.bomi-pair-cell:last-child { padding-bottom: 0 !important; }
+  table.babinola-shell td.babinola-body table.bomi-card-inner { width: 100% !important; max-width: 100% !important; }
+  table.babinola-shell td.babinola-body table.bomi-card-inner tr > td.bomi-c-text,
+  table.babinola-shell td.babinola-body table.bomi-card-inner tr > td.bomi-c-img {
+    display: block !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important;
+  }
+  table.babinola-shell td.babinola-body table.bomi-card-inner tr > td.bomi-c-text { text-align: left !important; }
+  table.babinola-shell td.babinola-body table.bomi-card-inner tr > td.bomi-c-img {
+    text-align: center !important; padding: 20px 8px 0 8px !important;
+  }
+  table.babinola-shell td.babinola-body table.bomi-card-inner tr > td.bomi-c-img img { max-width: 100% !important; width: 100% !important; height: auto !important; }
 }
 </style>
 </head>
@@ -257,20 +283,252 @@ img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: b
 </table>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
 
-<!-- Chapter 2 · 특허 -->
+<!-- 제품 소개: 다이어트환 / 디톡스환 (Chapter 1 직후 · 이미지: ../images/bomi-diet-9kinds.png, bomi-detox-3kinds.png) -->
+<table data-bomi="product-wrap" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:100%;">
+<tr>
+<td style="padding:40px 12px 0 12px; vertical-align:top; box-sizing:border-box;">
+<table data-bomi="product-pair" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:100%;table-layout:fixed;">
+<tr>
+<td class="bomi-pair-cell" width="50%" style="padding:0 6px 0 6px; vertical-align:top; box-sizing:border-box;">
+<table class="bomi-card-inner" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%; border:1px solid #d8deda; border-radius:10px; overflow:hidden; background-color:#ffffff;">
+<tr>
+<td class="bomi-c-text" width="50%" style="padding:20px 16px; vertical-align:top; text-align:left;">
+<p style="margin:0 0 12px 0; font-size:18px; font-weight:700; color:#2d3e50; line-height:1.35;">보미 다이어트환 9종</p>
+<p style="margin:0 0 14px 0;"><span style="display:inline-block; padding:8px 16px; background-color:#c8ddcf; color:#1a1a1a; border-radius:24px; font-size:13px; font-weight:700;">효능 및 효과</span></p>
+<p style="margin:0; padding:0; font-size:14px; line-height:1.7; color:#333333; word-break:keep-all;">· 식욕조절(식욕 억제), 체질 개선</p>
+<p style="margin:0; padding:8px 0 0 0; font-size:14px; line-height:1.7; color:#333333; border-top:1px solid #e8e8e8; word-break:keep-all;">· 요요 없는 다이어트</p>
+<p style="margin:0; padding:8px 0 0 0; font-size:14px; line-height:1.7; color:#333333; border-top:1px solid #e8e8e8; word-break:keep-all;">· 신진대사 &amp; 혈액순환 촉진</p>
+<p style="margin:0; padding:8px 0 0 0; font-size:14px; line-height:1.7; color:#333333; border-top:1px solid #e8e8e8; word-break:keep-all;">· 체중감량, 체지방 감소</p>
+<p style="margin:0; padding:8px 0 0 0; font-size:14px; line-height:1.7; color:#333333; border-top:1px solid #e8e8e8; word-break:keep-all;">· 노폐물 &amp; 독소 배출, 붓기 개선</p>
+<p style="margin:0; padding:8px 0 0 0; font-size:14px; line-height:1.7; color:#333333; border-top:1px solid #e8e8e8; word-break:keep-all;">· 장기복용 가능</p>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:16px; border-radius:8px; background-color:#f0f0f0; border:1px solid #d8d8d8;">
+<tr><td style="padding:14px 12px; font-size:14px; line-height:1.65; color:#1a1a1a; font-weight:600;">👉 식사 1~2시간 전 1포, 하루 2포</td></tr>
+</table>
+</td>
+<td class="bomi-c-img" width="50%" style="padding:12px; vertical-align:top; text-align:right; background-color:#f7faf8;">
+<img src="../images/bomi-diet-9kinds.png" alt="보미 다이어트환 9종" width="320" style="max-width:100%; width:100%; height:auto; display:block; margin:0 0 0 auto; border:0; border-radius:8px; vertical-align:top;">
+</td>
+</tr>
+</table>
+</td>
+<td class="bomi-pair-cell" width="50%" style="padding:0 6px 0 6px; vertical-align:top; box-sizing:border-box;">
+<table class="bomi-card-inner" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%; border:1px solid #d8deda; border-radius:10px; overflow:hidden; background-color:#ffffff;">
+<tr>
+<td class="bomi-c-text" width="50%" style="padding:20px 16px; vertical-align:top; text-align:left;">
+<p style="margin:0 0 12px 0; font-size:18px; font-weight:700; color:#2d3e50; line-height:1.35;">보미 디톡스환 3종</p>
+<p style="margin:0 0 14px 0;"><span style="display:inline-block; padding:8px 16px; background-color:#c8ddcf; color:#1a1a1a; border-radius:24px; font-size:13px; font-weight:700;">효능 및 효과</span></p>
+<p style="margin:0; padding:0; font-size:14px; line-height:1.7; color:#333333; word-break:keep-all;">· 대변 활동, 숙변 제거</p>
+<p style="margin:0; padding:8px 0 0 0; font-size:14px; line-height:1.7; color:#333333; border-top:1px solid #e8e8e8; word-break:keep-all;">· 장 디톡스, 노폐물 &amp; 독소 배출</p>
+<p style="margin:0; padding:8px 0 0 0; font-size:14px; line-height:1.7; color:#333333; border-top:1px solid #e8e8e8; word-break:keep-all;">· 붓기 개선, 피부 관리 도움</p>
+<p style="margin:0; padding:8px 0 0 0; font-size:14px; line-height:1.7; color:#333333; border-top:1px solid #e8e8e8; word-break:keep-all;">· 복용 후 6~12시간 이후 효과</p>
+<p style="margin:0; padding:8px 0 0 0; font-size:14px; line-height:1.7; color:#333333; border-top:1px solid #e8e8e8; word-break:keep-all;">· 비만 예방 특허</p>
+<p style="margin:0; padding:8px 0 0 0; font-size:14px; line-height:1.7; color:#333333; border-top:1px solid #e8e8e8; word-break:keep-all;">· 장기복용 가능</p>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:16px; border-radius:8px; background-color:#f0f0f0; border:1px solid #d8d8d8;">
+<tr><td style="padding:14px 12px; font-size:14px; line-height:1.65; color:#1a1a1a; font-weight:600;">👉 저녁 식사 후 공복에 하루 1포</td></tr>
+</table>
+</td>
+<td class="bomi-c-img" width="50%" style="padding:12px; vertical-align:top; text-align:right; background-color:#f7faf8;">
+<img src="../images/bomi-detox-3kinds.png" alt="보미 디톡스환 3종" width="320" style="max-width:100%; width:100%; height:auto; display:block; margin:0 0 0 auto; border:0; border-radius:8px; vertical-align:top;">
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:40px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+
+<!-- Chapter 2 · 컨텐츠 셀링 포인트 (오라라 히알브이티 카드 스타일) -->
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #d0d9d2;border-bottom:1px solid #d0d9d2;table-layout:fixed;">
 <tr>
 <td width="26%" style="padding:10px 12px;background-color:#ffffff;font-size:13px;font-weight:700;color:#1a1a1a;white-space:nowrap;">◆ Chapter 2</td>
-<td width="74%" align="center" style="padding:10px 12px;background-color:#e5ede6;font-size:15px;font-weight:700;color:#2d3e50;line-height:1.45;">특허로 검증된 다이어트 솔루션</td>
+<td width="74%" align="center" style="padding:10px 12px;background-color:#e5ede6;font-size:16px;font-weight:700;color:#2d3e50;line-height:1.45;">컨텐츠 셀링 포인트</td>
 </tr>
 </table>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
-<p style="margin:0;padding:0 28px 12px 28px;font-size:14px;line-height:1.8;color:#333333;text-align:left;word-break:keep-all;">보미오라 다이어트환과 디톡스환은<br>정대진 대표원장이 직접 연구, 배합, 개발까지 참여한 제품입니다.</p>
-<p style="margin:0;padding:0 28px 12px 28px;font-size:14px;line-height:1.8;color:#333333;text-align:left;word-break:keep-all;">해당 제품은 원료 조합과 배합 방식에 대해<br>국내 특허 등록을 완료한 제품으로 (특허청 등록 기준)</p>
-<p style="margin:0;padding:0 6px 6px 40px;font-size:14px;line-height:1.8;color:#333333;text-align:left;word-break:keep-all;">✔ 어떤 원료를</p>
-<p style="margin:0;padding:0 6px 6px 40px;font-size:14px;line-height:1.8;color:#333333;text-align:left;word-break:keep-all;">✔ 어떤 비율로</p>
-<p style="margin:0;padding:0 6px 12px 40px;font-size:14px;line-height:1.8;color:#333333;text-align:left;word-break:keep-all;">✔ 어떤 방향으로 작용하도록 설계했는지</p>
-<p style="margin:0;padding:0 28px 12px 28px;font-size:14px;line-height:1.8;color:#333333;text-align:left;word-break:keep-all;">그 기준이 명확하게 정리되어 있습니다.</p>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;">
+<tr>
+<td width="100%" style="padding:0;width:100%;line-height:0;font-size:0;">
+<img class="babinola-hero" src="../images/babinola-chapter2-checkpoint.png?v=20260331" alt="바비놀라 초코 — 칼로리 부담 DOWN, 진한 초코 풍미 UP" width="960" style="width:100%;height:auto;display:block;border:0;border-radius:8px;vertical-align:top;">
+</td>
+</tr>
+<tr>
+<td width="100%" style="padding:20px 20px 0 20px;width:100%;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">초코 덕후 공감형 콘텐츠</strong>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ “초코 못 끊는 사람들” 공감 스토리로 자연스럽게 유입 가능</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">간식 vs 다이어트 갈등 구조</strong>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 먹고 싶지만 참는 상황 → 대체 간식 제안으로 전환 유도</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">디저트 대체 콘텐츠에 최적화</strong>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 초코 간식 대신 선택하는 루틴으로 콘텐츠 확장 가능</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">오독오독 씹히는 식감 강조 포인트</strong>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 먹는 ASMR / 리얼 반응 콘텐츠로 활용도 높음</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">‘죄책감 덜한 초코’ 메시지</strong>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 다이어트 중에도 먹을 수 있는 간식 포지션으로 설득 가능</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">히밥 공동개발 스토리 활용</strong>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 맛에 대한 신뢰 + 검증된 제품 스토리로 연결 가능</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:0 0 14px 0;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">비교 콘텐츠 확장 가능</strong>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ “일반 초코 간식 vs 바비놀라 초코” 구조로 차별화 포인트 강조</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+<tr><td style="padding:0;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:separate;border-radius:12px;background-color:#e8e8e8;border:1px solid #dcdcdc;">
+<tr><td style="padding:14px 16px 16px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td width="30" style="padding:0 10px 0 0;vertical-align:top;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="22" align="left" style="border-collapse:collapse;">
+<tr><td align="center" valign="middle" width="22" height="22" style="width:22px;height:22px;min-width:22px;min-height:22px;background-color:#6d4ba8;border-radius:5px;font-size:12px;line-height:22px;color:#ffffff;font-weight:700;font-family:Arial,Helvetica,sans-serif;text-align:center;mso-line-height-rule:exactly;">&#10003;</td></tr>
+</table>
+</td>
+<td style="padding:0;vertical-align:top;">
+<strong style="font-size:15px;line-height:1.5;color:#1a1a1a;font-weight:700;">재구매/루틴형 콘텐츠 연결</strong>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:10px;border-collapse:separate;border-radius:8px;border:1px dashed #b0b0b0;background-color:#f4f4f4;">
+<tr><td style="padding:10px 12px;font-size:14px;line-height:1.65;color:#1a1a1a;font-weight:600;">→ 한 번이 아니라 계속 먹는 간식 루틴으로 자연스럽게 이어짐</td></tr>
+</table>
+</td>
+</tr>
+</table>
+</td></tr>
+</table>
+</td></tr>
+</table>
+</td>
+</tr>
+</table>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:24px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
 
 <!-- Chapter 3 · 실제 리뷰 콘텐츠 활용 TIP (오라라 히알브이티 카드 스타일) -->
