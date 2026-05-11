@@ -103,3 +103,14 @@
   for = "/email/kakkukishake-skin-probiotics.html"
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
+
+# 클렌즈 제안서 — 도메인 연결·캐시 이슈 대비
+[[headers]]
+  for = "/email/newon/tox-cleanse.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/email/aowa/sunscreen.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
