@@ -111,6 +111,12 @@
     Cache-Control = "no-cache, no-store, must-revalidate"
 
 [[headers]]
-  for = "/email/aowa/sunscreen.html"
+  for = "/email/aowa/suncream.html"
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[redirects]]
+  from = "/email/aowa/sunscreen.html"
+  to = "/email/aowa/suncream.html"
+  status = 301
+  force = true
