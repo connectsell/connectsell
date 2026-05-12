@@ -115,6 +115,11 @@
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
 
+[[headers]]
+  for = "/email/aowa/suncream-v2.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
 [[redirects]]
   from = "/email/aowa/sunscreen.html"
   to = "/email/aowa/suncream.html"
