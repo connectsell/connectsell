@@ -236,17 +236,26 @@ table[data-aowa="flow-icons"] td[bgcolor="#f5f3ef"] {
   table[data-aowa="compare-grid"] tr > td[data-aowa="compare-col"]:last-child {
     border-bottom: none !important;
   }
-  table[data-aowa="compare-grid"] [data-aowa="compare-split"],
-  table[data-aowa="compare-grid"] [data-aowa="compare-visual"] {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box;
+  table[data-aowa="compare-grid"] [data-aowa="compare-split"] {
+    display: table-cell !important;
+    width: 66% !important;
+    max-width: 66% !important;
+    box-sizing: border-box !important;
+    vertical-align: top !important;
   }
   table[data-aowa="compare-grid"] [data-aowa="compare-visual"] {
-    text-align: center !important;
-    padding-top: 12px !important;
-    padding-left: 0 !important;
+    display: table-cell !important;
+    width: 34% !important;
+    max-width: 34% !important;
+    box-sizing: border-box !important;
+    vertical-align: top !important;
+    text-align: right !important;
+    padding: 0 0 0 8px !important;
+  }
+  table[data-aowa="compare-grid"] [data-aowa="compare-visual"] img {
+    max-width: 120px !important;
+    width: auto !important;
+    height: auto !important;
   }
   .aowa-compare-line {
     white-space: normal !important;
@@ -262,9 +271,30 @@ table[data-aowa="flow-icons"] td[bgcolor="#f5f3ef"] {
   }
   table[data-aowa="cta-bar"] .aowa-cta-copy {
     text-align: left !important;
+    padding-bottom: 14px !important;
+  }
+  table[data-aowa="cta-bar"] .aowa-cta-main {
+    display: flex !important;
+    flex-direction: row-reverse !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  table[data-aowa="cta-bar"] .aowa-cta-icon {
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+  }
+  table[data-aowa="cta-bar"] .aowa-cta-text {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   table[data-aowa="cta-bar"] .aowa-cta-btn-wrap {
-    padding-top: 8px !important;
+    padding-top: 22px !important;
     padding-bottom: 22px !important;
     white-space: normal !important;
   }
@@ -305,16 +335,6 @@ table[data-aowa="flow-icons"] td[bgcolor="#f5f3ef"] {
     max-width: 100% !important;
   }
   table[data-aowa="cta-bar"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-  }
-  table[data-aowa="cta-bar"] .aowa-cta-main {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-  table[data-aowa="cta-bar"] .aowa-cta-text {
     width: 100% !important;
     max-width: 100% !important;
     min-width: 0 !important;
