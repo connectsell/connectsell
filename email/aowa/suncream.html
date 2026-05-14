@@ -13,47 +13,39 @@
 <meta property="og:description" content="데일리 케어 선크림 협업 제안 · ConnectSell">
 <meta property="og:image" content="https://www.connectsell.co.kr/email/images/aowa-sunscreen-hero-product.png">
 <meta property="og:image:secure_url" content="https://www.connectsell.co.kr/email/images/aowa-sunscreen-hero-product.png">
-<meta property="og:image:alt" content="아오와 선케어 2종 라인업">
+<meta property="og:image:alt" content="AHOHWA 선케어 2종 — 에스테틱 브랜드 · 백탁 X 눈시림 X 산뜻한 발림성">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="아오와 선크림 협업 제안">
 <meta name="twitter:description" content="데일리 케어 선크림 협업 제안 · ConnectSell">
 <meta name="twitter:image" content="../images/aowa-sunscreen-hero-product.png">
 <style type="text/css">
 *, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; padding: 0; }
+body { margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
 table { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
 img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }
+table.aowa-shell {
+  border: 1px solid #e4e1dc;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 32px rgba(45, 62, 80, 0.08);
+}
 .aowa-chapter-title {
-  margin: 0;
-  padding: 0 24px 18px 24px;
+  margin: 0 24px 20px 24px;
+  padding: 14px 20px 0 20px;
+  border-left: none;
+  border-top: 1px solid #ebe8e4;
   font-size: 20px;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: #2d3e50;
+  color: #24313f;
   line-height: 1.48;
-  text-align: left;
-}
-.aowa-product-title {
-  margin: 0;
-  padding: 0;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: #2d3e50;
-  line-height: 1.52;
-  text-align: left;
-}
-.aowa-body-copy {
-  margin: 0;
-  padding: 0 24px;
-  font-size: 15px;
-  line-height: 1.78;
-  color: #3a3a3a;
-  text-align: left;
+  text-align: center;
 }
 .aowa-point-card {
-  background-color: #f5f3ef;
-  border-radius: 10px;
+  background-color: #f7f5f3;
+  border-radius: 12px;
+  border: 1px solid #e8e3dc;
+  box-shadow: 0 1px 3px rgba(45, 62, 80, 0.05);
 }
 .aowa-point-card td {
   padding: 24px 12px;
@@ -67,7 +59,7 @@ img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: b
   margin: 0 0 8px 0;
   font-size: 14px;
   font-weight: 700;
-  color: #2d3e50;
+  color: #24313f;
   line-height: 1.45;
   letter-spacing: -0.02em;
 }
@@ -82,11 +74,135 @@ img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: b
   color: #5e5e5e;
   letter-spacing: -0.02em;
 }
+table[data-aowa="flow-icons"] {
+  background-color: #fafafa;
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+}
+table[data-aowa="compare-grid"] {
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+}
+.aowa-compare-line {
+  white-space: nowrap;
+}
+table[data-aowa="cta-bar"] {
+  border: none;
+  background-color: transparent;
+}
+table[data-aowa="cta-bar"] > tbody > tr:first-child > td.aowa-cta-copy {
+  background-color: #f5f0e8;
+  border: 1px solid #e8e0d4;
+  border-radius: 12px;
+}
+table[data-aowa="cta-bar"] .aowa-cta-icon {
+  font-size: 26px;
+  line-height: 1;
+}
+table[data-aowa="flow-icons"] td[bgcolor="#f5f3ef"] {
+  box-shadow: 0 2px 10px rgba(45, 62, 80, 0.07);
+}
+/* 반응형: PC는 min-width 769px, 모바일은 max-width 768px (겹침 없음). body/래퍼에 overflow-x 미사용. */
 @media screen and (min-width: 769px) {
   table.aowa-shell img.aowa-hero {
     width: 100% !important;
     height: auto !important;
     display: block !important;
+  }
+  /* 상단 헤더: 여백·서브라인·타이틀 무게 (PC만) */
+  td.aowa-header-deck {
+    padding: 38px 28px 36px 28px !important;
+  }
+  td.aowa-header-sub {
+    padding: 0 0 20px 0 !important;
+    letter-spacing: 0.22em !important;
+    color: #b5b3af !important;
+  }
+  td.aowa-header-title {
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.035em !important;
+    line-height: 1.3 !important;
+    color: #24313f !important;
+  }
+  /* 콘텐츠 흐름: 라인 아이콘·열 간격 (PC만) */
+  table[data-aowa="flow-icons"] [data-aowa="why-col"] {
+    padding: 32px 18px 34px 18px !important;
+  }
+  td.aowa-flow-icon-gap {
+    padding: 0 0 24px 0 !important;
+  }
+  td.aowa-flow-copy {
+    padding: 2px 10px 0 10px !important;
+    line-height: 1.68 !important;
+    color: #3d4d5c !important;
+  }
+  .aowa-flow-line-ico {
+    display: inline-block;
+    line-height: 0;
+    vertical-align: middle;
+  }
+  .aowa-flow-line-ico svg {
+    width: 44px !important;
+    height: 44px !important;
+    display: block;
+  }
+  /* 샘플체험 CTA: 포인트 그리드와 맞는 좌우 여백, 넉넉한 패딩, 아이콘·텍스트 정렬 */
+  td.aowa-cta-outer {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  table[data-aowa="cta-bar"] > tbody > tr > td[data-aowa="cta-cell"].aowa-cta-copy {
+    padding: 28px 30px 28px 30px !important;
+    vertical-align: middle !important;
+    width: auto !important;
+  }
+  table[data-aowa="cta-bar"] > tbody > tr > td[data-aowa="cta-cell"].aowa-cta-btn-wrap {
+    padding: 24px 0 12px 0 !important;
+    vertical-align: middle !important;
+    text-align: center !important;
+    width: 100% !important;
+    white-space: normal !important;
+    background-color: transparent !important;
+    border: none !important;
+  }
+  table[data-aowa="cta-bar"] .aowa-cta-main {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    max-width: 100%;
+  }
+  table[data-aowa="cta-bar"] .aowa-cta-icon {
+    flex-shrink: 0;
+    font-size: 48px;
+    line-height: 1;
+    margin: 7px 0 0 0;
+    padding: 0;
+  }
+  table[data-aowa="cta-bar"] .aowa-cta-text {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  table[data-aowa="cta-bar"] .aowa-cta-text > p:first-child {
+    margin: 0 0 8px 0 !important;
+    font-size: 15px;
+    font-weight: 700;
+    color: #24313f;
+    letter-spacing: -0.02em;
+    line-height: 1.45 !important;
+    text-align: left;
+  }
+  table[data-aowa="cta-bar"] .aowa-cta-text > p:not(:first-child) {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 14px;
+    line-height: 1.64 !important;
+    color: #4a4540;
+    letter-spacing: -0.02em;
+    text-align: left;
+  }
+  table[data-aowa="cta-bar"] .aowa-cta-text > p:not(:first-child) + p {
+    margin-top: 8px !important;
   }
 }
 @media screen and (max-width: 768px) {
@@ -97,41 +213,60 @@ img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: b
     max-width: 100% !important;
   }
   table.aowa-shell > tbody > tr:first-child > td.aowa-body {
-    padding: 20px 0 32px !important;
-  }
-  .aowa-intro-block {
-    padding: 28px 20px 18px 20px !important;
+    padding: 0 0 32px !important;
   }
   .aowa-chapter-title {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-    padding-bottom: 16px !important;
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+    padding: 12px 16px 16px 16px !important;
     font-size: 19px !important;
     line-height: 1.5 !important;
-  }
-  .aowa-product-title {
-    font-size: 19px !important;
-    line-height: 1.54 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-  .aowa-body-copy {
-    font-size: 15px !important;
-    line-height: 1.78 !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
-  .aowa-closing-wrap {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
-  .aowa-closing-panel .aowa-chapter-title,
-  .aowa-closing-panel .aowa-body-copy {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-  .aowa-closing-inner {
     text-align: center !important;
+    border-left: none !important;
+    border-top: 1px solid #ebe8e4 !important;
+  }
+  table[data-aowa="compare-grid"] [data-aowa="compare-col"] {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    border-right: none !important;
+    border-bottom: 1px solid #ececec !important;
+  }
+  table[data-aowa="compare-grid"] tr > td[data-aowa="compare-col"]:last-child {
+    border-bottom: none !important;
+  }
+  table[data-aowa="compare-grid"] [data-aowa="compare-split"],
+  table[data-aowa="compare-grid"] [data-aowa="compare-visual"] {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+  table[data-aowa="compare-grid"] [data-aowa="compare-visual"] {
+    text-align: center !important;
+    padding-top: 12px !important;
+    padding-left: 0 !important;
+  }
+  .aowa-compare-line {
+    white-space: normal !important;
+  }
+  table[data-aowa="cta-bar"] [data-aowa="cta-cell"] {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    text-align: center !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  table[data-aowa="cta-bar"] .aowa-cta-copy {
+    text-align: left !important;
+  }
+  table[data-aowa="cta-bar"] .aowa-cta-btn-wrap {
+    padding-top: 8px !important;
+    padding-bottom: 22px !important;
+    white-space: normal !important;
   }
   table[data-aowa="flow-icons"] [data-aowa="why-col"] {
     display: block !important;
@@ -164,161 +299,109 @@ img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: b
   img[width="960"], img[width="480"] {
     margin: 0 0 16px 0 !important;
   }
+  /* 샘플체험 CTA: 모바일에서 세로 스택·폭 유연 (PC의 flex·고정 링 크기와 분리) */
+  td.aowa-cta-outer {
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+  }
+  table[data-aowa="cta-bar"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  table[data-aowa="cta-bar"] .aowa-cta-main {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  table[data-aowa="cta-bar"] .aowa-cta-text {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  table[data-aowa="cta-bar"] .aowa-cta-btn-wrap a {
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+  }
 }
 </style>
 </head>
-<body style="margin:0;padding:0;background-color:#f0eeeb;">
-<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f0eeeb;">
+<body style="margin:0;padding:0;background-color:#ececec;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ececec;">
 <tr>
 <td align="center" width="100%" style="padding:0;width:100%;">
 <table class="aowa-shell" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff;width:100%;max-width:700px;margin:0 auto;table-layout:fixed;">
 <tr>
-<td class="aowa-body" width="100%" style="padding:32px 0 48px;width:100%;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif;font-size:15px;line-height:1.65;color:#1a1a1a;">
+<td class="aowa-body" width="100%" style="padding:0 0 48px;width:100%;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.65;color:#1a1a1a;">
 
 <!-- 메인 헤더 (기존 제안서 템플릿과 동일 구조) -->
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr>
-<td align="center" width="100%" style="padding:0 0 16px 0;width:100%;">
-<table width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;border-collapse:collapse;border-radius:8px;overflow:hidden;">
+<td align="center" width="100%" style="padding:0;width:100%;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;border-collapse:collapse;border-radius:12px 12px 0 0;overflow:hidden;">
 <tr>
-<td align="center" style="padding:14px 24px;background-color:#2d3e50;font-size:17px;font-weight:700;letter-spacing:0.05em;color:#ffffff;text-align:center;">Wellness Creator Commerce</td>
+<td align="center" style="padding:15px 24px;background-color:#e8e2da;font-size:16px;font-weight:600;letter-spacing:0.1em;color:#3d4548;text-align:center;">Wellness Creator Commerce</td>
 </tr>
 <tr>
-<td align="center" style="padding:28px 24px;background-color:#f2f3f4;text-align:center;">
+<td class="aowa-header-deck" align="center" style="padding:28px 24px 26px 24px;background-color:#ffffff;text-align:center;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td align="center" style="padding:0 0 16px 0;font-size:13px;font-weight:500;color:#9e9e9e;letter-spacing:0.12em;">by ConnectSell</td></tr>
-<tr><td align="center" style="padding:0;font-size:20px;font-weight:700;color:#2d3e50;letter-spacing:-0.02em;">ConnectSell이 제안하는 협업</td></tr>
+<tr><td class="aowa-header-sub" align="center" style="padding:0 0 14px 0;font-size:12px;font-weight:600;color:#9a9a9a;letter-spacing:0.14em;text-transform:uppercase;">by ConnectSell</td></tr>
+<tr><td class="aowa-header-title" align="center" style="padding:0;font-size:21px;font-weight:700;color:#24313f;letter-spacing:-0.03em;line-height:1.35;">ConnectSell이 제안하는 협업</td></tr>
 </table>
 </td>
 </tr>
 </table>
-</td>
-</tr>
-</table>
-
-<!-- 메인: 보라 라벨 + 굵은 헤드라인(레퍼런스 상단) → 제품 히어로 이미지 -->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr>
-<td class="aowa-intro-block" style="padding:28px 24px 18px 24px;background-color:#ffffff;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 16px 0;">
-<tr>
-<td style="padding:6px 12px;background-color:#8b7ec8;border-radius:4px;font-size:12px;font-weight:700;color:#ffffff;letter-spacing:0.06em;line-height:1.3;">광고 제안</td>
-</tr>
-</table>
-<p class="aowa-product-title" style="margin:0;padding:0;font-size:20px;font-weight:700;letter-spacing:-0.02em;color:#2d3e50;line-height:1.52;text-align:left;">피부과에 납품되는 에스테틱 브랜드 <wbr>AHOHWA Sun Care 2종</p>
 </td>
 </tr>
 </table>
 
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;">
 <tr>
-<td width="100%" style="padding:0;line-height:0;font-size:0;background-color:#ffffff;">
-<img class="aowa-hero" src="../images/aowa-sunscreen-hero-product.png" alt="아오와 선케어 2종 — SUN ESSENCE · MILD SUN CREAM" width="960" style="width:100%;max-width:100%;height:auto;display:block;border:0;vertical-align:top;">
+<td width="100%" style="padding:0;line-height:0;font-size:0;background-color:#fafafa;">
+<img class="aowa-hero" src="../images/aowa-sunscreen-hero-product.png" alt="AHOHWA 선케어 2종 — 피부과에 납품되는 에스테틱 브랜드 · 백탁 X 눈시림 X 산뜻한 발림성 · SUN ESSENCE · MILD SUN CREAM" width="960" style="width:100%;max-width:100%;height:auto;display:block;border:0;vertical-align:top;">
 </td>
 </tr>
 </table>
 
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:40px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
-
-<!-- 챕터: 콘텐츠 흐름 (제품 헤드라인과 동일 타이포·좌측 정렬) -->
-<p class="aowa-chapter-title" style="margin:0;padding:0 24px 18px 24px;font-size:20px;font-weight:700;letter-spacing:-0.02em;color:#2d3e50;line-height:1.48;text-align:left;">이런 콘텐츠 흐름에 잘 어울려요</p>
-<table data-aowa="flow-icons" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;border-top:1px solid #ebe8e4;border-bottom:1px solid #ebe8e4;">
+<!-- 2열 제품 비교 (레퍼런스: Sun Essence / Mild Sun Cream) -->
+<table data-aowa="compare-grid" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;background-color:#ffffff;">
 <tr>
-<td data-aowa="why-col" width="33%" valign="top" style="width:33%;padding:28px 14px 30px 14px;border-right:1px solid #ebe8e4;vertical-align:top;">
+<td data-aowa="compare-col" width="50%" valign="top" style="width:50%;padding:28px 16px 32px 24px;border-right:1px solid #ececec;vertical-align:top;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;">
+<tr><td colspan="2" style="padding:0 0 10px 0;font-size:0;line-height:0;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background-color:#e85d2c;vertical-align:middle;">&nbsp;</span><span style="display:inline-block;width:8px;">&nbsp;</span><span style="font-size:15px;font-weight:700;color:#24313f;letter-spacing:-0.02em;vertical-align:middle;">SUN ESSENCE</span></td></tr>
+<tr><td colspan="2" style="padding:0 0 14px 0;font-size:13px;line-height:1.55;color:#5c6570;font-weight:600;letter-spacing:-0.02em;">물광피부 연출 에센스형 데일리 선케어</td></tr>
+<tr>
+<td data-aowa="compare-split" width="68%" valign="top" style="width:68%;padding:0 10px 0 0;vertical-align:top;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td align="center" style="padding:0 0 14px 0;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;"><tr>
-<td align="center" valign="middle" width="48" height="48" bgcolor="#f5f3ef" style="width:48px;height:48px;min-width:48px;background-color:#f5f3ef;border-radius:24px;font-size:22px;line-height:48px;mso-line-height-rule:exactly;">☀️</td>
-</tr></table>
-</td></tr>
-<tr><td align="center" style="padding:0;font-size:14px;line-height:1.62;color:#3a4a56;font-weight:400;letter-spacing:-0.02em;">여름 시즌 피부·루틴 콘텐츠와<br>자연스러운 연결</td></tr>
+<tr><td class="aowa-compare-line" style="padding:0 0 5px 0;font-size:13px;line-height:1.68;color:#2d3a45;">✓ SPF 50+ PA+++</td></tr>
+<tr><td class="aowa-compare-line" style="padding:0 0 5px 0;font-size:13px;line-height:1.68;color:#2d3a45;">✓ 유기 + 무기 혼합자차</td></tr>
+<tr><td class="aowa-compare-line" style="padding:0 0 5px 0;font-size:13px;line-height:1.68;color:#2d3a45;">✓ 독점 특허성분 펩타이드</td></tr>
+<tr><td class="aowa-compare-line" style="padding:0 0 5px 0;font-size:13px;line-height:1.68;color:#2d3a45;">✓ 프랑스 특허 성분 오스포머</td></tr>
+<tr><td class="aowa-compare-line" style="padding:0;font-size:13px;line-height:1.68;color:#2d3a45;">✓ 피부 진정 저자극 테스트 완료</td></tr>
 </table>
 </td>
-<td data-aowa="why-col" width="34%" valign="top" style="width:34%;padding:28px 14px 30px 14px;border-right:1px solid #ebe8e4;vertical-align:top;">
+<td data-aowa="compare-visual" width="32%" valign="top" align="right" style="width:32%;padding:0 0 0 6px;vertical-align:top;text-align:right;line-height:0;font-size:0;">
+<img src="../images/aowa-sunscreen-compare-essence-sw.png" alt="SUN ESSENCE 제형 스와치" width="200" style="width:auto;max-width:148px;height:auto;display:inline-block;border:0;vertical-align:top;">
+</td>
+</tr>
+</table>
+</td>
+<td data-aowa="compare-col" width="50%" valign="top" style="width:50%;padding:28px 24px 32px 16px;vertical-align:top;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;">
+<tr><td colspan="2" style="padding:0 0 10px 0;font-size:0;line-height:0;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background-color:#c9a882;vertical-align:middle;">&nbsp;</span><span style="display:inline-block;width:8px;">&nbsp;</span><span style="font-size:15px;font-weight:700;color:#24313f;letter-spacing:-0.02em;vertical-align:middle;">MILD SUN CREAM</span></td></tr>
+<tr><td colspan="2" style="padding:0 0 14px 0;font-size:13px;line-height:1.55;color:#5c6570;font-weight:600;letter-spacing:-0.02em;">자연스러운 톤업 + 파데프리 전용</td></tr>
+<tr>
+<td data-aowa="compare-split" width="68%" valign="top" style="width:68%;padding:0 10px 0 0;vertical-align:top;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td align="center" style="padding:0 0 14px 0;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;"><tr>
-<td align="center" valign="middle" width="48" height="48" bgcolor="#f5f3ef" style="width:48px;height:48px;min-width:48px;background-color:#f5f3ef;border-radius:24px;font-size:22px;line-height:48px;mso-line-height-rule:exactly;">🧴</td>
-</tr></table>
-</td></tr>
-<tr><td align="center" style="padding:0;font-size:14px;line-height:1.62;color:#3a4a56;font-weight:400;letter-spacing:-0.02em;">특허 성분과 기능성을 갖춘<br>에스테틱전용 선크림 추천</td></tr>
+<tr><td class="aowa-compare-line" style="padding:0 0 5px 0;font-size:13px;line-height:1.68;color:#2d3a45;">✓ SPF 50+ PA++++</td></tr>
+<tr><td class="aowa-compare-line" style="padding:0 0 5px 0;font-size:13px;line-height:1.68;color:#2d3a45;">✓ 촉촉한 무기자차</td></tr>
+<tr><td class="aowa-compare-line" style="padding:0 0 5px 0;font-size:13px;line-height:1.68;color:#2d3a45;">✓ 생기발랄 번들거림 없는 톤업</td></tr>
+<tr><td class="aowa-compare-line" style="padding:0 0 5px 0;font-size:13px;line-height:1.68;color:#2d3a45;">✓ 미백, 주름개선 성분 함유</td></tr>
+<tr><td class="aowa-compare-line" style="padding:0;font-size:13px;line-height:1.68;color:#2d3a45;">✓ 지성/트러블 피부 추천</td></tr>
 </table>
 </td>
-<td data-aowa="why-col" width="33%" valign="top" style="width:33%;padding:28px 14px 30px 14px;vertical-align:top;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td align="center" style="padding:0 0 14px 0;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;"><tr>
-<td align="center" valign="middle" width="48" height="48" bgcolor="#f5f3ef" style="width:48px;height:48px;min-width:48px;background-color:#f5f3ef;border-radius:24px;font-size:22px;line-height:48px;mso-line-height-rule:exactly;">✨</td>
-</tr></table>
-</td></tr>
-<tr><td align="center" style="padding:0;font-size:14px;line-height:1.62;color:#3a4a56;font-weight:400;letter-spacing:-0.02em;">피부 속과 겉을 모두 케어하는<br>물광 메이크업 소개</td></tr>
-</table>
-</td>
-</tr>
-</table>
-
-<!-- 콘텐츠 흐름 섹션 직후: 제형·발림 무드 컷 -->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:32px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;">
-<tr>
-<td width="100%" style="padding:0;line-height:0;font-size:0;background-color:#ffffff;">
-<img class="aowa-hero" src="../images/aowa-sunscreen-flow-below.png" alt="아오와 선케어 — 발림 텍스처" width="960" style="width:100%;max-width:100%;height:auto;display:block;border:0;vertical-align:top;">
-</td>
-</tr>
-</table>
-
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:40px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
-
-<!-- 챕터: 제품 핵심 포인트 · 2행×3열 카드 -->
-<p class="aowa-chapter-title" style="margin:0;padding:0 24px 18px 24px;font-size:20px;font-weight:700;letter-spacing:-0.02em;color:#2d3e50;line-height:1.48;text-align:left;">제품 핵심 포인트</p>
-<table data-aowa="point-grid" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;">
-<tr>
-<td data-aowa="point-col" width="33%" valign="top" style="width:33%;padding:0 8px 12px 20px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="aowa-point-card" style="background-color:#f5f3ef;border-radius:10px;">
-<tr><td style="padding:24px 12px;font-size:13px;line-height:1.62;color:#4d4d4d;text-align:center;"><strong style="display:block;margin:0 0 8px 0;font-size:14px;font-weight:700;color:#2d3e50;line-height:1.45;letter-spacing:-0.02em;">자외선 철통방어!</strong><span style="display:block;">차단 지수 SPF 50+ PA+++</span></td></tr>
-</table>
-</td>
-<td data-aowa="point-col" width="34%" valign="top" style="width:34%;padding:0 8px 12px 8px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="aowa-point-card" style="background-color:#f5f3ef;border-radius:10px;">
-<tr><td style="padding:24px 12px;font-size:13px;line-height:1.62;color:#4d4d4d;text-align:center;"><strong style="display:block;margin:0 0 8px 0;font-size:14px;font-weight:700;color:#2d3e50;line-height:1.45;letter-spacing:-0.02em;">국내 병의원 및 에스테틱</strong><span style="display:block;">13,000곳 입점 제품</span></td></tr>
-</table>
-</td>
-<td data-aowa="point-col" width="33%" valign="top" style="width:33%;padding:0 20px 12px 8px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="aowa-point-card" style="background-color:#f5f3ef;border-radius:10px;">
-<tr><td style="padding:24px 12px;font-size:13px;line-height:1.62;color:#4d4d4d;text-align:center;"><strong style="display:block;margin:0 0 8px 0;font-size:14px;font-weight:700;color:#2d3e50;line-height:1.45;letter-spacing:-0.02em;">믿을 수 있는 안심성분</strong><span class="aowa-point-safety" style="display:block;margin-top:2px;font-size:11px;line-height:1.55;color:#5e5e5e;letter-spacing:-0.02em;">눈시림X 백탁X 트러블X 건조함X</span></td></tr>
-</table>
-</td>
-</tr>
-<tr>
-<td data-aowa="point-col" width="33%" valign="top" style="width:33%;padding:0 8px 0 20px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="aowa-point-card" style="background-color:#f5f3ef;border-radius:10px;">
-<tr><td class="aowa-point-lines" style="padding:24px 12px;font-size:13px;line-height:1.62;color:#4d4d4d;text-align:center;"><strong style="display:block;margin:0 0 8px 0;font-size:14px;font-weight:700;color:#2d3e50;line-height:1.45;letter-spacing:-0.02em;">저자극 테스트 완료</strong><span style="display:block;">병풀추출물 함유로</span><span style="display:block;">민감 피부 보호/진정</span></td></tr>
-</table>
-</td>
-<td data-aowa="point-col" width="34%" valign="top" style="width:34%;padding:0 8px 0 8px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="aowa-point-card" style="background-color:#f5f3ef;border-radius:10px;">
-<tr><td class="aowa-point-lines" style="padding:24px 12px;font-size:13px;line-height:1.62;color:#4d4d4d;text-align:center;"><strong style="display:block;margin:0 0 8px 0;font-size:14px;font-weight:700;color:#2d3e50;line-height:1.45;letter-spacing:-0.02em;">OSMOPER™</strong><span style="display:block;">외부자극을 차단하는</span><span style="display:block;">피부 보호 베이스 선블럭</span></td></tr>
-</table>
-</td>
-<td data-aowa="point-col" width="33%" valign="top" style="width:33%;padding:0 20px 0 8px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="aowa-point-card" style="background-color:#f5f3ef;border-radius:10px;">
-<tr><td class="aowa-point-lines" style="padding:24px 12px;font-size:13px;line-height:1.62;color:#4d4d4d;text-align:center;"><strong style="display:block;margin:0 0 8px 0;font-size:14px;font-weight:700;color:#2d3e50;line-height:1.45;letter-spacing:-0.02em;">독자적 특허성분</strong><span style="display:block;">펩타이드 피부장벽 강화</span><span style="display:block;">(특허번호 제 10-081295호)</span></td></tr>
-</table>
-</td>
-</tr>
-</table>
-
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:40px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
-
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr>
-<td class="aowa-closing-wrap" style="padding:0 24px;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="aowa-closing-panel" style="width:100%;">
-<tr>
-<td class="aowa-closing-inner" style="padding:28px 24px;background-color:#faf9f7;border-radius:10px;">
-<p class="aowa-chapter-title" style="margin:0;padding:0 0 16px 0;font-size:20px;font-weight:700;letter-spacing:-0.02em;color:#2d3e50;line-height:1.48;text-align:left;">구독자분들이 좋아할 만한 구성으로 준비했습니다.</p>
-<p class="aowa-body-copy" style="margin:0;padding:0 0 14px 0;font-size:15px;line-height:1.78;color:#3a3a3a;text-align:left;">최근 채널에서 보여주시는 루틴 · 자기관리 · 시즌 콘텐츠 흐름과도 자연스럽게 연결될 수 있는 제품이라, 구독자분들도 부담 없이 관심 가지실 수 있을 것 같았습니다.</p>
-<p class="aowa-body-copy" style="margin:0;padding:0;font-size:15px;line-height:1.78;color:#3a3a3a;text-align:left;">제품 체험과 함께 구독자분들을 위한 혜택 구성도 편하게 안내 받아보실 수 있습니다.</p>
+<td data-aowa="compare-visual" width="32%" valign="top" align="right" style="width:32%;padding:0 0 0 6px;vertical-align:top;text-align:right;line-height:0;font-size:0;">
+<img src="../images/aowa-sunscreen-compare-cream-sw.png" alt="MILD SUN CREAM 제형 스와치" width="200" style="width:auto;max-width:148px;height:auto;display:inline-block;border:0;vertical-align:top;">
 </td>
 </tr>
 </table>
@@ -328,18 +411,126 @@ img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: b
 
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:36px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
 
-<!-- CTA -->
+<!-- 챕터: 콘텐츠 흐름 (센터 타이틀 · 상단 라인) -->
+<p class="aowa-chapter-title">이런 콘텐츠 흐름에 잘 어울려요</p>
+<table data-aowa="flow-icons" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;">
+<tr>
+<td data-aowa="why-col" width="33%" valign="top" style="width:33%;padding:28px 14px 30px 14px;border-right:1px solid #e8e8e8;vertical-align:top;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td class="aowa-flow-icon-gap" align="center" style="padding:0 0 14px 0;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;"><tr>
+<td class="aowa-flow-icon-ring" align="center" valign="middle" width="48" height="48" bgcolor="#f5f3ef" style="width:48px;height:48px;min-width:48px;background-color:#f5f3ef;border-radius:24px;font-size:22px;line-height:48px;mso-line-height-rule:exactly;">☀️</td>
+</tr></table>
+</td></tr>
+<tr><td class="aowa-flow-copy" align="center" style="padding:0;font-size:14px;line-height:1.62;color:#3a4a56;font-weight:400;letter-spacing:-0.02em;">여름 시즌 피부·루틴<br>콘텐츠와 자연스러운 연결</td></tr>
+</table>
+</td>
+<td data-aowa="why-col" width="34%" valign="top" style="width:34%;padding:28px 14px 30px 14px;border-right:1px solid #e8e8e8;vertical-align:top;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td class="aowa-flow-icon-gap" align="center" style="padding:0 0 14px 0;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;"><tr>
+<td class="aowa-flow-icon-ring" align="center" valign="middle" width="48" height="48" bgcolor="#f5f3ef" style="width:48px;height:48px;min-width:48px;background-color:#f5f3ef;border-radius:24px;font-size:22px;line-height:48px;mso-line-height-rule:exactly;">🧴</td>
+</tr></table>
+</td></tr>
+<tr><td class="aowa-flow-copy" align="center" style="padding:0;font-size:14px;line-height:1.62;color:#3a4a56;font-weight:400;letter-spacing:-0.02em;">특허 성분과 기능성을 갖춘<br>에스테틱전용 선크림 추천</td></tr>
+</table>
+</td>
+<td data-aowa="why-col" width="33%" valign="top" style="width:33%;padding:28px 14px 30px 14px;vertical-align:top;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td class="aowa-flow-icon-gap" align="center" style="padding:0 0 14px 0;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;"><tr>
+<td class="aowa-flow-icon-ring" align="center" valign="middle" width="48" height="48" bgcolor="#f5f3ef" style="width:48px;height:48px;min-width:48px;background-color:#f5f3ef;border-radius:24px;font-size:22px;line-height:48px;mso-line-height-rule:exactly;">✨</td>
+</tr></table>
+</td></tr>
+<tr><td class="aowa-flow-copy" align="center" style="padding:0;font-size:14px;line-height:1.62;color:#3a4a56;font-weight:400;letter-spacing:-0.02em;">피부 재생과 장벽에 좋은<br><span style="white-space:nowrap;">물광 메이크업 소개</span></td></tr>
+</table>
+</td>
+</tr>
+</table>
+
+<!-- 콘텐츠 흐름 섹션 직후: 제형·발림 무드 컷 -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:32px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;">
+<tr>
+<td width="100%" style="padding:0;line-height:0;font-size:0;background-color:#f5f6f8;">
+<img class="aowa-hero" src="../images/aowa-sunscreen-flow-below.png" alt="아오와 선케어 — 발림 텍스처" width="960" style="width:100%;max-width:100%;height:auto;display:block;border:0;vertical-align:top;">
+</td>
+</tr>
+</table>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:40px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+
+<!-- 챕터: 제품 핵심 포인트 · 2행×3열 카드 -->
+<p class="aowa-chapter-title">제품 핵심 포인트</p>
+<table data-aowa="point-grid" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;">
+<tr>
+<td data-aowa="point-col" width="33%" valign="top" style="width:33%;padding:0 8px 12px 20px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="aowa-point-card">
+<tr><td style="padding:24px 12px;font-size:13px;line-height:1.62;color:#4d4d4d;text-align:center;"><strong style="display:block;margin:0 0 8px 0;font-size:14px;font-weight:700;color:#24313f;line-height:1.45;letter-spacing:-0.02em;">자외선 철통방어!</strong><span style="display:block;">차단 지수 SPF 50+ PA+++</span></td></tr>
+</table>
+</td>
+<td data-aowa="point-col" width="34%" valign="top" style="width:34%;padding:0 8px 12px 8px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="aowa-point-card">
+<tr><td style="padding:24px 12px;font-size:13px;line-height:1.62;color:#4d4d4d;text-align:center;"><strong style="display:block;margin:0 0 8px 0;font-size:14px;font-weight:700;color:#24313f;line-height:1.45;letter-spacing:-0.02em;">국내 병의원 및 에스테틱</strong><span style="display:block;">13,000곳 입점 제품</span></td></tr>
+</table>
+</td>
+<td data-aowa="point-col" width="33%" valign="top" style="width:33%;padding:0 20px 12px 8px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="aowa-point-card">
+<tr><td style="padding:24px 12px;font-size:13px;line-height:1.62;color:#4d4d4d;text-align:center;"><strong style="display:block;margin:0 0 8px 0;font-size:14px;font-weight:700;color:#24313f;line-height:1.45;letter-spacing:-0.02em;">믿을 수 있는 안심성분</strong><span class="aowa-point-safety" style="display:block;margin-top:2px;font-size:11px;line-height:1.55;color:#5e5e5e;letter-spacing:-0.02em;">눈시림X 백탁X 트러블X 건조함X</span></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td data-aowa="point-col" width="33%" valign="top" style="width:33%;padding:0 8px 0 20px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="aowa-point-card">
+<tr><td class="aowa-point-lines" style="padding:24px 12px;font-size:13px;line-height:1.62;color:#4d4d4d;text-align:center;"><strong style="display:block;margin:0 0 8px 0;font-size:14px;font-weight:700;color:#24313f;line-height:1.45;letter-spacing:-0.02em;">저자극 테스트 완료</strong><span style="display:block;">병풀추출물 함유로</span><span style="display:block;">민감 피부 보호/진정</span></td></tr>
+</table>
+</td>
+<td data-aowa="point-col" width="34%" valign="top" style="width:34%;padding:0 8px 0 8px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="aowa-point-card">
+<tr><td class="aowa-point-lines" style="padding:24px 12px;font-size:13px;line-height:1.62;color:#4d4d4d;text-align:center;"><strong style="display:block;margin:0 0 8px 0;font-size:14px;font-weight:700;color:#24313f;line-height:1.45;letter-spacing:-0.02em;">OSMOPER™</strong><span style="display:block;">외부자극을 차단하는</span><span style="display:block;">피부 보호 베이스 성분특허</span></td></tr>
+</table>
+</td>
+<td data-aowa="point-col" width="33%" valign="top" style="width:33%;padding:0 20px 0 8px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="aowa-point-card">
+<tr><td class="aowa-point-lines" style="padding:24px 12px;font-size:13px;line-height:1.62;color:#4d4d4d;text-align:center;"><strong style="display:block;margin:0 0 8px 0;font-size:14px;font-weight:700;color:#24313f;line-height:1.45;letter-spacing:-0.02em;">독자적 특허성분</strong><span style="display:block;">펩타이드 피부장벽 강화</span><span style="display:block;">(특허번호 제 10-081295호)</span></td></tr>
+</table>
+</td>
+</tr>
+</table>
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:40px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+
+<!-- 클로징 + CTA: 1행 베이지 카드(아이콘+본문) · 2행 버튼(카드 아래 중앙) -->
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr>
-<td align="center" width="100%" style="padding:40px 28px 40px 28px;width:100%;">
-<a href="https://www.connectsell.co.kr/form?product=%EC%95%84%EC%98%A4%EC%99%80%20%EC%84%A0%EC%BC%80%EC%96%B4%202%EC%A2%85" style="display:inline-block;padding:14px 32px;background-color:#2d3e50;color:#ffffff;font-size:16px;font-weight:700;text-decoration:none;border-radius:8px;">샘플체험 신청</a>
+<td class="aowa-cta-outer" style="padding:0 24px 32px 24px;">
+<table data-aowa="cta-bar" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;">
+<tr>
+<td data-aowa="cta-cell" class="aowa-cta-copy" valign="middle" bgcolor="#f5f0e8" style="padding:24px 14px 24px 22px;vertical-align:middle;background-color:#f5f0e8;border:1px solid #e8e0d4;border-radius:12px;">
+<div class="aowa-cta-main">
+<div class="aowa-cta-icon" role="presentation" aria-hidden="true">🎁</div>
+<div class="aowa-cta-text">
+<p style="margin:0 0 8px 0;padding:0;font-size:16px;font-weight:700;color:#1f2933;letter-spacing:-0.02em;line-height:1.45;text-align:left;">구독자분들이 좋아할 만한 구성으로 준비했습니다.</p>
+<p style="margin:0;padding:0 0 10px 0;font-size:14px;line-height:1.72;color:#4a4540;letter-spacing:-0.02em;text-align:left;">최근 채널에서 보여주시는 루틴 · 자기관리 · 시즌 콘텐츠 흐름과도 자연스럽게 연결될 수 있는 제품이라, 구독자분들도 부담 없이 관심 가지실 수 있을 것 같았습니다.</p>
+<p style="margin:0;padding:0;font-size:14px;line-height:1.72;color:#4a4540;letter-spacing:-0.02em;text-align:left;">제품 체험과 함께 구독자분들을 위한 혜택 구성도 편하게 안내 받아보실 수 있습니다.</p>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td data-aowa="cta-cell" class="aowa-cta-btn-wrap" valign="middle" align="center" style="padding:14px 0 8px 0;vertical-align:middle;text-align:center;background-color:transparent;">
+<a href="../../form?product=%EC%95%84%EC%98%A4%EC%99%80%20%EC%84%A0%EC%BC%80%EC%96%B4%202%EC%A2%85" style="display:inline-block;padding:13px 22px;background-color:#2d3e50;color:#ffffff;font-size:14px;font-weight:700;text-decoration:none;border-radius:8px;letter-spacing:0.02em;">샘플체험 신청하기 →</a>
+</td>
+</tr>
+</table>
 </td>
 </tr>
 </table>
 
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr>
-<td align="center" style="padding:0 28px 6px 28px;font-size:15px;line-height:1.65;color:#3d4f42;font-weight:700;"><strong>ConnectSell</strong> | <a href="../../" style="color:#2d3e50;text-decoration:none;font-weight:700;">connectsell.co.kr</a></td>
+<td align="center" style="padding:0 28px 6px 28px;font-size:15px;line-height:1.65;color:#3d4f42;font-weight:700;"><strong>ConnectSell</strong> | <a href="../../" style="color:#24313f;text-decoration:none;font-weight:700;">connectsell.co.kr</a></td>
 </tr>
 <tr>
 <td align="center" style="padding:0 28px 6px 28px;font-size:15px;line-height:1.65;color:#1a1a1a;">서울특별시 마포구 마포대로 2, 13층 1328호</td>
