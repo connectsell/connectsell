@@ -1065,14 +1065,22 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5fc"] {
     text-align: center !important;
     box-sizing: border-box !important;
   }
+  table[data-hwal="story"] td.hwal-story-rrp-pad {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
   table[data-hwal="story"] .hwal-story-rrp-caption {
-    padding: 18px 16px 20px 16px !important;
+    padding: 16px 4px 18px 4px !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
   }
   table[data-hwal="story"] .hwal-story-rrp-caption p.hwal-story-rrp-caption-lead {
-    font-size: 13px !important;
-    letter-spacing: -0.03em !important;
-    line-height: 1.55 !important;
-    white-space: normal !important;
+    font-size: clamp(9.5px, 2.85vw, 11.5px) !important;
+    letter-spacing: -0.05em !important;
+    line-height: 1.4 !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+    max-width: none !important;
   }
   table[data-hwal="story"] .hwal-story-rrp-caption p + p {
     font-size: 13px !important;
@@ -1389,7 +1397,7 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5fc"] {
 </td>
 </tr>
 <tr>
-<td class="hwal-story-pad" valign="top" style="padding:0 26px 36px 26px;vertical-align:top;">
+<td class="hwal-story-pad hwal-story-rrp-pad" valign="top" style="padding:0 26px 36px 26px;vertical-align:top;">
 <table class="hwal-story-rrp" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width:100%;background-color:#ffffff;border:1px solid #eee9f6;border-radius:16px;">
 <tr>
 <td colspan="3" align="center" style="padding:28px 20px 20px 20px;text-align:center;">
