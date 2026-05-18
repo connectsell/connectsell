@@ -126,6 +126,11 @@
     Cache-Control = "no-cache, no-store, must-revalidate"
 
 [[headers]]
+  for = "/email/hwalgangwon/baekmanhyoso/v1.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
   for = "/email/hwalgangwon/baekmanhyoso/v2.html"
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
