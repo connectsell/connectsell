@@ -866,17 +866,28 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5fc"] {
   table.hwal-chapter-split td.hwal-chapter-split-line div {
     min-width: 0 !important;
   }
-  /* ── 3. 상단 히어로(제품 이미지) ── */
+  /* ── 3. 상단 히어로(제품 이미지): 퍼플 스토리 영역과 동일 풀폭 ── */
+  table.aowa-shell > tbody > tr:first-child > td.aowa-body > table[role="presentation"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+  table.aowa-shell > tbody > tr:first-child > td.aowa-body > table[role="presentation"] td[width="100%"] {
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
   table.aowa-shell img.hwal-hero-main {
-    width: 76% !important;
-    max-width: 76% !important;
+    width: 100% !important;
+    max-width: 100% !important;
     height: auto !important;
     display: block !important;
-    margin: 0 auto !important;
+    margin: 0 !important;
   }
   table.aowa-shell > tbody > tr:first-child > td[style*="line-height:0"] {
     padding: 0 !important;
-    text-align: center !important;
+    text-align: left !important;
   }
   /* ── 4. 퍼플 문제제기 영역 ── */
   table[data-hwal="story"] td.hwal-story-hero-banner {
