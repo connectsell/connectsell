@@ -126,19 +126,37 @@
     Cache-Control = "no-cache, no-store, must-revalidate"
 
 [[headers]]
-  for = "/email/hwalgangwon/baekmanhyoso/v1.html"
+  for = "/email/hwalgangwon/baekmanhyoso/diet.html"
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
 
 [[headers]]
-  for = "/email/hwalgangwon/baekmanhyoso/v2.html"
+  for = "/email/hwalgangwon/baekmanhyoso/living.html"
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
 
 [[headers]]
-  for = "/email/hwalgangwon/baekmanhyoso/v3.html"
+  for = "/email/hwalgangwon/baekmanhyoso/mom.html"
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[redirects]]
+  from = "/email/hwalgangwon/baekmanhyoso/v1.html"
+  to = "/email/hwalgangwon/baekmanhyoso/diet.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/email/hwalgangwon/baekmanhyoso/v2.html"
+  to = "/email/hwalgangwon/baekmanhyoso/living.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/email/hwalgangwon/baekmanhyoso/v3.html"
+  to = "/email/hwalgangwon/baekmanhyoso/mom.html"
+  status = 301
+  force = true
 
 [[headers]]
   for = "/email/gakkugi/tengl-skin-booster-shot/v1.html"
