@@ -168,6 +168,11 @@
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
 
+[[headers]]
+  for = "/email/gakkugi/v-rop-tea/beauty/v1.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
 [[redirects]]
   from = "/email/aowa/sunscreen.html"
   to = "/email/aowa/suncream.html"
