@@ -125,6 +125,7 @@ body{margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-s
         return;
       }
       var decoded = decodeURIComponent(p.replace(/\+/g, ' ')).trim();
+      if (decoded === '가꾸기 볶이롭티') decoded = '가꾸기 브이롭티';
       if (decoded) {
         el.value = decoded;
         if (productDisplayEl) productDisplayEl.textContent = decoded;

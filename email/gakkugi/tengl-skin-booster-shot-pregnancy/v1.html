@@ -592,6 +592,13 @@ table[data-hwal="story"] img.hwal-hero-split-photo {
   border: 0;
   border-radius: 16px 0 0 16px;
 }
+table[data-hwal="story"] table.hwal-safe-section-mobile {
+  display: none;
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #e5e0d9;
+  border-radius: 16px;
+}
 /* 클로징 카드형 메시지 박스 */
 table[data-hwal="story"] table.hwal-story-close-wrap {
   border: 1px solid #e5e0d9;
@@ -1241,16 +1248,26 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
     max-width: 100% !important;
     padding: 0 !important;
     border-right: none !important;
-    border-bottom: 1px solid #e5e0d9 !important;
+    border-bottom: none !important;
     box-sizing: border-box !important;
   }
   table.hwal-recommend-layout td.hwal-recommend-check-col:last-child {
-    border-bottom: none !important;
-    padding-top: 4px !important;
+    padding-top: 0 !important;
+  }
+  table.hwal-recommend-layout .hwal-recommend-check-row {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
   }
   table.hwal-recommend-layout .hwal-recommend-check-row td {
-    padding: 10px 0 !important;
+    display: inline-block !important;
+    width: auto !important;
+    padding: 10px 4px !important;
     vertical-align: middle !important;
+    text-align: left !important;
+  }
+  table.hwal-recommend-layout .hwal-recommend-check-text {
+    text-align: left !important;
   }
   table.hwal-recommend-panel > tbody > tr > td {
     padding: 18px 16px 16px 16px !important;
@@ -1262,12 +1279,70 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
   a.hwal-cta-pill {
     display: inline-block !important;
     box-sizing: border-box !important;
-    width: 100% !important;
-    max-width: 320px !important;
-    min-height: 48px !important;
-    padding: 14px 24px !important;
-    font-size: 15px !important;
+    width: auto !important;
+    max-width: 260px !important;
+    min-width: 0 !important;
+    min-height: 44px !important;
+    padding: 12px 28px !important;
+    font-size: 14px !important;
     line-height: 1.4 !important;
+    text-align: center !important;
+  }
+  table[data-hwal="story"] td.hwal-story-pad.hwal-safe-section-pad {
+    padding: 0 20px 40px 20px !important;
+  }
+  table[data-hwal="story"] td.hwal-safe-section-pad table.hwal-safe-section-desktop {
+    display: none !important;
+  }
+  table[data-hwal="story"] table.hwal-safe-section-mobile {
+    display: table !important;
+    width: 100% !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e5e0d9 !important;
+    border-radius: 16px !important;
+  }
+  table[data-hwal="story"] table.hwal-safe-section-mobile > tbody > tr > td {
+    padding: 28px 22px 26px 22px !important;
+    text-align: center !important;
+  }
+  table[data-hwal="story"] .hwal-safe-section-mobile-badge {
+    width: 96px !important;
+    max-width: 96px !important;
+    height: auto !important;
+    margin: 0 auto 18px auto !important;
+    display: block !important;
+  }
+  table[data-hwal="story"] .hwal-safe-section-mobile-title {
+    margin: 0 0 10px 0 !important;
+    padding: 0 !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #2f2f2f !important;
+    line-height: 1.5 !important;
+    letter-spacing: -0.02em !important;
+    text-align: center !important;
+  }
+  table[data-hwal="story"] .hwal-safe-section-mobile-body {
+    margin: 0 0 16px 0 !important;
+    padding: 0 !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: #6b6b6b !important;
+    line-height: 1.6 !important;
+    letter-spacing: -0.02em !important;
+    text-align: center !important;
+  }
+  table[data-hwal="story"] .hwal-safe-section-mobile-pill {
+    display: inline-block !important;
+    margin: 0 auto !important;
+    padding: 10px 16px !important;
+    border-radius: 999px !important;
+    background-color: #471869 !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    line-height: 1.45 !important;
+    letter-spacing: -0.02em !important;
     text-align: center !important;
   }
   table[data-hwal="story"] .hwal-story-icon-ring {
@@ -1406,12 +1481,12 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
   table[data-aowa="cta-bar"] .hwal-cta-pill {
     display: inline-block !important;
     box-sizing: border-box !important;
-    width: 100% !important;
-    max-width: 320px !important;
+    width: auto !important;
+    max-width: 260px !important;
     min-width: 0 !important;
-    min-height: 48px !important;
-    padding: 14px 24px !important;
-    font-size: 15px !important;
+    min-height: 44px !important;
+    padding: 12px 28px !important;
+    font-size: 14px !important;
     line-height: 1.4 !important;
     text-align: center !important;
     box-shadow: 0 1px 2px rgba(47, 47, 47, 0.1) !important;
@@ -1427,15 +1502,10 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
 <tr>
 <td class="aowa-body" width="100%" style="padding:0 0 48px;width:100%;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.65;color:#2f2f2f;">
 
-<!-- 상단 초록 띠 + 메인 히어로 -->
+<!-- 상단 띠 -->
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;border-radius:12px 12px 0 0;overflow:hidden;">
 <tr>
 <td class="hwal-top-band" align="center" bgcolor="#efeae3" style="padding:13px 20px;background-color:#efeae3;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:13px;font-weight:600;letter-spacing:0.1em;color:#2f2f2f;text-align:center;line-height:1.5;">Wellness Creator Commerce ConnectSell</td>
-</tr>
-<tr>
-<td width="100%" style="padding:0;line-height:0;font-size:0;background-color:#f7f5f2;">
-<img class="hwal-hero-main" src="../../images/tengl-skin-booster-shot-pregnancy-hero-main.png" alt="텐글 스킨 부스터샷 — 자외선과 열감으로 지친 피부 속부터 채우는 스킨 부스터샷 · 비우고 살리고 보호하는 먹는 피부 영양제" width="1024" style="width:100%;max-width:100%;height:auto;display:block;border:0;vertical-align:top;">
-</td>
 </tr>
 </table>
 
@@ -1523,10 +1593,20 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
 </tr>
 <tr>
 <td class="hwal-story-pad hwal-safe-section-pad" valign="top" style="padding:0 26px 28px 26px;vertical-align:top;background-color:#f7f5f2;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width:100%;background-color:#ffffff;border:1px solid #e5e0d9;border-radius:16px;overflow:hidden;">
+<table class="hwal-safe-section-desktop" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width:100%;background-color:#ffffff;border:1px solid #e5e0d9;border-radius:16px;overflow:hidden;">
 <tr>
 <td align="center" style="padding:0;text-align:center;line-height:0;font-size:0;">
 <img class="hwal-safe-section-img" src="../../images/tengl-skin-booster-shot-pregnancy-safe-section.png" alt="임산부도 안심할 수 있도록 인증을 완료했어요 — 자연유래 원료만을 사용하고, 안전성까지 검증된 제품입니다. Two Safe Blue Good Safe 등급 · 임산부 및 수유부가 섭취해도 안전한 제품입니다." width="714" height="156" style="width:100%;max-width:100%;height:auto;display:block;margin:0 auto;border:0;">
+</td>
+</tr>
+</table>
+<table class="hwal-safe-section-mobile" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="display:none;width:100%;background-color:#ffffff;border:1px solid #e5e0d9;border-radius:16px;">
+<tr>
+<td align="center" style="padding:28px 22px 26px 22px;text-align:center;">
+<img class="hwal-safe-section-mobile-badge" src="../../images/twosafe-badge-pregnancy.png" alt="Two Safe 인증" width="96" height="96" style="width:96px;max-width:96px;height:auto;display:block;margin:0 auto 18px auto;border:0;">
+<p class="hwal-safe-section-mobile-title" style="margin:0 0 10px 0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:16px;font-weight:700;color:#2f2f2f;line-height:1.5;letter-spacing:-0.02em;text-align:center;">임산부도 안심할 수 있도록<br>인증을 완료했어요</p>
+<p class="hwal-safe-section-mobile-body" style="margin:0 0 16px 0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:13px;font-weight:500;color:#6b6b6b;line-height:1.6;letter-spacing:-0.02em;text-align:center;">자연유래 원료만을 사용하고,<br>안전성까지 검증된 제품입니다.<br>Two Safe Blue : Good Safe 등급</p>
+<span class="hwal-safe-section-mobile-pill" style="display:inline-block;padding:10px 16px;border-radius:999px;background-color:#471869;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:12px;font-weight:700;color:#ffffff;line-height:1.45;letter-spacing:-0.02em;text-align:center;">임산부 및 수유부가 섭취해도<br>안전한 제품입니다</span>
 </td>
 </tr>
 </table>
@@ -1595,7 +1675,7 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr>
 <td class="hwal-cta-pad" align="center" style="padding:0 26px 36px 26px;text-align:center;">
-<a class="hwal-cta-pill" href="../../../form?product=%EA%B0%80%EA%BE%B8%EA%B8%B0%20%EB%B8%88%EC%9D%B4%EB%A1%AD%ED%8B%B0" style="display:inline-block;max-width:100%;box-sizing:border-box;padding:14px 36px 15px 36px;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:15px;font-weight:700;letter-spacing:-0.01em;line-height:1.4;color:#ffffff !important;text-decoration:none !important;border-radius:999px;background-color:#471869;border:1px solid #3d145f;box-shadow:0 2px 8px rgba(71,24,105,0.12);">샘플신청하기 →</a>
+<a class="hwal-cta-pill" href="../../../form?product=%EA%B0%80%EA%BE%B8%EA%B8%B0%20%EB%B8%8C%EC%9D%B4%EB%A1%AD%ED%8B%B0" style="display:inline-block;max-width:100%;box-sizing:border-box;padding:14px 36px 15px 36px;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:15px;font-weight:700;letter-spacing:-0.01em;line-height:1.4;color:#ffffff !important;text-decoration:none !important;border-radius:999px;background-color:#471869;border:1px solid #3d145f;box-shadow:0 2px 8px rgba(71,24,105,0.12);">샘플신청하기 →</a>
 </td>
 </tr>
 </table>
