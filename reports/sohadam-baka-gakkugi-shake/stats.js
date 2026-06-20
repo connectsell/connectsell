@@ -38,17 +38,24 @@
     flavorBlock: document.getElementById("stats-flavor-block"),
     kpiBlock: document.getElementById("stats-kpi-block"),
     insightBlock: document.getElementById("stats-insight-block"),
+    campaignBlock: document.getElementById("stats-campaign-block"),
+    campaignGrid: document.getElementById("stats-campaign-grid"),
+    bestDay: document.getElementById("stats-best-day"),
+    bestDayDate: document.getElementById("stats-best-day-date"),
+    bestDayMeta: document.getElementById("stats-best-day-meta"),
   };
 
   const MSG_NO_OPTIONS =
     "구성별 판매비중 및 맛별 분석은 옵션 데이터가 없어 표시할 수 없습니다.";
 
-  /** @type {{ optionStats: object|null, timeStats: object|null, optionFileName: string, timeFileName: string }} */
+  /** @type {{ optionStats: object|null, timeStats: object|null, campaignStats: object|null, optionFileName: string, timeFileName: string, campaignFileName: string }} */
   const statsStore = {
     optionStats: null,
     timeStats: null,
+    campaignStats: null,
     optionFileName: "",
     timeFileName: "",
+    campaignFileName: "",
   };
 
   let lastStats = null;
@@ -531,9 +538,45 @@
     return "unknown";
   }
 
+  function buildCampaignDailyStats(records) {
+    const dayMap = new Map();
+    records.forEach((r) => {
+      if (!r.date || r.payment <= 0) return;
+      const key = r.date;
+      const prev = dayMap.get(key) || { date: key, orders: 0, payment: 0 };
+      prev.orders += r.orders || 1;
+      prev.payment += r.payment;
+      dayMap.set(key, prev);
+    });
+
+    const days = [...dayMap.values()].sort((a, b) => {
+      const [am, ad] = a.date.split("/").map(Number);
+      const [bm, bd] = b.date.split("/").map(Number);
+      return am !== bm ? am - bm : ad - bd;
+    });
+
+    const totalPayment = days.reduce((s, d) => s + d.payment, 0) || 1;
+    days.forEach((d) => {
+      d.share = (d.payment / totalPayment) * 100;
+    });
+
+    let bestDay = null;
+    days.forEach((d) => {
+      if (!bestDay || d.payment > bestDay.payment) bestDay = d;
+    });
+    if (bestDay) bestDay.isPeak = true;
+
+    return {
+      campaignDaily: days,
+      bestDay,
+      hasCampaignDaily: days.length > 0,
+    };
+  }
+
   function mergeStatsForRender() {
     const opt = statsStore.optionStats;
     const time = statsStore.timeStats;
+    const campaign = statsStore.campaignStats;
     return {
       compositions: opt?.compositions || [],
       flavors: opt?.flavors || [],
@@ -544,7 +587,10 @@
       hourly: time?.hourly || buildEmptyHourlySlots(),
       hasHourly: !!(time && time.hasHourly),
       hourlyPeak: time?.hourlyPeak || null,
-      customInsight: opt?.customInsight || time?.customInsight || "",
+      campaignDaily: campaign?.campaignDaily || [],
+      bestDay: campaign?.bestDay || null,
+      hasCampaignDaily: !!(campaign && campaign.hasCampaignDaily),
+      customInsight: opt?.customInsight || time?.customInsight || campaign?.customInsight || "",
     };
   }
 
@@ -566,6 +612,50 @@
     }
     return "다음 공구 진행 시 주문이 많은 시간대에 안내 노출을 추천드립니다.";
   }
+  function renderCampaignDaily(stats) {
+    const block = els.campaignBlock;
+    const grid = els.campaignGrid;
+    if (!block || !grid) return;
+
+    if (!stats.hasCampaignDaily || !stats.campaignDaily?.length) {
+      block.hidden = true;
+      grid.innerHTML = "";
+      if (els.bestDay) els.bestDay.hidden = true;
+      return;
+    }
+
+    block.hidden = false;
+    grid.innerHTML = stats.campaignDaily
+      .map(
+        (d) => `
+      <article class="stats-campaign-card${d.isPeak ? " is-peak" : ""}">
+        <p class="stats-campaign-card__date">${escapeHtml(d.date)}</p>
+        <p class="stats-campaign-card__line">주문 ${formatNumber(d.orders)}건</p>
+        <p class="stats-campaign-card__line">매출 ${formatWon(d.payment)}</p>
+        <p class="stats-campaign-card__line">${formatPct(d.share)}</p>
+      </article>`
+      )
+      .join("");
+
+    if (els.bestDay && stats.bestDay) {
+      els.bestDay.hidden = false;
+      if (els.bestDayDate) els.bestDayDate.textContent = stats.bestDay.date;
+      if (els.bestDayMeta) {
+        els.bestDayMeta.textContent = `주문 ${formatNumber(stats.bestDay.orders)}건 · 매출 ${formatWon(stats.bestDay.payment)} · 전체 매출 비중 ${formatPct(stats.bestDay.share)}`;
+      }
+    } else if (els.bestDay) {
+      els.bestDay.hidden = true;
+    }
+  }
+
+  function escapeHtml(s) {
+    return String(s ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
   function renderInsight(stats) {
     if (!els.insight) return;
     if (stats.customInsight) {
@@ -688,7 +778,7 @@
   }
 
   function hasAnyStats() {
-    return !!(statsStore.optionStats || statsStore.timeStats);
+    return !!(statsStore.optionStats || statsStore.timeStats || statsStore.campaignStats);
   }
 
   function updateFileNameDisplay() {
@@ -804,6 +894,7 @@
 
     updateSectionVisibility(lastStats);
     renderOptionStats(lastStats);
+    renderCampaignDaily(lastStats);
     renderHourly(lastStats);
   }
 
@@ -908,8 +999,10 @@
       fileName: els.fileName?.textContent?.trim() || "",
       optionFileName: statsStore.optionFileName,
       timeFileName: statsStore.timeFileName,
+      campaignFileName: statsStore.campaignFileName,
       optionStats: statsStore.optionStats,
       timeStats: statsStore.timeStats,
+      campaignStats: statsStore.campaignStats,
       stats: mergeStatsForRender(),
     };
   }
@@ -934,7 +1027,14 @@
       statsStore.timeStats = sanitizeTimeStats(payload.stats);
     }
 
-    if (!payload.optionStats && !payload.timeStats && payload.stats) {
+    if (payload.campaignStats) {
+      statsStore.campaignStats = sanitizeCampaignStats(payload.campaignStats);
+      statsStore.campaignFileName = payload.campaignFileName || "";
+    } else if (payload.stats && payload.stats.hasCampaignDaily) {
+      statsStore.campaignStats = sanitizeCampaignStats(payload.stats);
+    }
+
+    if (!payload.optionStats && !payload.timeStats && !payload.campaignStats && payload.stats) {
       const type = detectUploadTypeFromMerged(payload.stats);
       if (type === "option" || type === "both") {
         statsStore.optionStats = sanitizeOptionStats(payload.stats);
@@ -963,11 +1063,23 @@
     return "unknown";
   }
 
+  function sanitizeCampaignStats(stats) {
+    if (!stats || typeof stats !== "object") return null;
+    return {
+      campaignDaily: stats.campaignDaily || [],
+      bestDay: stats.bestDay || null,
+      hasCampaignDaily: !!stats.hasCampaignDaily,
+      customInsight: stats.customInsight || "",
+    };
+  }
+
   function clearStats() {
     statsStore.optionStats = null;
     statsStore.timeStats = null;
+    statsStore.campaignStats = null;
     statsStore.optionFileName = "";
     statsStore.timeFileName = "";
+    statsStore.campaignFileName = "";
     lastStats = null;
     if (els.fileInput) els.fileInput.value = "";
     if (els.fileName) els.fileName.textContent = "선택된 파일 없음";

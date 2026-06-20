@@ -764,6 +764,34 @@
         <table class="pdf-table pdf-mini-table"><thead><tr><th>맛</th><th class="num">판매수량</th><th class="num">판매비중</th></tr></thead><tbody>${flavorRows}</tbody></table></div>`
       : "";
 
+    let campaignBlock = "";
+    if (stats.hasCampaignDaily && stats.campaignDaily?.length) {
+      const cards = stats.campaignDaily
+        .map(
+          (d) => `
+        <article class="pdf-campaign-card${d.isPeak ? " is-peak" : ""}">
+          <p class="pdf-campaign-card__date">${escapeHtml(d.date)}</p>
+          <p class="pdf-campaign-card__line">주문 ${formatNumber(d.orders)}건</p>
+          <p class="pdf-campaign-card__line">매출 ${formatNumber(d.payment)}원</p>
+          <p class="pdf-campaign-card__line">${formatPctPdf(d.share)}</p>
+        </article>`
+        )
+        .join("");
+      const best = stats.bestDay;
+      const bestBox = best
+        ? `<div class="pdf-best-day">
+            <span class="pdf-kpi__badge">BEST DAY</span>
+            <p class="pdf-best-day__date">${escapeHtml(best.date)}</p>
+            <p class="pdf-best-day__meta">주문 ${formatNumber(best.orders)}건 · 매출 ${formatNumber(best.payment)}원 · 전체 매출 비중 ${formatPctPdf(best.share)}</p>
+          </div>`
+        : "";
+      campaignBlock = `<div class="pdf-sec pdf-sec--campaign">
+        <h3 class="pdf-sec__title">공구 기간별 주문 추이</h3>
+        <div class="pdf-campaign-grid">${cards}</div>
+        ${bestBox}
+      </div>`;
+    }
+
     let hourlyBlock = "";
     if (stats.hasHourly && stats.hourly && stats.hourly.length) {
       const slots = stats.hourly;
@@ -802,7 +830,7 @@
       </header>
       <div class="pdf-page-2__main">
       <div class="pdf-stats-body">
-        <p class="pdf-sec__sub">스룩페이 옵션 엑셀 기준 · 구성·맛·시간대별 주문 분석</p>
+        <p class="pdf-sec__sub">전체주문내역 · 거래명세서 기준 · 구성·맛·기간·시간대별 주문 분석</p>
         ${optionsNote}
         <div class="pdf-kpi-row pdf-kpi-row--main">
           <div class="pdf-kpi pdf-kpi--aov">
@@ -821,6 +849,7 @@
           </div>
         </div>
         ${insightBlock}
+        ${campaignBlock}
         ${compBlock}
         ${flavorBlock}
         ${hourlyBlock}

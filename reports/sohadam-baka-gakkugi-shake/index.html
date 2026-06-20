@@ -235,7 +235,7 @@
           <span class="section-title__icon" aria-hidden="true"></span>
           공동구매 통계 분석
         </h2>
-        <p class="stats-subtitle">스룩페이 옵션 엑셀 기준 · 구성·맛·시간대별 주문 분석</p>
+        <p class="stats-subtitle">전체주문내역 · 거래명세서 기준 · 구성·맛·기간·시간대별 주문 분석</p>
 
         <div id="stats-empty" class="stats-empty">
           <p class="stats-empty__text">상단에서 스룩페이 옵션 엑셀(.xlsx)을 업로드하면 통계가 자동으로 표시됩니다.</p>
@@ -264,6 +264,16 @@
           <div class="stats-block stats-block--insight" id="stats-insight-block">
             <h3 class="stats-block__title">운영 인사이트</h3>
             <p class="stats-insight" id="stats-insight" hidden></p>
+          </div>
+
+          <div class="stats-block stats-block--campaign" id="stats-campaign-block">
+            <h3 class="stats-block__title">공구 기간별 주문 추이</h3>
+            <div class="stats-campaign-grid" id="stats-campaign-grid"></div>
+            <article class="stats-best-day" id="stats-best-day" hidden>
+              <span class="stats-badge stats-badge--lg">BEST DAY</span>
+              <p class="stats-best-day__date" id="stats-best-day-date">—</p>
+              <p class="stats-best-day__meta" id="stats-best-day-meta">—</p>
+            </article>
           </div>
 
           <p id="stats-options-unavailable" class="stats-options-unavailable" hidden>구성별 판매비중 및 맛별 분석은 옵션 데이터가 없어 표시할 수 없습니다.</p>

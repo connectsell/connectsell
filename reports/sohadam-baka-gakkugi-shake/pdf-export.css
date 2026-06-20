@@ -437,6 +437,72 @@ body.pdf-exporting {
   vertical-align: middle;
 }
 
+/* 공구 기간별 추이 */
+#pdf-export .pdf-sec--campaign {
+  flex-shrink: 0;
+}
+
+#pdf-export .pdf-campaign-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+#pdf-export .pdf-campaign-card {
+  padding: 10px 8px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  text-align: center;
+}
+
+#pdf-export .pdf-campaign-card.is-peak {
+  border-color: #1a2d4a;
+  background: #e8f1f8;
+}
+
+#pdf-export .pdf-campaign-card__date {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #1a2d4a;
+}
+
+#pdf-export .pdf-campaign-card__line {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 600;
+  color: #334155;
+  line-height: 1.5;
+}
+
+#pdf-export .pdf-best-day {
+  padding: 12px 14px;
+  background: linear-gradient(135deg, #1a2d4a 0%, #2a4368 100%);
+  border-radius: 6px;
+  color: #fff;
+  text-align: center;
+}
+
+#pdf-export .pdf-best-day .pdf-kpi__badge {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+
+#pdf-export .pdf-best-day__date {
+  margin: 8px 0 4px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+#pdf-export .pdf-best-day__meta {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
 /* 시간대별 compact */
 #pdf-export .pdf-sec--hourly {
   flex-shrink: 0;
