@@ -590,3 +590,191 @@ body.pdf-exporting {
   font-size: 10px;
   color: #64748b;
 }
+
+/* ── Page 2 compact: A4 한 페이지 내 전체 노출 ── */
+#pdf-export .pdf-page.page-2 {
+  padding: 22px 36px 18px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-header {
+  margin-bottom: 6px;
+  border-radius: 6px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-header__eyebrow {
+  padding: 8px 12px 0;
+  font-size: 9px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-header__title {
+  padding: 4px 12px 10px;
+  font-size: 18px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-stats-body {
+  gap: 5px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-sec__title {
+  margin: 0 0 4px;
+  padding-left: 8px;
+  border-left-width: 3px;
+  font-size: 12px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-sec__sub {
+  margin: 0 0 4px;
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-kpi-row--main {
+  min-height: 0;
+  gap: 6px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-kpi {
+  min-height: 0;
+  padding: 8px 8px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-kpi__label {
+  margin: 0 0 4px;
+  font-size: 9px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-kpi__value {
+  font-size: 15px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-kpi__badge {
+  margin-bottom: 4px;
+  padding: 2px 8px;
+  font-size: 8px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-kpi__name {
+  margin: 0 0 2px;
+  font-size: 12px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-kpi__meta {
+  font-size: 9px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-insight-box {
+  padding: 7px 10px;
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-sec--campaign .pdf-campaign-grid {
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-campaign-card {
+  padding: 6px 5px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-campaign-card__date {
+  margin: 0 0 3px;
+  font-size: 13px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-campaign-card__line {
+  font-size: 9px;
+  line-height: 1.35;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-best-day--compact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 10px;
+  text-align: left;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-best-day--compact .pdf-kpi__badge {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-best-day__inline {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-tables-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-sec--half {
+  min-width: 0;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-mini-table thead th {
+  padding: 5px 4px;
+  font-size: 9px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-mini-table tbody td {
+  padding: 4px 4px;
+  font-size: 9px;
+  line-height: 1.25;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-badge {
+  margin-left: 4px;
+  padding: 1px 5px;
+  font-size: 7px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-sec--hourly {
+  flex-shrink: 0;
+  margin-top: 0;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-peak-label {
+  margin: 0 0 3px;
+  font-size: 10px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-hourly-bars--compact {
+  gap: 3px;
+  padding: 7px 10px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-hourly-bars--compact .pdf-hourly-row {
+  gap: 6px;
+  min-height: 14px;
+  font-size: 9px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-hourly-bars--compact .pdf-hourly-track {
+  height: 9px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-hourly-meta {
+  font-size: 8px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-footer--page2 {
+  margin-top: auto;
+  padding-top: 6px;
+  padding-bottom: 0;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-footer__brand {
+  font-size: 11px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-footer__url {
+  margin: 2px 0 0;
+  font-size: 9px;
+}

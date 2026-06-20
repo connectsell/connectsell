@@ -740,11 +740,6 @@
           .join("")
       : "";
 
-    const compBlock = hasComp
-      ? `<div class="pdf-sec"><h3 class="pdf-sec__title">구성별 판매비중</h3>
-        <table class="pdf-table pdf-mini-table"><thead><tr><th>구성명</th><th class="num">판매수량</th><th class="num">매출액</th><th class="num">판매비중</th></tr></thead><tbody>${compRows}</tbody></table></div>`
-      : "";
-
     const flavorRows = hasFlavor
       ? stats.flavors
           .slice(0, 8)
@@ -759,10 +754,20 @@
           .join("")
       : "";
 
-    const flavorBlock = hasFlavor
-      ? `<div class="pdf-sec"><h3 class="pdf-sec__title">맛별 인기순위</h3>
+    const compBlockInner = hasComp
+      ? `<div class="pdf-sec pdf-sec--half"><h3 class="pdf-sec__title">구성별 판매비중</h3>
+        <table class="pdf-table pdf-mini-table"><thead><tr><th>구성명</th><th class="num">판매수량</th><th class="num">매출액</th><th class="num">판매비중</th></tr></thead><tbody>${compRows}</tbody></table></div>`
+      : "";
+
+    const flavorBlockInner = hasFlavor
+      ? `<div class="pdf-sec pdf-sec--half"><h3 class="pdf-sec__title">맛별 인기순위</h3>
         <table class="pdf-table pdf-mini-table"><thead><tr><th>맛</th><th class="num">판매수량</th><th class="num">판매비중</th></tr></thead><tbody>${flavorRows}</tbody></table></div>`
       : "";
+
+    const tablesBlock =
+      compBlockInner || flavorBlockInner
+        ? `<div class="pdf-tables-duo">${compBlockInner}${flavorBlockInner}</div>`
+        : "";
 
     let campaignBlock = "";
     if (stats.hasCampaignDaily && stats.campaignDaily?.length) {
@@ -779,10 +784,9 @@
         .join("");
       const best = stats.bestDay;
       const bestBox = best
-        ? `<div class="pdf-best-day">
+        ? `<div class="pdf-best-day pdf-best-day--compact">
             <span class="pdf-kpi__badge">BEST DAY</span>
-            <p class="pdf-best-day__date">${escapeHtml(best.date)}</p>
-            <p class="pdf-best-day__meta">주문 ${formatNumber(best.orders)}건 · 매출 ${formatNumber(best.payment)}원 · 전체 매출 비중 ${formatPctPdf(best.share)}</p>
+            <span class="pdf-best-day__inline">${escapeHtml(best.date)} · 주문 ${formatNumber(best.orders)}건 · 매출 ${formatNumber(best.payment)}원 · ${formatPctPdf(best.share)}</span>
           </div>`
         : "";
       campaignBlock = `<div class="pdf-sec pdf-sec--campaign">
@@ -850,8 +854,7 @@
         </div>
         ${insightBlock}
         ${campaignBlock}
-        ${compBlock}
-        ${flavorBlock}
+        ${tablesBlock}
         ${hourlyBlock}
       </div>
       </div>
