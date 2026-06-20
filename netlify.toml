@@ -173,6 +173,16 @@
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
 
+[[headers]]
+  for = "/reports/sohadam-baka-gakkugi-shake/index.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/settlement-report/index.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
 [[redirects]]
   from = "/email/aowa/sunscreen.html"
   to = "/email/aowa/suncream.html"
