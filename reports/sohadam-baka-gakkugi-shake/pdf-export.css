@@ -1,0 +1,526 @@
+/* PDF 저장 전용 — A4 794×1123px, 스케일/축소 없음 */
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+}
+
+body.pdf-exporting {
+  margin: 0;
+  background: #fff;
+}
+
+#pdf-export-host {
+  position: fixed;
+  left: -10000px;
+  top: 0;
+  width: 794px;
+  z-index: -1;
+  pointer-events: none;
+  background: #fff;
+}
+
+.report-container {
+  width: 794px;
+  min-height: 1123px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  transform: none !important;
+  zoom: 1 !important;
+}
+
+#pdf-export {
+  width: 794px;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #2d3748;
+  box-sizing: border-box;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+#pdf-export .pdf-page {
+  width: 794px;
+  height: 1123px;
+  min-height: 1123px;
+  padding: 32px 40px 28px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  background: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transform: none !important;
+  zoom: 1 !important;
+  page-break-after: avoid;
+  page-break-before: avoid;
+}
+
+#pdf-export .pdf-page.page-1 {
+  page-break-after: always;
+}
+
+#pdf-export .pdf-page.page-2 {
+  page-break-after: avoid;
+}
+
+/* ── Page 1 ── */
+#pdf-export .pdf-page.page-1 .pdf-page__fill {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 0 4px;
+}
+
+#pdf-export .pdf-page.page-1 .pdf-sec {
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+/* ── Page 2: 본문 + 푸터 ── */
+#pdf-export .pdf-page.page-2 .pdf-page-2__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-stats-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-header {
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+/* ── Header ── */
+#pdf-export .pdf-header {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 0;
+  margin-bottom: 14px;
+  background: #1a2d4a;
+  color: #fff;
+  border-radius: 8px;
+}
+
+#pdf-export .pdf-header__eyebrow {
+  margin: 0;
+  padding: 14px 16px 0;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  opacity: 0.88;
+}
+
+#pdf-export .pdf-header__title {
+  margin: 0;
+  padding: 6px 16px 16px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* ── Sections ── */
+#pdf-export .pdf-sec__title {
+  margin: 0 0 10px;
+  padding-left: 10px;
+  border-left: 4px solid #1a2d4a;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a2d4a;
+  line-height: 1.3;
+}
+
+#pdf-export .pdf-sec__sub {
+  margin: 0 0 8px;
+  font-size: 10px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* ── 기본 정보 ── */
+#pdf-export .pdf-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+#pdf-export .pdf-info-field {
+  min-height: 62px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+}
+
+#pdf-export .pdf-info-field--hl {
+  background: #f0f7f4;
+  border-color: #b8d4c8;
+}
+
+#pdf-export .pdf-info-field__label {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+#pdf-export .pdf-info-field__value {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1a2d4a;
+  line-height: 1.35;
+}
+
+/* ── 테이블 ── */
+#pdf-export .pdf-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10px;
+  table-layout: fixed;
+}
+
+#pdf-export .pdf-table--orders thead th {
+  padding: 12px 8px;
+}
+
+#pdf-export .pdf-table thead th {
+  padding: 10px 8px;
+  background: #1a2d4a;
+  color: #fff;
+  font-weight: 700;
+  text-align: left;
+}
+
+#pdf-export .pdf-table thead th.num {
+  text-align: right;
+}
+
+#pdf-export .pdf-table--orders tbody td,
+#pdf-export .pdf-table--orders tfoot td {
+  padding: 11px 8px;
+  line-height: 1.4;
+}
+
+#pdf-export .pdf-table tbody td,
+#pdf-export .pdf-table tfoot td {
+  padding: 8px;
+  border-bottom: 1px solid #e8edf3;
+  vertical-align: middle;
+}
+
+#pdf-export .pdf-table tbody td.num,
+#pdf-export .pdf-table tfoot td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#pdf-export .pdf-table tfoot .row-sub td {
+  background: #f1f5f9;
+  font-weight: 600;
+  padding: 12px 8px;
+}
+
+#pdf-export .pdf-table tfoot .row-total td {
+  background: #1a2d4a;
+  color: #fff;
+  font-weight: 700;
+  padding: 13px 8px;
+  font-size: 11px;
+}
+
+/* ── 정산 요약 ── */
+#pdf-export .pdf-summary-row-title {
+  margin: 12px 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1a2d4a;
+}
+
+#pdf-export .pdf-summary-row-title:first-of-type {
+  margin-top: 4px;
+}
+
+#pdf-export .pdf-summary-grid {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+#pdf-export .pdf-summary-grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#pdf-export .pdf-summary-grid--2 {
+  grid-template-columns: 1fr 1.15fr;
+}
+
+#pdf-export .pdf-summary-card {
+  min-height: 76px;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+}
+
+#pdf-export .pdf-summary-card--primary {
+  min-height: 84px;
+  background: #f0f7f4;
+  border: 2px solid #1a2d4a;
+}
+
+#pdf-export .pdf-summary-card__label {
+  margin: 0 0 8px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+#pdf-export .pdf-summary-card__value {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: #1a2d4a;
+  line-height: 1.2;
+}
+
+#pdf-export .pdf-summary-card--primary .pdf-summary-card__value {
+  font-size: 20px;
+  color: #0d9488;
+}
+
+#pdf-export .pdf-disclaimer {
+  margin: 10px 0 0;
+  font-size: 10px;
+  font-weight: 700;
+  color: #1a2d4a;
+  line-height: 1.4;
+}
+
+/* ── Page 2 KPI ── */
+#pdf-export .pdf-kpi-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+#pdf-export .pdf-kpi-row--main {
+  min-height: 96px;
+}
+
+#pdf-export .pdf-kpi {
+  min-height: 90px;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  text-align: center;
+}
+
+#pdf-export .pdf-kpi--aov {
+  background: linear-gradient(145deg, #e8f5f0 0%, #fff 100%);
+}
+
+#pdf-export .pdf-kpi__label {
+  margin: 0 0 8px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+#pdf-export .pdf-kpi__value {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: #0d9488;
+  line-height: 1.2;
+}
+
+#pdf-export .pdf-kpi__badge {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 4px 10px;
+  font-size: 9px;
+  font-weight: 800;
+  color: #1a2d4a;
+  background: #f5e6b8;
+  border-radius: 12px;
+}
+
+#pdf-export .pdf-kpi__name {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 800;
+  color: #1a2d4a;
+  line-height: 1.25;
+}
+
+#pdf-export .pdf-kpi__meta {
+  margin: 0;
+  font-size: 10px;
+  color: #64748b;
+}
+
+#pdf-export .pdf-insight-box {
+  margin: 0;
+  padding: 12px 14px;
+  font-size: 10px;
+  line-height: 1.55;
+  color: #2d3748;
+  background: #f5f0e6;
+  border: 1px solid #e8dcc8;
+  border-radius: 6px;
+}
+
+#pdf-export .pdf-insight-box strong {
+  color: #1a2d4a;
+}
+
+#pdf-export .pdf-mini-table thead th {
+  font-size: 10px;
+  padding: 9px 8px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-mini-table thead th {
+  padding: 8px 6px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-mini-table tbody td {
+  font-size: 10px;
+  padding: 8px 6px;
+  line-height: 1.35;
+}
+
+#pdf-export .pdf-mini-table tbody td {
+  font-size: 10px;
+  padding: 9px 8px;
+  line-height: 1.4;
+}
+
+#pdf-export .pdf-badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 7px;
+  font-size: 8px;
+  font-weight: 800;
+  color: #1a2d4a;
+  background: #f5e6b8;
+  border-radius: 8px;
+  vertical-align: middle;
+}
+
+/* 시간대별 compact */
+#pdf-export .pdf-sec--hourly {
+  flex-shrink: 0;
+}
+
+#pdf-export .pdf-peak-label {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #1a2d4a;
+}
+
+#pdf-export .pdf-hourly-bars--compact {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 12px 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+#pdf-export .pdf-hourly-bars--compact .pdf-hourly-row {
+  display: grid;
+  grid-template-columns: 54px 1fr auto;
+  gap: 8px;
+  align-items: center;
+  font-size: 10px;
+  min-height: 18px;
+}
+
+#pdf-export .pdf-hourly-row.is-peak .pdf-hourly-fill {
+  background: linear-gradient(90deg, #1a2d4a 0%, #4a6fa5 100%);
+}
+
+#pdf-export .pdf-hourly-label {
+  font-weight: 700;
+  color: #1a2d4a;
+}
+
+#pdf-export .pdf-hourly-bars--compact .pdf-hourly-track {
+  height: 11px;
+  background: #e2e8f0;
+  border-radius: 5px;
+}
+
+#pdf-export .pdf-hourly-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4a6b8a 0%, #1a2d4a 100%);
+  border-radius: 5px;
+  min-width: 3px;
+}
+
+#pdf-export .pdf-hourly-meta {
+  font-size: 9px;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+/* 푸터 — 페이지 하단 고정 */
+#pdf-export .pdf-footer {
+  flex-shrink: 0;
+  padding-top: 12px;
+  text-align: center;
+  border-top: 1px solid #e2e8f0;
+}
+
+#pdf-export .pdf-footer--page2 {
+  margin-top: auto;
+  padding-top: 12px;
+  padding-bottom: 4px;
+  background: #fff;
+}
+
+#pdf-export .pdf-footer__brand {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 800;
+  color: #1a2d4a;
+}
+
+#pdf-export .pdf-footer__url {
+  margin: 4px 0 0;
+  font-size: 10px;
+  color: #64748b;
+}

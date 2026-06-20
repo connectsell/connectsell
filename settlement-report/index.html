@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공동구매 운영 리포트 | ConnectSell</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pdf-export.css">
+</head>
+<body>
+  <div class="page-shell">
+    <!-- Screen-only toolbar -->
+    <div class="toolbar no-print" aria-hidden="false">
+      <p class="toolbar-hint">1페이지: 정산 요약 · 2페이지: 판매 통계·인사이트. 숫자 수정 시 자동 계산됩니다. 스룩페이 옵션 엑셀(.xlsx)을 업로드하면 2페이지 통계가 자동 반영됩니다.</p>
+      <div class="stats-upload" id="stats-drop-zone">
+        <label class="stats-upload__label" for="stats-file-input">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          스룩페이 옵션 엑셀 업로드 (.xlsx)
+        </label>
+        <input type="file" id="stats-file-input" class="stats-upload__input" accept=".xlsx,.xls" hidden>
+        <span class="stats-upload__filename" id="stats-file-name">선택된 파일 없음</span>
+      </div>
+    </div>
+
+    <!-- PDF capture area -->
+    <main id="report-root" class="report-root">
+      <header class="report-header">
+        <div class="report-header__actions no-print">
+          <button type="button" id="btn-save" class="btn-header btn-header--save" title="현재 리포트 저장">저장</button>
+          <button type="button" id="btn-new-report" class="btn-header btn-header--new" title="새 셀러 리포트 작성">새 리포트</button>
+          <button type="button" id="btn-pdf" class="btn-header btn-header--pdf" title="A4 PDF로 저장">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="12" y1="18" x2="12" y2="12"/>
+              <polyline points="9 15 12 18 15 15"/>
+            </svg>
+            PDF 저장
+          </button>
+        </div>
+        <div class="report-header__center">
+          <p class="report-eyebrow">CONNECTSELL · 공동구매 운영 리포트</p>
+          <h1 class="report-title">공동구매 운영 리포트</h1>
+        </div>
+      </header>
+
+      <div class="report-page-1 pdf-page-1">
+      <!-- 1. Basic info -->
+      <section class="section report-section section--basic" aria-labelledby="sec-basic">
+        <h2 id="sec-basic" class="section-title">
+          <span class="section-title__icon" aria-hidden="true"></span>
+          기본 정보
+        </h2>
+        <div class="info-grid">
+          <label class="info-field">
+            <span class="info-field__label">셀러명</span>
+            <input type="text" class="info-input" id="seller-name" data-field="seller" value="@sample_seller">
+          </label>
+          <label class="info-field">
+            <span class="info-field__label">상품명</span>
+            <input type="text" class="info-input" id="product-name" data-field="product" value="다이어트 단백질 쉐이크">
+          </label>
+          <label class="info-field">
+            <span class="info-field__label">공구 기간</span>
+            <input type="text" class="info-input" id="campaign-period" data-field="period" value="2026.05.18 ~ 2026.05.20">
+          </label>
+          <label class="info-field">
+            <span class="info-field__label">작성일</span>
+            <input type="text" class="info-input" id="written-date" data-field="date" value="2026.05.20">
+          </label>
+          <label class="info-field">
+            <span class="info-field__label">공급사</span>
+            <input type="text" class="info-input" id="supplier-name" data-field="supplier" value="ConnectSell">
+          </label>
+          <label class="info-field">
+            <span class="info-field__label">담당자</span>
+            <input type="text" class="info-input" id="manager-name" data-field="manager" value="허연선">
+          </label>
+          <label class="info-field info-field--highlight">
+            <span class="info-field__label">셀러 수수료율</span>
+            <div class="rate-input-wrap">
+              <input type="text" class="info-input info-input--number" id="commission-rate" data-field="rate" value="10" inputmode="decimal">
+              <span class="rate-suffix">%</span>
+            </div>
+          </label>
+          <label class="info-field info-field--highlight">
+            <span class="info-field__label">정산 예정일</span>
+            <input type="text" class="info-input info-input--date" id="settlement-due-date" data-field="settlement-due" value="2026.06.05">
+          </label>
+        </div>
+      </section>
+
+      <!-- 2. Daily orders table -->
+      <section class="section report-section section--daily" aria-labelledby="sec-daily">
+        <div class="section-head-row">
+          <h2 id="sec-daily" class="section-title">
+            <span class="section-title__icon" aria-hidden="true"></span>
+            일자별 주문 내역
+          </h2>
+          <button type="button" id="btn-add-row" class="btn-ghost no-print">+ 일자 추가</button>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table data-table--daily" id="daily-table">
+            <colgroup>
+              <col class="col-w-date">
+              <col class="col-w-product">
+              <col class="col-w-orders">
+              <col class="col-w-product-amt">
+              <col class="col-w-shipping">
+              <col class="col-w-payment">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col" class="col-date">날짜</th>
+                <th scope="col" class="col-product">상품명</th>
+                <th scope="col" class="col-num">주문수</th>
+                <th scope="col" class="col-num">상품구매금액</th>
+                <th scope="col" class="col-num">배송비</th>
+                <th scope="col" class="col-num">결제합계</th>
+              </tr>
+            </thead>
+            <tbody id="daily-tbody"></tbody>
+            <tfoot>
+              <tr class="subtotal-row row-subtotal">
+                <td colspan="2">소계</td>
+                <td class="cell-num" id="subtotal-orders">0</td>
+                <td class="cell-num" id="subtotal-product">0</td>
+                <td class="cell-num" id="subtotal-shipping">0</td>
+                <td class="cell-num cell-payment" id="subtotal-payment">0</td>
+              </tr>
+              <tr class="total-row row-total">
+                <td colspan="2">합계</td>
+                <td class="cell-num" id="total-orders">0</td>
+                <td class="cell-num" id="total-product">0</td>
+                <td class="cell-num" id="total-shipping">0</td>
+                <td class="cell-num cell-payment" id="total-payment">0</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+
+      <!-- 3. 주문 상태 및 정산 요약 -->
+      <section class="section report-section section--summary" id="summary-section" data-report-mode="ops" aria-labelledby="sec-summary">
+        <h2 id="sec-summary" class="section-title">
+          <span class="section-title__icon" aria-hidden="true"></span>
+          주문 상태 및 정산 요약
+        </h2>
+        <p class="summary-intro">본사 링크 공구 진행 시, 공구 기간 동안의 주문·취소·교환·반품 현황과 예상 정산 금액을 함께 확인할 수 있습니다.</p>
+
+        <div class="summary-panel summary-panel--ops">
+          <h3 class="summary-row-title">주문 상태 요약</h3>
+          <div class="summary-grid summary-grid--orders">
+            <article class="summary-card summary-card--doc">
+              <p class="summary-card__label">총 주문건수</p>
+              <p class="summary-card__value" id="card-total-orders">0건</p>
+            </article>
+            <article class="summary-card summary-card--doc summary-card--count-input">
+              <p class="summary-card__label">취소건수</p>
+              <div class="summary-card__value summary-card__value--count">
+                <input type="text" class="summary-count-input" id="adj-cancel-count" inputmode="numeric" value="0" aria-label="취소건수" title="상품 발송 전 고객 취소">
+                <span class="summary-count-suffix">건</span>
+              </div>
+            </article>
+            <article class="summary-card summary-card--doc summary-card--count-input">
+              <p class="summary-card__label">교환건수</p>
+              <div class="summary-card__value summary-card__value--count">
+                <input type="text" class="summary-count-input" id="adj-exchange-count" inputmode="numeric" value="0" aria-label="교환건수" title="수령 후 교환 접수">
+                <span class="summary-count-suffix">건</span>
+              </div>
+            </article>
+            <article class="summary-card summary-card--doc summary-card--count-input">
+              <p class="summary-card__label">반품건수</p>
+              <div class="summary-card__value summary-card__value--count">
+                <input type="text" class="summary-count-input" id="adj-return-count" inputmode="numeric" value="0" aria-label="반품건수" title="수령 후 반품 접수">
+                <span class="summary-count-suffix">건</span>
+              </div>
+            </article>
+          </div>
+
+          <h3 class="summary-row-title">정산 요약</h3>
+          <div class="summary-grid summary-grid--amounts">
+            <article class="summary-card summary-card--doc" id="card-total-sales-wrap">
+              <p class="summary-card__label">총 매출액</p>
+              <p class="summary-card__value summary-card__value--money" id="card-total-sales">
+                <span class="value-amount" id="card-total-sales-amount">0</span><span class="value-unit">원</span>
+              </p>
+            </article>
+            <article class="summary-card summary-card--doc summary-card--primary" id="card-seller-settlement-wrap">
+              <p class="summary-card__label">예상 셀러 정산금액</p>
+              <p class="summary-card__value summary-card__value--money summary-card__value--primary" id="card-seller-settlement" aria-live="polite">
+                <span class="value-amount" id="card-seller-settlement-amount">0</span><span class="value-unit">원</span>
+              </p>
+            </article>
+          </div>
+          <p class="summary-disclaimer summary-disclaimer--ops-only">※ 정산금액은 취소/교환/반품 및 환불건에 따라 최종 금액이 변동될 수 있습니다.</p>
+        </div>
+
+        <!-- 최종 정산 리포트 모드 (향후 확장) -->
+        <div class="summary-panel summary-panel--final" hidden>
+          <div class="summary-grid summary-grid--final">
+            <article class="summary-card summary-card--doc">
+              <p class="summary-card__label">총 주문건수</p>
+              <p class="summary-card__value" id="card-final-total-orders">0건</p>
+            </article>
+            <article class="summary-card summary-card--doc">
+              <p class="summary-card__label">취소건수</p>
+              <p class="summary-card__value" id="card-final-cancel">0건</p>
+            </article>
+            <article class="summary-card summary-card--doc">
+              <p class="summary-card__label">교환건수</p>
+              <p class="summary-card__value" id="card-final-exchange">0건</p>
+            </article>
+            <article class="summary-card summary-card--doc">
+              <p class="summary-card__label">반품건수</p>
+              <p class="summary-card__value" id="card-final-return">0건</p>
+            </article>
+            <article class="summary-card summary-card--doc summary-card--primary summary-card--final-settlement" id="card-final-settlement-wrap">
+              <p class="summary-card__label">최종 확정 정산금액</p>
+              <p class="summary-card__value summary-card__value--money summary-card__value--primary" id="card-final-settlement">
+                <span class="value-amount" id="card-final-settlement-amount">0</span><span class="value-unit">원</span>
+              </p>
+            </article>
+          </div>
+        </div>
+
+      </section>
+
+      </div>
+
+      <!-- 5. 통계 분석 (2페이지) -->
+      <section class="section section--stats statistics-section pdf-page-2 report-section" id="stats-section" aria-labelledby="sec-stats">
+        <h2 id="sec-stats" class="section-title">
+          <span class="section-title__icon" aria-hidden="true"></span>
+          공동구매 통계 분석
+        </h2>
+        <p class="stats-subtitle">스룩페이 옵션 엑셀 기준 · 구성·맛·시간대별 주문 분석</p>
+
+        <div id="stats-empty" class="stats-empty">
+          <p class="stats-empty__text">상단에서 스룩페이 옵션 엑셀(.xlsx)을 업로드하면 통계가 자동으로 표시됩니다.</p>
+        </div>
+
+        <div id="stats-content" class="stats-content" hidden>
+          <div class="stats-block stats-block--kpi" id="stats-kpi-block">
+            <div class="stats-kpi-row">
+              <article class="stats-kpi stats-kpi--aov">
+                <p class="stats-kpi__label">객단가</p>
+                <p class="stats-kpi__value" id="stats-aov-amount">—</p>
+              </article>
+              <article class="stats-kpi stats-kpi--best">
+                <span class="stats-badge stats-badge--lg">BEST 구성</span>
+                <p class="stats-kpi__name" id="stats-best-comp-name">—</p>
+                <p class="stats-kpi__meta"><span id="stats-best-comp-qty">—</span> · <span id="stats-best-comp-share">—</span></p>
+              </article>
+              <article class="stats-kpi stats-kpi--best stats-kpi--flavor">
+                <span class="stats-badge stats-badge--lg">BEST 맛</span>
+                <p class="stats-kpi__name" id="stats-best-flavor-name">—</p>
+                <p class="stats-kpi__meta"><span id="stats-best-flavor-qty">—</span> · <span id="stats-best-flavor-share">—</span></p>
+              </article>
+            </div>
+          </div>
+
+          <div class="stats-block stats-block--insight" id="stats-insight-block">
+            <h3 class="stats-block__title">운영 인사이트</h3>
+            <p class="stats-insight" id="stats-insight" hidden></p>
+          </div>
+
+          <p id="stats-options-unavailable" class="stats-options-unavailable" hidden>구성별 판매비중 및 맛별 분석은 옵션 데이터가 없어 표시할 수 없습니다.</p>
+
+          <div class="stats-block stats-block--compact" id="stats-comp-block">
+            <h3 class="stats-block__title">구성별 판매비중</h3>
+            <div class="table-wrap">
+              <table class="data-table stats-table">
+                <thead>
+                  <tr>
+                    <th>구성명</th>
+                    <th class="col-num">판매수량</th>
+                    <th class="col-num">매출액</th>
+                    <th class="col-rate">판매비중</th>
+                  </tr>
+                </thead>
+                <tbody id="stats-comp-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="stats-block stats-block--compact" id="stats-flavor-block">
+            <h3 class="stats-block__title">맛별 인기순위</h3>
+            <div class="table-wrap">
+              <table class="data-table stats-table">
+                <thead>
+                  <tr>
+                    <th>맛</th>
+                    <th class="col-num">판매수량</th>
+                    <th class="col-rate">판매비중</th>
+                  </tr>
+                </thead>
+                <tbody id="stats-flavor-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="stats-block stats-block--hourly" id="stats-hourly-block">
+            <h3 class="stats-block__title">시간대별 판매 추이</h3>
+            <p class="stats-hourly-peak-label" id="stats-hourly-peak-label" hidden></p>
+            <div class="stats-hourly-body" id="stats-hourly-body" hidden>
+              <div class="hourly-bars" id="stats-hourly-bars" aria-label="시간대별 주문 막대그래프"></div>
+            </div>
+            <p class="stats-hourly-insight" id="stats-hourly-insight" hidden></p>
+          </div>
+        </div>
+
+        <footer class="report-footer report-footer--page2">
+          <p class="report-footer__brand">ConnectSell</p>
+          <p class="report-footer__url">connectsell.co.kr</p>
+        </footer>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="stats.js?v=20260524"></script>
+  <script src="script.js"></script>
+</body>
+</html>
