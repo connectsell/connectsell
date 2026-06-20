@@ -27,7 +27,7 @@ body.pdf-exporting {
 
 .report-container {
   width: 794px;
-  min-height: 1123px;
+  min-height: 0;
   margin: 0 auto;
   box-sizing: border-box;
   transform: none !important;
@@ -48,15 +48,10 @@ body.pdf-exporting {
 
 #pdf-export .pdf-page {
   width: 794px;
-  height: 1123px;
-  min-height: 1123px;
-  padding: 32px 40px 28px;
   box-sizing: border-box;
   margin: 0 auto;
   background: #fff;
   position: relative;
-  display: flex;
-  flex-direction: column;
   transform: none !important;
   zoom: 1 !important;
   page-break-after: avoid;
@@ -64,10 +59,19 @@ body.pdf-exporting {
 }
 
 #pdf-export .pdf-page.page-1 {
+  height: 1123px;
+  min-height: 1123px;
+  padding: 32px 40px 28px;
+  display: flex;
+  flex-direction: column;
   page-break-after: always;
 }
 
 #pdf-export .pdf-page.page-2 {
+  height: auto;
+  min-height: 0;
+  padding: 20px 36px 16px;
+  display: block;
   page-break-after: avoid;
 }
 
@@ -86,20 +90,14 @@ body.pdf-exporting {
   flex-shrink: 0;
 }
 
-/* ── Page 2: 본문 + 푸터 ── */
+/* ── Page 2: 본문 + 푸터 (block, 콘텐츠 높이 기준) ── */
 #pdf-export .pdf-page.page-2 .pdf-page-2__main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
+  display: block;
 }
 
 #pdf-export .pdf-page.page-2 .pdf-stats-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 10px;
+  display: block;
+  gap: 0;
 }
 
 #pdf-export .pdf-page.page-2 .pdf-header {
@@ -563,18 +561,17 @@ body.pdf-exporting {
   white-space: nowrap;
 }
 
-/* 푸터 — 페이지 하단 고정 */
+/* 푸터 — 본문 바로 아래 */
 #pdf-export .pdf-footer {
-  flex-shrink: 0;
   padding-top: 12px;
   text-align: center;
   border-top: 1px solid #e2e8f0;
 }
 
 #pdf-export .pdf-footer--page2 {
-  margin-top: auto;
-  padding-top: 12px;
-  padding-bottom: 4px;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 0;
   background: #fff;
 }
 
@@ -591,14 +588,14 @@ body.pdf-exporting {
   color: #64748b;
 }
 
-/* ── Page 2 compact: A4 한 페이지 내 전체 노출 + 균형 레이아웃 ── */
-#pdf-export .pdf-page.page-2 {
-  padding: 20px 36px 16px;
-}
-
+/* ── Page 2: 섹션 간격 + 가독성 ── */
 #pdf-export .pdf-page.page-2 .pdf-header {
   margin-bottom: 8px;
   border-radius: 6px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-stats-body > * + * {
+  margin-top: 8px;
 }
 
 #pdf-export .pdf-page.page-2 .pdf-header__eyebrow {
@@ -612,8 +609,6 @@ body.pdf-exporting {
 }
 
 #pdf-export .pdf-page.page-2 .pdf-stats-body {
-  flex: 1;
-  gap: 8px;
   min-height: 0;
 }
 
@@ -845,8 +840,8 @@ body.pdf-exporting {
 }
 
 #pdf-export .pdf-page.page-2 .pdf-footer--page2 {
-  margin-top: auto;
-  padding-top: 8px;
+  margin-top: 10px;
+  padding-top: 10px;
   padding-bottom: 0;
 }
 
@@ -857,4 +852,26 @@ body.pdf-exporting {
 #pdf-export .pdf-page.page-2 .pdf-footer__url {
   margin: 2px 0 0;
   font-size: 9px;
+}
+
+@media print {
+  #pdf-export .pdf-page.page-2,
+  #pdf-export-host .pdf-page.page-2 {
+    display: block !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+
+  #pdf-export .pdf-page.page-2 .pdf-page-2__main,
+  #pdf-export .pdf-page.page-2 .pdf-stats-body {
+    display: block !important;
+    flex: none !important;
+    min-height: 0 !important;
+  }
+
+  #pdf-export .pdf-footer--page2 {
+    margin-top: 10px !important;
+    position: static !important;
+  }
 }

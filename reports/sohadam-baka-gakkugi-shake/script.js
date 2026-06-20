@@ -911,6 +911,13 @@
     return container;
   }
 
+  function measurePdfPageHeight(pageEl) {
+    if (pageEl.classList.contains("page-2")) {
+      return Math.ceil(pageEl.getBoundingClientRect().height);
+    }
+    return PDF_PAGE_H;
+  }
+
   async function exportPdf() {
     const jsPDFCtor = window.jspdf?.jsPDF;
     const html2canvasFn = window.html2canvas;
@@ -934,22 +941,24 @@
     await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
 
     const pages = host.querySelectorAll(".pdf-page");
+    const pageHeights = [...pages].map((p) => measurePdfPageHeight(p));
     const pdf = new jsPDFCtor({
       unit: "px",
-      format: [PDF_PAGE_W, PDF_PAGE_H],
+      format: [PDF_PAGE_W, pageHeights[0] || PDF_PAGE_H],
       orientation: "portrait",
       hotfixes: ["px_scaling"],
     });
 
     try {
       for (let i = 0; i < pages.length; i++) {
-        if (i > 0) pdf.addPage([PDF_PAGE_W, PDF_PAGE_H], "p");
+        const captureH = pageHeights[i] || PDF_PAGE_H;
+        if (i > 0) pdf.addPage([PDF_PAGE_W, captureH], "p");
         const canvas = await html2canvasFn(pages[i], {
           scale: 2,
           width: PDF_PAGE_W,
-          height: PDF_PAGE_H,
+          height: captureH,
           windowWidth: PDF_PAGE_W,
-          windowHeight: PDF_PAGE_H,
+          windowHeight: captureH,
           scrollX: 0,
           scrollY: 0,
           useCORS: true,
@@ -957,7 +966,7 @@
           logging: false,
         });
         const img = canvas.toDataURL("image/jpeg", 0.92);
-        pdf.addImage(img, "JPEG", 0, 0, PDF_PAGE_W, PDF_PAGE_H);
+        pdf.addImage(img, "JPEG", 0, 0, PDF_PAGE_W, captureH);
       }
       pdf.save(buildPdfFilename());
     } catch (err) {
