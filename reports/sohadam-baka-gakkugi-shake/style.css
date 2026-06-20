@@ -1852,22 +1852,7 @@ body {
   }
 }
 
-/* PDF 캡처 호스트 — A4 794px 중앙 정렬 */
-#pdf-export-host {
-  position: fixed;
-  left: 50%;
-  top: 0;
-  width: 794px;
-  max-width: 794px;
-  margin: 0;
-  transform: translateX(-50%);
-  z-index: 100000;
-  pointer-events: none;
-  background: #fff;
-  overflow: visible;
-}
-
-.pdf-mode body,
+/* PDF 캡처 — 화면과 동일 레이아웃 (794px A4, 별도 압축 없음) */
 .pdf-exporting body {
   min-height: 0 !important;
   height: auto !important;
@@ -1879,305 +1864,27 @@ body {
   margin: 0 !important;
 }
 
-.pdf-exporting .stats-upload,
-.pdf-exporting .stats-empty,
-.pdf-exporting .no-print,
-
-#pdf-export-host .report-root,
-#pdf-export-host #pdf-export-clone,
-#pdf-export-clone {
-  width: 794px !important;
-  max-width: 794px !important;
-  min-height: 0 !important;
-  height: auto !important;
-  margin: 0 auto !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  overflow: visible !important;
+#pdf-export-host .pdf-capture-page .section {
+  page-break-inside: auto;
+  break-inside: auto;
 }
 
-/* 1페이지: 기본정보 + 주문내역 + 정산요약 */
 #pdf-export-host .report-page-1 {
-  page-break-after: always !important;
-  break-after: page !important;
-  page-break-inside: auto !important;
-  break-inside: auto !important;
-  min-height: 0 !important;
-  height: auto !important;
+  page-break-after: always;
+  break-after: page;
+  min-height: 0;
+  height: auto;
 }
 
-#pdf-export-host .report-page-1 .report-section,
-#pdf-export-host .report-page-1 .section {
-  page-break-inside: auto !important;
-  break-inside: auto !important;
-  page-break-before: auto !important;
-  page-break-after: auto !important;
-}
-
-/* 2페이지: 통계 전체 (page-1의 page-break-after만 사용, before 금지) */
-#pdf-export-host .statistics-section,
-#pdf-export-host .pdf-page-2 {
-  page-break-before: auto !important;
-  break-before: auto !important;
-  page-break-after: avoid !important;
-  page-break-inside: auto !important;
-  break-inside: auto !important;
-  min-height: 0 !important;
-  height: auto !important;
-  padding-top: 8px !important;
-}
-
-#pdf-export-host .report-header {
-  padding: 14px 16px 10px !important;
-}
-
-#pdf-export-host .report-title {
-  font-size: 18px !important;
-}
-
-#pdf-export-host .report-eyebrow {
-  font-size: 8px !important;
-  margin-bottom: 4px !important;
-}
-
-#pdf-export-host .report-page-1 .section,
-#pdf-export-host .report-section {
-  padding: 6px 14px !important;
-}
-
-#pdf-export-host .section-title {
-  margin-bottom: 6px !important;
-  font-size: 12px !important;
-}
-
-#pdf-export-host .section-title__icon {
-  height: 13px !important;
-}
-
-#pdf-export-host .info-grid {
-  gap: 4px !important;
-}
-
-#pdf-export-host .info-field {
-  padding: 4px 6px !important;
-  gap: 2px !important;
-}
-
-#pdf-export-host .info-field__label {
-  font-size: 8px !important;
-}
-
-#pdf-export-host .pdf-plain-text {
-  font-size: 9px !important;
-  line-height: 1.25 !important;
-  font-weight: 600;
-}
-
-#pdf-export-host .data-table--daily {
-  font-size: 8px !important;
-}
-
-#pdf-export-host .data-table--daily thead th {
-  padding: 5px 4px !important;
-  font-size: 7px !important;
-}
-
-#pdf-export-host .data-table--daily tbody td,
-#pdf-export-host .data-table--daily tfoot td {
-  padding: 3px 4px !important;
-  font-size: 8px !important;
-}
-
-#pdf-export-host .summary-grid--orders,
-#pdf-export-host .summary-grid--amounts {
-  gap: 5px !important;
-  margin-bottom: 5px !important;
-}
-
-#pdf-export-host .summary-count-input {
-  border: none !important;
-  font-size: 10px !important;
-}
-
-#pdf-export-host .summary-count-suffix {
-  font-size: 10px !important;
-}
-
-.pdf-exporting .summary-count-input {
-  border: none !important;
-  background: transparent !important;
-}
-
-#pdf-export-host .section--summary {
-  padding: 6px 14px !important;
-}
-
-#pdf-export-host .summary-intro {
-  margin-bottom: 6px !important;
-  font-size: 8px !important;
-}
-
-#pdf-export-host .summary-row-title {
-  margin-bottom: 4px !important;
-  font-size: 9px !important;
-}
-
-#pdf-export-host .summary-disclaimer {
-  margin-top: 6px !important;
-  font-size: 9px !important;
-  font-weight: 700 !important;
-  color: var(--navy) !important;
-}
-
-#pdf-export-host .summary-card--doc {
-  padding: 5px 8px !important;
-}
-
-#pdf-export-host .summary-card__label {
-  font-size: 8px !important;
-}
-
-#pdf-export-host .summary-card__value {
-  font-size: 10px !important;
-}
-
-#pdf-export-host .summary-card__value--primary .value-amount {
-  font-size: 12px !important;
-}
-
-#pdf-export-host .section--notice {
-  padding: 6px 14px 8px !important;
-  background: var(--cream) !important;
-}
-
-#pdf-export-host .notice-card {
-  padding: 6px 8px !important;
-  box-shadow: none !important;
-}
-
-#pdf-export-host .notice-list li {
-  padding: 2px 0 !important;
-  gap: 6px !important;
-  font-size: 8px !important;
-}
-
-#pdf-export-host .pdf-plain-text--notice {
-  font-size: 8px !important;
-  line-height: 1.35 !important;
-}
-
-#pdf-export-host .notice-check {
-  width: 14px !important;
-  height: 14px !important;
-}
-
-#pdf-export-host .notice-check svg {
-  width: 9px !important;
-  height: 9px !important;
-}
-
-#pdf-export-host .stats-subtitle {
-  margin: 0 0 6px !important;
-  font-size: 8px !important;
-}
-
-#pdf-export-host .stats-content {
-  gap: 5px !important;
-}
-
-#pdf-export-host .stats-block,
-#pdf-export-host .stats-kpi-row,
-#pdf-export-host .stats-kpi,
-#pdf-export-host .table-wrap,
-#pdf-export-host .hourly-bars {
-  page-break-inside: auto !important;
-  break-inside: auto !important;
-  page-break-before: auto !important;
-  page-break-after: auto !important;
-}
-
-#pdf-export-host .stats-block--insight {
-  margin-bottom: 8px !important;
-}
-
-#pdf-export-host .stats-insight {
-  margin-bottom: 4px !important;
-  padding: 6px 8px !important;
-  font-size: 7.5px !important;
-}
-
-#pdf-export-host .stats-kpi-row {
-  gap: 5px !important;
-}
-
-#pdf-export-host .stats-kpi {
-  padding: 8px 6px !important;
-}
-
-#pdf-export-host .stats-kpi__value {
-  font-size: 14px !important;
-}
-
-#pdf-export-host .stats-kpi__name {
-  font-size: 11px !important;
-}
-
-#pdf-export-host .stats-block__title {
-  margin-bottom: 4px !important;
-  font-size: 10px !important;
-}
-
-#pdf-export-host .stats-table {
-  font-size: 7px !important;
-}
-
-#pdf-export-host .stats-table thead th,
-#pdf-export-host .stats-table tbody td {
-  padding: 4px 3px !important;
-  font-size: 7px !important;
-}
-
-#pdf-export-host .stats-hourly-peak-label {
-  margin-bottom: 4px !important;
-  font-size: 7px !important;
-}
-
-#pdf-export-host .hourly-bars {
-  padding: 4px 5px !important;
-  gap: 3px !important;
-}
-
-#pdf-export-host .hourly-bar-row {
-  grid-template-columns: 42px 1fr auto !important;
-  font-size: 6.5px !important;
-}
-
-#pdf-export-host .hourly-bar-track {
-  height: 5px !important;
-}
-
-#pdf-export-host .hourly-bar-meta {
-  font-size: 6px !important;
-}
-
-#pdf-export-host .stats-hourly-insight {
-  margin-top: 4px !important;
-  padding: 4px 6px !important;
-  font-size: 6.5px !important;
-  line-height: 1.4 !important;
-}
-
-#pdf-export-host .stats-block--kpi .stats-kpi {
-  padding: 5px 4px !important;
-}
-
-#pdf-export-host .stats-block--kpi .stats-kpi__value {
-  font-size: 11px !important;
+#pdf-export-host .statistics-section {
+  min-height: 0;
+  height: auto;
+  page-break-before: auto;
+  break-before: auto;
 }
 
 #pdf-export-host .report-footer--page2 {
-  margin-top: 8px !important;
-  padding: 8px 14px !important;
+  margin-top: 12px;
 }
 
 .pdf-exporting .table-input,

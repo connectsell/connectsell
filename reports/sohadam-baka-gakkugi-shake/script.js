@@ -557,365 +557,77 @@
   const PDF_PAGE_W = 794;
   const PDF_PAGE_H = 1123;
 
-  function escapeHtml(s) {
-    return String(s ?? "")
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
-  }
-
-  function pdfVal(s) {
-    const t = String(s ?? "").trim();
-    return t ? escapeHtml(t) : "—";
-  }
-
-  function formatPctPdf(n) {
-    const v = Math.round(Number(n) * 10) / 10;
-    const s = Number.isInteger(v) ? String(v) : v.toFixed(1);
-    return s + "%";
-  }
-
   function hasStatsForPdf() {
     return window.ConnectSellStats?.getSavePayload?.() != null;
   }
 
-  function collectDailyRowsForPdf() {
-    return [...els.tbody.querySelectorAll(".data-row")].map((tr) => {
-      const inputs = tr.querySelectorAll("input");
-      const product = parseNumber(inputs[3].value);
-      const shipping = parseNumber(inputs[4].value);
-      const payment = product + shipping;
-      return {
-        date: inputs[0].value.trim(),
-        productName: inputs[1].value.trim() || getDefaultProductName(),
-        orders: parseNumber(inputs[2].value),
-        product,
-        shipping,
-        payment,
-      };
+  function stripNoPrint(root) {
+    root.querySelectorAll(".no-print").forEach((el) => el.remove());
+  }
+
+  function replaceInputsWithPlainText(root) {
+    root.querySelectorAll("input, textarea, select").forEach((input) => {
+      const span = document.createElement("span");
+      span.className = "pdf-plain-text";
+      if (input.tagName === "SELECT") {
+        span.textContent = input.options[input.selectedIndex]?.text || input.value;
+      } else {
+        span.textContent = input.value;
+      }
+      input.replaceWith(span);
     });
   }
 
-  function buildPdfPage1Html() {
-    const rows = collectDailyRowsForPdf();
-    const rate = els.commissionRate.value.trim();
-    const rateLabel = rate ? `${pdfVal(rate)}%` : "—";
-
-    const tableBody = rows
-      .map(
-        (r) => `
-      <tr>
-        <td>${pdfVal(r.date)}</td>
-        <td>${pdfVal(r.productName)}</td>
-        <td class="num">${r.orders > 0 ? formatNumber(r.orders) : "—"}</td>
-        <td class="num">${r.product > 0 ? formatNumber(r.product) : "—"}</td>
-        <td class="num">${r.shipping > 0 ? formatNumber(r.shipping) : "—"}</td>
-        <td class="num">${r.payment > 0 ? formatNumber(r.payment) : "—"}</td>
-      </tr>`
-      )
-      .join("");
-
-    const cancelN = parseNumber(els.adjCancel?.value);
-    const exchangeN = parseNumber(els.adjExchange?.value);
-    const returnN = parseNumber(els.adjReturn?.value);
-
-    return `
-    <section class="pdf-page page-1">
-      <header class="pdf-header">
-        <p class="pdf-header__eyebrow">CONNECTSELL · 공동구매 운영 리포트</p>
-        <h1 class="pdf-header__title">공동구매 운영 리포트</h1>
-      </header>
-
-      <div class="pdf-page__fill">
-      <div class="pdf-sec pdf-sec--basic">
-        <h2 class="pdf-sec__title">기본 정보</h2>
-        <div class="pdf-info-grid">
-          <div class="pdf-info-field"><span class="pdf-info-field__label">셀러명</span><span class="pdf-info-field__value">${pdfVal(els.sellerName.value)}</span></div>
-          <div class="pdf-info-field"><span class="pdf-info-field__label">상품명</span><span class="pdf-info-field__value">${pdfVal(els.productName.value)}</span></div>
-          <div class="pdf-info-field"><span class="pdf-info-field__label">공구 기간</span><span class="pdf-info-field__value">${pdfVal(els.campaignPeriod.value)}</span></div>
-          <div class="pdf-info-field"><span class="pdf-info-field__label">작성일</span><span class="pdf-info-field__value">${pdfVal(els.writtenDate.value)}</span></div>
-          <div class="pdf-info-field"><span class="pdf-info-field__label">공급사</span><span class="pdf-info-field__value">${pdfVal(els.supplierName.value)}</span></div>
-          <div class="pdf-info-field"><span class="pdf-info-field__label">담당자</span><span class="pdf-info-field__value">${pdfVal(els.managerName.value)}</span></div>
-          <div class="pdf-info-field pdf-info-field--hl"><span class="pdf-info-field__label">셀러 수수료율</span><span class="pdf-info-field__value">${rateLabel}</span></div>
-          <div class="pdf-info-field"><span class="pdf-info-field__label">정산 예정일</span><span class="pdf-info-field__value">${pdfVal(els.settlementDueDate?.value)}</span></div>
-        </div>
-      </div>
-
-      <div class="pdf-sec pdf-sec--orders">
-        <h2 class="pdf-sec__title">일자별 주문내역</h2>
-        <table class="pdf-table pdf-table--orders">
-          <thead>
-            <tr>
-              <th style="width:12%">일자</th>
-              <th style="width:28%">상품명</th>
-              <th class="num" style="width:12%">주문건수</th>
-              <th class="num" style="width:16%">상품금액</th>
-              <th class="num" style="width:14%">배송비</th>
-              <th class="num" style="width:18%">결제금액</th>
-            </tr>
-          </thead>
-          <tbody>${tableBody}</tbody>
-          <tfoot>
-            <tr class="row-sub">
-              <td colspan="2">소계</td>
-              <td class="num">${els.subtotalOrders.textContent}</td>
-              <td class="num">${els.subtotalProduct.textContent.replace(/원$/, "")}</td>
-              <td class="num">${els.subtotalShipping.textContent.replace(/원$/, "")}</td>
-              <td class="num">${els.subtotalPayment.textContent.replace(/원$/, "")}</td>
-            </tr>
-            <tr class="row-total">
-              <td colspan="2">합계</td>
-              <td class="num">${els.totalOrders.textContent}</td>
-              <td class="num">${els.totalProduct.textContent.replace(/원$/, "")}</td>
-              <td class="num">${els.totalShipping.textContent.replace(/원$/, "")}</td>
-              <td class="num">${els.totalPayment.textContent.replace(/원$/, "")}</td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
-
-      <div class="pdf-sec pdf-sec--summary">
-        <h2 class="pdf-sec__title">주문 상태 및 정산 요약</h2>
-        <p class="pdf-sec__sub">본사 링크 공구 진행 시, 공구 기간 동안의 주문·취소·교환·반품 현황과 예상 정산 금액을 함께 확인할 수 있습니다.</p>
-        <p class="pdf-summary-row-title">주문 상태 요약</p>
-        <div class="pdf-summary-grid pdf-summary-grid--4">
-          <div class="pdf-summary-card"><p class="pdf-summary-card__label">총 주문건수</p><p class="pdf-summary-card__value">${escapeHtml(els.cardTotalOrders.textContent)}</p></div>
-          <div class="pdf-summary-card"><p class="pdf-summary-card__label">취소건수</p><p class="pdf-summary-card__value">${formatNumber(cancelN)}건</p></div>
-          <div class="pdf-summary-card"><p class="pdf-summary-card__label">교환건수</p><p class="pdf-summary-card__value">${formatNumber(exchangeN)}건</p></div>
-          <div class="pdf-summary-card"><p class="pdf-summary-card__label">반품건수</p><p class="pdf-summary-card__value">${formatNumber(returnN)}건</p></div>
-        </div>
-        <p class="pdf-summary-row-title">정산 요약</p>
-        <div class="pdf-summary-grid pdf-summary-grid--2">
-          <div class="pdf-summary-card"><p class="pdf-summary-card__label">총 매출액</p><p class="pdf-summary-card__value">${escapeHtml(els.cardTotalSalesAmount.textContent)}원</p></div>
-          <div class="pdf-summary-card pdf-summary-card--primary"><p class="pdf-summary-card__label">예상 셀러 정산금액</p><p class="pdf-summary-card__value">${escapeHtml(els.cardSellerSettlementAmount.textContent)}원</p></div>
-        </div>
-        <p class="pdf-disclaimer">※ 정산금액은 취소/교환/반품 및 환불건에 따라 최종 금액이 변동될 수 있습니다.</p>
-      </div>
-      </div>
-    </section>`;
+  function prepareNodeForPdfCapture(source) {
+    const clone = source.cloneNode(true);
+    stripNoPrint(clone);
+    replaceInputsWithPlainText(clone);
+    return clone;
   }
 
-  function buildPdfPage2Html(stats) {
-    const hasComp = !!(stats.compositions && stats.compositions.length);
-    const hasFlavor = !!(stats.flavors && stats.flavors.length);
-    const hasOptionStats = hasComp || hasFlavor;
-    const aovText = stats.aov > 0 ? formatWon(stats.aov) : "—";
+  function buildPdfCaptureFromScreen() {
+    const host = document.createElement("div");
+    host.id = "pdf-export-host";
+    const captureW = Math.round(
+      document.querySelector(".report-root")?.getBoundingClientRect().width || PDF_PAGE_W
+    );
+    host.style.width = `${captureW}px`;
+    host.dataset.captureWidth = String(captureW);
+    const pages = [];
 
-    let kpiBestComp = "—";
-    let kpiBestCompMeta = "—";
-    if (stats.bestComp && hasComp) {
-      kpiBestComp = escapeHtml(stats.bestComp.name);
-      kpiBestCompMeta = `${formatNumber(stats.bestComp.qty)}개 · ${formatPctPdf(stats.bestComp.share)}`;
-    } else if (!hasOptionStats) {
-      kpiBestCompMeta = "옵션 데이터 없음";
+    const header = document.querySelector(".report-header");
+    const page1Source = document.querySelector(".report-page-1");
+    if (header && page1Source) {
+      const page1 = document.createElement("div");
+      page1.className = "pdf-capture-page pdf-capture-page--1";
+      page1.style.width = `${captureW}px`;
+      page1.appendChild(prepareNodeForPdfCapture(header));
+      page1.appendChild(prepareNodeForPdfCapture(page1Source));
+      host.appendChild(page1);
+      pages.push(page1);
     }
 
-    let kpiBestFlavor = "—";
-    let kpiBestFlavorMeta = "—";
-    if (stats.bestFlavor && hasFlavor) {
-      kpiBestFlavor = escapeHtml(stats.bestFlavor.name);
-      kpiBestFlavorMeta = `${formatNumber(stats.bestFlavor.qty)}개 · ${formatPctPdf(stats.bestFlavor.share)}`;
-    } else if (!hasOptionStats) {
-      kpiBestFlavorMeta = "옵션 데이터 없음";
-    }
-
-    const insightText = buildPdfInsightText(stats);
-    const insightBlock = insightText
-      ? `<div class="pdf-sec pdf-sec--insight"><h3 class="pdf-sec__title">운영 인사이트</h3><p class="pdf-insight-box">${escapeHtml(insightText)}</p></div>`
-      : "";
-
-    const compRows = hasComp
-      ? stats.compositions
-          .slice(0, 8)
-          .map(
-            (c, i) => `
-        <tr>
-          <td>${escapeHtml(c.name)}${i === 0 ? '<span class="pdf-badge">BEST</span>' : ""}</td>
-          <td class="num">${formatNumber(c.qty)}</td>
-          <td class="num">${formatNumber(c.payment)}</td>
-          <td class="num">${formatPctPdf(c.share)}</td>
-        </tr>`
-          )
-          .join("")
-      : "";
-
-    const flavorRows = hasFlavor
-      ? stats.flavors
-          .slice(0, 8)
-          .map(
-            (f, i) => `
-        <tr>
-          <td>${escapeHtml(f.name)}${i === 0 ? '<span class="pdf-badge">BEST</span>' : ""}</td>
-          <td class="num">${formatNumber(f.qty)}</td>
-          <td class="num">${formatPctPdf(f.share)}</td>
-        </tr>`
-          )
-          .join("")
-      : "";
-
-    const compBlockInner = hasComp
-      ? `<div class="pdf-sec pdf-sec--half"><h3 class="pdf-sec__title">구성별 판매비중</h3>
-        <table class="pdf-table pdf-mini-table"><thead><tr><th>구성명</th><th class="num">판매수량</th><th class="num">매출액</th><th class="num">판매비중</th></tr></thead><tbody>${compRows}</tbody></table></div>`
-      : "";
-
-    const flavorBlockInner = hasFlavor
-      ? `<div class="pdf-sec pdf-sec--half"><h3 class="pdf-sec__title">맛별 인기순위</h3>
-        <table class="pdf-table pdf-mini-table"><thead><tr><th>맛</th><th class="num">판매수량</th><th class="num">판매비중</th></tr></thead><tbody>${flavorRows}</tbody></table></div>`
-      : "";
-
-    const tablesBlock =
-      compBlockInner || flavorBlockInner
-        ? `<div class="pdf-tables-duo">${compBlockInner}${flavorBlockInner}</div>`
-        : "";
-
-    let campaignBlock = "";
-    if (stats.hasCampaignDaily && stats.campaignDaily?.length) {
-      const cards = stats.campaignDaily
-        .map(
-          (d) => `
-        <article class="pdf-campaign-card${d.isPeak ? " is-peak" : ""}">
-          <p class="pdf-campaign-card__date">${escapeHtml(d.date)}</p>
-          <p class="pdf-campaign-card__line">주문 ${formatNumber(d.orders)}건</p>
-          <p class="pdf-campaign-card__line">매출 ${formatNumber(d.payment)}원</p>
-          <p class="pdf-campaign-card__line">${formatPctPdf(d.share)}</p>
-        </article>`
-        )
-        .join("");
-      campaignBlock = `<div class="pdf-sec pdf-sec--campaign">
-        <h3 class="pdf-sec__title">공구 기간별 주문 추이</h3>
-        <div class="pdf-campaign-grid">${cards}</div>
-      </div>`;
-    }
-
-    let bestDayBlock = "";
-    if (stats.hasCampaignDaily && stats.bestDay) {
-      const best = stats.bestDay;
-      bestDayBlock = `<div class="pdf-sec pdf-sec--best-day">
-        <h3 class="pdf-sec__title">최고 성과일</h3>
-        <div class="pdf-best-day pdf-best-day--hero">
-          <span class="pdf-kpi__badge">BEST DAY</span>
-          <div class="pdf-best-day__grid">
-            <div class="pdf-best-day__metric">
-              <p class="pdf-best-day__label">날짜</p>
-              <p class="pdf-best-day__value pdf-best-day__value--date">${escapeHtml(best.date)}</p>
-            </div>
-            <div class="pdf-best-day__metric">
-              <p class="pdf-best-day__label">주문건수</p>
-              <p class="pdf-best-day__value">${formatNumber(best.orders)}건</p>
-            </div>
-            <div class="pdf-best-day__metric">
-              <p class="pdf-best-day__label">매출액</p>
-              <p class="pdf-best-day__value">${formatNumber(best.payment)}원</p>
-            </div>
-            <div class="pdf-best-day__metric">
-              <p class="pdf-best-day__label">전체 매출 비중</p>
-              <p class="pdf-best-day__value">${formatPctPdf(best.share)}</p>
-            </div>
-          </div>
-        </div>
-      </div>`;
-    }
-
-    let hourlyBlock = "";
-    if (stats.hasHourly && stats.hourly && stats.hourly.length) {
-      const slots = stats.hourly;
-      const maxShare = Math.max(...slots.map((s) => s.share), 1);
-      const peak = slots.find((s) => s.isPeak && s.orders > 0);
-      const peakLabel = peak ? `<p class="pdf-peak-label">🔥 주문 집중 시간: ${escapeHtml(peak.label)}</p>` : "";
-      const bars = slots
-        .map((s) => {
-          const pct = s.orders > 0 ? Math.max(6, Math.round((s.share / maxShare) * 100)) : 0;
-          return `
-          <div class="pdf-hourly-row${s.isPeak ? " is-peak" : ""}">
-            <span class="pdf-hourly-label">${escapeHtml(s.label)}</span>
-            <div class="pdf-hourly-track"><div class="pdf-hourly-fill" style="width:${pct}%"></div></div>
-            <span class="pdf-hourly-meta">${formatNumber(s.orders)}건 · ${formatPctPdf(s.share)}</span>
-          </div>`;
-        })
-        .join("");
-
-      hourlyBlock = `<div class="pdf-sec pdf-sec--hourly pdf-sec--hourly-sub">
-        <h3 class="pdf-sec__title">시간대별 주문 분포</h3>
-        ${peakLabel}
-        <div class="pdf-hourly-bars pdf-hourly-bars--compact">${bars}</div>
-      </div>`;
-    }
-
-    const optionsNote =
-      !hasOptionStats && stats.hasHourly
-        ? `<p class="pdf-sec__sub">구성별 판매비중 및 맛별 분석은 옵션 데이터가 없어 표시할 수 없습니다.</p>`
-        : "";
-
-    return `
-    <section class="pdf-page page-2">
-      <header class="pdf-header">
-        <p class="pdf-header__eyebrow">CONNECTSELL · 공동구매 운영 리포트</p>
-        <h1 class="pdf-header__title">공동구매 운영 결과</h1>
-      </header>
-      <div class="pdf-page-2__main">
-      <div class="pdf-stats-body">
-        <p class="pdf-sec__sub">공구 기간 주문·매출 요약 및 핵심 운영 인사이트</p>
-        ${optionsNote}
-        <div class="pdf-kpi-row pdf-kpi-row--main">
-          <div class="pdf-kpi pdf-kpi--aov">
-            <p class="pdf-kpi__label">객단가</p>
-            <p class="pdf-kpi__value">${escapeHtml(aovText)}</p>
-          </div>
-          <div class="pdf-kpi">
-            <span class="pdf-kpi__badge">BEST 구성</span>
-            <p class="pdf-kpi__name">${kpiBestComp}</p>
-            <p class="pdf-kpi__meta">${kpiBestCompMeta}</p>
-          </div>
-          <div class="pdf-kpi">
-            <span class="pdf-kpi__badge">BEST 맛</span>
-            <p class="pdf-kpi__name">${kpiBestFlavor}</p>
-            <p class="pdf-kpi__meta">${kpiBestFlavorMeta}</p>
-          </div>
-        </div>
-        ${insightBlock}
-        ${campaignBlock}
-        ${bestDayBlock}
-        ${tablesBlock}
-        ${hourlyBlock}
-      </div>
-      </div>
-      <footer class="pdf-footer pdf-footer--page2">
-        <p class="pdf-footer__brand">ConnectSell</p>
-        <p class="pdf-footer__url">connectsell.co.kr</p>
-      </footer>
-    </section>`;
-  }
-
-  function buildPdfInsightText(stats) {
-    if (stats.customInsight) return stats.customInsight;
-    if (stats.bestComp && stats.bestFlavor) {
-      return `「${stats.bestComp.name}」 구성(비중 ${formatPctPdf(stats.bestComp.share)})과 「${stats.bestFlavor.name}」 맛(비중 ${formatPctPdf(stats.bestFlavor.share)})이 가장 인기였습니다. 다음 공구에서는 해당 옵션을 전면에 내세우는 것을 권장합니다.`;
-    }
-    return "";
-  }
-
-  function buildPdfExportDocument() {
-    const container = document.createElement("div");
-    container.className = "report-container";
-
-    const root = document.createElement("div");
-    root.id = "pdf-export";
-    let html = buildPdfPage1Html();
     if (hasStatsForPdf()) {
-      const stats = window.ConnectSellStats.getLastStats();
-      html += buildPdfPage2Html(stats);
+      const statsSource = document.querySelector(".statistics-section");
+      if (statsSource) {
+        const page2 = document.createElement("div");
+        page2.className = "pdf-capture-page pdf-capture-page--2";
+        page2.style.width = `${captureW}px`;
+        const statsClone = prepareNodeForPdfCapture(statsSource);
+        statsClone.querySelector("#stats-empty")?.remove();
+        const statsContent = statsClone.querySelector("#stats-content");
+        if (statsContent) statsContent.hidden = false;
+        page2.appendChild(statsClone);
+        host.appendChild(page2);
+        pages.push(page2);
+      }
     }
-    root.innerHTML = html;
-    container.appendChild(root);
-    return container;
+
+    return { host, pages };
   }
 
   function measurePdfPageHeight(pageEl) {
-    if (pageEl.classList.contains("page-2")) {
-      return Math.ceil(pageEl.getBoundingClientRect().height);
-    }
-    return PDF_PAGE_H;
+    return Math.max(1, Math.ceil(pageEl.getBoundingClientRect().height));
   }
 
   async function exportPdf() {
@@ -933,18 +645,27 @@
 
     recalculate();
 
-    const host = document.createElement("div");
-    host.id = "pdf-export-host";
-    host.appendChild(buildPdfExportDocument());
+    const { host, pages } = buildPdfCaptureFromScreen();
+    if (!pages.length) {
+      alert("PDF로 저장할 내용이 없습니다.");
+      btn.disabled = false;
+      btn.innerHTML = PDF_BTN_HTML;
+      document.body.classList.remove("pdf-exporting");
+      return;
+    }
+
     document.body.appendChild(host);
+
+    const captureW = Number(host.dataset.captureWidth) || PDF_PAGE_W;
+    const pdfScale = PDF_PAGE_W / captureW;
 
     await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
 
-    const pages = host.querySelectorAll(".pdf-page");
-    const pageHeights = [...pages].map((p) => measurePdfPageHeight(p));
+    const pageHeights = pages.map((p) => measurePdfPageHeight(p));
+    const pdfHeights = pageHeights.map((h) => Math.max(1, Math.round(h * pdfScale)));
     const pdf = new jsPDFCtor({
       unit: "px",
-      format: [PDF_PAGE_W, pageHeights[0] || PDF_PAGE_H],
+      format: [PDF_PAGE_W, pdfHeights[0] || PDF_PAGE_H],
       orientation: "portrait",
       hotfixes: ["px_scaling"],
     });
@@ -952,12 +673,13 @@
     try {
       for (let i = 0; i < pages.length; i++) {
         const captureH = pageHeights[i] || PDF_PAGE_H;
-        if (i > 0) pdf.addPage([PDF_PAGE_W, captureH], "p");
+        const pdfH = pdfHeights[i] || PDF_PAGE_H;
+        if (i > 0) pdf.addPage([PDF_PAGE_W, pdfH], "p");
         const canvas = await html2canvasFn(pages[i], {
           scale: 2,
-          width: PDF_PAGE_W,
+          width: captureW,
           height: captureH,
-          windowWidth: PDF_PAGE_W,
+          windowWidth: captureW,
           windowHeight: captureH,
           scrollX: 0,
           scrollY: 0,
@@ -966,7 +688,7 @@
           logging: false,
         });
         const img = canvas.toDataURL("image/jpeg", 0.92);
-        pdf.addImage(img, "JPEG", 0, 0, PDF_PAGE_W, captureH);
+        pdf.addImage(img, "JPEG", 0, 0, PDF_PAGE_W, pdfH);
       }
       pdf.save(buildPdfFilename());
     } catch (err) {
