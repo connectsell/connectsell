@@ -1427,6 +1427,57 @@ body {
   margin-bottom: 6px;
 }
 
+.stats-tables-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.stats-tables-duo .stats-block--compact {
+  min-width: 0;
+}
+
+.stats-tables-duo .table-wrap {
+  width: 100%;
+}
+
+.stats-tables-duo .stats-table {
+  width: 100%;
+  table-layout: fixed;
+  font-size: 12px;
+}
+
+.stats-tables-duo .stats-table thead th {
+  padding: 10px 8px;
+  font-size: 11px;
+}
+
+.stats-tables-duo .stats-table tbody td {
+  padding: 9px 8px;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.stats-tables-duo .stats-table--comp thead th:nth-child(1) {
+  width: 34%;
+}
+
+.stats-tables-duo .stats-table--comp thead th:nth-child(2),
+.stats-tables-duo .stats-table--comp thead th:nth-child(3),
+.stats-tables-duo .stats-table--comp thead th:nth-child(4) {
+  width: 22%;
+}
+
+.stats-tables-duo .stats-table--flavor thead th:nth-child(1) {
+  width: 46%;
+}
+
+.stats-tables-duo .stats-table--flavor thead th:nth-child(2),
+.stats-tables-duo .stats-table--flavor thead th:nth-child(3) {
+  width: 27%;
+}
+
 .stats-block--kpi {
   margin-top: -2px;
 }
@@ -1804,6 +1855,10 @@ body {
   }
 
   .stats-campaign-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-tables-duo {
     grid-template-columns: 1fr;
   }
 }

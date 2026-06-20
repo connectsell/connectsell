@@ -55,7 +55,8 @@ body.pdf-exporting {
 #pdf-export-host .summary-grid--orders,
 #pdf-export-host .summary-grid--amounts,
 #pdf-export-host .stats-kpi-row,
-#pdf-export-host .stats-campaign-grid {
+#pdf-export-host .stats-campaign-grid,
+#pdf-export-host .stats-tables-duo {
   width: 100%;
   max-width: none;
   box-sizing: border-box;

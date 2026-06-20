@@ -261,11 +261,6 @@
             </div>
           </div>
 
-          <div class="stats-block stats-block--insight" id="stats-insight-block">
-            <h3 class="stats-block__title">운영 인사이트</h3>
-            <p class="stats-insight" id="stats-insight" hidden></p>
-          </div>
-
           <div class="stats-block stats-block--campaign" id="stats-campaign-block">
             <h3 class="stats-block__title">공구 기간별 주문 추이</h3>
             <div class="stats-campaign-grid" id="stats-campaign-grid"></div>
@@ -278,10 +273,11 @@
 
           <p id="stats-options-unavailable" class="stats-options-unavailable" hidden>구성별 판매비중 및 맛별 분석은 옵션 데이터가 없어 표시할 수 없습니다.</p>
 
+          <div class="stats-tables-duo">
           <div class="stats-block stats-block--compact" id="stats-comp-block">
             <h3 class="stats-block__title">구성별 판매비중</h3>
             <div class="table-wrap">
-              <table class="data-table stats-table">
+              <table class="data-table stats-table stats-table--comp">
                 <thead>
                   <tr>
                     <th>구성명</th>
@@ -298,7 +294,7 @@
           <div class="stats-block stats-block--compact" id="stats-flavor-block">
             <h3 class="stats-block__title">맛별 인기순위</h3>
             <div class="table-wrap">
-              <table class="data-table stats-table">
+              <table class="data-table stats-table stats-table--flavor">
                 <thead>
                   <tr>
                     <th>맛</th>
@@ -309,6 +305,7 @@
                 <tbody id="stats-flavor-tbody"></tbody>
               </table>
             </div>
+          </div>
           </div>
 
           <div class="stats-block stats-block--hourly" id="stats-hourly-block">
@@ -333,7 +330,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="preset.js?v=20260626"></script>
-  <script src="stats.js?v=20260621"></script>
+  <script src="stats.js?v=20260622"></script>
   <script src="script.js?v=20260621"></script>
 </body>
 </html>

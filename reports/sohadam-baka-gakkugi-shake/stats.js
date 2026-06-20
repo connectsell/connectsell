@@ -32,12 +32,10 @@
     bestFlavorName: document.getElementById("stats-best-flavor-name"),
     bestFlavorQty: document.getElementById("stats-best-flavor-qty"),
     bestFlavorShare: document.getElementById("stats-best-flavor-share"),
-    insight: document.getElementById("stats-insight"),
     optionsUnavailable: document.getElementById("stats-options-unavailable"),
     compBlock: document.getElementById("stats-comp-block"),
     flavorBlock: document.getElementById("stats-flavor-block"),
     kpiBlock: document.getElementById("stats-kpi-block"),
-    insightBlock: document.getElementById("stats-insight-block"),
     campaignBlock: document.getElementById("stats-campaign-block"),
     campaignGrid: document.getElementById("stats-campaign-grid"),
     bestDay: document.getElementById("stats-best-day"),
@@ -656,21 +654,6 @@
       .replace(/"/g, "&quot;");
   }
 
-  function renderInsight(stats) {
-    if (!els.insight) return;
-    if (stats.customInsight) {
-      els.insight.textContent = stats.customInsight;
-      els.insight.hidden = false;
-      return;
-    }
-    if (stats.bestComp && stats.bestFlavor) {
-      els.insight.textContent = `「${stats.bestComp.name}」 구성(비중 ${formatPct(stats.bestComp.share)})과 「${stats.bestFlavor.name}」 맛(비중 ${formatPct(stats.bestFlavor.share)})이 가장 인기였습니다. 다음 공구에서는 해당 옵션을 전면에 내세우는 것을 권장합니다.`;
-      els.insight.hidden = false;
-    } else {
-      els.insight.textContent = "";
-      els.insight.hidden = true;
-    }
-  }
   function renderBadge(isBest) {
     return isBest ? '<span class="stats-badge">BEST</span>' : "";
   }
@@ -820,7 +803,6 @@
     if (els.kpiBlock) els.kpiBlock.hidden = false;
     if (els.compBlock) els.compBlock.hidden = !hasComp;
     if (els.flavorBlock) els.flavorBlock.hidden = !hasFlavor;
-    if (els.insightBlock) els.insightBlock.hidden = !hasOptionStats;
     if (els.optionsUnavailable) {
       els.optionsUnavailable.hidden = hasOptionStats;
       if (!hasOptionStats) els.optionsUnavailable.textContent = MSG_NO_OPTIONS;
@@ -873,13 +855,6 @@
       );
     } else if (els.flavorTbody) {
       els.flavorTbody.innerHTML = "";
-    }
-
-    if (hasOptionStats) {
-      renderInsight(stats);
-    } else if (els.insight) {
-      els.insight.textContent = "";
-      els.insight.hidden = true;
     }
   }
 
