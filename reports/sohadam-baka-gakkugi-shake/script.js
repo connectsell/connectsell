@@ -782,17 +782,38 @@
         </article>`
         )
         .join("");
-      const best = stats.bestDay;
-      const bestBox = best
-        ? `<div class="pdf-best-day pdf-best-day--compact">
-            <span class="pdf-kpi__badge">BEST DAY</span>
-            <span class="pdf-best-day__inline">${escapeHtml(best.date)} · 주문 ${formatNumber(best.orders)}건 · 매출 ${formatNumber(best.payment)}원 · ${formatPctPdf(best.share)}</span>
-          </div>`
-        : "";
       campaignBlock = `<div class="pdf-sec pdf-sec--campaign">
         <h3 class="pdf-sec__title">공구 기간별 주문 추이</h3>
         <div class="pdf-campaign-grid">${cards}</div>
-        ${bestBox}
+      </div>`;
+    }
+
+    let bestDayBlock = "";
+    if (stats.hasCampaignDaily && stats.bestDay) {
+      const best = stats.bestDay;
+      bestDayBlock = `<div class="pdf-sec pdf-sec--best-day">
+        <h3 class="pdf-sec__title">최고 성과일</h3>
+        <div class="pdf-best-day pdf-best-day--hero">
+          <span class="pdf-kpi__badge">BEST DAY</span>
+          <div class="pdf-best-day__grid">
+            <div class="pdf-best-day__metric">
+              <p class="pdf-best-day__label">날짜</p>
+              <p class="pdf-best-day__value pdf-best-day__value--date">${escapeHtml(best.date)}</p>
+            </div>
+            <div class="pdf-best-day__metric">
+              <p class="pdf-best-day__label">주문건수</p>
+              <p class="pdf-best-day__value">${formatNumber(best.orders)}건</p>
+            </div>
+            <div class="pdf-best-day__metric">
+              <p class="pdf-best-day__label">매출액</p>
+              <p class="pdf-best-day__value">${formatNumber(best.payment)}원</p>
+            </div>
+            <div class="pdf-best-day__metric">
+              <p class="pdf-best-day__label">전체 매출 비중</p>
+              <p class="pdf-best-day__value">${formatPctPdf(best.share)}</p>
+            </div>
+          </div>
+        </div>
       </div>`;
     }
 
@@ -814,8 +835,8 @@
         })
         .join("");
 
-      hourlyBlock = `<div class="pdf-sec pdf-sec--hourly">
-        <h3 class="pdf-sec__title">시간대별 판매 추이</h3>
+      hourlyBlock = `<div class="pdf-sec pdf-sec--hourly pdf-sec--hourly-sub">
+        <h3 class="pdf-sec__title">시간대별 주문 분포</h3>
         ${peakLabel}
         <div class="pdf-hourly-bars pdf-hourly-bars--compact">${bars}</div>
       </div>`;
@@ -830,11 +851,11 @@
     <section class="pdf-page page-2">
       <header class="pdf-header">
         <p class="pdf-header__eyebrow">CONNECTSELL · 공동구매 운영 리포트</p>
-        <h1 class="pdf-header__title">공동구매 통계 분석</h1>
+        <h1 class="pdf-header__title">공동구매 운영 결과</h1>
       </header>
       <div class="pdf-page-2__main">
       <div class="pdf-stats-body">
-        <p class="pdf-sec__sub">전체주문내역 · 거래명세서 기준 · 구성·맛·기간·시간대별 주문 분석</p>
+        <p class="pdf-sec__sub">공구 기간 주문·매출 요약 및 핵심 운영 인사이트</p>
         ${optionsNote}
         <div class="pdf-kpi-row pdf-kpi-row--main">
           <div class="pdf-kpi pdf-kpi--aov">
@@ -854,6 +875,7 @@
         </div>
         ${insightBlock}
         ${campaignBlock}
+        ${bestDayBlock}
         ${tablesBlock}
         ${hourlyBlock}
       </div>

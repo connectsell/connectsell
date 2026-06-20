@@ -664,18 +664,22 @@ body.pdf-exporting {
   font-size: 9px;
 }
 
-/* 운영 인사이트 +20% */
-#pdf-export .pdf-page.page-2 .pdf-insight-box {
-  padding: 9px 12px;
-  font-size: 9px;
-  line-height: 1.55;
-  min-height: 52px;
+/* 운영 인사이트 — 리포트 핵심 */
+#pdf-export .pdf-page.page-2 .pdf-sec--insight .pdf-sec__title {
+  font-size: 13px;
 }
 
-/* 공구 기간별 카드 +15% */
+#pdf-export .pdf-page.page-2 .pdf-insight-box {
+  padding: 10px 14px;
+  font-size: 10px;
+  line-height: 1.58;
+  min-height: 56px;
+}
+
+/* 공구 기간별 카드 */
 #pdf-export .pdf-page.page-2 .pdf-sec--campaign .pdf-campaign-grid {
   gap: 6px;
-  margin-bottom: 6px;
+  margin-bottom: 0;
 }
 
 #pdf-export .pdf-page.page-2 .pdf-campaign-card {
@@ -693,26 +697,62 @@ body.pdf-exporting {
   line-height: 1.45;
 }
 
-/* BEST DAY +30% */
-#pdf-export .pdf-page.page-2 .pdf-best-day--compact {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-height: 36px;
-  padding: 8px 13px;
-  text-align: left;
-}
-
-#pdf-export .pdf-page.page-2 .pdf-best-day--compact .pdf-kpi__badge {
-  margin: 0;
+/* BEST DAY — 2배 강조 카드 */
+#pdf-export .pdf-page.page-2 .pdf-sec--best-day {
   flex-shrink: 0;
 }
 
-#pdf-export .pdf-page.page-2 .pdf-best-day__inline {
-  font-size: 11px;
+#pdf-export .pdf-page.page-2 .pdf-sec--best-day .pdf-sec__title {
+  font-size: 13px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-best-day--hero {
+  padding: 14px 16px 16px;
+  background: linear-gradient(135deg, #1a2d4a 0%, #2a4368 100%);
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  min-height: 72px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-best-day--hero .pdf-kpi__badge {
+  margin: 0 0 10px;
+  padding: 4px 12px;
+  font-size: 9px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-best-day__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-best-day__metric {
+  padding: 10px 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-best-day__label {
+  margin: 0 0 6px;
+  font-size: 9px;
   font-weight: 600;
-  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+#pdf-export .pdf-page.page-2 .pdf-best-day__value {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #fff;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-best-day__value--date {
+  font-size: 20px;
 }
 
 #pdf-export .pdf-page.page-2 .pdf-tables-duo {
@@ -726,60 +766,82 @@ body.pdf-exporting {
   min-width: 0;
 }
 
-/* 표 행간 +10% */
+#pdf-export .pdf-page.page-2 .pdf-sec--half .pdf-sec__title {
+  font-size: 12px;
+}
+
+/* 표 가독성 */
+#pdf-export .pdf-page.page-2 .pdf-mini-table {
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
 #pdf-export .pdf-page.page-2 .pdf-mini-table thead th {
-  padding: 6px 5px;
-  font-size: 9px;
+  padding: 8px 6px;
+  font-size: 10px;
 }
 
 #pdf-export .pdf-page.page-2 .pdf-mini-table tbody td {
-  padding: 5px 5px;
-  font-size: 9px;
-  line-height: 1.38;
+  padding: 7px 6px;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-mini-table tbody tr:nth-child(even) td {
+  background: #f8fafc;
+}
+
+#pdf-export .pdf-page.page-2 .pdf-mini-table tbody tr:first-child td {
+  background: #f0f7f4;
+  font-weight: 600;
 }
 
 #pdf-export .pdf-page.page-2 .pdf-badge {
   margin-left: 4px;
-  padding: 1px 5px;
+  padding: 2px 6px;
   font-size: 7px;
 }
 
-/* 시간대별 차트: 남은 세로 공간 채움 + 높이 +35% */
+/* 시간대별 — 보조 정보, 높이 40% 축소 */
 #pdf-export .pdf-page.page-2 .pdf-sec--hourly {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
+  flex-shrink: 0;
   margin-top: 0;
 }
 
+#pdf-export .pdf-page.page-2 .pdf-sec--hourly-sub .pdf-sec__title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  border-left-color: #94a3b8;
+}
+
 #pdf-export .pdf-page.page-2 .pdf-peak-label {
-  margin: 0 0 5px;
-  font-size: 10px;
+  margin: 0 0 4px;
+  font-size: 9px;
+  font-weight: 600;
+  color: #64748b;
 }
 
 #pdf-export .pdf-page.page-2 .pdf-hourly-bars--compact {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  gap: 5px;
-  min-height: 200px;
-  padding: 10px 12px;
+  gap: 3px;
+  padding: 6px 10px;
+  min-height: 0;
+  max-height: 120px;
 }
 
 #pdf-export .pdf-page.page-2 .pdf-hourly-bars--compact .pdf-hourly-row {
-  gap: 8px;
-  min-height: 19px;
-  font-size: 10px;
+  gap: 6px;
+  min-height: 12px;
+  font-size: 9px;
 }
 
 #pdf-export .pdf-page.page-2 .pdf-hourly-bars--compact .pdf-hourly-track {
-  height: 12px;
+  height: 8px;
 }
 
 #pdf-export .pdf-page.page-2 .pdf-hourly-meta {
-  font-size: 9px;
+  font-size: 8px;
 }
 
 #pdf-export .pdf-page.page-2 .pdf-footer--page2 {
