@@ -1864,23 +1864,30 @@ body {
   margin: 0 !important;
 }
 
-#pdf-export-host .pdf-capture-page .section {
-  page-break-inside: auto;
-  break-inside: auto;
-}
-
-#pdf-export-host .report-page-1 {
-  page-break-after: always;
-  break-after: page;
-  min-height: 0;
-  height: auto;
+#pdf-export-host .pdf-capture-page {
+  width: 794px;
+  max-width: none;
+  box-sizing: border-box;
 }
 
 #pdf-export-host .statistics-section {
+  width: 100%;
+  max-width: none;
   min-height: 0;
   height: auto;
   page-break-before: auto;
   break-before: auto;
+}
+
+#pdf-export-host .table-wrap {
+  overflow: visible;
+  width: 100%;
+}
+
+#pdf-export-host .data-table,
+#pdf-export-host .stats-table {
+  width: 100%;
+  table-layout: fixed;
 }
 
 #pdf-export-host .report-footer--page2 {

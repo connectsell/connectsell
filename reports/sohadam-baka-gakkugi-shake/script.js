@@ -588,11 +588,7 @@
   function buildPdfCaptureFromScreen() {
     const host = document.createElement("div");
     host.id = "pdf-export-host";
-    const captureW = Math.round(
-      document.querySelector(".report-root")?.getBoundingClientRect().width || PDF_PAGE_W
-    );
-    host.style.width = `${captureW}px`;
-    host.dataset.captureWidth = String(captureW);
+    host.style.width = `${PDF_PAGE_W}px`;
     const pages = [];
 
     const header = document.querySelector(".report-header");
@@ -600,7 +596,7 @@
     if (header && page1Source) {
       const page1 = document.createElement("div");
       page1.className = "pdf-capture-page pdf-capture-page--1";
-      page1.style.width = `${captureW}px`;
+      page1.style.width = `${PDF_PAGE_W}px`;
       page1.appendChild(prepareNodeForPdfCapture(header));
       page1.appendChild(prepareNodeForPdfCapture(page1Source));
       host.appendChild(page1);
@@ -612,7 +608,7 @@
       if (statsSource) {
         const page2 = document.createElement("div");
         page2.className = "pdf-capture-page pdf-capture-page--2";
-        page2.style.width = `${captureW}px`;
+        page2.style.width = `${PDF_PAGE_W}px`;
         const statsClone = prepareNodeForPdfCapture(statsSource);
         statsClone.querySelector("#stats-empty")?.remove();
         const statsContent = statsClone.querySelector("#stats-content");
@@ -656,16 +652,12 @@
 
     document.body.appendChild(host);
 
-    const captureW = Number(host.dataset.captureWidth) || PDF_PAGE_W;
-    const pdfScale = PDF_PAGE_W / captureW;
-
     await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
 
     const pageHeights = pages.map((p) => measurePdfPageHeight(p));
-    const pdfHeights = pageHeights.map((h) => Math.max(1, Math.round(h * pdfScale)));
     const pdf = new jsPDFCtor({
       unit: "px",
-      format: [PDF_PAGE_W, pdfHeights[0] || PDF_PAGE_H],
+      format: [PDF_PAGE_W, pageHeights[0] || PDF_PAGE_H],
       orientation: "portrait",
       hotfixes: ["px_scaling"],
     });
@@ -673,13 +665,12 @@
     try {
       for (let i = 0; i < pages.length; i++) {
         const captureH = pageHeights[i] || PDF_PAGE_H;
-        const pdfH = pdfHeights[i] || PDF_PAGE_H;
-        if (i > 0) pdf.addPage([PDF_PAGE_W, pdfH], "p");
+        if (i > 0) pdf.addPage([PDF_PAGE_W, captureH], "p");
         const canvas = await html2canvasFn(pages[i], {
           scale: 2,
-          width: captureW,
+          width: PDF_PAGE_W,
           height: captureH,
-          windowWidth: captureW,
+          windowWidth: PDF_PAGE_W,
           windowHeight: captureH,
           scrollX: 0,
           scrollY: 0,
@@ -688,7 +679,7 @@
           logging: false,
         });
         const img = canvas.toDataURL("image/jpeg", 0.92);
-        pdf.addImage(img, "JPEG", 0, 0, PDF_PAGE_W, pdfH);
+        pdf.addImage(img, "JPEG", 0, 0, PDF_PAGE_W, captureH);
       }
       pdf.save(buildPdfFilename());
     } catch (err) {

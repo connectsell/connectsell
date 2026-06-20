@@ -1,4 +1,4 @@
-/* PDF 저장 — 화면 DOM 클론 캡처 (A4 width 794px, WYSIWYG) */
+/* PDF 저장 — A4 고정 210mm × 297mm (794×1123px @96dpi), 배율/transform 없음 */
 
 @page {
   size: A4;
@@ -14,39 +14,90 @@ body.pdf-exporting {
   position: fixed;
   left: -10000px;
   top: 0;
-  max-width: 920px;
+  width: 794px;
   z-index: -1;
   pointer-events: none;
   background: #fff;
   overflow: visible;
+  transform: none !important;
+  zoom: 1 !important;
 }
 
 #pdf-export-host .pdf-capture-page {
-  height: auto;
-  min-height: 0;
-  display: block;
+  width: 794px;
   box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+  display: block;
   background: #fff;
   overflow: visible;
+  transform: none !important;
+  zoom: 1 !important;
+}
+
+#pdf-export-host .pdf-capture-page--1 {
+  min-height: 1123px;
+}
+
+#pdf-export-host .pdf-capture-page--2 {
+  min-height: 0;
+  height: auto;
+}
+
+#pdf-export-host .report-header,
+#pdf-export-host .report-page-1,
+#pdf-export-host .statistics-section,
+#pdf-export-host .section,
+#pdf-export-host .stats-content,
+#pdf-export-host .stats-block,
+#pdf-export-host .table-wrap,
+#pdf-export-host .info-grid,
+#pdf-export-host .summary-grid--orders,
+#pdf-export-host .summary-grid--amounts,
+#pdf-export-host .stats-kpi-row,
+#pdf-export-host .stats-campaign-grid {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
 }
 
 #pdf-export-host .pdf-capture-page--1 .report-header {
   border-radius: 0;
+  padding: 24px 20px 20px;
 }
 
-#pdf-export-host .statistics-section {
+#pdf-export-host .section {
+  padding: 18px 22px;
+}
+
+#pdf-export-host .table-wrap {
+  overflow: visible;
   width: 100%;
-  max-width: 794px;
-  min-height: 0;
-  height: auto;
-  box-shadow: none;
-  border-radius: 0;
-  border: none;
+}
+
+#pdf-export-host .data-table,
+#pdf-export-host .stats-table {
+  width: 100%;
+  max-width: none;
+  table-layout: fixed;
+}
+
+#pdf-export-host .data-table--daily {
+  font-size: 11px;
+}
+
+#pdf-export-host .data-table--daily thead th,
+#pdf-export-host .data-table--daily tbody td,
+#pdf-export-host .data-table--daily tfoot td {
+  padding: 7px 6px;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 #pdf-export-host .report-footer--page2 {
+  width: 100%;
   margin-top: 12px;
-  padding-top: 12px;
+  padding: 12px 22px;
 }
 
 #pdf-export-host .pdf-plain-text {
@@ -58,12 +109,23 @@ body.pdf-exporting {
 }
 
 @media print {
-  #pdf-export-host .pdf-capture-page,
-  #pdf-export-host .statistics-section {
-    display: block !important;
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
+  #pdf-export-host,
+  #pdf-export-host .pdf-capture-page {
+    width: 210mm !important;
+    max-width: none !important;
+    transform: none !important;
+    zoom: 1 !important;
+    scale: none !important;
+  }
+
+  #pdf-export-host .statistics-section,
+  #pdf-export-host .section,
+  #pdf-export-host .stats-content,
+  #pdf-export-host .table-wrap,
+  #pdf-export-host .data-table,
+  #pdf-export-host .stats-table {
+    width: 100% !important;
+    max-width: none !important;
   }
 
   #pdf-export-host .report-footer--page2 {
