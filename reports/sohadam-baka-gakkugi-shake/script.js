@@ -948,6 +948,11 @@
 
   function init() {
     if (window.REPORT_PRESET) {
+      try {
+        localStorage.removeItem(STORAGE_KEY_SAVED);
+      } catch (err) {
+        console.warn("저장 데이터 초기화 실패", err);
+      }
       applyReportData(window.REPORT_PRESET);
     } else {
       const saved = loadReportFromStorage();

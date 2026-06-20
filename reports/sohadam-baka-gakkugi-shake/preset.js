@@ -70,7 +70,7 @@
     supplierName: "ConnectSell",
     managerName: "허연선",
     commissionRate: "30",
-    settlementDueDate: "2026.07.05",
+    settlementDueDate: "2026.06.26",
     adjustments: { cancel: 0, exchange: 0, return: 0 },
     dailyRows: [
       {
