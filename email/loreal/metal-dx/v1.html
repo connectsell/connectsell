@@ -1802,22 +1802,54 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
     font-size: 10px !important;
     line-height: 1.45 !important;
   }
-  table.mdx-brand-hero > tbody > tr {
-    display: flex !important;
-    flex-direction: column !important;
+  table.mdx-brand > tbody > tr > td {
+    display: block !important;
     width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    position: static !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    z-index: auto !important;
+  }
+  table.mdx-brand-hero,
+  table.mdx-brand-hero > tbody,
+  table.mdx-brand-philosophy,
+  table.mdx-brand-philosophy > tbody,
+  table.mdx-brand-phil-grid,
+  table.mdx-brand-phil-grid > tbody {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    position: static !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    z-index: auto !important;
+  }
+  table.mdx-brand-hero > tbody > tr {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    position: static !important;
+    transform: none !important;
   }
   table.mdx-brand-hero > tbody > tr > td.mdx-brand-hero-img,
   table.mdx-brand-hero > tbody > tr > td.mdx-brand-hero-copy {
     display: block !important;
     width: 100% !important;
     max-width: 100% !important;
-  }
-  table.mdx-brand-hero td.mdx-brand-hero-copy {
-    order: 1 !important;
-  }
-  table.mdx-brand-hero td.mdx-brand-hero-img {
-    order: 2 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    position: static !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    z-index: auto !important;
+    float: none !important;
   }
   table.mdx-brand-hero img.mdx-brand-hero-photo {
     width: 100% !important;
@@ -1826,9 +1858,25 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
     object-fit: contain !important;
     object-position: center center !important;
     -o-object-fit: contain !important;
+    position: static !important;
+    transform: none !important;
+  }
+  table.mdx-brand-inner,
+  table.mdx-brand-inner > tbody,
+  table.mdx-brand-inner > tbody > tr {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    position: static !important;
+    transform: none !important;
   }
   table.mdx-brand-inner > tbody > tr > td {
-    padding: 36px 22px 32px 22px !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 32px 22px 28px 22px !important;
+    position: static !important;
+    transform: none !important;
   }
   .mdx-brand-title {
     font-size: 30px !important;
@@ -1838,49 +1886,65 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
     font-size: 15px !important;
     line-height: 1.6 !important;
   }
+  table.mdx-brand-philosophy {
+    margin-top: 36px !important;
+    clear: both !important;
+    position: static !important;
+  }
   table.mdx-brand-philosophy > tbody > tr > td {
-    padding: 24px 22px 32px 22px !important;
+    padding: 0 22px 32px 22px !important;
+    position: static !important;
+    transform: none !important;
   }
   table.mdx-brand-phil-grid > tbody > tr {
-    display: block !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
     width: 100% !important;
-    font-size: 0 !important;
-    text-align: center !important;
+    position: static !important;
+    transform: none !important;
+    font-size: inherit !important;
+    text-align: left !important;
   }
   table.mdx-brand-phil-grid > tbody > tr > td.mdx-brand-phil-col {
-    display: inline-block !important;
-    width: 50% !important;
-    max-width: 50% !important;
+    display: block !important;
+    width: auto !important;
+    max-width: none !important;
     box-sizing: border-box !important;
-    padding: 0 6px 24px 6px !important;
+    padding: 0 !important;
+    margin: 0 !important;
     vertical-align: top !important;
+    position: static !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    z-index: auto !important;
+    float: none !important;
+    text-align: center !important;
     font-size: 10px !important;
   }
-  table.mdx-brand-phil-grid > tbody > tr > td.mdx-brand-phil-col:nth-child(odd) {
-    padding-left: 0 !important;
-  }
-  table.mdx-brand-phil-grid > tbody > tr > td.mdx-brand-phil-col:nth-child(even) {
-    padding-right: 0 !important;
-  }
-  table.mdx-brand-phil-grid > tbody > tr > td.mdx-brand-phil-col:nth-child(3),
-  table.mdx-brand-phil-grid > tbody > tr > td.mdx-brand-phil-col:nth-child(4) {
-    padding-bottom: 0 !important;
-  }
   img.mdx-brand-phil-img {
+    width: 100% !important;
     height: auto !important;
     max-height: 120px !important;
     object-fit: contain !important;
     object-position: center center !important;
     -o-object-fit: contain !important;
+    position: static !important;
+    transform: none !important;
+    display: block !important;
+    margin: 0 auto !important;
   }
   .mdx-brand-phil-title {
     font-size: 10px !important;
     line-height: 1.4 !important;
+    margin-top: 12px !important;
   }
   .mdx-brand-phil-desc {
     font-size: 10px !important;
     line-height: 1.5 !important;
     word-break: keep-all !important;
+    margin-top: 6px !important;
   }
   table[data-hwal="story"] table.hwal-hero-split-icons {
     margin: 20px auto 0 auto !important;
