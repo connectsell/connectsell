@@ -1297,14 +1297,41 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
   table.yg-megadose-section {
     padding: 0 !important;
   }
+  table.yg-megadose-spacer td {
+    padding-top: 20px !important;
+  }
   table.yg-megadose-section > tbody > tr > td.yg-megadose-pad {
-    padding: 80px 20px 0 20px !important;
+    padding: 8px 20px 0 20px !important;
   }
   table.yg-megadose-section > tbody > tr > td.yg-megadose-img-pad {
-    padding: 28px 20px 0 20px !important;
+    padding: 20px 20px 0 20px !important;
   }
   table.yg-megadose-section > tbody > tr > td.yg-megadose-card-pad {
-    padding: 28px 20px 80px 20px !important;
+    padding: 24px 20px 40px 20px !important;
+  }
+  /* 모바일: 팩샷 숨김 (라이프스타일 컷만 유지) */
+  table.yg-product-card td.yg-product-img {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    overflow: hidden !important;
+  }
+  table.yg-product-card td.yg-product-copy {
+    padding-bottom: 0 !important;
+  }
+  /* 히어로 카피 → KEY POINTS 간격 타이트 */
+  table[data-hwal="story"] td.yg-hero-copy {
+    padding: 18px 20px 8px 20px !important;
+  }
+  table[data-hwal="story"] td.yg-feature-wrap {
+    padding: 12px 20px 0 20px !important;
+  }
+  table[data-hwal="story"] td.yg-feature-wrap > table.hwal-chapter-split {
+    margin-top: 0 !important;
+    margin-bottom: 14px !important;
   }
   table.yg-megadose-title-wrap {
     margin: 0 auto 0 auto !important;
@@ -1339,30 +1366,28 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
     display: block !important;
     width: 100% !important;
   }
-  table.yg-product-card td.yg-product-copy,
-  table.yg-product-card td.yg-product-img {
+  table.yg-product-card td.yg-product-copy {
     display: block !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
     height: auto !important;
-  }
-  table.yg-product-card td.yg-product-copy {
-    padding: 0 0 24px 0 !important;
+    padding: 0 !important;
     text-align: left !important;
     vertical-align: top !important;
   }
   table.yg-product-card td.yg-product-img {
-    padding: 8px 0 0 0 !important;
-    text-align: center !important;
-    vertical-align: middle !important;
+    display: none !important;
+    width: 0 !important;
+    max-width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
   }
   table.yg-product-card td.yg-product-img img {
-    width: 160px !important;
-    max-width: 160px !important;
-    height: auto !important;
-    margin: 0 auto !important;
-    display: block !important;
+    display: none !important;
   }
   .yg-product-name {
     font-size: 26px !important;
@@ -1429,10 +1454,10 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
     padding: 40px 20px 40px 20px !important;
   }
   table[data-hwal="story"] td.yg-hero-copy {
-    padding: 18px 20px 16px 20px !important;
+    padding: 18px 20px 8px 20px !important;
   }
   table[data-hwal="story"] td.yg-feature-wrap {
-    padding: 8px 20px 0 20px !important;
+    padding: 12px 20px 0 20px !important;
   }
   table[data-hwal="story"] table.yg-key-grid > tbody > tr > td.yg-key-col {
     padding: 0 0 10px 0 !important;
@@ -1892,7 +1917,7 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
 </tr>
 </table>
 
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff;"><tr><td style="padding:18px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
+<table class="yg-megadose-spacer" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff;"><tr><td style="padding:18px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
 
 <!-- MEGA DOSE C: 단일 3000mg 소개 -->
 <table class="yg-megadose-section" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff;">
