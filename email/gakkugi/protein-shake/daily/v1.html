@@ -978,13 +978,23 @@ table[data-aowa="flow-icons"] td[bgcolor="#f3efe8"] {
     color: #222222 !important;
     text-align: center !important;
   }
+  table.hwal-chapter-split.hwal-chapter-split-nutrition {
+    margin: 8px 0 0 0 !important;
+  }
+  table.hwal-chapter-split.hwal-chapter-split-nutrition td.hwal-chapter-split-line {
+    padding-top: 10px !important;
+    padding-bottom: 18px !important;
+  }
+  table.hwal-chapter-split.hwal-chapter-split-nutrition td.hwal-chapter-split-title {
+    padding: 10px 8px 18px 8px !important;
+  }
   table.hwal-chapter-split.hwal-chapter-split-recommend td.hwal-chapter-split-line {
-    padding-top: 8px !important;
-    padding-bottom: 12px !important;
+    padding-top: 12px !important;
+    padding-bottom: 20px !important;
   }
   table.hwal-chapter-split.hwal-chapter-split-recommend td.hwal-chapter-split-title {
-    padding-top: 8px !important;
-    padding-bottom: 12px !important;
+    padding-top: 12px !important;
+    padding-bottom: 20px !important;
   }
   table.hwal-chapter-split td.hwal-chapter-split-line div {
     min-width: 0 !important;
@@ -1410,17 +1420,13 @@ table[data-aowa="flow-icons"] td[bgcolor="#f3efe8"] {
     width: 100% !important;
   }
   table.hwal-nutrition-panel > tbody > tr > td.hwal-nutrition-lead {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 20px 16px 6px 16px !important;
-    text-align: center !important;
-  }
-  table.hwal-nutrition-panel > tbody > tr > td.hwal-nutrition-lead p {
-    text-align: center !important;
-    font-size: 15px !important;
-    line-height: 1.5 !important;
-    word-break: keep-all !important;
+    display: none !important;
+    width: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
   }
   table.hwal-nutrition-panel > tbody > tr > td.hwal-nutrition-copy,
   table.hwal-nutrition-panel > tbody > tr > td.hwal-nutrition-visual {
@@ -1430,7 +1436,7 @@ table[data-aowa="flow-icons"] td[bgcolor="#f3efe8"] {
     box-sizing: border-box !important;
   }
   table.hwal-nutrition-panel > tbody > tr > td.hwal-nutrition-copy {
-    padding: 10px 16px 10px 16px !important;
+    padding: 22px 16px 14px 16px !important;
   }
   table.hwal-nutrition-panel > tbody > tr > td.hwal-nutrition-copy p {
     word-break: keep-all !important;
@@ -1438,21 +1444,23 @@ table[data-aowa="flow-icons"] td[bgcolor="#f3efe8"] {
   table.hwal-nutrition-panel > tbody > tr > td.hwal-nutrition-copy > table {
     width: 100% !important;
     max-width: 100% !important;
+    margin-top: 14px !important;
   }
   td.hwal-nutrition-badge {
     display: block !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-    padding: 11px 12px !important;
+    padding: 13px 16px !important;
     font-size: 12px !important;
-    line-height: 1.4 !important;
+    line-height: 1.45 !important;
+    letter-spacing: -0.01em !important;
     white-space: normal !important;
     text-align: center !important;
     word-break: keep-all !important;
   }
   table.hwal-nutrition-panel > tbody > tr > td.hwal-nutrition-visual {
-    padding: 4px 12px 18px 12px !important;
+    padding: 12px 14px 22px 14px !important;
   }
   img.hwal-nutrition-img {
     width: 100% !important;
@@ -1462,13 +1470,17 @@ table[data-aowa="flow-icons"] td[bgcolor="#f3efe8"] {
     margin: 0 auto !important;
   }
   table.hwal-section-gap td {
-    padding-top: 20px !important;
+    padding-top: 24px !important;
   }
   table.hwal-recommend-section > tbody > tr > td {
-    padding: 16px 16px 20px 16px !important;
+    padding: 12px 16px 20px 16px !important;
+  }
+  table.hwal-recommend-section .hwal-chapter-split {
+    margin-bottom: 0 !important;
   }
   table.hwal-recommend-layout {
     table-layout: fixed !important;
+    width: 100% !important;
   }
   table.hwal-recommend-layout > tbody > tr {
     display: block !important;
@@ -1488,29 +1500,48 @@ table[data-aowa="flow-icons"] td[bgcolor="#f3efe8"] {
   }
   table.hwal-recommend-layout td.hwal-recommend-check-col > table {
     width: 100% !important;
+    table-layout: fixed !important;
   }
   table.hwal-recommend-layout .hwal-recommend-check-row {
     display: table-row !important;
     width: 100% !important;
   }
-  table.hwal-recommend-layout .hwal-recommend-check-row td {
+  table.hwal-recommend-layout .hwal-recommend-check-row > td {
     display: table-cell !important;
-    padding: 9px 0 !important;
     vertical-align: middle !important;
     text-align: left !important;
   }
-  table.hwal-recommend-layout .hwal-recommend-check-row td:first-child {
-    width: 22px !important;
-    padding-right: 0 !important;
+  table.hwal-recommend-layout .hwal-recommend-check-row > td:first-child {
+    width: 30px !important;
+    max-width: 30px !important;
+    padding: 11px 0 11px 0 !important;
+  }
+  table.hwal-recommend-layout .hwal-recommend-check-row > td:first-child > table {
+    width: 18px !important;
+    margin: 0 !important;
+  }
+  table.hwal-recommend-layout .hwal-recommend-check-row > td:first-child > table td {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    max-width: 18px !important;
+    padding: 0 !important;
+    font-size: 11px !important;
+    line-height: 18px !important;
+    mso-line-height-rule: exactly !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    box-sizing: border-box !important;
   }
   table.hwal-recommend-layout .hwal-recommend-check-text {
+    padding: 11px 0 11px 12px !important;
     text-align: left !important;
     font-size: 13px !important;
     line-height: 1.45 !important;
     word-break: keep-all !important;
   }
   table.hwal-recommend-panel > tbody > tr > td {
-    padding: 16px 14px 14px 14px !important;
+    padding: 18px 16px 16px 16px !important;
   }
   td.hwal-cta-pad {
     padding: 0 16px 28px 16px !important;
