@@ -8,17 +8,21 @@
 <title>ConnectSell Revenue Share | RS 광고 제안</title>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ConnectSell">
-<meta property="og:url" content="email/revenue-share/ascorbic-acid.html">
+<meta property="og:url" content="https://connectsell.vercel.app/email/revenue-share/">
+<link rel="canonical" href="https://connectsell.vercel.app/email/revenue-share/">
 <meta property="og:title" content="ConnectSell RS (Revenue Share) 광고">
 <meta property="og:description" content="크리에이터와 함께 만드는 성과형 RS 광고">
-<meta property="og:image" content="https://www.connectsell.co.kr/email/images/rs-connectsell-banner.png?v=4">
-<meta property="og:image:secure_url" content="https://www.connectsell.co.kr/email/images/rs-connectsell-banner.png?v=4">
+<meta property="og:image" content="https://connectsell.vercel.app/email/images/rs-connectsell-banner.png?v=7">
+<meta property="og:image:secure_url" content="https://connectsell.vercel.app/email/images/rs-connectsell-banner.png?v=7">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="296">
 <meta property="og:image:alt" content="ConnectSell Revenue Share">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ConnectSell RS (Revenue Share) 광고">
 <meta name="twitter:description" content="크리에이터와 함께 만드는 성과형 RS 광고">
-<meta name="twitter:image" content="https://www.connectsell.co.kr/email/images/rs-connectsell-banner.png?v=4">
+<meta name="twitter:image" content="https://connectsell.vercel.app/email/images/rs-connectsell-banner.png?v=7">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style type="text/css">
 *, *::before, *::after { box-sizing: border-box; }
 body { margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
@@ -800,15 +804,135 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
   table.rs-why-panel {
     max-width: 952px !important;
   }
-  table.rs-story-frame {
+  /* ========== 4섹션 동일 셸 (절대 풀리지 않게 !important 고정) ==========
+     WHY / HOW / DIFFERS / LEAVES BEHIND
+     폭 952 · 높이 457 · 보더 #e5e0d9 · 라운드 18 · 바깥 패딩 32 40 16 40
+  */
+  table.rs-why-section > tbody > tr > td,
+  table.rs-how-section > tbody > tr > td,
+  table.rs-cmp-section > tbody > tr > td,
+  table.rs-growth-section > tbody > tr > td {
+    padding: 32px 40px 16px 40px !important;
+  }
+  table.rs-story-frame,
+  table.rs-how-panel,
+  table.rs-differs-frame,
+  table.rs-growth-frame {
+    width: 100% !important;
+    max-width: 952px !important;
+    height: 457px !important;
+    border: 1px solid #e5e0d9 !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    background-color: #ffffff !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  table.rs-story-frame > tbody > tr > td,
+  table.rs-how-panel > tbody > tr > td {
+    height: 457px !important;
+    vertical-align: middle !important;
+  }
+  /* DIFFERS / LEAVES: 타이틀(보라)만 상단 · 카드(초록)는 원래 크기 · 사이에 공백 */
+  table.rs-differs-frame > tbody > tr > td,
+  table.rs-growth-frame > tbody > tr > td,
+  table.rs-cmp-wrap td.rs-cmp-stage,
+  table.rs-growth-wrap td.rs-growth-stage {
+    height: 457px !important;
+    vertical-align: top !important;
+    padding: 0 36px 28px 36px !important;
+  }
+  table.rs-cmp-stack,
+  table.rs-growth-stack {
+    width: 100% !important;
+    height: auto !important;
+  }
+  table.rs-cmp-stack td.rs-cmp-title-row {
+    height: auto !important;
+    padding: 0 0 56px 0 !important; /* LEAVES와 동일: 타이틀↔본문 공백 */
+    vertical-align: top !important;
+  }
+  table.rs-growth-stack td.rs-growth-title-row {
+    height: auto !important;
+    padding: 0 0 56px 0 !important; /* 연두 가이드만큼 타이틀↔카드 공백 */
+    vertical-align: top !important;
+  }
+  table.rs-cmp-titlebar,
+  table.rs-growth-titlebar {
+    margin-top: -8px !important;
+  }
+  table.rs-cmp-stack td.rs-cmp-body-row,
+  table.rs-growth-stack td.rs-growth-body-row {
+    height: auto !important;
+    padding: 0 !important;
+    vertical-align: top !important;
+  }
+  /* 카드/듀오 강제 늘림 해제 — 원래 콘텐츠 높이 유지 */
+  table.rs-growth-grid,
+  table.rs-growth-grid td.rs-growth-col,
+  table.rs-growth-grid td.rs-growth-arrow,
+  table.rs-cmp-duo,
+  table.rs-cmp-duo td.rs-cmp-old,
+  table.rs-cmp-duo td.rs-cmp-arrow,
+  table.rs-cmp-duo td.rs-cmp-new,
+  table.rs-cmp-old-card {
+    height: auto !important;
+  }
+  /* LEAVES 회색 카드: 높이 확장 */
+  table.rs-growth-card {
+    height: 280px !important;
+  }
+  table.rs-growth-card > tbody > tr > td {
+    height: 280px !important;
+    padding: 28px 14px 30px 14px !important;
+    vertical-align: middle !important;
+  }
+  table.rs-why-panel,
+  table.rs-how-head,
+  table.rs-cmp-wrap,
+  table.rs-growth-wrap {
+    width: 100% !important;
+    max-width: 952px !important;
+    height: 457px !important;
+  }
+  table.rs-why-panel > tbody > tr > td,
+  table.rs-how-head > tbody > tr > td {
+    height: 457px !important;
+    vertical-align: middle !important;
+  }
+  table.rs-how-flow,
+  table.rs-sol-panel {
     max-width: 952px !important;
   }
-  table.rs-how-panel,
-  table.rs-how-flow,
-  table.rs-cmp-wrap,
-  table.rs-growth-wrap,
+  table.rs-cmp-new-frame,
+  table.rs-cmp-new-card {
+    width: 500px !important;
+    max-width: 500px !important;
+    height: 300px !important;
+    background-color: #ffffff !important;
+    border: 1px solid #E6E6E6 !important;
+    border-radius: 14px !important;
+    box-shadow: 0 12px 32px rgba(17, 17, 17, 0.12) !important;
+  }
+  table.rs-cmp-new-frame td.rs-cmp-new-content,
+  table.rs-cmp-new-card td.rs-cmp-new-content {
+    height: 295px !important;
+  }
+  .rs-cmp-rs-mark {
+    font-size: 24px !important;
+  }
+  .rs-cmp-rs-sub {
+    font-size: 13px !important;
+    color: #9A9A9A !important;
+    letter-spacing: -0.02em !important;
+  }
+  .rs-cmp-star {
+    color: #FF3B30 !important;
+    font-size: 15px !important;
+  }
+  table.rs-top-wrap,
   table.rs-close-wrap {
-    max-width: 952px !important;
+    max-width: 1000px !important;
   }
 }
 
@@ -939,7 +1063,13 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
 @media screen and (max-width: 768px) {
   /* WHY IT MATTERS: 모바일 1열 */
   table.rs-why-section > tbody > tr > td {
-    padding: 28px 20px 24px 20px !important;
+    padding: 28px 20px 12px 20px !important;
+  }
+  table.rs-story-frame,
+  table.rs-story-frame > tbody > tr > td,
+  table.rs-why-panel,
+  table.rs-why-panel > tbody > tr > td {
+    height: auto !important;
   }
   table.rs-why-panel > tbody > tr {
     display: block !important;
@@ -1035,15 +1165,21 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
     text-align: center !important;
   }
 
-  /* HOW IT WORKS: 모바일 */
+  /* HOW IT WORKS: 좌 카피 + 우 폰 / 프로세스 바 */
   table.rs-how-section > tbody > tr > td {
-    padding: 8px 20px 28px 20px !important;
+    padding: 24px 20px 12px 20px !important;
+  }
+  table.rs-how-panel,
+  table.rs-how-panel > tbody > tr > td,
+  table.rs-how-head {
+    height: auto !important;
   }
   table.rs-how-head > tbody > tr {
     display: block !important;
     width: 100% !important;
   }
   table.rs-how-head td.rs-how-copy,
+  table.rs-how-head td.rs-model-copy,
   table.rs-how-head td.rs-how-media {
     display: block !important;
     width: 100% !important;
@@ -1052,11 +1188,12 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
     box-sizing: border-box !important;
     border-right: none !important;
   }
-  table.rs-how-head td.rs-how-copy {
+  table.rs-how-head td.rs-how-copy,
+  table.rs-how-head td.rs-model-copy {
     padding: 28px 24px 16px 24px !important;
   }
   table.rs-how-head td.rs-how-media {
-    padding: 20px !important;
+    padding: 24px 20px !important;
   }
   table.rs-how-head img.rs-how-card {
     width: 300px !important;
@@ -1064,25 +1201,16 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
     height: auto !important;
     margin: 0 auto !important;
   }
-  table.rs-how-head .rs-how-title {
-    font-size: 32px !important;
+  table.rs-how-head .rs-model-title {
+    font-size: 30px !important;
   }
-  table.rs-how-head .rs-how-sub {
-    font-size: 22px !important;
+  table.rs-how-head .rs-model-sub {
+    font-size: 20px !important;
+    margin-top: 18px !important;
   }
-  table.rs-how-head .rs-how-desc {
-    font-size: 16px !important;
+  table.rs-how-head .rs-model-desc {
+    font-size: 15px !important;
   }
-  table.rs-why-panel td.rs-why-media {
-    padding: 20px !important;
-  }
-  table.rs-why-panel img.rs-why-card {
-    width: 300px !important;
-    max-width: 100% !important;
-    height: auto !important;
-    margin: 0 auto !important;
-  }
-  /* HOW 플로우 바: 모바일 스택 */
   table.rs-how-flow {
     width: 100% !important;
     max-width: 100% !important;
@@ -1096,10 +1224,11 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
     display: block !important;
     width: 100% !important;
     max-width: 100% !important;
+    height: auto !important;
     box-sizing: border-box !important;
   }
   table.rs-how-flow td.rs-how-flow-step {
-    padding: 18px 20px !important;
+    padding: 16px 18px !important;
     border-bottom: 1px solid #E5E5E5 !important;
     text-align: center !important;
   }
@@ -1109,15 +1238,58 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
   table.rs-how-flow td.rs-how-flow-arrow {
     padding: 4px 0 !important;
     text-align: center !important;
-    transform: none !important;
-  }
-  table.rs-how-flow td.rs-how-flow-arrow {
     font-size: 14px !important;
   }
 
-  /* 비교 카드: 모바일 스택 */
-  table.rs-cmp-section > tbody > tr > td {
-    padding: 8px 16px 32px 16px !important;
+  /* HOW IT DIFFERS / WHAT RS LEAVES BEHIND: 모바일은 고정 높이 해제 */
+  table.rs-cmp-section > tbody > tr > td,
+  table.rs-growth-section > tbody > tr > td {
+    padding: 20px 16px 20px 16px !important;
+  }
+  table.rs-differs-frame,
+  table.rs-growth-frame,
+  table.rs-cmp-wrap,
+  table.rs-growth-wrap,
+  table.rs-cmp-wrap td.rs-cmp-stage,
+  table.rs-growth-wrap td.rs-growth-stage {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  table.rs-differs-frame > tbody > tr > td,
+  table.rs-growth-frame > tbody > tr > td {
+    height: auto !important;
+    padding: 20px 16px !important;
+  }
+  table.rs-cmp-stack,
+  table.rs-growth-stack,
+  table.rs-cmp-stack td.rs-cmp-title-row,
+  table.rs-growth-stack td.rs-growth-title-row,
+  table.rs-cmp-stack td.rs-cmp-body-row,
+  table.rs-growth-stack td.rs-growth-body-row,
+  table.rs-growth-grid,
+  table.rs-growth-grid td.rs-growth-col,
+  table.rs-growth-grid td.rs-growth-arrow,
+  table.rs-growth-card,
+  table.rs-growth-card > tbody > tr > td,
+  table.rs-cmp-duo,
+  table.rs-cmp-duo td.rs-cmp-old,
+  table.rs-cmp-duo td.rs-cmp-arrow,
+  table.rs-cmp-duo td.rs-cmp-new,
+  table.rs-cmp-old-card,
+  table.rs-cmp-new-frame,
+  table.rs-cmp-new-card {
+    height: auto !important;
+  }
+  table.rs-cmp-titlebar {
+    width: auto !important;
+    max-width: 100% !important;
+  }
+  table.rs-cmp-titlebar td {
+    padding: 12px 20px !important;
+  }
+  .rs-cmp-titlebar-text {
+    font-size: 16px !important;
+    white-space: normal !important;
   }
   table.rs-cmp-duo {
     width: 100% !important;
@@ -1150,21 +1322,44 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
   table.rs-cmp-duo td.rs-cmp-new {
     padding: 0 !important;
   }
+  table.rs-cmp-new-frame,
+  table.rs-cmp-new-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  table.rs-cmp-new-frame > tbody > tr > td,
+  table.rs-cmp-new-card > tbody > tr > td {
+    height: auto !important;
+  }
+  table.rs-why-panel td.rs-why-media {
+    padding: 20px !important;
+  }
+  table.rs-why-panel img.rs-why-card {
+    width: 300px !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+  table.rs-cmp-duo {
+    width: 100% !important;
+    max-width: 860px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  table.rs-cmp-duo td.rs-cmp-old {
+    padding: 0 40px 0 24px !important;
+    text-align: left !important;
+  }
+  table.rs-cmp-old-card {
+    width: 200px !important;
+    max-width: 200px !important;
+    height: 220px !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
   .rs-cmp-old-title {
     font-size: 13px !important;
-  }
-  .rs-cmp-kicker {
-    font-size: 11px !important;
-  }
-  .rs-cmp-title {
-    font-size: 32px !important;
-  }
-  .rs-cmp-lead {
-    font-size: 16px !important;
-  }
-  td.rs-cmp-head {
-    padding: 20px 4px 20px 4px !important;
-    text-align: left !important;
   }
   .rs-cmp-rs-mark {
     font-size: 26px !important;
@@ -1176,70 +1371,88 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
     font-size: 13px !important;
   }
 
-  /* CREATOR GROWTH: 모바일 1열 스택 */
-  table.rs-growth-section > tbody > tr > td {
-    padding: 8px 16px 28px 16px !important;
+  /* CREATOR GROWTH / WHAT RS LEAVES BEHIND: 모바일 스택 */
+  table.rs-growth-wrap,
+  table.rs-growth-wrap td.rs-growth-stage {
+    height: auto !important;
+    min-height: 0 !important;
   }
-  td.rs-growth-head {
-    padding: 28px 20px 18px 20px !important;
-  }
-  .rs-growth-title {
-    font-size: 22px !important;
+  table.rs-growth-grid {
+    width: 100% !important;
+    max-width: 100% !important;
   }
   table.rs-growth-grid > tbody > tr {
     display: block !important;
     width: 100% !important;
   }
-  table.rs-growth-grid td.rs-growth-col {
+  table.rs-growth-grid td.rs-growth-col,
+  table.rs-growth-grid td.rs-growth-arrow {
     display: block !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-    padding: 0 0 12px 0 !important;
-    vertical-align: top !important;
-  }
-  table.rs-growth-grid td.rs-growth-col > table {
-    height: auto !important;
-  }
-  table.rs-growth-grid td.rs-growth-col > table td {
-    height: auto !important;
-  }
-
-  /* Closing banner: 모바일 */
-  table.rs-top-section > tbody > tr > td,
-  table.rs-close-section > tbody > tr > td {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
-  table.rs-close-section > tbody > tr > td {
-    padding: 0 16px !important;
-  }
-  table.rs-top-section > tbody > tr > td {
-    padding: 16px 16px 0 16px !important;
-  }
-  table.rs-close-wrap > tbody > tr {
-    display: block !important;
-    width: 100% !important;
-  }
-  table.rs-close-wrap td.rs-close-copy,
-  table.rs-close-wrap td.rs-close-media {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  table.rs-close-wrap td.rs-close-copy {
-    padding: 32px 24px 16px 24px !important;
-  }
-  .rs-close-text {
-    font-size: 20px !important;
-  }
-  table.rs-close-wrap td.rs-close-media {
-    padding: 8px 16px 28px 16px !important;
+    padding: 0 0 10px 0 !important;
     text-align: center !important;
   }
+  table.rs-growth-grid td.rs-growth-arrow {
+    padding: 4px 0 10px 0 !important;
+    transform: rotate(90deg) !important;
+  }
+
+  /* Closing / Top black bars: 풀블리드 · 모바일 */
+  table.rs-top-section > tbody > tr > td,
+  table.rs-close-section > tbody > tr > td {
+    padding: 0 !important;
+  }
+  table.rs-close-wrap,
+  table.rs-top-wrap {
+    height: auto !important;
+    min-height: 180px !important;
+  }
+  table.rs-close-wrap td.rs-close-inner {
+    height: auto !important;
+    padding: 36px 28px !important;
+  }
+  table.rs-close-lockup {
+    width: 100% !important;
+  }
+  table.rs-close-lockup > tbody > tr {
+    display: block !important;
+    width: 100% !important;
+  }
+  table.rs-close-lockup td.rs-close-copy,
+  table.rs-close-lockup td.rs-close-media {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+  table.rs-close-lockup td.rs-close-copy {
+    padding: 0 0 20px 0 !important;
+  }
+  .rs-close-text {
+    font-family: Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif !important;
+    font-size: 22px !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.02em !important;
+    text-align: center !important;
+  }
+  table.rs-close-lockup td.rs-close-media {
+    padding: 0 !important;
+  }
+  table.rs-close-lockup img.rs-close-phone {
+    width: 180px !important;
+    max-width: 180px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+  table.rs-top-wrap img.rs-connectsell-banner {
+    height: auto !important;
+    max-height: none !important;
+  }
   table.rs-close-wrap td.rs-close-media img {
-    width: 220px !important;
+    width: 180px !important;
     max-width: 80% !important;
   }
 
@@ -2133,6 +2346,360 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
   }
 }
 
+/* RS 최종 모바일 오버라이드 — PC(769px 이상)에는 영향 없음 */
+@media screen and (max-width: 768px) {
+  html,
+  body {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+  }
+  table.aowa-shell,
+  td.aowa-body {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    border-radius: 0 !important;
+  }
+  table.rs-story-frame,
+  table.rs-how-panel,
+  table.rs-differs-frame,
+  table.rs-growth-frame,
+  table.rs-sol-panel,
+  table.rs-how-flow {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  table.rs-why-section > tbody > tr > td,
+  table.rs-how-section > tbody > tr > td,
+  table.rs-cmp-section > tbody > tr > td,
+  table.rs-growth-section > tbody > tr > td {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  table.rs-section-divider > tbody > tr > td {
+    padding: 18px 20px !important;
+  }
+
+  /* 상단 BLACK: 데스크톱 배너 대신 모바일 전용 로고/문구 */
+  table.rs-top-wrap {
+    width: 100% !important;
+    min-height: 0 !important;
+    background-color: #000000 !important;
+  }
+  td.rs-top-banner {
+    width: 100% !important;
+    height: auto !important;
+    background-color: #000000 !important;
+  }
+  img.rs-connectsell-banner {
+    display: none !important;
+  }
+  table.rs-mobile-top-banner {
+    display: table !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    mso-hide: none !important;
+  }
+
+  /* WHY: 텍스트 → 기사 → WHAT IF */
+  table.rs-why-panel td.rs-why-copy {
+    padding: 30px 22px 22px 22px !important;
+  }
+  table.rs-why-panel .rs-why-title {
+    font-size: 30px !important;
+    line-height: 1.15 !important;
+  }
+  table.rs-why-panel .rs-why-lead {
+    font-size: 22px !important;
+    line-height: 1.42 !important;
+  }
+  table.rs-why-panel td.rs-why-media {
+    padding: 10px 18px 24px 18px !important;
+  }
+  table.rs-why-panel img.rs-why-card {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+  table.rs-sol-panel {
+    margin-top: 14px !important;
+  }
+  /* WHAT IF?: 별표를 문구 왼쪽으로 (한 줄, 가운데 정렬) */
+  table.rs-sol-panel > tbody > tr {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+  table.rs-sol-panel td.rs-sol-star-cell {
+    display: inline-block !important;
+    width: auto !important;
+    max-width: none !important;
+    padding: 20px 8px 0 0 !important;
+    vertical-align: middle !important;
+    text-align: center !important;
+    line-height: 0 !important;
+  }
+  table.rs-sol-panel .rs-sol-star {
+    width: 34px !important;
+    height: 34px !important;
+    margin: 0 !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+  }
+  table.rs-sol-panel td.rs-sol-copy {
+    display: inline-block !important;
+    width: auto !important;
+    max-width: none !important;
+    padding: 20px 0 0 0 !important;
+    border-right: none !important;
+    border-bottom: none !important;
+    vertical-align: middle !important;
+    text-align: left !important;
+  }
+  table.rs-sol-panel .rs-sol-title {
+    font-size: 22px !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+    line-height: 1.1 !important;
+  }
+  .rs-sol-title-arrow {
+    display: none !important;
+  }
+  table.rs-sol-panel td.rs-sol-body {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    border-top: 1px solid #D1D5DB !important;
+    margin-top: 16px !important;
+    padding: 16px 22px 22px 22px !important;
+    text-align: center !important;
+  }
+  table.rs-sol-panel .rs-sol-ask {
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+  }
+
+  /* HOW: 설명 → 이미지 → 01~04 세로 플로우 */
+  table.rs-how-head td.rs-model-copy {
+    padding: 28px 22px 20px 22px !important;
+  }
+  table.rs-how-head .rs-model-title {
+    font-size: 30px !important;
+    line-height: 1.15 !important;
+  }
+  table.rs-how-head .rs-model-sub {
+    font-size: 21px !important;
+  }
+  table.rs-how-head .rs-model-desc {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  table.rs-how-head td.rs-how-media {
+    padding: 16px 18px 24px 18px !important;
+  }
+  table.rs-how-head img.rs-how-card {
+    width: 100% !important;
+    max-width: 300px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+  table.rs-how-flow {
+    margin-top: 14px !important;
+  }
+  table.rs-how-flow td.rs-how-flow-step {
+    padding: 18px 18px !important;
+    border-bottom: none !important;
+  }
+  table.rs-how-flow td.rs-how-flow-step p {
+    font-size: 16px !important;
+    line-height: 1.45 !important;
+  }
+  table.rs-how-flow td.rs-how-flow-arrow {
+    padding: 2px 0 8px 0 !important;
+    border: 0 !important;
+  }
+  .rs-how-flow-arrow-icon {
+    display: inline-block !important;
+    transform: rotate(90deg) !important;
+    font-size: 18px !important;
+  }
+
+  /* DIFFERS: 브랜디드 ↓ RS */
+  table.rs-cmp-wrap td.rs-cmp-stage,
+  table.rs-growth-wrap td.rs-growth-stage {
+    padding: 20px 16px 24px 16px !important;
+  }
+  table.rs-cmp-stack td.rs-cmp-title-row,
+  table.rs-growth-stack td.rs-growth-title-row {
+    padding: 0 0 24px 0 !important;
+  }
+  table.rs-cmp-titlebar,
+  table.rs-growth-titlebar {
+    margin: 0 auto !important;
+    max-width: 100% !important;
+  }
+  table.rs-cmp-titlebar .rs-cmp-titlebar-text {
+    white-space: nowrap !important;
+  }
+  table.rs-cmp-duo {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+  table.rs-cmp-duo td.rs-cmp-old {
+    width: 100% !important;
+    height: auto !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+  table.rs-cmp-old-card {
+    width: 78% !important;
+    max-width: 280px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+  table.rs-cmp-duo td.rs-cmp-arrow {
+    width: 100% !important;
+    height: auto !important;
+    padding: 12px 0 18px 0 !important;
+    text-align: center !important;
+  }
+  table.rs-cmp-duo .rs-cmp-arrow-icon {
+    position: static !important;
+    left: auto !important;
+    display: inline-block !important;
+    transform: rotate(90deg) !important;
+    font-size: 18px !important;
+  }
+  table.rs-cmp-duo td.rs-cmp-new {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  table.rs-cmp-new-frame,
+  table.rs-cmp-new-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+  table.rs-cmp-new-frame td.rs-cmp-new-content,
+  table.rs-cmp-new-card td.rs-cmp-new-content {
+    height: auto !important;
+    padding: 22px 18px 24px 18px !important;
+  }
+  .rs-cmp-rs-mark {
+    font-size: 23px !important;
+  }
+  .rs-cmp-rs-sub {
+    font-size: 11px !important;
+  }
+  table.rs-cmp-new-list {
+    width: 84% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    float: none !important;
+  }
+  table.rs-cmp-new-list td {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+  .rs-cmp-row-text {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    white-space: normal !important;
+  }
+
+  /* LEAVES: 동일 크기 카드 4개 세로 배열 */
+  table.rs-growth-grid,
+  table.rs-growth-grid > tbody > tr,
+  table.rs-growth-grid td.rs-growth-col {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+  table.rs-growth-grid td.rs-growth-col {
+    padding: 0 !important;
+  }
+  table.rs-growth-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+  table.rs-growth-card > tbody > tr > td {
+    height: auto !important;
+    padding: 26px 20px 28px 20px !important;
+  }
+  .rs-growth-card-title {
+    font-size: 17px !important;
+    line-height: 1.4 !important;
+  }
+  .rs-growth-card-desc {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+  table.rs-growth-grid td.rs-growth-arrow {
+    padding: 8px 0 12px 0 !important;
+    font-size: 18px !important;
+  }
+
+  /* 하단 BLACK + Footer */
+  table.rs-close-wrap td.rs-close-inner {
+    padding: 34px 22px !important;
+  }
+  .rs-close-text {
+    font-size: 22px !important;
+    line-height: 1.5 !important;
+    white-space: normal !important;
+  }
+  .rs-close-text-desktop {
+    display: none !important;
+  }
+  .rs-close-text-mobile {
+    display: block !important;
+    text-align: center !important;
+  }
+  table.rs-close-lockup img.rs-close-phone {
+    width: 180px !important;
+    max-width: 70% !important;
+    height: auto !important;
+  }
+  table.rs-footer {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  table.rs-footer td {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    word-break: keep-all !important;
+  }
+  table.rs-footer tr:first-child td {
+    font-size: 14px !important;
+    padding-top: 30px !important;
+  }
+  table.rs-footer tr:nth-child(2) td {
+    font-size: 12px !important;
+    line-height: 1.65 !important;
+  }
+  table.rs-footer tr:nth-child(3) td,
+  table.rs-footer tr:nth-child(4) td {
+    font-size: 11px !important;
+  }
+}
+
 @media screen and (max-width: 480px) {
   td.yg-megadose-title {
     font-size: 28px !important;
@@ -2152,6 +2719,24 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
     max-width: 150px !important;
   }
 }
+@media screen and (max-width: 768px) {
+  table.aowa-shell table.rs-why-panel img.rs-why-card {
+    width: 100% !important;
+    max-width: 380px !important;
+    height: auto !important;
+  }
+  table.aowa-shell table.rs-cmp-duo td.rs-cmp-old,
+  table.aowa-shell table.rs-cmp-duo td.rs-cmp-new {
+    height: auto !important;
+    vertical-align: top !important;
+  }
+  table.aowa-shell table.rs-cmp-old-card {
+    float: none !important;
+    clear: both !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
 </style>
 </head>
 <body style="margin:0;padding:0;background-color:#f7f5f2;">
@@ -2162,14 +2747,22 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
 <tr>
 <td class="aowa-body" width="100%" style="padding:0;width:100%;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.65;color:#2f2f2f;">
 
-<!-- RS 상단 배너 — 하단 클로징과 동일 영역(좌우 40 · max 952 · radius 18) -->
-<table class="rs-top-section" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;background-color:#ffffff;">
+<!-- RS 상단 배너 — 하단 클로징과 동일 풀블리드 블랙 바(높이 220) -->
+<table class="rs-top-section" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#000000" style="width:100%;background-color:#000000;">
 <tr>
-<td style="padding:24px 40px 0 40px;">
-<table class="rs-top-wrap rs-close-wrap" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#000000" style="width:100%;max-width:952px;margin:0 auto;background-color:#000000;border-radius:18px;overflow:hidden;table-layout:fixed;">
+<td style="padding:0;background-color:#000000;">
+<table class="rs-top-wrap rs-close-wrap" role="presentation" width="100%" height="220" cellpadding="0" cellspacing="0" border="0" bgcolor="#000000" style="width:100%;max-width:1000px;height:220px;margin:0 auto;background-color:#000000;overflow:hidden;table-layout:fixed;">
 <tr>
-<td class="rs-top-banner" align="center" style="padding:0;line-height:0;font-size:0;background-color:#000000;">
-<img class="rs-connectsell-banner" src="../images/rs-connectsell-banner.png?v=4" alt="ConnectSell — 좋은 제품과 특별한 혜택을 구독자에게 연결합니다." width="952" height="391" style="width:100%;max-width:952px;height:auto;display:block;margin:0 auto;border:0;">
+<td class="rs-top-banner" align="center" height="220" valign="middle" style="padding:0;height:220px;line-height:0;font-size:0;background-color:#000000;vertical-align:middle;">
+<img class="rs-connectsell-banner" src="../images/rs-connectsell-banner.png?v=6" alt="ConnectSell — 좋은 제품과 특별한 혜택을 구독자에게 연결합니다." width="952" height="220" style="width:100%;max-width:952px;height:220px;display:block;margin:0 auto;border:0;object-fit:cover;object-position:center center;">
+<table class="rs-mobile-top-banner" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#000000" style="display:none;width:100%;background-color:#000000;mso-hide:all;">
+<tr>
+<td align="center" style="padding:30px 22px 28px 22px;text-align:center;font-family:Pretendard,'Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic',sans-serif;">
+<p style="margin:0;padding:0;font-size:30px;font-weight:500;color:#ffffff;letter-spacing:-0.03em;line-height:1.1;white-space:nowrap;">ConnectSell</p>
+<p style="margin:18px 0 0 0;padding:0;font-size:14px;font-weight:500;color:#ffffff;letter-spacing:-0.03em;line-height:1.55;word-break:keep-all;">좋은 제품과 특별한 혜택을<br>구독자에게 연결합니다.</p>
+</td>
+</tr>
+</table>
 </td>
 </tr>
 </table>
@@ -2180,20 +2773,20 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
 <!-- PROBLEM → SOLUTION: 한 프레임 연속 -->
 <table class="rs-why-section" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;background-color:#ffffff;">
 <tr>
-<td style="padding:36px 40px 36px 40px;">
-<table class="rs-story-frame" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:952px;margin:0 auto;border:1px solid #e5e0d9;border-radius:18px;overflow:hidden;">
+<td style="padding:32px 40px 16px 40px;">
+<table class="rs-story-frame" role="presentation" width="100%" height="457" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:952px;height:457px;margin:0 auto;border:1px solid #e5e0d9;border-radius:18px;overflow:hidden;">
 <tr>
-<td style="padding:0;">
+<td height="457" valign="middle" style="height:457px;padding:0;vertical-align:middle;">
 
 <!-- 1) WHY IT MATTERS -->
-<table class="rs-why-panel" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;table-layout:fixed;">
+<table class="rs-why-panel" role="presentation" width="100%" height="457" cellpadding="0" cellspacing="0" border="0" style="width:100%;height:457px;table-layout:fixed;">
 <tr>
-<td class="rs-why-copy" width="58%" valign="middle" bgcolor="#ffffff" style="width:58%;padding:44px 36px 44px 44px;vertical-align:middle;background-color:#ffffff;border-right:1px solid #e8e8e8;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
+<td class="rs-why-copy" width="58%" height="457" valign="middle" bgcolor="#ffffff" style="width:58%;height:457px;padding:44px 36px 44px 44px;vertical-align:middle;background-color:#ffffff;border-right:1px solid #e8e8e8;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
 <p class="rs-why-kicker" style="margin:0;padding:0;font-size:12px;font-weight:700;letter-spacing:0.16em;color:#9a9a9a;line-height:1.3;">PROBLEM FRAMING</p>
 <p class="rs-why-title" style="margin:12px 0 0 0;padding:0;font-size:40px;font-weight:800;color:#111111;letter-spacing:-0.045em;line-height:1.12;">WHY IT MATTERS</p>
 <p class="rs-why-lead" style="margin:26px 0 0 0;padding:0;font-size:28px;font-weight:800;color:#111111;letter-spacing:-0.04em;line-height:1.38;word-break:keep-all;">크리에이터에게<br>광고는 단순한 노출<br>그 이상입니다.</p>
 </td>
-<td class="rs-why-media" width="42%" valign="middle" align="center" bgcolor="#F7F7F7" style="width:42%;padding:24px 20px;vertical-align:middle;text-align:center;background-color:#F7F7F7;line-height:0;font-size:0;">
+<td class="rs-why-media" width="42%" height="457" valign="middle" align="center" bgcolor="#F7F7F7" style="width:42%;height:457px;padding:24px 20px;vertical-align:middle;text-align:center;background-color:#F7F7F7;line-height:0;font-size:0;">
 <img class="rs-why-card" src="../images/rs-why-it-matters-article-1-card.png?v=4" alt="매일경제 — 안선영, 과대·허위광고 의혹 해명 기사" width="300" height="409" style="width:300px;max-width:100%;height:auto;display:block;margin:0 auto;border:0;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.10);">
 </td>
 </tr>
@@ -2204,13 +2797,13 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
 </table>
 
 <!-- 2) SOLUTION: WHAT IF? — 높이·여백 유지 -->
-<table class="rs-sol-panel" role="presentation" width="952" cellpadding="0" cellspacing="0" border="0" bgcolor="#F6F6F6" style="width:100%;max-width:952px;margin:16px auto 0 auto;background-color:#F6F6F6;border:1px solid #D1D5DB;border-radius:12px;overflow:hidden;table-layout:fixed;">
+<table class="rs-sol-panel" role="presentation" width="952" cellpadding="0" cellspacing="0" border="0" bgcolor="#F6F6F6" style="width:100%;max-width:952px;margin:14px auto 0 auto;background-color:#F6F6F6;border:1px solid #D1D5DB;border-radius:12px;overflow:hidden;table-layout:fixed;">
 <tr>
 <td class="rs-sol-star-cell" width="72" height="118" valign="middle" align="center" style="width:72px;height:118px;padding:0 4px 0 16px;vertical-align:middle;text-align:center;line-height:0;font-size:0;">
 <img class="rs-sol-star" src="../images/rs-what-if-star.png?v=2" alt="" width="44" height="44" style="width:44px;height:44px;display:block;margin:0 auto;border:0;background:transparent;">
 </td>
 <td class="rs-sol-copy" width="22%" height="118" valign="middle" style="width:22%;height:118px;padding:0 14px 0 4px;vertical-align:middle;border-right:1px solid #D1D5DB;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
-<p class="rs-sol-title" style="margin:0;padding:0;font-size:24px;font-weight:800;color:#111111;letter-spacing:-0.04em;line-height:1.2;text-align:left;white-space:nowrap;">WHAT IF? →</p>
+<p class="rs-sol-title" style="margin:0;padding:0;font-size:24px;font-weight:800;color:#111111;letter-spacing:-0.04em;line-height:1.2;text-align:left;white-space:nowrap;">WHAT IF? <span class="rs-sol-title-arrow" style="display:inline-block;">→</span></p>
 </td>
 <td class="rs-sol-body" width="70%" height="118" valign="middle" align="center" style="width:70%;height:118px;padding:0 36px;vertical-align:middle;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
 <p class="rs-sol-ask" style="margin:0;padding:0;font-size:17px;font-weight:500;color:#333333;letter-spacing:-0.03em;line-height:1.65;text-align:center;word-break:keep-all;">구독자의 <span style="display:inline-block;padding:2px 7px;background-color:#111111;color:#ffffff;font-weight:800;letter-spacing:-0.02em;line-height:1.3;">신뢰</span>를 지키면서,<br>콘텐츠에 <span style="display:inline-block;padding:2px 7px;background-color:#111111;color:#ffffff;font-weight:800;letter-spacing:-0.02em;line-height:1.3;">시너지</span>를 낼 수 있는 광고는 없을까?</p>
@@ -2222,105 +2815,97 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
 </tr>
 </table>
 
-<!-- HOW IT WORKS -->
+<!-- Section divider: WHY IT MATTERS ↔ HOW IT WORKS -->
+<table class="rs-section-divider" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width:100%;background-color:#ffffff;">
+<tr>
+<td style="padding:24px 40px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:952px;margin:0 auto;">
+<tr>
+<td style="border-top:1px solid #e5e0d9;font-size:0;line-height:0;height:1px;">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<!-- HOW IT WORKS — 레퍼런스1 비율 복원 (이미지·문구 유지) -->
 <table class="rs-how-section" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;background-color:#ffffff;">
 <tr>
-<td style="padding:8px 40px 36px 40px;">
-<table class="rs-how-panel" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:952px;margin:0 auto;border:1px solid #e5e0d9;border-radius:18px;overflow:hidden;background-color:#ffffff;">
+<td style="padding:32px 40px 16px 40px;">
+<table class="rs-how-panel" role="presentation" width="100%" height="457" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:952px;height:457px;margin:0 auto;border:1px solid #e5e0d9;border-radius:18px;overflow:hidden;background-color:#ffffff;">
 <tr>
-<td style="padding:0;">
-
-<!-- Top: WHY와 동일 58:42 · 좌 카피 + 우 카드 이미지 -->
-<table class="rs-how-head" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;table-layout:fixed;">
+<td height="457" valign="middle" style="height:457px;padding:0;vertical-align:middle;">
+<table class="rs-how-head" role="presentation" width="100%" height="457" cellpadding="0" cellspacing="0" border="0" style="width:100%;height:457px;table-layout:fixed;">
 <tr>
-<td class="rs-how-copy" width="58%" valign="middle" bgcolor="#ffffff" style="width:58%;padding:44px 36px 44px 44px;vertical-align:middle;background-color:#ffffff;border-right:1px solid #e8e8e8;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
-<p class="rs-how-kicker" style="margin:0;padding:0;font-size:12px;font-weight:700;letter-spacing:0.16em;color:#9a9a9a;line-height:1.3;">THE MODEL</p>
-<p class="rs-how-title" style="margin:12px 0 0 0;padding:0;font-size:40px;font-weight:800;color:#111111;letter-spacing:-0.045em;line-height:1.12;">HOW IT WORKS</p>
-<p class="rs-how-sub" style="margin:22px 0 0 0;padding:0;font-size:28px;font-weight:800;color:#111111;letter-spacing:-0.04em;line-height:1.38;word-break:keep-all;">RS광고 <span style="font-weight:500;">(Revenue Share)</span></p>
-<p class="rs-how-desc" style="margin:20px 0 0 0;padding:0;font-size:20px;font-weight:500;color:#555555;letter-spacing:-0.03em;line-height:1.55;word-break:keep-all;">콘텐츠에 맞는 제품을<br>구독자 전용 조건으로 소개하는 광고</p>
+<!-- LEFT: THE MODEL / HOW IT WORKS / RS광고 / 설명 — WHY와 동일 58:42 -->
+<td class="rs-model-copy rs-how-copy" width="58%" height="457" valign="middle" bgcolor="#ffffff" style="width:58%;height:457px;padding:44px 36px 44px 44px;vertical-align:middle;background-color:#ffffff;border-right:1px solid #e8e8e8;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
+<p class="rs-model-kicker" style="margin:0;padding:0;font-size:12px;font-weight:700;letter-spacing:0.16em;color:#9a9a9a;line-height:1.3;">THE MODEL</p>
+<p class="rs-model-title" style="margin:12px 0 0 0;padding:0;font-size:40px;font-weight:800;color:#111111;letter-spacing:-0.045em;line-height:1.12;">HOW IT WORKS</p>
+<p class="rs-model-sub" style="margin:26px 0 0 0;padding:0;font-size:26px;font-weight:800;color:#111111;letter-spacing:-0.04em;line-height:1.38;word-break:keep-all;">RS광고 <span style="font-weight:500;">(Revenue Share)</span></p>
+<p class="rs-model-desc" style="margin:14px 0 0 0;padding:0;font-size:17px;font-weight:500;color:#555555;letter-spacing:-0.03em;line-height:1.55;word-break:keep-all;">콘텐츠에 맞는 제품을<br>구독자 전용 조건으로 소개하는 광고</p>
 </td>
-<td class="rs-how-media" width="42%" valign="middle" align="center" bgcolor="#F7F7F7" style="width:42%;padding:24px 20px;vertical-align:middle;text-align:center;background-color:#F7F7F7;line-height:0;font-size:0;">
-<img class="rs-how-card" src="../images/rs-how-ad-slot-card.png?v=5" alt="콘텐츠에 맞는 제품을 구독자 전용 조건으로 소개하는 광고" width="300" height="210" style="width:300px;max-width:100%;height:auto;display:block;margin:0 auto;border:0;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.10);">
+<!-- RIGHT: WHY와 동일 열폭·패딩·표시폭 (이미지 소스·비율 유지) -->
+<td class="rs-how-media" width="42%" height="457" valign="middle" align="center" bgcolor="#F7F7F7" style="width:42%;height:457px;padding:24px 20px;vertical-align:middle;text-align:center;background-color:#F7F7F7;line-height:0;font-size:0;">
+<img class="rs-how-card" src="../images/rs-how-ad-slot-card.png?v=8" alt="콘텐츠에 맞는 제품을 구독자 전용 조건으로 소개하는 광고" width="300" height="390" style="width:300px;max-width:100%;height:auto;display:block;margin:0 auto;border:0;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.10);">
+</td>
+</tr>
+</table>
 </td>
 </tr>
 </table>
 
-</td>
-</tr>
-</table>
-
-<!-- 4스텝 플로우 — WHAT IF와 동일 높이(118), 번호↑ / 제목↓ 세로 스택 -->
-<table class="rs-how-flow" role="presentation" width="952" cellpadding="0" cellspacing="0" border="0" bgcolor="#F6F6F6" style="width:100%;max-width:952px;margin:16px auto 0 auto;background-color:#F6F6F6;border:1px solid #D1D5DB;border-radius:12px;overflow:hidden;table-layout:fixed;">
+<!-- 하단: 01 → 02 → 03 → 04 프로세스 -->
+<table class="rs-how-flow" role="presentation" width="952" cellpadding="0" cellspacing="0" border="0" bgcolor="#F6F6F6" style="width:100%;max-width:952px;margin:14px auto 0 auto;background-color:#F6F6F6;border:1px solid #D1D5DB;border-radius:12px;overflow:hidden;table-layout:fixed;">
 <tr>
-<!-- 01 -->
-<td class="rs-how-flow-step" width="22%" height="118" valign="middle" align="center" style="width:22%;height:118px;padding:0 10px;vertical-align:middle;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
+<td class="rs-how-flow-step" width="22%" height="112" valign="middle" align="center" style="width:22%;height:112px;padding:0 10px;vertical-align:middle;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;">
-<tr>
-<td align="center" style="padding:0 0 10px 0;text-align:center;line-height:0;font-size:0;">
+<tr><td align="center" style="padding:0 0 10px 0;text-align:center;line-height:0;font-size:0;">
 <table role="presentation" width="28" height="28" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
-<td align="center" valign="middle" width="28" height="28" bgcolor="#E11D2E" style="width:28px;height:28px;background-color:#E11D2E;border-radius:14px;text-align:center;font-size:11px;font-weight:800;color:#ffffff;line-height:28px;">01</td>
+<td align="center" valign="middle" width="28" height="28" bgcolor="#FF3B30" style="width:28px;height:28px;background-color:#FF3B30;border-radius:14px;text-align:center;font-size:11px;font-weight:800;color:#ffffff;line-height:28px;">01</td>
 </tr></table>
-</td>
-</tr>
-<tr>
-<td align="center" height="38" valign="middle" style="height:38px;padding:0;text-align:center;vertical-align:middle;">
+</td></tr>
+<tr><td align="center" height="36" valign="middle" style="height:36px;padding:0;text-align:center;vertical-align:middle;">
 <p style="margin:0;padding:0;font-size:14px;font-weight:800;color:#111111;letter-spacing:-0.03em;line-height:1.35;word-break:keep-all;text-align:center;">제품 체험 후<br>진행 결정</p>
-</td>
-</tr>
+</td></tr>
 </table>
 </td>
-<td class="rs-how-flow-arrow" width="4%" height="118" valign="middle" align="center" style="width:4%;height:118px;padding:0;vertical-align:middle;text-align:center;font-size:15px;font-weight:400;color:#333333;line-height:1;">&#8594;</td>
-<!-- 02 -->
-<td class="rs-how-flow-step" width="22%" height="118" valign="middle" align="center" style="width:22%;height:118px;padding:0 10px;vertical-align:middle;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
+<td class="rs-how-flow-arrow" width="4%" height="112" valign="middle" align="center" style="width:4%;height:112px;padding:0;vertical-align:middle;text-align:center;font-size:15px;font-weight:400;color:#333333;line-height:1;"><span class="rs-how-flow-arrow-icon" style="display:inline-block;">&#8594;</span></td>
+<td class="rs-how-flow-step" width="22%" height="112" valign="middle" align="center" style="width:22%;height:112px;padding:0 10px;vertical-align:middle;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;">
-<tr>
-<td align="center" style="padding:0 0 10px 0;text-align:center;line-height:0;font-size:0;">
+<tr><td align="center" style="padding:0 0 10px 0;text-align:center;line-height:0;font-size:0;">
 <table role="presentation" width="28" height="28" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
-<td align="center" valign="middle" width="28" height="28" bgcolor="#E11D2E" style="width:28px;height:28px;background-color:#E11D2E;border-radius:14px;text-align:center;font-size:11px;font-weight:800;color:#ffffff;line-height:28px;">02</td>
+<td align="center" valign="middle" width="28" height="28" bgcolor="#FF3B30" style="width:28px;height:28px;background-color:#FF3B30;border-radius:14px;text-align:center;font-size:11px;font-weight:800;color:#ffffff;line-height:28px;">02</td>
 </tr></table>
-</td>
-</tr>
-<tr>
-<td align="center" height="38" valign="middle" style="height:38px;padding:0;text-align:center;vertical-align:middle;">
+</td></tr>
+<tr><td align="center" height="36" valign="middle" style="height:36px;padding:0;text-align:center;vertical-align:middle;">
 <p style="margin:0;padding:0;font-size:14px;font-weight:800;color:#111111;letter-spacing:-0.03em;line-height:1.35;word-break:keep-all;text-align:center;">자연스러운<br>제품 소개</p>
-</td>
-</tr>
+</td></tr>
 </table>
 </td>
-<td class="rs-how-flow-arrow" width="4%" height="118" valign="middle" align="center" style="width:4%;height:118px;padding:0;vertical-align:middle;text-align:center;font-size:15px;font-weight:400;color:#333333;line-height:1;">&#8594;</td>
-<!-- 03 -->
-<td class="rs-how-flow-step" width="22%" height="118" valign="middle" align="center" style="width:22%;height:118px;padding:0 10px;vertical-align:middle;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
+<td class="rs-how-flow-arrow" width="4%" height="112" valign="middle" align="center" style="width:4%;height:112px;padding:0;vertical-align:middle;text-align:center;font-size:15px;font-weight:400;color:#333333;line-height:1;"><span class="rs-how-flow-arrow-icon" style="display:inline-block;">&#8594;</span></td>
+<td class="rs-how-flow-step" width="22%" height="112" valign="middle" align="center" style="width:22%;height:112px;padding:0 10px;vertical-align:middle;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;">
-<tr>
-<td align="center" style="padding:0 0 10px 0;text-align:center;line-height:0;font-size:0;">
+<tr><td align="center" style="padding:0 0 10px 0;text-align:center;line-height:0;font-size:0;">
 <table role="presentation" width="28" height="28" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
-<td align="center" valign="middle" width="28" height="28" bgcolor="#E11D2E" style="width:28px;height:28px;background-color:#E11D2E;border-radius:14px;text-align:center;font-size:11px;font-weight:800;color:#ffffff;line-height:28px;">03</td>
+<td align="center" valign="middle" width="28" height="28" bgcolor="#FF3B30" style="width:28px;height:28px;background-color:#FF3B30;border-radius:14px;text-align:center;font-size:11px;font-weight:800;color:#ffffff;line-height:28px;">03</td>
 </tr></table>
-</td>
-</tr>
-<tr>
-<td align="center" height="38" valign="middle" style="height:38px;padding:0;text-align:center;vertical-align:middle;">
+</td></tr>
+<tr><td align="center" height="36" valign="middle" style="height:36px;padding:0;text-align:center;vertical-align:middle;">
 <p style="margin:0;padding:0;font-size:14px;font-weight:800;color:#111111;letter-spacing:-0.03em;line-height:1.35;word-break:keep-all;text-align:center;">혜택가 오픈</p>
-</td>
-</tr>
+</td></tr>
 </table>
 </td>
-<td class="rs-how-flow-arrow" width="4%" height="118" valign="middle" align="center" style="width:4%;height:118px;padding:0;vertical-align:middle;text-align:center;font-size:15px;font-weight:400;color:#333333;line-height:1;">&#8594;</td>
-<!-- 04 -->
-<td class="rs-how-flow-step" width="22%" height="118" valign="middle" align="center" style="width:22%;height:118px;padding:0 10px;vertical-align:middle;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
+<td class="rs-how-flow-arrow" width="4%" height="112" valign="middle" align="center" style="width:4%;height:112px;padding:0;vertical-align:middle;text-align:center;font-size:15px;font-weight:400;color:#333333;line-height:1;"><span class="rs-how-flow-arrow-icon" style="display:inline-block;">&#8594;</span></td>
+<td class="rs-how-flow-step" width="22%" height="112" valign="middle" align="center" style="width:22%;height:112px;padding:0 10px;vertical-align:middle;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;">
-<tr>
-<td align="center" style="padding:0 0 10px 0;text-align:center;line-height:0;font-size:0;">
+<tr><td align="center" style="padding:0 0 10px 0;text-align:center;line-height:0;font-size:0;">
 <table role="presentation" width="28" height="28" cellpadding="0" cellspacing="0" border="0" align="center"><tr>
-<td align="center" valign="middle" width="28" height="28" bgcolor="#E11D2E" style="width:28px;height:28px;background-color:#E11D2E;border-radius:14px;text-align:center;font-size:11px;font-weight:800;color:#ffffff;line-height:28px;">04</td>
+<td align="center" valign="middle" width="28" height="28" bgcolor="#FF3B30" style="width:28px;height:28px;background-color:#FF3B30;border-radius:14px;text-align:center;font-size:11px;font-weight:800;color:#ffffff;line-height:28px;">04</td>
 </tr></table>
-</td>
-</tr>
-<tr>
-<td align="center" height="38" valign="middle" style="height:38px;padding:0;text-align:center;vertical-align:middle;">
+</td></tr>
+<tr><td align="center" height="36" valign="middle" style="height:36px;padding:0;text-align:center;vertical-align:middle;">
 <p style="margin:0;padding:0;font-size:14px;font-weight:800;color:#111111;letter-spacing:-0.03em;line-height:1.35;word-break:keep-all;text-align:center;">정산</p>
-</td>
-</tr>
+</td></tr>
 </table>
 </td>
 </tr>
@@ -2330,144 +2915,81 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
 </tr>
 </table>
 
-<!-- HOW IT DIFFERS: 브랜디드(작게) → RS(크게 강조) -->
+<!-- Section divider: HOW IT WORKS ↔ HOW IT DIFFERS -->
+<table class="rs-section-divider" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width:100%;background-color:#ffffff;">
+<tr>
+<td style="padding:24px 40px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:952px;margin:0 auto;">
+<tr>
+<td style="border-top:1px solid #e5e0d9;font-size:0;line-height:0;height:1px;">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<!-- HOW IT DIFFERS — WHY/HOW와 동일 셸 952×457 -->
 <table class="rs-cmp-section" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;background-color:#ffffff;">
 <tr>
-<td align="center" style="padding:12px 40px 52px 40px;text-align:center;">
-<table class="rs-cmp-wrap" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="width:100%;max-width:952px;margin:0 auto;background-color:#ffffff;">
-
-<!-- Section header -->
+<td align="center" style="padding:32px 40px 16px 40px;text-align:center;">
+<table class="rs-differs-frame rs-cmp-wrap" role="presentation" width="100%" height="457" cellpadding="0" cellspacing="0" border="0" align="center" style="width:100%;max-width:952px;height:457px;margin:0 auto;border:1px solid #e5e0d9;border-radius:18px;overflow:hidden;background-color:#ffffff;table-layout:fixed;">
 <tr>
-<td class="rs-cmp-head" align="left" style="padding:32px 4px 32px 4px;text-align:left;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
-<p class="rs-cmp-kicker" style="margin:0;padding:0;font-size:12px;font-weight:700;letter-spacing:0.16em;color:#9a9a9a;line-height:1.3;">THE MODEL</p>
-<p class="rs-cmp-title" style="margin:12px 0 0 0;padding:0;font-size:40px;font-weight:800;color:#111111;letter-spacing:-0.045em;line-height:1.12;">HOW IT DIFFERS</p>
-<p class="rs-cmp-lead" style="margin:16px 0 0 0;padding:0;font-size:18px;font-weight:500;color:#555555;letter-spacing:-0.03em;line-height:1.55;word-break:keep-all;">일반 브랜디드 광고와 RS 광고는 이렇게 다릅니다.</p>
-</td>
-</tr>
+<td class="rs-cmp-stage" height="457" align="center" valign="top" style="height:457px;padding:0 36px 28px 36px;text-align:center;vertical-align:top;">
+<table class="rs-cmp-stack" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="width:100%;margin:0 auto;">
 
 <tr>
-<td align="center" style="padding:8px 0 0 0;text-align:center;">
-<table class="rs-cmp-duo" role="presentation" width="920" cellpadding="0" cellspacing="0" border="0" align="center" style="width:920px;max-width:100%;margin:0 auto;table-layout:fixed;">
+<td class="rs-cmp-title-row" align="center" valign="top" style="padding:0 0 56px 0;text-align:center;vertical-align:top;">
+<table class="rs-cmp-titlebar" role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#111111" style="margin:-8px auto 0 auto;background-color:#111111;border-radius:4px;">
 <tr>
-<!-- LEFT: 작게 · 보조 -->
-<td class="rs-cmp-old" width="220" valign="middle" style="width:220px;padding:0;vertical-align:middle;">
-<table class="rs-cmp-old-card" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#F5F5F5" style="width:100%;background-color:#F5F5F5;border-radius:12px;overflow:hidden;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
-<tr>
-<td align="center" style="padding:16px 12px;text-align:center;">
-<p class="rs-cmp-old-title" style="margin:0;padding:0;font-size:12px;font-weight:600;color:#6B6B6B;letter-spacing:-0.02em;line-height:1.4;word-break:keep-all;">일반 브랜디드 광고<br><span style="font-weight:500;color:#A8A8A8;">(Branded Ad)</span></p>
-</td>
-</tr>
-<tr>
-<td align="center" style="padding:14px 12px;border-top:1px solid #E8E8E8;text-align:center;">
-<p style="margin:0;padding:0;font-size:12px;font-weight:600;color:#7A7A7A;letter-spacing:-0.02em;line-height:1.35;">고정 광고비</p>
-</td>
-</tr>
-<tr>
-<td align="center" style="padding:14px 12px;border-top:1px solid #E8E8E8;text-align:center;">
-<p style="margin:0;padding:0;font-size:12px;font-weight:600;color:#7A7A7A;letter-spacing:-0.02em;line-height:1.35;">단순 링크 노출</p>
-</td>
-</tr>
-<tr>
-<td align="center" style="padding:14px 12px;border-top:1px solid #E8E8E8;text-align:center;">
-<p style="margin:0;padding:0;font-size:12px;font-weight:600;color:#7A7A7A;letter-spacing:-0.02em;line-height:1.35;">브랜드 메시지 중심</p>
+<td align="center" style="padding:14px 36px;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
+<p class="rs-cmp-titlebar-text" style="margin:0;padding:0;font-size:18px;font-weight:800;color:#ffffff;letter-spacing:-0.03em;line-height:1.35;white-space:nowrap;">HOW IT DIFFERS</p>
 </td>
 </tr>
 </table>
 </td>
+</tr>
 
-<!-- ARROW -->
-<td class="rs-cmp-arrow" width="40" valign="middle" align="center" style="width:40px;padding:0;vertical-align:middle;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
-<span class="rs-cmp-arrow-icon" style="display:inline-block;font-size:16px;font-weight:400;color:#333333;line-height:1;">&#8594;</span>
-</td>
-
-<!-- RIGHT: 크게 강조 · 테두리 없음 -->
-<td class="rs-cmp-new" width="660" valign="middle" style="width:660px;padding:0;vertical-align:middle;">
-<table class="rs-cmp-new-card" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width:100%;background-color:#ffffff;border:0;border-radius:14px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,0.07);font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
-<!-- Header + red star -->
 <tr>
-<td style="padding:26px 28px 18px 28px;border-bottom:1px solid #EEEEEE;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-<td valign="middle" style="padding:0;vertical-align:middle;line-height:1;">
-<span class="rs-cmp-rs-mark" style="font-size:32px;font-weight:900;color:#111111;letter-spacing:-0.04em;line-height:1;">RS</span>
-<span class="rs-cmp-rs-sub" style="display:inline-block;margin-left:10px;font-size:11px;font-weight:600;color:#8A8A8A;letter-spacing:0.14em;line-height:1;vertical-align:middle;">REVENUE SHARE</span>
+<td class="rs-cmp-body-row" align="center" valign="top" style="padding:0;text-align:center;vertical-align:top;">
+<table class="rs-cmp-duo" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="width:100%;max-width:860px;margin:0 auto;table-layout:fixed;">
+<tr>
+<td class="rs-cmp-old" height="340" valign="middle" align="left" style="height:340px;padding:0 40px 0 24px;vertical-align:middle;text-align:left;">
+<table class="rs-cmp-old-card" role="presentation" width="200" height="220" cellpadding="0" cellspacing="0" border="0" align="left" bgcolor="#F5F5F5" style="width:200px;height:220px;margin:0;background-color:#F5F5F5;border-radius:14px;overflow:hidden;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
+<tr><td align="center" valign="middle" height="55" style="height:55px;padding:10px 12px;text-align:center;vertical-align:middle;"><p class="rs-cmp-old-title" style="margin:0;padding:0;font-size:13px;font-weight:700;color:#555555;letter-spacing:-0.02em;line-height:1.4;word-break:keep-all;">브랜디드 광고<br><span style="font-weight:500;color:#A0A0A0;font-size:11px;">(Branded Ad)</span></p></td></tr>
+<tr><td align="center" valign="middle" height="55" style="height:55px;padding:10px 12px;border-top:1px solid #E8E8E8;text-align:center;vertical-align:middle;"><p style="margin:0;padding:0;font-size:13px;font-weight:600;color:#6B6B6B;letter-spacing:-0.02em;line-height:1.35;">고정 광고비</p></td></tr>
+<tr><td align="center" valign="middle" height="55" style="height:55px;padding:10px 12px;border-top:1px solid #E8E8E8;text-align:center;vertical-align:middle;"><p style="margin:0;padding:0;font-size:13px;font-weight:600;color:#6B6B6B;letter-spacing:-0.02em;line-height:1.35;">단순 링크 노출</p></td></tr>
+<tr><td align="center" valign="middle" height="55" style="height:55px;padding:10px 12px;border-top:1px solid #E8E8E8;text-align:center;vertical-align:middle;"><p style="margin:0;padding:0;font-size:13px;font-weight:600;color:#6B6B6B;letter-spacing:-0.02em;line-height:1.35;">브랜드 메시지 중심</p></td></tr>
+</table>
 </td>
-<td valign="middle" style="padding:0 0 0 10px;vertical-align:middle;line-height:0;font-size:0;">
-<img src="../images/rs-cmp-star.png?v=2" alt="" width="22" height="22" style="width:22px;height:22px;display:block;border:0;background:transparent;">
-</td>
-</tr></table>
+<td class="rs-cmp-arrow" width="48" height="340" valign="middle" align="center" style="width:48px;height:340px;padding:0;vertical-align:middle;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;"><span class="rs-cmp-arrow-icon" style="position:relative;left:-24px;display:inline-block;font-size:18px;font-weight:400;color:#333333;line-height:1;">&#8594;</span></td>
+<td class="rs-cmp-new" width="500" valign="middle" align="center" style="width:500px;padding:0;vertical-align:middle;text-align:center;">
+<!-- RS 강조 카드: 뉴트럴 프레임 + 그림자 + 짧은 빨간 포인트 -->
+<table class="rs-cmp-new-frame rs-cmp-new-card" role="presentation" width="500" height="300" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width:500px;height:300px;max-width:500px;margin:0 auto;background-color:#ffffff;border:1px solid #E6E6E6;border-radius:14px;box-shadow:0 12px 32px rgba(17,17,17,0.12);font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
+<tr>
+<td class="rs-cmp-accent-cell" align="center" height="5" style="height:5px;padding:0;text-align:center;line-height:0;font-size:0;">
+<table role="presentation" width="72" height="5" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#FF3B30" style="width:72px;height:5px;margin:0 auto;background-color:#FF3B30;border-radius:0 0 4px 4px;"><tr><td height="5" style="height:5px;padding:0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
 </td>
 </tr>
-<!-- 01 -->
 <tr>
-<td style="padding:18px 28px;border-bottom:1px solid #EEEEEE;vertical-align:middle;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;table-layout:fixed;"><tr>
-<td class="rs-cmp-num" width="32" valign="middle" align="center" style="width:32px;vertical-align:middle;text-align:center;">
-<table role="presentation" width="26" height="26" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#F3F3F3" style="margin:0 auto;background-color:#F3F3F3;border-radius:13px;"><tr>
-<td align="center" valign="middle" width="26" height="26" style="width:26px;height:26px;text-align:center;font-size:10px;font-weight:700;color:#666666;letter-spacing:0.02em;line-height:26px;">01</td>
-</tr></table>
-</td>
-<td width="12" valign="middle" align="center" style="width:12px;vertical-align:middle;text-align:center;">
-<span style="display:inline-block;width:1px;height:16px;background-color:#E0E0E0;font-size:0;line-height:0;">&nbsp;</span>
-</td>
-<td valign="middle" style="padding:0 0 0 12px;vertical-align:middle;text-align:left;">
-<p class="rs-cmp-row-text" style="margin:0;padding:0;font-size:15px;font-weight:600;color:#222222;letter-spacing:-0.03em;line-height:1.4;word-break:keep-all;text-align:left;">구독자 <span style="display:inline-block;padding:2px 7px;background-color:#111111;color:#ffffff;font-weight:800;letter-spacing:-0.02em;line-height:1.3;">니즈 중심</span>의 제품 큐레이션</p>
-</td>
-</tr></table>
-</td>
+<td class="rs-cmp-new-content" align="center" valign="middle" height="295" style="height:295px;padding:20px 34px 22px 34px;text-align:center;vertical-align:middle;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;">
+<tr>
+<td valign="middle" align="center" style="padding:0;vertical-align:middle;line-height:1;text-align:center;"><span class="rs-cmp-rs-mark" style="font-size:24px;font-weight:900;color:#111111;letter-spacing:-0.03em;line-height:1.2;">RS 광고</span> <span class="rs-cmp-rs-sub" style="font-size:13px;font-weight:600;color:#777777;letter-spacing:-0.02em;">(REVENUE SHARE)</span></td>
 </tr>
-<!-- 02 -->
+</table>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;margin:16px 0 0 0;"><tr><td style="border-top:1px solid #E8E8E8;font-size:0;line-height:0;height:1px;">&nbsp;</td></tr></table>
+<table class="rs-cmp-new-list" role="presentation" width="84%" cellpadding="0" cellspacing="0" border="0" align="right" style="width:84%;table-layout:fixed;margin:0 0 0 auto;">
 <tr>
-<td style="padding:18px 28px;border-bottom:1px solid #EEEEEE;vertical-align:middle;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;table-layout:fixed;"><tr>
-<td class="rs-cmp-num" width="32" valign="middle" align="center" style="width:32px;vertical-align:middle;text-align:center;">
-<table role="presentation" width="26" height="26" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#F3F3F3" style="margin:0 auto;background-color:#F3F3F3;border-radius:13px;"><tr>
-<td align="center" valign="middle" width="26" height="26" style="width:26px;height:26px;text-align:center;font-size:10px;font-weight:700;color:#666666;letter-spacing:0.02em;line-height:26px;">02</td>
-</tr></table>
-</td>
-<td width="12" valign="middle" align="center" style="width:12px;vertical-align:middle;text-align:center;">
-<span style="display:inline-block;width:1px;height:16px;background-color:#E0E0E0;font-size:0;line-height:0;">&nbsp;</span>
-</td>
-<td valign="middle" style="padding:0 0 0 12px;vertical-align:middle;text-align:left;">
-<p class="rs-cmp-row-text" style="margin:0;padding:0;font-size:15px;font-weight:600;color:#222222;letter-spacing:-0.03em;line-height:1.4;word-break:keep-all;text-align:left;">콘텐츠 <span style="display:inline-block;padding:2px 7px;background-color:#111111;color:#ffffff;font-weight:800;letter-spacing:-0.02em;line-height:1.3;">핏 중심</span> · 체험 후 결정</p>
-</td>
-</tr></table>
-</td>
+<td valign="middle" style="padding:12px 18px;border-bottom:1px solid #EEEEEE;"><p class="rs-cmp-row-text" style="margin:0;padding:0;font-size:15px;font-weight:650;color:#171717;letter-spacing:-0.03em;line-height:1.45;word-break:keep-all;text-align:left;">구독자 <span style="display:inline-block;padding:2px 8px;background-color:#111111;color:#ffffff;font-weight:800;">니즈 중심</span>의 제품 큐레이션</p></td>
 </tr>
-<!-- 03 -->
 <tr>
-<td style="padding:18px 28px;border-bottom:1px solid #EEEEEE;vertical-align:middle;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;table-layout:fixed;"><tr>
-<td class="rs-cmp-num" width="32" valign="middle" align="center" style="width:32px;vertical-align:middle;text-align:center;">
-<table role="presentation" width="26" height="26" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#F3F3F3" style="margin:0 auto;background-color:#F3F3F3;border-radius:13px;"><tr>
-<td align="center" valign="middle" width="26" height="26" style="width:26px;height:26px;text-align:center;font-size:10px;font-weight:700;color:#666666;letter-spacing:0.02em;line-height:26px;">03</td>
-</tr></table>
-</td>
-<td width="12" valign="middle" align="center" style="width:12px;vertical-align:middle;text-align:center;">
-<span style="display:inline-block;width:1px;height:16px;background-color:#E0E0E0;font-size:0;line-height:0;">&nbsp;</span>
-</td>
-<td valign="middle" style="padding:0 0 0 12px;vertical-align:middle;text-align:left;">
-<p class="rs-cmp-row-text" style="margin:0;padding:0;font-size:15px;font-weight:600;color:#222222;letter-spacing:-0.03em;line-height:1.4;word-break:keep-all;text-align:left;">콘텐츠에 <span style="display:inline-block;padding:2px 7px;background-color:#111111;color:#ffffff;font-weight:800;letter-spacing:-0.02em;line-height:1.3;">자연스럽게</span> 연결</p>
-</td>
-</tr></table>
-</td>
+<td valign="middle" style="padding:12px 18px;border-bottom:1px solid #EEEEEE;"><p class="rs-cmp-row-text" style="margin:0;padding:0;font-size:15px;font-weight:650;color:#171717;letter-spacing:-0.03em;line-height:1.45;word-break:keep-all;text-align:left;">콘텐츠 <span style="display:inline-block;padding:2px 8px;background-color:#111111;color:#ffffff;font-weight:800;">핏 중심</span> · 체험 후 결정</p></td>
 </tr>
-<!-- 04 -->
 <tr>
-<td style="padding:18px 28px 26px 28px;vertical-align:middle;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;table-layout:fixed;"><tr>
-<td class="rs-cmp-num" width="32" valign="middle" align="center" style="width:32px;vertical-align:middle;text-align:center;">
-<table role="presentation" width="26" height="26" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#F3F3F3" style="margin:0 auto;background-color:#F3F3F3;border-radius:13px;"><tr>
-<td align="center" valign="middle" width="26" height="26" style="width:26px;height:26px;text-align:center;font-size:10px;font-weight:700;color:#666666;letter-spacing:0.02em;line-height:26px;">04</td>
-</tr></table>
-</td>
-<td width="12" valign="middle" align="center" style="width:12px;vertical-align:middle;text-align:center;">
-<span style="display:inline-block;width:1px;height:16px;background-color:#E0E0E0;font-size:0;line-height:0;">&nbsp;</span>
-</td>
-<td valign="middle" style="padding:0 0 0 12px;vertical-align:middle;text-align:left;">
-<p class="rs-cmp-row-text" style="margin:0;padding:0;font-size:15px;font-weight:600;color:#222222;letter-spacing:-0.03em;line-height:1.4;word-break:keep-all;text-align:left;">구독자 <span style="display:inline-block;padding:2px 7px;background-color:#111111;color:#ffffff;font-weight:800;letter-spacing:-0.02em;line-height:1.3;">혜택가</span>로 진행</p>
-</td>
-</tr></table>
-</td>
+<td valign="middle" style="padding:12px 18px;border-bottom:1px solid #EEEEEE;"><p class="rs-cmp-row-text" style="margin:0;padding:0;font-size:15px;font-weight:650;color:#171717;letter-spacing:-0.03em;line-height:1.45;word-break:keep-all;text-align:left;">콘텐츠에 <span style="display:inline-block;padding:2px 8px;background-color:#111111;color:#ffffff;font-weight:800;">자연스럽게</span> 연결</p></td>
+</tr>
+<tr>
+<td valign="middle" style="padding:12px 18px 2px 18px;"><p class="rs-cmp-row-text" style="margin:0;padding:0;font-size:15px;font-weight:650;color:#171717;letter-spacing:-0.03em;line-height:1.45;word-break:keep-all;text-align:left;">구독자 <span style="display:inline-block;padding:2px 8px;background-color:#111111;color:#ffffff;font-weight:800;">혜택가</span>로 진행</p></td>
 </tr>
 </table>
 </td>
@@ -2478,91 +3000,129 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
 </table>
 </td>
 </tr>
+
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
 </table>
 
-<!-- CREATOR GROWTH: 공구 장점 / 성장 단계 -->
+<!-- Section divider: HOW IT DIFFERS ↔ CREATOR GROWTH -->
+<table class="rs-section-divider" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width:100%;background-color:#ffffff;">
+<tr>
+<td style="padding:24px 40px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:952px;margin:0 auto;">
+<tr>
+<td style="border-top:1px solid #e5e0d9;font-size:0;line-height:0;height:1px;">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<!-- WHAT RS LEAVES BEHIND — WHY/HOW/DIFFERS와 동일 셸 952×457 -->
 <table class="rs-growth-section" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;background-color:#ffffff;">
 <tr>
-<td style="padding:8px 40px 40px 40px;">
-<table class="rs-growth-wrap" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:952px;margin:0 auto;border:1px solid #e5e0d9;border-radius:18px;overflow:hidden;background-color:#ffffff;">
+<td align="center" style="padding:32px 40px 16px 40px;text-align:center;">
+<table class="rs-growth-frame rs-growth-wrap" role="presentation" width="100%" height="457" cellpadding="0" cellspacing="0" border="0" align="center" style="width:100%;max-width:952px;height:457px;margin:0 auto;border:1px solid #e5e0d9;border-radius:18px;overflow:hidden;background-color:#ffffff;table-layout:fixed;">
+
 <tr>
-<td class="rs-growth-head" align="center" style="padding:40px 36px 28px 36px;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
-<p class="rs-growth-title" style="margin:0;padding:0;font-size:28px;font-weight:800;color:#111111;letter-spacing:-0.04em;line-height:1.4;text-align:center;word-break:keep-all;">매출을 넘어, 다음 협업의<br>레퍼런스가 됩니다</p>
-</td>
-</tr>
+<td class="rs-growth-stage" height="457" align="center" valign="top" style="height:457px;padding:0 36px 28px 36px;text-align:center;vertical-align:top;">
+<table class="rs-growth-stack" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="width:100%;margin:0 auto;">
+
 <tr>
-<td style="padding:0 20px 36px 20px;">
-<table class="rs-growth-grid" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;table-layout:fixed;">
+<td class="rs-growth-title-row" align="center" valign="top" style="padding:0 0 56px 0;text-align:center;vertical-align:top;">
+<table class="rs-cmp-titlebar rs-growth-titlebar" role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#111111" style="margin:-8px auto 0 auto;background-color:#111111;border-radius:4px;">
 <tr>
-<!-- 01 — 가장 낮음 -->
-<td class="rs-growth-col" width="25%" valign="bottom" style="width:25%;padding:0 6px;vertical-align:bottom;">
-<table role="presentation" width="100%" height="230" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width:100%;height:230px;background-color:#ffffff;border:1px solid #e8e8e8;border-radius:14px;">
-<tr>
-<td align="center" valign="top" height="230" style="height:230px;padding:20px 12px 18px 12px;vertical-align:top;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;"><tr>
-<td align="center" bgcolor="#111111" style="padding:4px 10px;background-color:#111111;border-radius:6px;font-size:11px;font-weight:800;color:#ffffff;letter-spacing:0.04em;line-height:1.2;">01</td>
-</tr></table>
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:14px auto 0 auto;"><tr>
-<td align="center" valign="middle" width="40" height="40" bgcolor="#f0f0f0" style="width:40px;height:40px;background-color:#f0f0f0;border-radius:20px;text-align:center;line-height:40px;font-size:0;">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;"><path d="M4 19V10M9 19V6M14 19v-7M19 19V8" stroke="#111111" stroke-width="1.8" stroke-linecap="round"/><path d="M3 19h18" stroke="#111111" stroke-width="1.8" stroke-linecap="round"/></svg>
-</td></tr></table>
-<p style="margin:12px 0 0 0;padding:0;font-size:14px;font-weight:800;color:#111111;letter-spacing:-0.03em;line-height:1.35;word-break:keep-all;">구매 전환<br>데이터 확보</p>
-<p style="margin:8px 0 0 0;padding:0;font-size:12px;font-weight:500;color:#777777;letter-spacing:-0.02em;line-height:1.45;word-break:keep-all;">실제 판매 성과를<br>데이터로</p>
+<td align="center" style="padding:14px 36px;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
+<p class="rs-cmp-titlebar-text" style="margin:0;padding:0;font-size:18px;font-weight:800;color:#ffffff;letter-spacing:-0.03em;line-height:1.35;white-space:nowrap;">WHAT RS LEAVES BEHIND</p>
 </td>
 </tr>
 </table>
 </td>
+</tr>
+
+<tr>
+<td class="rs-growth-body-row" align="center" valign="top" style="padding:0;text-align:center;vertical-align:top;">
+<table class="rs-growth-grid" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="width:100%;margin:0 auto;table-layout:fixed;">
+<tr>
+<!-- 01 -->
+<td class="rs-growth-col" width="22%" valign="middle" style="width:22%;padding:0;vertical-align:middle;">
+<table class="rs-growth-card" role="presentation" width="100%" height="280" cellpadding="0" cellspacing="0" border="0" bgcolor="#F7F7F7" style="width:100%;height:280px;background-color:#F7F7F7;border-radius:10px;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
+<tr>
+<td align="center" valign="middle" height="280" style="height:280px;padding:28px 14px 30px 14px;text-align:center;vertical-align:middle;">
+<table role="presentation" width="24" height="24" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#FF3B30" style="margin:0 auto;background-color:#FF3B30;border-radius:12px;"><tr>
+<td align="center" valign="middle" width="24" height="24" style="width:24px;height:24px;text-align:center;font-size:10px;font-weight:800;color:#ffffff;line-height:24px;">01</td>
+</tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:10px auto 0 auto;"><tr>
+<td align="center" valign="middle" width="24" height="24" style="width:24px;height:24px;text-align:center;line-height:0;font-size:0;">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;"><rect x="4" y="10" width="16" height="11" rx="1.2" stroke="#333333" stroke-width="1.5"/><path d="M4 13h16M12 10v11M9.5 7.5c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5M9.5 7.5H7.2C5.4 7.5 4 8.9 4 10.7V10h7.5M14.5 7.5h2.3C18.6 7.5 20 8.9 20 10.7V10h-5.5" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</td></tr></table>
+<p class="rs-growth-card-title" style="margin:10px 0 0 0;padding:0;font-size:15px;font-weight:800;color:#111111;letter-spacing:-0.03em;line-height:1.35;word-break:keep-all;">구독자 혜택<br>차별화</p>
+<table role="presentation" width="28" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:10px auto 0 auto;"><tr><td style="border-top:1px dotted #C8C8C8;font-size:0;line-height:0;height:1px;">&nbsp;</td></tr></table>
+<p class="rs-growth-card-desc" style="margin:10px 0 0 0;padding:0;font-size:12px;font-weight:500;color:#777777;letter-spacing:-0.02em;line-height:1.45;word-break:keep-all;">다른 채널과 차별화된<br>특별한 혜택</p>
+</td>
+</tr>
+</table>
+</td>
+<td class="rs-growth-arrow" width="4%" valign="middle" align="center" style="width:4%;padding:0;vertical-align:middle;text-align:center;font-size:14px;font-weight:400;color:#333333;line-height:1;">&#8594;</td>
 <!-- 02 -->
-<td class="rs-growth-col" width="25%" valign="bottom" style="width:25%;padding:0 6px;vertical-align:bottom;">
-<table role="presentation" width="100%" height="290" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width:100%;height:290px;background-color:#ffffff;border:1px solid #e8e8e8;border-radius:14px;">
+<td class="rs-growth-col" width="22%" valign="middle" style="width:22%;padding:0;vertical-align:middle;">
+<table class="rs-growth-card" role="presentation" width="100%" height="280" cellpadding="0" cellspacing="0" border="0" bgcolor="#F7F7F7" style="width:100%;height:280px;background-color:#F7F7F7;border-radius:10px;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
 <tr>
-<td align="center" valign="top" height="290" style="height:290px;padding:20px 12px 18px 12px;vertical-align:top;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;"><tr>
-<td align="center" bgcolor="#111111" style="padding:4px 10px;background-color:#111111;border-radius:6px;font-size:11px;font-weight:800;color:#ffffff;letter-spacing:0.04em;line-height:1.2;">02</td>
+<td align="center" valign="middle" height="280" style="height:280px;padding:28px 14px 30px 14px;text-align:center;vertical-align:middle;">
+<table role="presentation" width="24" height="24" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#FF3B30" style="margin:0 auto;background-color:#FF3B30;border-radius:12px;"><tr>
+<td align="center" valign="middle" width="24" height="24" style="width:24px;height:24px;text-align:center;font-size:10px;font-weight:800;color:#ffffff;line-height:24px;">02</td>
 </tr></table>
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:14px auto 0 auto;"><tr>
-<td align="center" valign="middle" width="40" height="40" bgcolor="#f0f0f0" style="width:40px;height:40px;background-color:#f0f0f0;border-radius:20px;text-align:center;line-height:40px;font-size:0;">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;"><rect x="6" y="3.5" width="12" height="17" rx="2" stroke="#111111" stroke-width="1.6"/><path d="M9 8h6M9 12h6M9 16h3.5" stroke="#111111" stroke-width="1.5" stroke-linecap="round"/><path d="M15.2 15.2l1.3 1.3 2.3-2.5" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:10px auto 0 auto;"><tr>
+<td align="center" valign="middle" width="24" height="24" style="width:24px;height:24px;text-align:center;line-height:0;font-size:0;">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;"><path d="M4 19V10M9 19V6M14 19v-7M19 19V8" stroke="#333333" stroke-width="1.7" stroke-linecap="round"/><path d="M3 19h18" stroke="#333333" stroke-width="1.7" stroke-linecap="round"/></svg>
 </td></tr></table>
-<p style="margin:12px 0 0 0;padding:0;font-size:14px;font-weight:800;color:#111111;letter-spacing:-0.03em;line-height:1.35;word-break:keep-all;">협업 레퍼런스<br>구축</p>
-<p style="margin:8px 0 0 0;padding:0;font-size:12px;font-weight:500;color:#777777;letter-spacing:-0.02em;line-height:1.45;word-break:keep-all;">브랜드가 확인할 수<br>있는 성과</p>
+<p class="rs-growth-card-title" style="margin:10px 0 0 0;padding:0;font-size:15px;font-weight:800;color:#111111;letter-spacing:-0.03em;line-height:1.35;word-break:keep-all;">구매 전환<br>데이터 확보</p>
+<table role="presentation" width="28" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:10px auto 0 auto;"><tr><td style="border-top:1px dotted #C8C8C8;font-size:0;line-height:0;height:1px;">&nbsp;</td></tr></table>
+<p class="rs-growth-card-desc" style="margin:10px 0 0 0;padding:0;font-size:12px;font-weight:500;color:#777777;letter-spacing:-0.02em;line-height:1.45;word-break:keep-all;">실제 판매 성과를<br>수치로 증명</p>
 </td>
 </tr>
 </table>
 </td>
+<td class="rs-growth-arrow" width="4%" valign="middle" align="center" style="width:4%;padding:0;vertical-align:middle;text-align:center;font-size:14px;font-weight:400;color:#333333;line-height:1;">&#8594;</td>
 <!-- 03 -->
-<td class="rs-growth-col" width="25%" valign="bottom" style="width:25%;padding:0 6px;vertical-align:bottom;">
-<table role="presentation" width="100%" height="350" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width:100%;height:350px;background-color:#ffffff;border:1px solid #e8e8e8;border-radius:14px;">
+<td class="rs-growth-col" width="22%" valign="middle" style="width:22%;padding:0;vertical-align:middle;">
+<table class="rs-growth-card" role="presentation" width="100%" height="280" cellpadding="0" cellspacing="0" border="0" bgcolor="#F7F7F7" style="width:100%;height:280px;background-color:#F7F7F7;border-radius:10px;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
 <tr>
-<td align="center" valign="top" height="350" style="height:350px;padding:20px 12px 18px 12px;vertical-align:top;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;"><tr>
-<td align="center" bgcolor="#111111" style="padding:4px 10px;background-color:#111111;border-radius:6px;font-size:11px;font-weight:800;color:#ffffff;letter-spacing:0.04em;line-height:1.2;">03</td>
+<td align="center" valign="middle" height="280" style="height:280px;padding:28px 14px 30px 14px;text-align:center;vertical-align:middle;">
+<table role="presentation" width="24" height="24" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#FF3B30" style="margin:0 auto;background-color:#FF3B30;border-radius:12px;"><tr>
+<td align="center" valign="middle" width="24" height="24" style="width:24px;height:24px;text-align:center;font-size:10px;font-weight:800;color:#ffffff;line-height:24px;">03</td>
 </tr></table>
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:14px auto 0 auto;"><tr>
-<td align="center" valign="middle" width="40" height="40" bgcolor="#f0f0f0" style="width:40px;height:40px;background-color:#f0f0f0;border-radius:20px;text-align:center;line-height:40px;font-size:0;">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;"><path d="M4 19V9.5L12 5l8 4.5V19" stroke="#111111" stroke-width="1.6" stroke-linejoin="round"/><path d="M9.5 19v-5h5v5" stroke="#111111" stroke-width="1.6" stroke-linejoin="round"/></svg>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:10px auto 0 auto;"><tr>
+<td align="center" valign="middle" width="24" height="24" style="width:24px;height:24px;text-align:center;line-height:0;font-size:0;">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;"><rect x="6" y="3.5" width="12" height="17" rx="2" stroke="#333333" stroke-width="1.5"/><path d="M9 8h6M9 12h6M9 16h3.5" stroke="#333333" stroke-width="1.4" stroke-linecap="round"/></svg>
 </td></tr></table>
-<p style="margin:12px 0 0 0;padding:0;font-size:14px;font-weight:800;color:#111111;letter-spacing:-0.03em;line-height:1.35;word-break:keep-all;">브랜드 협업<br>확장</p>
-<p style="margin:8px 0 0 0;padding:0;font-size:12px;font-weight:500;color:#777777;letter-spacing:-0.02em;line-height:1.45;word-break:keep-all;">더 큰 브랜드와<br>새로운 기회</p>
-<span style="display:inline-block;margin-top:14px;padding:5px 10px;background-color:#C8F000;border-radius:999px;font-size:11px;font-weight:700;color:#111111;letter-spacing:-0.02em;line-height:1.2;">구독자 혜택 차별화</span>
+<p class="rs-growth-card-title" style="margin:8px 0 0 0;padding:0;font-size:15px;font-weight:800;color:#111111;letter-spacing:-0.03em;line-height:1.35;word-break:keep-all;">광고 레퍼런스<br>구축</p>
+<table role="presentation" width="28" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:6px auto 0 auto;"><tr><td style="border-top:1px dotted #C8C8C8;font-size:0;line-height:0;height:1px;">&nbsp;</td></tr></table>
+<p class="rs-growth-card-desc" style="margin:8px 0 0 0;padding:0;font-size:12px;font-weight:500;color:#777777;letter-spacing:-0.02em;line-height:1.45;word-break:keep-all;">광고주에게 제시할 수<br>있는 성과 데이터</p>
 </td>
 </tr>
 </table>
 </td>
-<!-- 04 — 가장 높음 -->
-<td class="rs-growth-col" width="25%" valign="bottom" style="width:25%;padding:0 6px;vertical-align:bottom;">
-<table role="presentation" width="100%" height="410" cellpadding="0" cellspacing="0" border="0" bgcolor="#C8F000" style="width:100%;height:410px;background-color:#C8F000;border-radius:14px;">
+<td class="rs-growth-arrow" width="4%" valign="middle" align="center" style="width:4%;padding:0;vertical-align:middle;text-align:center;font-size:14px;font-weight:400;color:#333333;line-height:1;">&#8594;</td>
+<!-- 04 -->
+<td class="rs-growth-col" width="22%" valign="middle" style="width:22%;padding:0;vertical-align:middle;">
+<table class="rs-growth-card" role="presentation" width="100%" height="280" cellpadding="0" cellspacing="0" border="0" bgcolor="#F7F7F7" style="width:100%;height:280px;background-color:#F7F7F7;border-radius:10px;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
 <tr>
-<td align="center" valign="top" height="410" style="height:410px;padding:20px 12px 18px 12px;vertical-align:top;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;"><tr>
-<td align="center" bgcolor="#111111" style="padding:4px 10px;background-color:#111111;border-radius:6px;font-size:11px;font-weight:800;color:#ffffff;letter-spacing:0.04em;line-height:1.2;">04</td>
+<td align="center" valign="middle" height="280" style="height:280px;padding:28px 14px 30px 14px;text-align:center;vertical-align:middle;">
+<table role="presentation" width="24" height="24" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#FF3B30" style="margin:0 auto;background-color:#FF3B30;border-radius:12px;"><tr>
+<td align="center" valign="middle" width="24" height="24" style="width:24px;height:24px;text-align:center;font-size:10px;font-weight:800;color:#ffffff;line-height:24px;">04</td>
 </tr></table>
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:14px auto 0 auto;"><tr>
-<td align="center" valign="middle" width="40" height="40" bgcolor="#111111" style="width:40px;height:40px;background-color:#111111;border-radius:20px;text-align:center;line-height:40px;font-size:0;">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;"><path d="M8 9V5.8A1.8 1.8 0 019.8 4h4.4A1.8 1.8 0 0116 5.8V9" stroke="#ffffff" stroke-width="1.6"/><path d="M6.5 9h11v2.2a5.5 5.5 0 01-5.5 5.5h0A5.5 5.5 0 016.5 11.2V9z" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 16.7V20M9 20h6" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"/><path d="M12 12.2l.7 1.4 1.5.2-1.1 1.1.3 1.5L12 15.6l-1.4.8.3-1.5-1.1-1.1 1.5-.2.7-1.4z" fill="#ffffff"/></svg>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:10px auto 0 auto;"><tr>
+<td align="center" valign="middle" width="24" height="24" style="width:24px;height:24px;text-align:center;line-height:0;font-size:0;">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block;vertical-align:middle;"><path d="M8.2 13.2c-1.7-1.1-2.8-2.9-2.8-5 0-3.2 2.6-5.7 5.7-5.7 1.6 0 3 .6 4 1.7" stroke="#333333" stroke-width="1.5" stroke-linecap="round"/><path d="M15.8 13.2c1.7-1.1 2.8-2.9 2.8-5 0-.7-.1-1.3-.3-1.9" stroke="#333333" stroke-width="1.5" stroke-linecap="round"/><path d="M4.5 20.5c0-3.2 2.8-5.5 6.6-5.5h.4M19.5 20.5c0-2.2-1.3-4-3.2-4.9" stroke="#333333" stroke-width="1.5" stroke-linecap="round"/><path d="M12.2 11.8c.9.4 1.5 1.2 1.5 2.2v1.2l1.8 1.1c.9.5 1.5 1.5 1.5 2.5V20.5H7v-1.7c0-1 .6-2 1.5-2.5l1.8-1.1v-1.2c0-1 .6-1.8 1.5-2.2z" stroke="#333333" stroke-width="1.5" stroke-linejoin="round"/></svg>
 </td></tr></table>
-<p style="margin:12px 0 0 0;padding:0;font-size:15px;font-weight:800;color:#111111;letter-spacing:-0.02em;line-height:1.3;">CREATOR<br>GROWTH ↗</p>
-<p style="margin:8px 0 0 0;padding:0;font-size:12px;font-weight:500;color:#333333;letter-spacing:-0.02em;line-height:1.45;word-break:keep-all;">장기적인<br>커리어 확장</p>
+<p class="rs-growth-card-title" style="margin:8px 0 0 0;padding:0;font-size:15px;font-weight:800;color:#111111;letter-spacing:-0.03em;line-height:1.35;word-break:keep-all;">협업 기회<br>확장</p>
+<table role="presentation" width="28" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:6px auto 0 auto;"><tr><td style="border-top:1px dotted #C8C8C8;font-size:0;line-height:0;height:1px;">&nbsp;</td></tr></table>
+<p class="rs-growth-card-desc" style="margin:8px 0 0 0;padding:0;font-size:12px;font-weight:500;color:#777777;letter-spacing:-0.02em;line-height:1.45;word-break:keep-all;">더 다양한 광고 ·<br>더 큰 브랜드와의 기회</p>
 </td>
 </tr>
 </table>
@@ -2570,25 +3130,48 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
 </tr>
 </table>
 </td>
+</tr>
+
+</table>
+</td>
+</tr>
+
+</table>
+</td>
+</tr>
+</table>
+
+<!-- Section divider: WHAT RS LEAVES BEHIND ↔ 하단 ConnectSell 배너 -->
+<table class="rs-section-divider" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width:100%;background-color:#ffffff;">
+<tr>
+<td style="padding:24px 40px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:952px;margin:0 auto;">
+<tr>
+<td style="border-top:1px solid #e5e0d9;font-size:0;line-height:0;height:1px;">&nbsp;</td>
 </tr>
 </table>
 </td>
 </tr>
 </table>
 
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff;"><tr><td style="padding:36px 0 0 0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
-
-<!-- Closing banner — 블랙 카드 · 좌 카피 / 우 비주얼 -->
-<table class="rs-close-section" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;background-color:#ffffff;">
+<!-- Closing banner — 상단과 동일 풀블리드 블랙 바(높이 220) · 중앙 락업 -->
+<table class="rs-close-section" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#000000" style="width:100%;background-color:#000000;">
 <tr>
-<td style="padding:0 40px 0 40px;">
-<table class="rs-close-wrap" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#000000" style="width:100%;max-width:952px;margin:0 auto;background-color:#000000;border-radius:18px;overflow:hidden;table-layout:fixed;">
+<td style="padding:0;background-color:#000000;">
+<table class="rs-close-wrap rs-top-wrap" role="presentation" width="100%" height="220" cellpadding="0" cellspacing="0" border="0" bgcolor="#000000" style="width:100%;max-width:1000px;height:220px;margin:0 auto;background-color:#000000;overflow:hidden;table-layout:fixed;">
 <tr>
-<td class="rs-close-copy" width="64%" valign="middle" style="width:64%;padding:48px 28px 48px 44px;vertical-align:middle;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
-<p class="rs-close-text" style="margin:0;padding:0;font-size:28px;font-weight:800;color:#ffffff;letter-spacing:-0.04em;line-height:1.45;word-break:keep-all;">ConnectSell은 크리에이터와 함께<br>지속 가능한 협업을<br>만들어갑니다.</p>
+<td class="rs-close-inner" align="center" height="220" valign="middle" style="padding:0 40px;height:220px;vertical-align:middle;text-align:center;background-color:#000000;">
+<table class="rs-close-lockup" role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;">
+<tr>
+<td class="rs-close-copy" valign="middle" align="left" style="padding:0 32px 0 0;vertical-align:middle;text-align:left;font-family:Pretendard,'Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic',sans-serif;">
+<p class="rs-close-text rs-close-text-desktop" style="margin:0;padding:0;font-family:Pretendard,'Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic',sans-serif;font-size:30px;font-weight:500;color:#ffffff;letter-spacing:-0.02em;line-height:1.45;word-break:keep-all;text-align:left;">ConnectSell은 크리에이터와 함께<br>지속 가능한 협업을<br>만들어갑니다.</p>
+<p class="rs-close-text rs-close-text-mobile" style="display:none;margin:0;padding:0;font-family:Pretendard,'Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic',sans-serif;font-size:22px;font-weight:500;color:#ffffff;letter-spacing:-0.02em;line-height:1.5;word-break:keep-all;text-align:center;mso-hide:all;">ConnectSell은<br>크리에이터와 함께 지속 가능한<br>협업을 만들어갑니다.</p>
 </td>
-<td class="rs-close-media" width="36%" valign="middle" align="center" style="width:36%;padding:24px 28px 24px 8px;vertical-align:middle;text-align:center;line-height:0;font-size:0;background-color:#000000;">
-<img src="../images/rs-closing-phone.png?v=5" alt="" width="260" height="157" style="width:260px;max-width:100%;height:auto;display:inline-block;border:0;vertical-align:middle;background-color:#000000;">
+<td class="rs-close-media" valign="middle" align="left" style="padding:0;vertical-align:middle;text-align:left;line-height:0;font-size:0;background-color:#000000;">
+<img class="rs-close-phone" src="../images/rs-closing-phone.png?v=7" alt="" width="220" height="133" style="width:220px;max-width:220px;height:auto;display:block;border:0;background-color:#000000;">
+</td>
+</tr>
+</table>
 </td>
 </tr>
 </table>
@@ -2597,7 +3180,7 @@ table[data-aowa="flow-icons"] td[bgcolor="#f7f5f2"] {
 </table>
 
 <!-- Footer -->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="background-color:#ffffff;">
+<table class="rs-footer" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="background-color:#ffffff;">
 <tr>
 <td align="center" style="padding:36px 28px 0 28px;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:14px;line-height:1.5;font-weight:700;color:#222222;">
 ConnectSell&nbsp;&nbsp;|&nbsp;&nbsp;<a href="../../" style="color:#111111;text-decoration:none;font-weight:700;">connectsell.co.kr</a>
