@@ -1,6 +1,10 @@
 {
   "version": 2,
+  "redirects": [
+    { "source": "/email/revenue-share", "destination": "/email/revenue-share/", "permanent": false }
+  ],
   "rewrites": [
+    { "source": "/email/revenue-share/", "destination": "/email/revenue-share/ascorbic-acid.html" },
     { "source": "/form", "destination": "/sample/landing.html" },
     { "source": "/form/", "destination": "/sample/landing.html" }
   ],
@@ -13,6 +17,18 @@
     },
     {
       "source": "/email/kakkukishake-skin-probiotics.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/email/revenue-share",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/email/revenue-share/",
       "headers": [
         { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
       ]
