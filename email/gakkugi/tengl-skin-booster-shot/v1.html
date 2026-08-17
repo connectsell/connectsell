@@ -2064,8 +2064,10 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
     padding-top: 0 !important;
   }
   table.hwal-recommend-layout td.hwal-recommend-check-col > table {
-    width: 100% !important;
-    table-layout: fixed !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    table-layout: auto !important;
   }
   table.hwal-recommend-layout .hwal-recommend-check-row {
     display: table-row !important;
@@ -2472,20 +2474,43 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
     width: 100% !important;
   }
   table[data-hwal="story"] table.tengl-sol-grid > tbody > tr > td.tengl-sol-arrow {
-    padding: 2px 0 10px 0 !important;
+    padding: 4px 0 12px 0 !important;
+    text-align: center !important;
+  }
+  table[data-hwal="story"] table.tengl-sol-grid td.tengl-sol-arrow > table {
+    width: 36px !important;
+    height: 36px !important;
+    margin: 0 auto !important;
   }
   table[data-hwal="story"] table.tengl-sol-grid td.tengl-sol-arrow td {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    max-width: 36px !important;
+    border-radius: 18px !important;
+    background-color: #542445 !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M2.2 4.4L7 9.2l4.8-4.8' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
     font-size: 0 !important;
-    line-height: 22px !important;
+    line-height: 0 !important;
+    color: transparent !important;
   }
   table[data-hwal="story"] table.tengl-sol-grid td.tengl-sol-arrow td::after {
-    content: "↓";
-    display: block !important;
-    font-size: 13px !important;
-    font-weight: 700 !important;
-    line-height: 22px !important;
-    color: #ffffff !important;
-    font-family: Arial, Helvetica, sans-serif !important;
+    content: none !important;
+    display: none !important;
+  }
+  td.tengl-kp-arrow {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    max-width: 36px !important;
+    border-radius: 18px !important;
+  }
+  td.tengl-kp-arrow svg {
+    width: 14px !important;
+    height: 14px !important;
+    max-width: 14px !important;
   }
 
   table.tengl-iq-section td.tengl-iq-pad {
@@ -2544,9 +2569,22 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
   }
   table.hwal-recommend-panel > tbody > tr > td {
     padding: 14px 16px 12px 16px !important;
+    text-align: center !important;
+  }
+  table.hwal-recommend-layout {
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    table-layout: auto !important;
   }
   table.hwal-recommend-layout td.hwal-recommend-check-col {
     border-right: none !important;
+  }
+  table.hwal-recommend-layout td.hwal-recommend-check-col > table {
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    table-layout: auto !important;
   }
 
   td.hwal-cta-pad {
