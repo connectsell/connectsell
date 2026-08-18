@@ -23,22 +23,22 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap">
 <style type="text/css">
 *, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+body { margin: 0; padding: 0; -webkit-font-smoothing: antialiased; background-color: #F7F5F2; color: #000000; }
 table { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
 img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }
 table.aowa-shell {
-  border: 1px solid #ede6ea;
+  border: 1px solid #E5E0D9;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 24px rgba(47, 47, 47, 0.06);
+  box-shadow: 0 8px 30px rgba(22, 22, 22, 0.05);
 }
 td.hwal-top-band {
-  padding: 13px 20px;
-  background-color: #ffffff;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  color: #542445;
+  padding: 14px 20px 13px 20px;
+  background-color: #E8E0D4;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #000000;
   text-align: center;
   line-height: 1.5;
 }
@@ -52,11 +52,11 @@ table.aowa-shell img.hwal-hero-main {
   margin: 0 24px 20px 24px;
   padding: 18px 20px 0 20px;
   border-left: none;
-  border-top: 1px solid #ede6ea;
+  border-top: 1px solid #E5E0D9;
   font-size: 18px;
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: #2f2f2f;
+  color: #2F2F2F;
   line-height: 1.55;
   text-align: center;
 }
@@ -70,7 +70,7 @@ table.hwal-chapter-split td.hwal-chapter-split-line {
   padding: 0;
 }
 table.hwal-chapter-split td.hwal-chapter-split-line div {
-  border-top: 1px solid #ede6ea;
+  border-top: 1px solid #E5E0D9;
   font-size: 0;
   line-height: 0;
   height: 1px;
@@ -83,7 +83,7 @@ table.hwal-chapter-split td.hwal-chapter-split-title {
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.06em;
-  color: #2d2a32;
+  color: #2F2F2F;
   line-height: 1.4;
 }
 table.hwal-chapter-split td.hwal-chapter-split-title.hwal-chapter-split-title-oneline {
@@ -99,9 +99,9 @@ table.hwal-chapter-split td.hwal-chapter-split-line {
 table.hwal-chapter-split td.hwal-chapter-split-title {
   padding: 0 12px;
   font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: #2d2a32;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  color: #1F1F1F;
   line-height: 1.4;
 }
 table[data-hwal="story"] .hwal-story-pad {
@@ -110,37 +110,37 @@ table[data-hwal="story"] .hwal-story-pad {
 }
 table[data-hwal="story"] td.tengl-kp-wrap {
   padding: 8px 22px 0 22px;
-  background-color: #ffffff;
+  background-color: #F7F5F2;
 }
 table[data-hwal="story"] td.tengl-sol-wrap {
   padding: 32px 22px 32px 22px;
-  background-color: #ffffff;
+  background-color: #F7F5F2;
 }
 
 table[data-hwal="story"] td.tengl-empty-wrap {
   padding: 36px 22px 32px 22px;
-  background-color: #fff4f7;
+  background-color: #F7F5F2;
 }
 table.tengl-iq-section td.tengl-iq-pad {
   padding: 36px 22px 32px 22px;
-  background-color: #fff4f7;
+  background-color: #F7F5F2;
 }
 
 table.tengl-iq-section {
-  background-color: #fff4f7;
+  background-color: #F7F5F2;
 }
 table.hwal-recommend-section {
-  background-color: #fff4f7;
+  background-color: #F7F5F2;
 }
 table.hwal-recommend-section > tbody > tr > td {
   padding: 8px 22px 24px 22px;
-  background-color: #fff4f7;
+  background-color: #F7F5F2;
 }
 table.hwal-recommend-section .hwal-chapter-split {
   margin-bottom: 8px !important;
 }
 table.hwal-recommend-section .hwal-chapter-split-title {
-  color: #2d2a32;
+  color: #2F2F2F;
   font-weight: 700;
   padding-bottom: 0 !important;
 }
@@ -152,7 +152,7 @@ p.tengl-sec-sub {
   padding: 0;
   font-size: 13px;
   font-weight: 500;
-  color: #7a7384;
+  color: #000000;
   letter-spacing: -0.02em;
   line-height: 1.5;
   text-align: center;
@@ -162,11 +162,11 @@ p.tengl-iq-title,
 p.tengl-sol-title {
   margin: 0 0 12px 0;
   padding: 0;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 700;
-  color: #2d2a32;
+  color: #1F1F1F;
   letter-spacing: -0.03em;
-  line-height: 1.45;
+  line-height: 1.5;
   text-align: center;
   word-break: keep-all;
 }
@@ -175,10 +175,10 @@ table.tengl-iq-panel,
 table.hwal-recommend-panel {
   width: 100%;
   max-width: none;
-  background-color: #ffffff;
-  border: 1px solid #ede6ea;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E0D9;
   border-radius: 14px;
-  box-shadow: 0 2px 10px rgba(84, 36, 69, 0.08);
+  box-shadow: 0 6px 18px rgba(25, 25, 25, 0.045);
 }
 table.tengl-iq-cols {
   width: 100%;
@@ -206,9 +206,9 @@ table.tengl-iq-cols td.tengl-iq-item-fill .tengl-iq-clip {
   overflow: hidden;
   position: relative;
   border-radius: 14px;
-  border: 1px solid #ede6ea;
-  background-color: #ffffff;
-  box-shadow: 0 2px 10px rgba(84, 36, 69, 0.08);
+  border: 1px solid #E5E0D9;
+  background-color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(25, 25, 25, 0.045);
 }
 table.tengl-iq-cols td.tengl-iq-item-fill .tengl-iq-clip > table.tengl-iq-panel {
   position: absolute;
@@ -256,7 +256,7 @@ table.tengl-iq-section .tengl-iq-h {
   padding: 0;
   font-size: 17px;
   font-weight: 700;
-  color: #542445;
+  color: #2F2F2F;
   letter-spacing: -0.03em;
   line-height: 1.35;
   text-align: center;
@@ -275,21 +275,21 @@ table.tengl-iq-section td.tengl-iq-badge {
   border-radius: 999px;
 }
 table.tengl-iq-section td.tengl-iq-badge-fill {
-  background-color: #fde8ee;
-  border: 1px solid #fde8ee;
-  color: #542445;
+  background-color: #EFEAE3;
+  border: 1px solid #E5E0D9;
+  color: #2F2F2F;
 }
 table.tengl-iq-section td.tengl-iq-badge-line {
-  background-color: #ffffff;
-  border: 1px solid #e04b78;
-  color: #e04b78;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E0D9;
+  color: #2F2F2F;
 }
 table.tengl-iq-section .tengl-iq-point {
   margin: 0;
   padding: 0;
   font-size: 12px;
   font-weight: 500;
-  color: #6b6570;
+  color: #6B6B6B;
   letter-spacing: -0.04em;
   line-height: 1.45;
   text-align: center;
@@ -297,12 +297,12 @@ table.tengl-iq-section .tengl-iq-point {
   white-space: nowrap;
 }
 table.tengl-iq-section .tengl-iq-point-pink {
-  color: #e04b78;
+  color: #6B6B6B;
   font-weight: 600;
 }
 table.tengl-iq-section .tengl-iq-em,
 table.tengl-iq-section .tengl-iq-no {
-  color: #e04b78;
+  color: #2F2F2F;
   font-weight: 700;
 }
 table.tengl-iq-section img.tengl-iq-photo {
@@ -326,7 +326,7 @@ p.tengl-kp-title {
   margin: 0 0 16px 0;
   font-size: 16px;
   font-weight: 700;
-  color: #2d2a32;
+  color: #2F2F2F;
   letter-spacing: -0.03em;
   line-height: 1.45;
 }
@@ -335,16 +335,16 @@ table.tengl-sol-grid {
   max-width: none;
 }
 .aowa-point-card {
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border-radius: 12px;
-  border: 1px solid #ede6ea;
+  border: 1px solid #E5E0D9;
   box-shadow: 0 1px 4px rgba(47, 47, 47, 0.06);
 }
 .aowa-point-card td {
   padding: 24px 12px;
   font-size: 13px;
   line-height: 1.62;
-  color: #6b6b6b;
+  color: #6B6B6B;
   text-align: center;
 }
 .aowa-point-card strong {
@@ -352,7 +352,7 @@ table.tengl-sol-grid {
   margin: 0 0 8px 0;
   font-size: 14px;
   font-weight: 700;
-  color: #2f2f2f;
+  color: #2F2F2F;
   line-height: 1.45;
   letter-spacing: -0.02em;
 }
@@ -364,20 +364,20 @@ table.tengl-sol-grid {
   margin-top: 2px;
   font-size: 11px;
   line-height: 1.55;
-  color: #6b6b6b;
+  color: #6B6B6B;
   letter-spacing: -0.02em;
 }
 table.hwal-recommend-section {
-  background-color: #fff4f7;
+  background-color: #F3EFE8;
 }
 table.hwal-recommend-section > tbody > tr > td {
   padding: 8px 22px 16px 22px;
-  background-color: #fff4f7;
+  background-color: #FFFDF9;
 }
 table.hwal-recommend-panel {
   width: 100%;
-  background-color: #fffdf9;
-  border: 1px solid #ede6ea;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E0D9;
   border-radius: 12px;
 }
 table.hwal-recommend-panel > tbody > tr > td {
@@ -406,13 +406,13 @@ table.hwal-recommend-layout .hwal-recommend-check-icon {
   width: 18px;
   height: 18px;
   min-width: 18px;
-  background-color: #fff4f7;
-  border: 1px solid #ede6ea;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E0D9;
   border-radius: 9px;
   font-size: 9px;
   line-height: 18px;
   mso-line-height-rule: exactly;
-  color: #6b6b6b;
+  color: #6B6B6B;
   font-weight: 700;
   text-align: center;
 }
@@ -420,7 +420,7 @@ table.hwal-recommend-layout .hwal-recommend-check-text {
   padding: 0 0 0 8px;
   font-size: 13px;
   font-weight: 500;
-  color: #2f2f2f;
+  color: #2F2F2F;
   line-height: 1.48;
   letter-spacing: -0.02em;
 }
@@ -428,12 +428,12 @@ table.hwal-recommend-section .hwal-chapter-split {
   margin-bottom: 8px !important;
 }
 table.hwal-recommend-section .hwal-chapter-split-title {
-  color: #2d2a32;
+  color: #2F2F2F;
   font-weight: 700;
   padding-bottom: 0 !important;
 }
 table.hwal-recommend-section .hwal-chapter-split-line div {
-  border-top-color: #ede6ea;
+  border-top-color: #E5E0D9;
 }
 table.hwal-recommend-section .hwal-chapter-split-line {
   padding-bottom: 0 !important;
@@ -442,8 +442,8 @@ table.hwal-flow-section [data-aowa="why-col"] {
   padding: 28px 16px 30px 16px;
 }
 table.hwal-flow-section .hwal-flow-card {
-  background-color: #ffffff;
-  border: 1px solid #ede6ea;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E0D9;
   border-radius: 16px;
   box-shadow: 0 4px 16px rgba(47, 47, 47, 0.05);
 }
@@ -451,41 +451,41 @@ table.hwal-flow-section .hwal-flow-icon-cell {
   width: 52px;
   height: 52px;
   min-width: 52px;
-  background-color: #ffffff !important;
-  border: 1px solid #ede6ea;
+  background-color: #FFFFFF !important;
+  border: 1px solid #E5E0D9;
   border-radius: 26px;
   line-height: 52px;
   mso-line-height-rule: exactly;
 }
 table.hwal-flow-section .hwal-flow-copy-inner p:first-child {
-  color: #2f2f2f;
+  color: #2F2F2F;
 }
 table.hwal-flow-section .hwal-flow-copy-divider {
   width: 28px;
   height: 2px;
   margin: 0 auto 12px auto;
-  background-color: #ede6ea;
+  background-color: #EFEAE3;
   border-radius: 1px;
   font-size: 0;
   line-height: 0;
 }
 table.hwal-flow-section .hwal-flow-copy-inner p:not(:first-child) {
-  color: #6b6b6b;
+  color: #6B6B6B;
 }
 table[data-aowa="flow-icons"] {
-  background-color: #ffffff;
-  border-top: 1px solid #e8e8e8;
-  border-bottom: 1px solid #e8e8e8;
+  background-color: #FFFFFF;
+  border-top: 1px solid #E5E0D9;
+  border-bottom: 1px solid #E5E0D9;
 }
 table[data-aowa="flow-icons"].hwal-flow-section {
-  background-color: #ffffff;
-  border-top: 1px solid #ede6ea;
-  border-bottom: 1px solid #ede6ea;
+  background-color: #FFFFFF;
+  border-top: 1px solid #E5E0D9;
+  border-bottom: 1px solid #E5E0D9;
 }
 table[data-hwal="story"] {
-  border-top: 1px solid #ede6ea;
-  border-bottom: 1px solid #ede6ea;
-  background-color: #ffffff;
+  border-top: 1px solid #E5E0D9;
+  border-bottom: 1px solid #E5E0D9;
+  background-color: #FFFDF9;
 }
 table[data-hwal="story"] .hwal-story-pad {
   padding-left: 24px;
@@ -494,7 +494,7 @@ table[data-hwal="story"] .hwal-story-pad {
 /* 스토리 히어로: 웜 베이지 배너 */
 table[data-hwal="story"] td.hwal-story-hero-banner {
   padding: 36px 32px 36px 32px;
-  background-color: #fff4f7;
+  background-color: #FFFFFF;
   text-align: center;
 }
 table[data-hwal="story"] .hwal-story-hero-sub {
@@ -503,7 +503,7 @@ table[data-hwal="story"] .hwal-story-hero-sub {
   font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #6b6b6b;
+  color: #6B6B6B;
   letter-spacing: 0.02em;
   line-height: 1.55;
 }
@@ -513,7 +513,7 @@ table[data-hwal="story"] .hwal-story-hero-title {
   font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, sans-serif;
   font-size: 26px;
   font-weight: 800;
-  color: #2f2f2f;
+  color: #2F2F2F;
   letter-spacing: -0.03em;
   line-height: 1.38;
   white-space: normal;
@@ -525,7 +525,7 @@ table[data-hwal="story"] .hwal-story-hero-desc {
   font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, sans-serif;
   font-size: 15px;
   font-weight: 700;
-  color: #ffffff;
+  color: #FFFFFF;
   letter-spacing: -0.02em;
   line-height: 1.55;
 }
@@ -540,10 +540,10 @@ table[data-hwal="story"] .hwal-story-pick-pill {
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.45;
-  color: #6b6b6b !important;
+  color: #6B6B6B !important;
   text-decoration: none !important;
-  background-color: #ffffff;
-  border: 1px solid #ede6ea;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E0D9;
   border-radius: 999px;
   box-shadow: 0 4px 16px rgba(47, 47, 47, 0.08);
 }
@@ -553,7 +553,7 @@ table[data-hwal="story"] .hwal-story-pick-tail {
   margin: 0 auto;
   border-left: 9px solid transparent;
   border-right: 9px solid transparent;
-  border-top: 10px solid #ffffff;
+  border-top: 10px solid #FFFFFF;
   font-size: 0;
   line-height: 0;
 }
@@ -562,18 +562,18 @@ table[data-hwal="story"] .hwal-story-points-head {
   font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, sans-serif;
   font-size: 15px;
   font-weight: 700;
-  color: #2f2f2f;
+  color: #2F2F2F;
   letter-spacing: -0.03em;
   line-height: 1.4;
   text-align: center;
-  border-bottom: 1px solid #ede6ea;
-  background-color: #ffffff;
+  border-bottom: 1px solid #E5E0D9;
+  background-color: #FFFDF9;
 }
 table[data-hwal="story"] .hwal-story-check-title {
   display: block;
   font-size: 14px;
   font-weight: 700;
-  color: #2f2f2f;
+  color: #2F2F2F;
   letter-spacing: -0.03em;
   line-height: 1.42;
 }
@@ -582,20 +582,20 @@ table[data-hwal="story"] .hwal-story-check-sub {
   margin-top: 4px;
   font-size: 12.5px;
   font-weight: 400;
-  color: #6b6b6b;
+  color: #6B6B6B;
   letter-spacing: -0.01em;
   line-height: 1.5;
 }
 /* 스토리 체크포인트 카드 (레퍼런스: 화이트·점선 구분) */
 table[data-hwal="story"] table.hwal-story-check-wrap {
-  background-color: #ffffff;
-  border: 1px solid #ede6ea;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E0D9;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(47, 47, 47, 0.06);
   overflow: hidden;
 }
 table[data-hwal="story"] table.hwal-story-check-wrap td.hwal-story-check-row {
-  border-bottom: 1px dotted #ede6ea;
+  border-bottom: 1px dotted #E5E0D9;
 }
 table[data-hwal="story"] table.hwal-story-check-inner tr:last-child td.hwal-story-check-row {
   border-bottom: none;
@@ -603,7 +603,7 @@ table[data-hwal="story"] table.hwal-story-check-inner tr:last-child td.hwal-stor
 table[data-hwal="story"] td.hwal-story-check-item {
   width: 50%;
   vertical-align: middle;
-  border-right: 1px dotted #ede6ea;
+  border-right: 1px dotted #E5E0D9;
 }
 table[data-hwal="story"] table.hwal-story-check-inner tr:last-child td.hwal-story-check-item {
   border-bottom: none;
@@ -616,7 +616,7 @@ table[data-hwal="story"] td.hwal-story-check-col-right {
   text-align: center;
   line-height: 0;
   font-size: 0;
-  background-color: #fff4f7;
+  background-color: #FFFDF9;
 }
 table[data-hwal="story"] td.hwal-story-check-col-right .hwal-story-check-visual {
   display: block;
@@ -645,8 +645,8 @@ table[data-hwal="story"] img.hwal-story-full-img {
 }
 table[data-hwal="story"] table.hwal-story-rrp {
   width: 100%;
-  background-color: #ffffff;
-  border: 1px solid #ede6ea;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E0D9;
   border-radius: 16px;
   overflow: hidden;
   font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, sans-serif;
@@ -656,7 +656,7 @@ table[data-hwal="story"] .hwal-story-rrp-title {
   padding: 0;
   font-size: 22px;
   font-weight: 700;
-  color: #2f2f2f;
+  color: #2F2F2F;
   letter-spacing: -0.03em;
   line-height: 1.4;
 }
@@ -665,8 +665,8 @@ table[data-hwal="story"] .hwal-story-rrp-step-num {
   width: 22px;
   height: 22px;
   margin: 0 6px 0 0;
-  background-color: #542445;
-  color: #ffffff;
+  background-color: #471869;
+  color: #FFFFFF;
   font-size: 12px;
   font-weight: 700;
   line-height: 22px;
@@ -679,7 +679,7 @@ table[data-hwal="story"] .hwal-story-rrp-step-title {
   padding: 0;
   font-size: 19px;
   font-weight: 700;
-  color: #2f2f2f;
+  color: #2F2F2F;
   letter-spacing: -0.03em;
   line-height: 1.35;
 }
@@ -688,7 +688,7 @@ table[data-hwal="story"] .hwal-story-rrp-step-sub {
   padding: 0;
   font-size: 15.5px;
   font-weight: 600;
-  color: #2f2f2f;
+  color: #2F2F2F;
   letter-spacing: -0.02em;
   line-height: 1.5;
 }
@@ -697,15 +697,15 @@ table[data-hwal="story"] .hwal-story-rrp-step-detail {
   padding: 0;
   font-size: 14.5px;
   font-weight: 400;
-  color: #6b6b6b;
+  color: #6B6B6B;
   letter-spacing: -0.01em;
   line-height: 1.62;
 }
 table[data-hwal="story"] .hwal-story-rrp-pill {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #542445;
-  color: #ffffff;
+  background-color: #471869;
+  color: #FFFFFF;
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -713,12 +713,12 @@ table[data-hwal="story"] .hwal-story-rrp-pill {
   border-radius: 999px;
 }
 table[data-hwal="story"] .hwal-story-rrp-pill-rebuild {
-  background-color: #2f2f2f;
+  background-color: #2F2F2F;
 }
 table[data-hwal="story"] .hwal-story-rrp-card {
   width: 100%;
-  background-color: #ffffff;
-  border: 1px solid #ede6ea;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E0D9;
   border-radius: 12px;
 }
 table[data-hwal="story"] .hwal-story-rrp-card > tbody > tr > td {
@@ -727,8 +727,8 @@ table[data-hwal="story"] .hwal-story-rrp-card > tbody > tr > td {
 }
 table[data-hwal="story"] .hwal-story-rrp-caption {
   padding: 18px 10px 20px 10px;
-  background-color: #ffffff;
-  border: 1px solid #ede6ea;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E0D9;
   border-top: none;
   border-radius: 0 0 16px 16px;
   font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, sans-serif;
@@ -739,7 +739,7 @@ table[data-hwal="story"] .hwal-story-rrp-caption p.hwal-story-rrp-caption-lead {
   padding: 0;
   font-size: 14px;
   font-weight: 600;
-  color: #2f2f2f;
+  color: #2F2F2F;
   line-height: 1.5;
   letter-spacing: -0.04em;
 }
@@ -747,13 +747,13 @@ table[data-hwal="story"] .hwal-story-rrp-caption p + p {
   margin-top: 8px;
   font-size: 14px;
   font-weight: 500;
-  color: #542445;
+  color: #2F2F2F;
 }
 table[data-hwal="story"] .hwal-story-icon-ring {
   width: 44px;
   height: 44px;
   min-width: 44px;
-  background-color: #fff4f7;
+  background-color: #EFEAE3;
   border-radius: 22px;
   text-align: center;
   vertical-align: middle;
@@ -767,7 +767,8 @@ table[data-hwal="story"] .hwal-story-icon-ring svg {
 /* 2열 히어로: 제품 이미지 + 핵심 포인트 */
 table[data-hwal="story"] table.hwal-hero-split {
   width: 100%;
-  background-color: #fff4f7;
+  background-color: #F7F5F2;
+  background-image: none;
   border-radius: 16px;
   overflow: hidden;
 }
@@ -777,7 +778,7 @@ table[data-hwal="story"] td.hwal-hero-split-img {
   vertical-align: middle;
   line-height: 0;
   font-size: 0;
-  background-color: #fff4f7;
+  background-color: transparent;
 }
 table[data-hwal="story"] td.hwal-hero-split-copy {
   width: 54%;
@@ -791,7 +792,7 @@ table[data-hwal="story"] .hwal-hero-split-title {
   font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, sans-serif;
   font-size: 24px;
   font-weight: 800;
-  color: #2f2f2f;
+  color: #2F2F2F;
   letter-spacing: -0.04em;
   line-height: 1.32;
   text-align: left;
@@ -802,7 +803,7 @@ table[data-hwal="story"] .hwal-hero-split-sub {
   font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, sans-serif;
   font-size: 13px;
   font-weight: 500;
-  color: #8a8494;
+  color: #6B6B6B;
   letter-spacing: -0.01em;
   line-height: 1.5;
   text-align: left;
@@ -824,7 +825,7 @@ table[data-hwal="story"] .hwal-hero-split-icon-label {
   font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, sans-serif;
   font-size: 11px;
   font-weight: 700;
-  color: #542445;
+  color: #2F2F2F;
   line-height: 1.25;
   letter-spacing: -0.04em;
   word-break: keep-all;
@@ -835,7 +836,7 @@ table[data-hwal="story"] .hwal-hero-split-icon-sub {
   font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, sans-serif;
   font-size: 10px;
   font-weight: 500;
-  color: #8a8494;
+  color: #6B6B6B;
   line-height: 1.35;
   letter-spacing: -0.03em;
   word-break: keep-all;
@@ -849,13 +850,14 @@ table[data-hwal="story"] img.hwal-hero-split-photo {
   border-radius: 12px;
   object-fit: contain;
   -o-object-fit: contain;
-  background-color: #fff4f7;
+  background-color: transparent;
+  box-shadow: 0 16px 36px rgba(30, 30, 30, 0.08);
 }
 table[data-hwal="story"] table.hwal-safe-section-mobile {
   display: none;
   width: 100%;
-  background-color: #ffffff;
-  border: 1px solid #ede6ea;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E0D9;
   border-radius: 16px;
 }
 /* 뷰티 히어로: 좌 46 / 우 54, 타이포·원형 아이콘·하단 NO 바 */
@@ -866,29 +868,29 @@ table.hwal-hero-split--beauty td.hwal-hero-split-img {
 table.hwal-hero-split--beauty td.hwal-hero-split-copy {
   width: 54%;
   text-align: left;
-  padding: 22px 22px 20px 20px;
+  padding: 18px 30px 18px 22px;
   vertical-align: middle;
 }
 table.hwal-hero-split--beauty .hwal-hero-split-title {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 800;
-  color: #542445;
+  color: #2F2F2F;
   letter-spacing: -0.04em;
-  line-height: 1.34;
+  line-height: 1.38;
 }
 table.hwal-hero-split--beauty .hwal-hero-split-sub {
-  margin: 12px 0 0 0;
-  font-size: 13px;
+  margin: 14px 0 0 0;
+  font-size: 14px;
   font-weight: 500;
-  color: #8a8a8e;
+  color: #6B6B6B;
   letter-spacing: -0.01em;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 table.hwal-hero-split--beauty .hwal-hero-split-rule {
   margin: 16px 0 0 0;
   padding: 0;
   border: 0;
-  border-top: 1px solid #e8dce2;
+  border-top: 1px solid #E5E0D9;
   font-size: 0;
   line-height: 0;
   height: 1px;
@@ -898,7 +900,7 @@ table.hwal-hero-split--beauty table.hwal-hero-split-icons {
   margin: 16px 0 0 0;
 }
 table.hwal-hero-split--beauty td.hwal-hero-split-icon {
-  border-right: 1px solid #ede6ea;
+  border-right: 1px solid #E5E0D9;
   padding: 2px 8px 0 8px;
 }
 table.hwal-hero-split--beauty td.hwal-hero-split-icon:last-child {
@@ -909,8 +911,8 @@ table.hwal-hero-split--beauty .hwal-hero-split-pt-num {
   padding: 0;
   font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, sans-serif;
   font-size: 10px;
-  font-weight: 600;
-  color: #542445;
+  font-weight: 700;
+  color: #2F2F2F;
   letter-spacing: 0.08em;
   line-height: 1.2;
   text-align: center;
@@ -921,7 +923,7 @@ table.hwal-hero-split--beauty .hwal-hero-split-pt-en {
   font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, sans-serif;
   font-size: 10px;
   font-weight: 700;
-  color: #542445;
+  color: #2F2F2F;
   letter-spacing: 0.1em;
   line-height: 1.2;
   text-align: center;
@@ -930,7 +932,7 @@ table.hwal-hero-split--beauty .hwal-hero-split-pt-rule {
   width: 16px;
   height: 1px;
   margin: 7px auto 0 auto;
-  background-color: #f0c9d4;
+  background-color: #E6007E;
   font-size: 0;
   line-height: 0;
 }
@@ -940,7 +942,7 @@ table.hwal-hero-split--beauty .hwal-hero-split-pt-ko {
   font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, sans-serif;
   font-size: 12px;
   font-weight: 600;
-  color: #2d2a32;
+  color: #6B6B6B;
   letter-spacing: -0.04em;
   line-height: 1.3;
   text-align: center;
@@ -949,23 +951,43 @@ table.hwal-hero-split--beauty .hwal-hero-split-pt-ko {
 table.hwal-hero-split--beauty .hwal-hero-split-nos {
   margin: 20px 0 0 0;
   padding: 10px 12px;
-  background-color: #f6e4ea;
+  background-color: #EFEAE3;
   border-radius: 8px;
   font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, sans-serif;
   font-size: 11px;
   font-weight: 600;
-  color: #542445;
+  color: #2F2F2F;
   letter-spacing: -0.04em;
   line-height: 1.4;
   text-align: center;
   word-break: keep-all;
 }
 table.hwal-hero-split--beauty .hwal-hero-split-nos .tengl-iq-no {
-  color: #e04b78;
+  color: #2F2F2F;
   font-weight: 800;
 }
+table.hwal-hero-split--beauty .hwal-hero-split-sub-accent,
+table.hwal-hero-split--beauty .hwal-hero-split-pt-ko-accent {
+  color: #2F2F2F;
+  font-weight: 700;
+}
+table.tengl-iq-section .tengl-iq-num {
+  font-size: 20px;
+  font-weight: 800;
+  color: #000000;
+  letter-spacing: -0.02em;
+}
+table.tengl-iq-section td.tengl-iq-badge-line {
+  font-size: 14px;
+  font-weight: 800;
+  color: #000000;
+  border-color: #E6007E;
+}
+.hwal-cta-pill:hover {
+  background-image: linear-gradient(135deg, #37105F 0%, #5B2A86 88%, #E6007E 100%);
+}
 table[data-hwal="story"] table.hwal-story-close-wrap {
-  border: 1px solid #ede6ea;
+  border: 1px solid #E5E0D9;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 6px 24px rgba(47, 47, 47, 0.08);
@@ -973,17 +995,17 @@ table[data-hwal="story"] table.hwal-story-close-wrap {
 table[data-hwal="story"] .hwal-story-close-badge {
   width: 32px;
   height: 32px;
-  background-color: #542445;
+  background-color: #471869;
   border-radius: 16px;
   font-size: 14px;
   line-height: 32px;
   mso-line-height-rule: exactly;
-  color: #faf8f4;
+  color: #FFFFFF;
   font-weight: 700;
   text-align: center;
 }
 table[data-hwal="story"] .hwal-story-close-top {
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   padding: 8px 28px 28px 28px;
 }
 table[data-hwal="story"] .hwal-story-close-headline {
@@ -991,7 +1013,7 @@ table[data-hwal="story"] .hwal-story-close-headline {
   padding: 0;
   font-size: 15px;
   font-weight: 700;
-  color: #2f2f2f;
+  color: #2F2F2F;
   line-height: 1.55;
   letter-spacing: -0.03em;
 }
@@ -1000,14 +1022,14 @@ table[data-hwal="story"] .hwal-story-close-body {
   padding: 0;
   font-size: 14px;
   font-weight: 500;
-  color: #6b6b6b;
+  color: #6B6B6B;
   line-height: 1.65;
   letter-spacing: -0.02em;
 }
 table[data-hwal="story"] .hwal-story-close-bottom {
-  background-color: #542445;
-  background: linear-gradient(180deg, #6b5e50 0%, #542445 45%, #2f2f2f 100%);
-  color: #faf8f4;
+  background-color: #471869;
+  background: linear-gradient(180deg, #6d5f8f 0%, #471869 45%, #2f2f2f 100%);
+  color: #FFFFFF;
   padding: 20px 28px 22px 28px;
   font-size: 13px;
   font-weight: 600;
@@ -1018,8 +1040,8 @@ table[data-aowa="cta-bar"] {
   background-color: transparent;
 }
 table[data-aowa="cta-bar"] > tbody > tr:first-child > td.aowa-cta-copy {
-  background-color: #fff4f7;
-  border: 1px solid #ede6ea;
+  background-color: #EFEAE3;
+  border: 1px solid #E5E0D9;
   border-radius: 16px;
   box-shadow: 0 2px 12px rgba(47, 47, 47, 0.04);
 }
@@ -1036,7 +1058,7 @@ table[data-aowa="cta-bar"] .aowa-cta-icon-wrap {
 table[data-aowa="cta-bar"] .aowa-cta-icon-cell {
   width: 48px;
   height: 48px;
-  background-color: #fff4f7;
+  background-color: #EFEAE3;
   border-radius: 24px;
   text-align: center;
   vertical-align: middle;
@@ -1053,7 +1075,7 @@ table[data-aowa="cta-bar"] .aowa-cta-title {
   padding: 0;
   font-size: 16px;
   font-weight: 700;
-  color: #2f2f2f;
+  color: #2F2F2F;
   letter-spacing: -0.03em;
   line-height: 1.5;
   text-align: left;
@@ -1063,7 +1085,7 @@ table[data-aowa="cta-bar"] .aowa-cta-body {
   padding: 0;
   font-size: 14px;
   font-weight: 400;
-  color: #6b6b6b;
+  color: #6B6B6B;
   line-height: 1.68;
   letter-spacing: -0.02em;
   text-align: left;
@@ -1074,25 +1096,25 @@ table[data-aowa="cta-bar"] .aowa-cta-body:last-child {
 td.hwal-cta-pad {
   padding: 36px 22px 36px 22px;
   text-align: center;
-  background-color: #ffffff;
-  border-top: 1px solid #ede6ea;
+  background-color: #FFFFFF;
+  border-top: 1px solid #E5E0D9;
 }
 .hwal-cta-pill {
   display: inline-block;
   padding: 11px 28px 12px 28px;
   font-size: 14px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   line-height: 1.4;
-  color: #ffffff !important;
+  color: #FFFFFF !important;
   text-decoration: none !important;
   border-radius: 999px;
-  background-color: #542445;
-  border: 1px solid #3d1a32;
-  box-shadow: 0 2px 8px rgba(84, 36, 69, 0.18);
+  background-color: #471869;
+  border: 1px solid #3D145F;
+  box-shadow: 0 6px 16px rgba(38, 20, 55, 0.16);
   mso-padding-alt: 11px 28px 12px 28px;
 }
-table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
+table[data-aowa="flow-icons"] td[bgcolor="#FFFFFF"] {
   box-shadow: 0 2px 10px rgba(45, 62, 80, 0.07);
 }
 /* 반응형: PC는 min-width 769px, 모바일은 max-width 768px (겹침 없음). body/래퍼에 overflow-x 미사용. */
@@ -1116,14 +1138,14 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
   td.aowa-header-sub {
     padding: 0 0 20px 0 !important;
     letter-spacing: 0.22em !important;
-    color: #b5b3af !important;
+    color: #B5B3AF !important;
   }
   td.aowa-header-title {
     font-size: 22px !important;
     font-weight: 800 !important;
     letter-spacing: -0.035em !important;
     line-height: 1.3 !important;
-    color: #2f2f2f !important;
+    color: #2F2F2F !important;
   }
   /* 콘텐츠 흐름: 라인 아이콘·열 간격 (PC만) */
   table[data-aowa="flow-icons"] [data-aowa="why-col"] {
@@ -1139,13 +1161,13 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
   td.aowa-flow-copy {
     padding: 2px 10px 0 10px !important;
     line-height: 1.68 !important;
-    color: #6b6b6b !important;
+    color: #6B6B6B !important;
   }
   table.hwal-flow-section td.hwal-flow-copy-inner {
     padding: 14px 16px 22px 16px !important;
     font-size: 15px !important;
     line-height: 1.72 !important;
-    color: #2f2f2f !important;
+    color: #2F2F2F !important;
   }
   .aowa-flow-line-ico {
     display: inline-block;
@@ -1210,7 +1232,7 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
     margin: 0 0 10px 0 !important;
     font-size: 16px !important;
     font-weight: 700 !important;
-    color: #2f2f2f !important;
+    color: #2F2F2F !important;
     line-height: 1.5 !important;
     text-align: left !important;
   }
@@ -1219,7 +1241,7 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
     padding: 0 !important;
     font-size: 14px !important;
     line-height: 1.68 !important;
-    color: #6b6b6b !important;
+    color: #6B6B6B !important;
     text-align: left !important;
   }
   table[data-aowa="cta-bar"] .aowa-cta-body:last-child {
@@ -1302,7 +1324,7 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
     line-height: 1.55 !important;
     text-align: center !important;
     border-left: none !important;
-    border-top: 1px solid #fff4f7 !important;
+    border-top: 1px solid #EFEAE3 !important;
   }
   table.hwal-chapter-split td.hwal-chapter-split-line {
     width: 14% !important;
@@ -1324,7 +1346,7 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
     padding: 0 8px !important;
     white-space: nowrap !important;
     line-height: 1.4 !important;
-    color: #2d2a32 !important;
+    color: #2F2F2F !important;
     text-align: center !important;
   }
   table.hwal-chapter-split.hwal-chapter-split-nutrition {
@@ -1384,7 +1406,7 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
   }
   table[data-hwal="story"] td.hwal-hero-split-img {
     padding: 16px 16px 8px 16px !important;
-    background-color: #fff4f7 !important;
+    background-color: #F7F5F2 !important;
   }
   table[data-hwal="story"] img.hwal-hero-split-photo {
     border-radius: 12px !important;
@@ -1430,7 +1452,7 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
   }
   table.hwal-hero-split--beauty td.hwal-hero-split-icon {
     padding: 0 6px !important;
-    border-right: 1px solid #ede6ea !important;
+    border-right: 1px solid #E5E0D9 !important;
   }
   table.hwal-hero-split--beauty td.hwal-hero-split-icon:last-child {
     border-right: none !important;
@@ -1564,13 +1586,13 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
   /* ── KEY POINTS: 텐글 WHY 카드 ── */
   table[data-hwal="story"] td.tengl-kp-wrap {
     padding: 12px 16px 0 16px !important;
-    background-color: #ffffff !important;
+    background-color: #FFFFFF !important;
   }
   table[data-hwal="story"] .tengl-kp-title {
     font-size: 16px !important;
     line-height: 1.45 !important;
     margin: 0 0 14px 0 !important;
-    color: #2d2a32 !important;
+    color: #2F2F2F !important;
   }
   table[data-hwal="story"] .tengl-kp-pill {
     font-size: 12px !important;
@@ -1581,7 +1603,7 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
   }
   table[data-hwal="story"] td.tengl-sol-wrap {
     padding: 24px 16px 24px 16px !important;
-    background-color: #ffffff !important;
+    background-color: #FFFFFF !important;
   }
   table[data-hwal="story"] .tengl-sol-badge {
     font-size: 10px !important;
@@ -1593,7 +1615,7 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
     line-height: 1.45 !important;
     padding-bottom: 0 !important;
     margin: 0 0 12px 0 !important;
-    color: #2d2a32 !important;
+    color: #2F2F2F !important;
   }
   table[data-hwal="story"] .tengl-sol-desc,
   table[data-hwal="story"] .tengl-sol-ings {
@@ -1625,18 +1647,18 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
   table.tengl-iq-section {
     width: 100% !important;
     max-width: 100% !important;
-    background-color: #fff4f7 !important;
+    background-color: #F7F5F2 !important;
   }
   table.tengl-iq-section td.tengl-iq-pad {
     padding: 24px 16px 20px 16px !important;
-    background-color: #fff4f7 !important;
+    background-color: #F7F5F2 !important;
   }
   table.tengl-iq-section .tengl-iq-title {
     font-size: 17px !important;
     line-height: 1.45 !important;
     padding: 0 !important;
     margin: 0 0 20px 0 !important;
-    color: #2d2a32 !important;
+    color: #2F2F2F !important;
   }
   table.tengl-iq-cols {
     width: 100% !important;
@@ -1736,7 +1758,7 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
   }
   table[data-hwal="story"] td.hwal-story-check-item {
     border-right: none !important;
-    border-bottom: 1px dotted #ede6ea !important;
+    border-bottom: 1px dotted #E5E0D9 !important;
   }
   table[data-hwal="story"] td.hwal-story-check-col-right {
     display: none !important;
@@ -1755,8 +1777,8 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
     display: block !important;
     width: 100% !important;
     padding: 0 !important;
-    background-color: #fff4f7 !important;
-    border-top: 1px dotted #ede6ea !important;
+    background-color: #F7F5F2 !important;
+    border-top: 1px dotted #E5E0D9 !important;
   }
   table[data-hwal="story"] .hwal-story-check-row,
   table[data-hwal="story"] table.hwal-story-check-wrap td.hwal-story-check-row {
@@ -1916,16 +1938,16 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
   table[data-hwal="story"] td.hwal-story-pad.yg-feature-wrap,
   table[data-hwal="story"] td.hwal-story-pad.tengl-sol-wrap {
     padding: 24px 16px 24px 16px !important;
-    background-color: #ffffff !important;
+    background-color: #FFFFFF !important;
   }
   table[data-hwal="story"] td.hwal-story-pad.tengl-kp-wrap {
     padding: 12px 16px 0 16px !important;
-    background-color: #ffffff !important;
+    background-color: #FFFFFF !important;
   }
 
   table[data-hwal="story"] td.hwal-story-pad.tengl-empty-wrap {
     padding: 28px 16px 24px 16px !important;
-    background-color: #fff4f7 !important;
+    background-color: #F7F5F2 !important;
   }
 
   table[data-hwal="story"] td.hwal-story-pad.hwal-flavor-pad {
@@ -2034,11 +2056,11 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
     padding-top: 24px !important;
   }
   table.hwal-recommend-section {
-    background-color: #fff4f7 !important;
+    background-color: #F7F5F2 !important;
   }
   table.hwal-recommend-section > tbody > tr > td {
     padding: 12px 16px 20px 16px !important;
-    background-color: #fff4f7 !important;
+    background-color: #F7F5F2 !important;
   }
   table.hwal-recommend-section .hwal-chapter-split {
     margin-bottom: 8px !important;
@@ -2113,8 +2135,8 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
   td.hwal-cta-pad {
     padding: 32px 16px 32px 16px !important;
     text-align: center !important;
-    background-color: #ffffff !important;
-    border-top: 1px solid #ede6ea !important;
+    background-color: #FFFFFF !important;
+    border-top: 1px solid #E5E0D9 !important;
   }
   a.hwal-cta-pill {
     display: inline-block !important;
@@ -2145,8 +2167,8 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
   table[data-hwal="story"] table.hwal-safe-section-mobile {
     display: table !important;
     width: 100% !important;
-    background-color: #ffffff !important;
-    border: 1px solid #ede6ea !important;
+    background-color: #FFFFFF !important;
+    border: 1px solid #E5E0D9 !important;
     border-radius: 16px !important;
   }
   table[data-hwal="story"] table.hwal-safe-section-mobile > tbody > tr > td {
@@ -2165,7 +2187,7 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
     padding: 0 !important;
     font-size: 16px !important;
     font-weight: 700 !important;
-    color: #2f2f2f !important;
+    color: #2F2F2F !important;
     line-height: 1.5 !important;
     letter-spacing: -0.02em !important;
     text-align: center !important;
@@ -2175,7 +2197,7 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
     padding: 0 !important;
     font-size: 13px !important;
     font-weight: 500 !important;
-    color: #6b6b6b !important;
+    color: #6B6B6B !important;
     line-height: 1.6 !important;
     letter-spacing: -0.02em !important;
     text-align: center !important;
@@ -2185,10 +2207,10 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
     margin: 0 auto !important;
     padding: 10px 16px !important;
     border-radius: 999px !important;
-    background-color: #542445 !important;
+    background-color: #2F2F2F !important;
     font-size: 12px !important;
     font-weight: 700 !important;
-    color: #ffffff !important;
+    color: #FFFFFF !important;
     line-height: 1.45 !important;
     letter-spacing: -0.02em !important;
     text-align: center !important;
@@ -2488,7 +2510,7 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
     min-width: 36px !important;
     max-width: 36px !important;
     border-radius: 18px !important;
-    background-color: #542445 !important;
+    background-color: #4B217C !important;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M2.2 4.4L7 9.2l4.8-4.8' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
@@ -2609,57 +2631,33 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
 }
 </style>
 </head>
-<body style="margin:0;padding:0;background-color:#ffffff;">
-<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff;">
+<body style="margin:0;padding:0;background-color:#F7F5F2;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#F7F5F2;">
 <tr>
 <td align="center" width="100%" style="padding:0;width:100%;">
-<table class="aowa-shell" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff;width:100%;max-width:700px;margin:0 auto;table-layout:fixed;border:1px solid #ede6ea;">
+<table class="aowa-shell" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#FFFFFF;width:100%;max-width:700px;margin:0 auto;table-layout:fixed;border:1px solid #E5E0D9;">
 <tr>
-<td class="aowa-body" width="100%" style="padding:0 0 48px;width:100%;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.65;color:#2d2a32;">
+<td class="aowa-body" width="100%" style="padding:0 0 48px;width:100%;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.65;color:#2F2F2F;">
 
 <!-- 상단 띠 -->
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;border-radius:12px 12px 0 0;overflow:hidden;">
 <tr>
-<td class="hwal-top-band" align="center" bgcolor="#ffffff" style="padding:13px 20px;background-color:#ffffff;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:13px;font-weight:600;letter-spacing:0.1em;color:#542445;text-align:center;line-height:1.5;">Wellness Creator Commerce ConnectSell</td>
+<td class="hwal-top-band" align="center" bgcolor="#FFFFFF" style="padding:13px 20px;background-color:#EFEAE3;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:13px;font-weight:600;letter-spacing:0.1em;color:#2F2F2F;text-align:center;line-height:1.5;">Wellness Creator Commerce ConnectSell</td>
 </tr>
 </table>
 
 <!-- 2열 히어로: 제품 이미지 + 핵심 포인트 -->
-<table data-hwal="story" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;background-color:#ffffff;">
+<table data-hwal="story" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;background-color:#FFFFFF;">
 <tr>
 <td class="hwal-story-pad" valign="top" style="padding:24px 22px 24px 22px;vertical-align:top;">
-<table class="hwal-hero-split hwal-hero-split--beauty" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#fff4f7" style="width:100%;background-color:#fff4f7;border-radius:16px;overflow:hidden;">
+<table class="hwal-hero-split hwal-hero-split--beauty" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;background-color:#F7F5F2;background-image:none;border-radius:16px;overflow:hidden;">
 <tr>
-<td class="hwal-hero-split-img" width="46%" valign="middle" style="width:46%;padding:12px 8px 12px 12px;vertical-align:middle;line-height:0;font-size:0;background-color:#fff4f7;">
-<img class="hwal-hero-split-photo" src="../../images/tengl-skin-booster-shot-beauty-hero.png" alt="텐글 스킨 부스터샷 블루베리맛" width="635" height="640" style="width:100%;max-width:100%;height:auto;display:block;border:0;border-radius:12px;object-fit:contain;-o-object-fit:contain;object-position:center;background-color:#fff4f7;">
+<td class="hwal-hero-split-img" width="46%" valign="middle" style="width:46%;padding:12px 8px 12px 12px;vertical-align:middle;line-height:0;font-size:0;background-color:transparent;">
+<img class="hwal-hero-split-photo" src="../../images/tengl-skin-booster-shot-beauty-hero.png" alt="텐글 스킨 부스터샷 블루베리맛" width="635" height="640" style="width:100%;max-width:100%;height:auto;display:block;border:0;border-radius:12px;object-fit:contain;-o-object-fit:contain;object-position:center;background-color:transparent;box-shadow:0 14px 30px rgba(91,42,134,0.10);">
 </td>
-<td class="hwal-hero-split-copy" width="54%" valign="middle" align="left" style="width:54%;padding:22px 22px 20px 20px;vertical-align:middle;text-align:left;">
-<p class="hwal-hero-split-title" style="margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:22px;font-weight:800;color:#542445;letter-spacing:-0.04em;line-height:1.34;text-align:left;word-break:keep-all;">30~40대 피부관리<br>바르는 것만으로는 힘들어요</p>
-<p class="hwal-hero-split-sub" style="margin:12px 0 0 0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:13px;font-weight:500;color:#8a8a8e;letter-spacing:-0.01em;line-height:1.55;text-align:left;word-break:keep-all;">매일 비우고 · 채우고 · 보호하는<br>3STEP 이너뷰티</p>
-<div class="hwal-hero-split-rule" style="margin:16px 0 0 0;padding:0;border:0;border-top:1px solid #e8dce2;font-size:0;line-height:0;height:1px;">&nbsp;</div>
-<table class="hwal-hero-split-icons" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:100%;margin:16px 0 0 0;">
-<tr>
-<td class="hwal-hero-split-icon" width="33%" valign="top" align="center" style="width:33%;padding:2px 8px 0 0;vertical-align:top;text-align:center;border-right:1px solid #ede6ea;">
-<p class="hwal-hero-split-pt-num" style="margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:10px;font-weight:600;color:#542445;letter-spacing:0.08em;line-height:1.2;text-align:center;">01</p>
-<p class="hwal-hero-split-pt-en" style="margin:5px 0 0 0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:10px;font-weight:700;color:#542445;letter-spacing:0.1em;line-height:1.2;text-align:center;">CLEAN</p>
-<div class="hwal-hero-split-pt-rule" style="width:16px;height:1px;margin:7px auto 0 auto;background-color:#f0c9d4;font-size:0;line-height:0;">&nbsp;</div>
-<p class="hwal-hero-split-pt-ko" style="margin:7px 0 0 0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:12px;font-weight:600;color:#2d2a32;letter-spacing:-0.04em;line-height:1.3;text-align:center;word-break:keep-all;">클린 포뮬라</p>
-</td>
-<td class="hwal-hero-split-icon" width="34%" valign="top" align="center" style="width:34%;padding:2px 8px 0 8px;vertical-align:top;text-align:center;border-right:1px solid #ede6ea;">
-<p class="hwal-hero-split-pt-num" style="margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:10px;font-weight:600;color:#542445;letter-spacing:0.08em;line-height:1.2;text-align:center;">02</p>
-<p class="hwal-hero-split-pt-en" style="margin:5px 0 0 0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:10px;font-weight:700;color:#542445;letter-spacing:0.1em;line-height:1.2;text-align:center;">EAT</p>
-<div class="hwal-hero-split-pt-rule" style="width:16px;height:1px;margin:7px auto 0 auto;background-color:#f0c9d4;font-size:0;line-height:0;">&nbsp;</div>
-<p class="hwal-hero-split-pt-ko" style="margin:7px 0 0 0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:12px;font-weight:600;color:#2d2a32;letter-spacing:-0.04em;line-height:1.3;text-align:center;word-break:keep-all;">먹는 스킨부스터</p>
-</td>
-<td class="hwal-hero-split-icon" width="33%" valign="top" align="center" style="width:33%;padding:2px 0 0 8px;vertical-align:top;text-align:center;">
-<p class="hwal-hero-split-pt-num" style="margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:10px;font-weight:600;color:#542445;letter-spacing:0.08em;line-height:1.2;text-align:center;">03</p>
-<p class="hwal-hero-split-pt-en" style="margin:5px 0 0 0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:10px;font-weight:700;color:#542445;letter-spacing:0.1em;line-height:1.2;text-align:center;">1 DAY</p>
-<div class="hwal-hero-split-pt-rule" style="width:16px;height:1px;margin:7px auto 0 auto;background-color:#f0c9d4;font-size:0;line-height:0;">&nbsp;</div>
-<p class="hwal-hero-split-pt-ko" style="margin:7px 0 0 0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:12px;font-weight:600;color:#2d2a32;letter-spacing:-0.04em;line-height:1.3;text-align:center;word-break:keep-all;">하루 한 포</p>
-</td>
-</tr>
-</table>
-<p class="hwal-hero-split-nos" style="margin:20px 0 0 0;padding:10px 12px;background-color:#f6e4ea;border-radius:8px;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:11px;font-weight:600;color:#542445;letter-spacing:-0.04em;line-height:1.4;text-align:center;word-break:keep-all;"><span class="tengl-iq-no" style="color:#e04b78;font-weight:800;">NO</span> 화학방부제 · <span class="tengl-iq-no" style="color:#e04b78;font-weight:800;">NO</span> 인공감미료 · <span class="tengl-iq-no" style="color:#e04b78;font-weight:800;">NO</span> 인공향료</p>
+<td class="hwal-hero-split-copy" width="54%" valign="middle" align="left" style="width:54%;padding:18px 30px 18px 22px;vertical-align:middle;text-align:left;">
+<p class="hwal-hero-split-title" style="margin:0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:24px;font-weight:800;color:#2F2F2F;letter-spacing:-0.04em;line-height:1.38;text-align:left;word-break:keep-all;">30~40대 피부관리<br>바르는 것만으로는 힘들어요</p>
+<p class="hwal-hero-split-sub" style="margin:14px 0 0 0;padding:0;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:14px;font-weight:500;color:#2F2F2F;letter-spacing:-0.01em;line-height:1.6;text-align:left;word-break:keep-all;">매일 비우고 · 채우고 · 보호하는<br><span class="hwal-hero-split-sub-accent">3STEP</span> 이너뷰티</p>
 </td>
 </tr>
 </table>
@@ -2668,34 +2666,34 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
 
 <!-- WHY: aging + empty -->
 <tr>
-<td class="hwal-story-pad yg-feature-wrap tengl-kp-wrap" valign="top" style="padding:8px 22px 0 22px;vertical-align:top;background-color:#ffffff;">
+<td class="hwal-story-pad yg-feature-wrap tengl-kp-wrap" valign="top" style="padding:8px 22px 0 22px;vertical-align:top;background-color:#FFFFFF;">
 <table role="presentation" class="hwal-chapter-split" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;margin:0 0 8px 0;">
 <tr valign="middle">
-<td class="hwal-chapter-split-line" width="18%" style="width:18%;padding:0 0 0 4px;vertical-align:middle;"><div style="border-top:1px solid #ede6ea;font-size:0;line-height:0;">&nbsp;</div></td>
-<td class="hwal-chapter-split-title tengl-kp-head" valign="middle" align="center" style="padding:0 10px;vertical-align:middle;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:15px;font-weight:700;color:#542445;letter-spacing:0.06em;line-height:1.4;white-space:nowrap;">WHY?</td>
-<td class="hwal-chapter-split-line" width="18%" style="width:18%;padding:0 4px 0 0;vertical-align:middle;"><div style="border-top:1px solid #ede6ea;font-size:0;line-height:0;">&nbsp;</div></td>
+<td class="hwal-chapter-split-line" width="18%" style="width:18%;padding:0 0 0 4px;vertical-align:middle;"><div style="border-top:1px solid #E5E0D9;font-size:0;line-height:0;">&nbsp;</div></td>
+<td class="hwal-chapter-split-title tengl-kp-head" valign="middle" align="center" style="padding:0 10px;vertical-align:middle;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:15px;font-weight:800;color:#1F1F1F;letter-spacing:0.11em;line-height:1.4;white-space:nowrap;">WHY?</td>
+<td class="hwal-chapter-split-line" width="18%" style="width:18%;padding:0 4px 0 0;vertical-align:middle;"><div style="border-top:1px solid #E5E0D9;font-size:0;line-height:0;">&nbsp;</div></td>
 </tr>
 </table>
-<p class="tengl-sec-lead" style="margin:0 0 24px 0;padding:0;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:17px;font-weight:700;color:#2d2a32;letter-spacing:-0.03em;line-height:1.45;word-break:keep-all;">피부 노화, 어디서부터 시작될까요?</p>
+<p class="tengl-sec-lead" style="margin:0 0 24px 0;padding:0;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:18px;font-weight:700;color:#1F1F1F;letter-spacing:-0.03em;line-height:1.5;word-break:keep-all;">피부 노화, 어디서부터 시작될까요?</p>
 
-<table class="tengl-kp-card" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width:100%;margin:0 auto;background-color:#ffffff;border-radius:14px;border:1px solid #ede6ea;">
+<table class="tengl-kp-card" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;margin:0 auto;background-color:#FFFFFF;border-radius:14px;border:1px solid #E5E0D9;">
 <tr>
 <td class="tengl-kp-pad" align="center" valign="top" style="padding:20px 20px 18px 20px;text-align:center;vertical-align:top;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
 <table class="tengl-kp-flow" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;margin:0 auto;table-layout:fixed;">
 <tr>
 <td class="tengl-kp-step" width="28%" align="center" valign="top" style="width:28%;padding:0 2px;text-align:center;vertical-align:top;">
-<svg width="72" height="72" viewBox="0 0 72 72" style="display:block;margin:0 auto;"><circle cx="36" cy="36" r="35" fill="#f7f5f9"/><path d="M24 18c8 8 16 28 24 36M48 18c-8 8-16 28-24 36" fill="none" stroke="#6d3db5" stroke-width="3" stroke-linecap="round"/><path d="M28 26h8M36 32h8M28 40h8M36 46h8" stroke="#9a72d4" stroke-width="2" stroke-linecap="round"/><circle cx="22" cy="34" r="3.2" fill="#7a48c4"/><circle cx="50" cy="28" r="2.6" fill="#8d5fd0"/><circle cx="52" cy="46" r="3" fill="#7a48c4"/><circle cx="21" cy="50" r="2.4" fill="#a57de0"/></svg>
-<p style="margin:10px 0 0 0;padding:0;font-size:12px;font-weight:700;color:#222222;letter-spacing:-0.03em;line-height:1.4;word-break:keep-all;">DNA 손상</p>
+<svg width="72" height="72" viewBox="0 0 72 72" style="display:block;margin:0 auto;"><circle cx="36" cy="36" r="35" fill="#F4EEFA"/><path d="M24 18c8 8 16 28 24 36M48 18c-8 8-16 28-24 36" fill="none" stroke="#8656C5" stroke-width="3" stroke-linecap="round"/><path d="M28 26h8M36 32h8M28 40h8M36 46h8" stroke="#9A6AD8" stroke-width="2" stroke-linecap="round"/><circle cx="22" cy="34" r="3.2" fill="#8656C5"/><circle cx="50" cy="28" r="2.6" fill="#9365D5"/><circle cx="52" cy="46" r="3" fill="#8656C5"/><circle cx="21" cy="50" r="2.4" fill="#B48BE8"/></svg>
+<p style="margin:10px 0 0 0;padding:0;font-size:12px;font-weight:700;color:#37105F;letter-spacing:-0.03em;line-height:1.4;word-break:keep-all;">DNA 손상</p>
 </td>
-<td class="tengl-kp-chevron" width="8%" align="center" valign="middle" style="width:8%;padding:0 0 28px 0;color:#542445;font-size:18px;font-weight:700;line-height:1;font-family:Arial,Helvetica,sans-serif;">&gt;</td>
+<td class="tengl-kp-chevron" width="8%" align="center" valign="middle" style="width:8%;padding:0 0 28px 0;color:#5B2A86;font-size:18px;font-weight:700;line-height:1;font-family:Arial,Helvetica,sans-serif;">&gt;</td>
 <td class="tengl-kp-step" width="28%" align="center" valign="top" style="width:28%;padding:0 2px;text-align:center;vertical-align:top;">
-<svg width="72" height="72" viewBox="0 0 72 72" style="display:block;margin:0 auto;"><circle cx="36" cy="36" r="35" fill="#f7f5f9"/><circle cx="36" cy="38" r="18" fill="#c9a6ef"/><circle cx="36" cy="38" r="10" fill="#6d3db5"/><circle cx="48" cy="26" r="5" fill="#9a72d4"/><circle cx="50" cy="48" r="4" fill="#8d5fd0"/></svg>
-<p style="margin:10px 0 0 0;padding:0;font-size:12px;font-weight:700;color:#222222;letter-spacing:-0.03em;line-height:1.4;word-break:keep-all;">노화세포 생성</p>
+<svg width="72" height="72" viewBox="0 0 72 72" style="display:block;margin:0 auto;"><circle cx="36" cy="36" r="35" fill="#F4EEFA"/><circle cx="36" cy="38" r="18" fill="#D7C2F3"/><circle cx="36" cy="38" r="10" fill="#8656C5"/><circle cx="48" cy="26" r="5" fill="#9A6AD8"/><circle cx="50" cy="48" r="4" fill="#9365D5"/></svg>
+<p style="margin:10px 0 0 0;padding:0;font-size:12px;font-weight:700;color:#37105F;letter-spacing:-0.03em;line-height:1.4;word-break:keep-all;">노화세포 생성</p>
 </td>
-<td class="tengl-kp-chevron" width="8%" align="center" valign="middle" style="width:8%;padding:0 0 28px 0;color:#542445;font-size:18px;font-weight:700;line-height:1;font-family:Arial,Helvetica,sans-serif;">&gt;</td>
+<td class="tengl-kp-chevron" width="8%" align="center" valign="middle" style="width:8%;padding:0 0 28px 0;color:#5B2A86;font-size:18px;font-weight:700;line-height:1;font-family:Arial,Helvetica,sans-serif;">&gt;</td>
 <td class="tengl-kp-step" width="28%" align="center" valign="top" style="width:28%;padding:0 2px;text-align:center;vertical-align:top;">
-<svg width="72" height="72" viewBox="0 0 72 72" style="display:block;margin:0 auto;"><circle cx="36" cy="36" r="35" fill="#f7f5f9"/><circle cx="28" cy="30" r="11" fill="#c9a6ef"/><circle cx="28" cy="30" r="5.5" fill="#6d3db5"/><circle cx="46" cy="28" r="10" fill="#bf98ea"/><circle cx="46" cy="28" r="5" fill="#6d3db5"/><circle cx="26" cy="48" r="10" fill="#c9a6ef"/><circle cx="26" cy="48" r="5" fill="#6d3db5"/><circle cx="44" cy="50" r="11" fill="#bf98ea"/><circle cx="44" cy="50" r="5.5" fill="#6d3db5"/><circle cx="36" cy="40" r="9" fill="#b084e0"/><circle cx="36" cy="40" r="4.5" fill="#5b2ea3"/></svg>
-<p style="margin:10px 0 0 0;padding:0;font-size:12px;font-weight:700;color:#222222;letter-spacing:-0.03em;line-height:1.4;word-break:keep-all;">노화세포 축적<br><span style="display:inline-block;margin-top:2px;font-size:11px;font-weight:500;color:#888888;">(피부 노화 진행)</span></p>
+<svg width="72" height="72" viewBox="0 0 72 72" style="display:block;margin:0 auto;"><circle cx="36" cy="36" r="35" fill="#F4EEFA"/><circle cx="28" cy="30" r="11" fill="#D7C2F3"/><circle cx="28" cy="30" r="5.5" fill="#8656C5"/><circle cx="46" cy="28" r="10" fill="#CDADEB"/><circle cx="46" cy="28" r="5" fill="#8656C5"/><circle cx="26" cy="48" r="10" fill="#D7C2F3"/><circle cx="26" cy="48" r="5" fill="#8656C5"/><circle cx="44" cy="50" r="11" fill="#CDADEB"/><circle cx="44" cy="50" r="5.5" fill="#8656C5"/><circle cx="36" cy="40" r="9" fill="#B991E6"/><circle cx="36" cy="40" r="4.5" fill="#6F33B6"/></svg>
+<p style="margin:10px 0 0 0;padding:0;font-size:12px;font-weight:700;color:#2F2F2F;letter-spacing:-0.03em;line-height:1.4;word-break:keep-all;">노화세포 축적<br><span style="display:inline-block;margin-top:2px;font-size:11px;font-weight:500;color:#2F2F2F;">(피부 노화 진행)</span></p>
 </td>
 </tr>
 </table>
@@ -2705,8 +2703,8 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
 
 <table role="presentation" width="36" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:28px auto;width:36px;">
 <tr>
-<td class="tengl-kp-arrow" align="center" valign="middle" width="36" height="36" bgcolor="#542445" style="width:36px;height:36px;background-color:#542445;border-radius:18px;text-align:center;vertical-align:middle;line-height:36px;mso-line-height-rule:exactly;">
-<svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="display:inline-block;vertical-align:middle;"><path d="M2.2 4.4L7 9.2l4.8-4.8" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<td class="tengl-kp-arrow" align="center" valign="middle" width="36" height="36" bgcolor="#37105F" style="width:36px;height:36px;background-color:#5B2A86;border-radius:18px;text-align:center;vertical-align:middle;line-height:36px;mso-line-height-rule:exactly;">
+<svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="display:inline-block;vertical-align:middle;"><path d="M2.2 4.4L7 9.2l4.8-4.8" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </td>
 </tr>
 </table>
@@ -2714,34 +2712,34 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
 </td>
 </tr>
 <tr>
-<td class="hwal-story-pad tengl-empty-wrap" valign="top" style="padding:36px 22px 32px 22px;vertical-align:top;background-color:#fff4f7;">
+<td class="hwal-story-pad tengl-empty-wrap" valign="top" style="padding:36px 22px 32px 22px;vertical-align:top;background-color:#F7F5F2;">
 <table role="presentation" class="hwal-chapter-split" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;margin:0 0 8px 0;">
 <tr valign="middle">
-<td class="hwal-chapter-split-line" width="18%" style="width:18%;padding:0 0 0 4px;vertical-align:middle;"><div style="border-top:1px solid #ede6ea;font-size:0;line-height:0;">&nbsp;</div></td>
-<td class="hwal-chapter-split-title tengl-kp-head" valign="middle" align="center" style="padding:0 10px;vertical-align:middle;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:15px;font-weight:700;color:#542445;letter-spacing:0.06em;line-height:1.4;white-space:nowrap;">WHY EMPTY FIRST?</td>
-<td class="hwal-chapter-split-line" width="18%" style="width:18%;padding:0 4px 0 0;vertical-align:middle;"><div style="border-top:1px solid #ede6ea;font-size:0;line-height:0;">&nbsp;</div></td>
+<td class="hwal-chapter-split-line" width="18%" style="width:18%;padding:0 0 0 4px;vertical-align:middle;"><div style="border-top:1px solid #E8DDF3;font-size:0;line-height:0;">&nbsp;</div></td>
+<td class="hwal-chapter-split-title tengl-kp-head" valign="middle" align="center" style="padding:0 10px;vertical-align:middle;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:15px;font-weight:800;color:#1F1F1F;letter-spacing:0.11em;line-height:1.4;white-space:nowrap;">WHY EMPTY FIRST?</td>
+<td class="hwal-chapter-split-line" width="18%" style="width:18%;padding:0 4px 0 0;vertical-align:middle;"><div style="border-top:1px solid #E8DDF3;font-size:0;line-height:0;">&nbsp;</div></td>
 </tr>
 </table>
-<p class="tengl-sec-lead" style="margin:0 0 24px 0;padding:0;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:17px;font-weight:700;color:#2d2a32;letter-spacing:-0.03em;line-height:1.45;word-break:keep-all;">좋은 걸 채우기 전에, 먼저 비워야 해요</p>
+<p class="tengl-sec-lead" style="margin:0 0 24px 0;padding:0;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:18px;font-weight:700;color:#1F1F1F;letter-spacing:-0.03em;line-height:1.5;word-break:keep-all;">좋은 걸 채우기 전에, 먼저 비워야 해요</p>
 
-<table class="tengl-kp-card" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width:100%;margin:0 auto;background-color:#ffffff;border-radius:14px;border:1px solid #ede6ea;">
+<table class="tengl-kp-card" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;margin:0 auto;background-color:#FFFFFF;border-radius:14px;border:1px solid #E8DDF3;">
 <tr>
 <td class="tengl-kp-pad" align="center" valign="top" style="padding:20px 20px 18px 20px;text-align:center;vertical-align:top;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
 <table class="tengl-kp-flow" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;margin:0 auto;table-layout:fixed;">
 <tr>
 <td class="tengl-kp-step" width="28%" align="center" valign="top" style="width:28%;padding:0 2px;text-align:center;vertical-align:top;">
-<svg width="72" height="72" viewBox="0 0 72 72" style="display:block;margin:0 auto;"><circle cx="36" cy="36" r="35" fill="#f4f7fb"/><circle cx="34" cy="36" r="18" fill="none" stroke="#7eb6e8" stroke-width="5"/><path d="M50 30c4 2 6 6 6 10 0 4-2 8-6 10" fill="none" stroke="#7eb6e8" stroke-width="5" stroke-linecap="round"/><circle cx="28" cy="32" r="4.2" fill="#5a5a5a"/><circle cx="38" cy="31" r="4.2" fill="#4a4a4a"/><circle cx="29" cy="42" r="4.2" fill="#555"/><circle cx="39" cy="43" r="4.2" fill="#4a4a4a"/></svg>
-<p style="margin:10px 0 0 0;padding:0;font-size:12px;font-weight:700;color:#222222;letter-spacing:-0.03em;line-height:1.4;word-break:keep-all;">불필요한 성분 포착</p>
+<svg width="72" height="72" viewBox="0 0 72 72" style="display:block;margin:0 auto;"><circle cx="36" cy="36" r="35" fill="#FAF7FD"/><circle cx="34" cy="36" r="18" fill="none" stroke="#9A6AD8" stroke-width="5"/><path d="M50 30c4 2 6 6 6 10 0 4-2 8-6 10" fill="none" stroke="#9A6AD8" stroke-width="5" stroke-linecap="round"/><circle cx="28" cy="32" r="4.2" fill="#5a5a5a"/><circle cx="38" cy="31" r="4.2" fill="#4a4a4a"/><circle cx="29" cy="42" r="4.2" fill="#555"/><circle cx="39" cy="43" r="4.2" fill="#4a4a4a"/></svg>
+<p style="margin:10px 0 0 0;padding:0;font-size:12px;font-weight:700;color:#37105F;letter-spacing:-0.03em;line-height:1.4;word-break:keep-all;">불필요한 성분 포착</p>
 </td>
-<td class="tengl-kp-chevron" width="8%" align="center" valign="middle" style="width:8%;padding:0 0 28px 0;color:#542445;font-size:18px;font-weight:700;line-height:1;font-family:Arial,Helvetica,sans-serif;">&gt;</td>
+<td class="tengl-kp-chevron" width="8%" align="center" valign="middle" style="width:8%;padding:0 0 28px 0;color:#5B2A86;font-size:18px;font-weight:700;line-height:1;font-family:Arial,Helvetica,sans-serif;">&gt;</td>
 <td class="tengl-kp-step" width="28%" align="center" valign="top" style="width:28%;padding:0 2px;text-align:center;vertical-align:top;">
-<svg width="72" height="72" viewBox="0 0 72 72" style="display:block;margin:0 auto;"><circle cx="36" cy="36" r="35" fill="#f4f7fb"/><circle cx="36" cy="36" r="18" fill="none" stroke="#7eb6e8" stroke-width="5"/><path d="M48 28c6 4 4 16-2 20" fill="none" stroke="#9ec9ee" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="34" r="3.8" fill="#5a5a5a"/><circle cx="40" cy="33" r="3.8" fill="#4a4a4a"/><circle cx="33" cy="42" r="3.8" fill="#555"/><circle cx="41" cy="42" r="3.8" fill="#4a4a4a"/><circle cx="46" cy="30" r="3.2" fill="#666"/></svg>
-<p style="margin:10px 0 0 0;padding:0;font-size:12px;font-weight:700;color:#222222;letter-spacing:-0.03em;line-height:1.4;word-break:keep-all;">자가포식 작용으로<br>분해 시작</p>
+<svg width="72" height="72" viewBox="0 0 72 72" style="display:block;margin:0 auto;"><circle cx="36" cy="36" r="35" fill="#FAF7FD"/><circle cx="36" cy="36" r="18" fill="none" stroke="#9A6AD8" stroke-width="5"/><path d="M48 28c6 4 4 16-2 20" fill="none" stroke="#C8B1ED" stroke-width="3" stroke-linecap="round"/><circle cx="32" cy="34" r="3.8" fill="#5a5a5a"/><circle cx="40" cy="33" r="3.8" fill="#4a4a4a"/><circle cx="33" cy="42" r="3.8" fill="#555"/><circle cx="41" cy="42" r="3.8" fill="#4a4a4a"/><circle cx="46" cy="30" r="3.2" fill="#666"/></svg>
+<p style="margin:10px 0 0 0;padding:0;font-size:12px;font-weight:700;color:#37105F;letter-spacing:-0.03em;line-height:1.4;word-break:keep-all;">자가포식 작용으로<br>분해 시작</p>
 </td>
-<td class="tengl-kp-chevron" width="8%" align="center" valign="middle" style="width:8%;padding:0 0 28px 0;color:#542445;font-size:18px;font-weight:700;line-height:1;font-family:Arial,Helvetica,sans-serif;">&gt;</td>
+<td class="tengl-kp-chevron" width="8%" align="center" valign="middle" style="width:8%;padding:0 0 28px 0;color:#5B2A86;font-size:18px;font-weight:700;line-height:1;font-family:Arial,Helvetica,sans-serif;">&gt;</td>
 <td class="tengl-kp-step" width="28%" align="center" valign="top" style="width:28%;padding:0 2px;text-align:center;vertical-align:top;">
-<svg width="72" height="72" viewBox="0 0 72 72" style="display:block;margin:0 auto;"><circle cx="36" cy="36" r="35" fill="#f4f7fb"/><circle cx="34" cy="38" r="18" fill="none" stroke="#7eb6e8" stroke-width="5"/><path d="M54 18l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5z" fill="#7eb6e8"/><path d="M62 28l1.2 3 3 1.2-3 1.2-1.2 3-1.2-3-3-1.2 3-1.2 1.2-3z" fill="#9ec9ee"/><path d="M58 40l1 2.4 2.4 1-2.4 1-1 2.4-1-2.4-2.4-1 2.4-1 1-2.4z" fill="#7eb6e8"/></svg>
-<p style="margin:10px 0 0 0;padding:0;font-size:12px;font-weight:700;color:#222222;letter-spacing:-0.03em;line-height:1.4;word-break:keep-all;">깨끗하게 비워내어<br>세포 건강 유지</p>
+<svg width="72" height="72" viewBox="0 0 72 72" style="display:block;margin:0 auto;"><circle cx="36" cy="36" r="35" fill="#FAF7FD"/><circle cx="34" cy="38" r="18" fill="none" stroke="#9A6AD8" stroke-width="5"/><path d="M54 18l2 5 5 2-5 2-2 5-2-5-5-2 5-2 2-5z" fill="#9A6AD8"/><path d="M62 28l1.2 3 3 1.2-3 1.2-1.2 3-1.2-3-3-1.2 3-1.2 1.2-3z" fill="#C8B1ED"/><path d="M58 40l1 2.4 2.4 1-2.4 1-1 2.4-1-2.4-2.4-1 2.4-1 1-2.4z" fill="#9A6AD8"/></svg>
+<p style="margin:10px 0 0 0;padding:0;font-size:12px;font-weight:700;color:#37105F;letter-spacing:-0.03em;line-height:1.4;word-break:keep-all;">깨끗하게 비워내어<br>세포 건강 유지</p>
 </td>
 </tr>
 </table>
@@ -2754,83 +2752,83 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
 
 <!-- THE SOLUTION: 3STEP -->
 <tr>
-<td class="hwal-story-pad tengl-sol-wrap" valign="top" style="padding:32px 22px 32px 22px;vertical-align:top;background-color:#ffffff;">
+<td class="hwal-story-pad tengl-sol-wrap" valign="top" style="padding:32px 22px 32px 22px;vertical-align:top;background-color:#FFFFFF;">
 <table role="presentation" class="hwal-chapter-split" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;margin:0 0 8px 0;">
 <tr valign="middle">
-<td class="hwal-chapter-split-line" width="16%" style="width:16%;padding:0 0 0 4px;vertical-align:middle;"><div style="border-top:1px solid #ede6ea;font-size:0;line-height:0;">&nbsp;</div></td>
-<td class="hwal-chapter-split-title" valign="middle" align="center" style="padding:0 10px;vertical-align:middle;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:15px;font-weight:700;color:#542445;letter-spacing:0.06em;line-height:1.4;white-space:nowrap;">THE SOLUTION | 3STEP</td>
-<td class="hwal-chapter-split-line" width="16%" style="width:16%;padding:0 4px 0 0;vertical-align:middle;"><div style="border-top:1px solid #ede6ea;font-size:0;line-height:0;">&nbsp;</div></td>
+<td class="hwal-chapter-split-line" width="16%" style="width:16%;padding:0 0 0 4px;vertical-align:middle;"><div style="border-top:1px solid #E8DDF3;font-size:0;line-height:0;">&nbsp;</div></td>
+<td class="hwal-chapter-split-title" valign="middle" align="center" style="padding:0 10px;vertical-align:middle;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:15px;font-weight:800;color:#1F1F1F;letter-spacing:0.11em;line-height:1.4;white-space:nowrap;">THE SOLUTION | 3STEP</td>
+<td class="hwal-chapter-split-line" width="16%" style="width:16%;padding:0 4px 0 0;vertical-align:middle;"><div style="border-top:1px solid #E8DDF3;font-size:0;line-height:0;">&nbsp;</div></td>
 </tr>
 </table>
-<p class="tengl-sol-title tengl-sec-lead" style="margin:0 0 24px 0;padding:0;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:17px;font-weight:700;color:#2d2a32;letter-spacing:-0.03em;line-height:1.45;word-break:keep-all;">비우고 · 채우고 · 보호하세요</p>
+<p class="tengl-sol-title tengl-sec-lead" style="margin:0 0 24px 0;padding:0;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:18px;font-weight:700;color:#1F1F1F;letter-spacing:-0.03em;line-height:1.5;word-break:keep-all;">비우고 · 채우고 · 보호하세요</p>
 
 <table class="tengl-sol-grid" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;margin:0 auto;table-layout:fixed;">
 <tr>
 <td class="tengl-sol-col" width="31%" valign="top" style="width:31%;padding:0 3px;vertical-align:top;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width:100%;background-color:#ffffff;border-radius:14px;border:1px solid #ede6ea;overflow:hidden;box-shadow:0 2px 10px rgba(84,36,69,0.08);">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;background-color:#FFFFFF;border-radius:14px;border:1px solid #E5E0D9;overflow:hidden;box-shadow:0 2px 10px rgba(47,47,47,0.06);">
 <tr>
 <td align="center" valign="top" style="padding:18px 14px 0 14px;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td align="center" valign="middle" width="28" height="28" bgcolor="#542445" style="width:28px;height:28px;background-color:#542445;border-radius:14px;color:#ffffff;font-size:11px;font-weight:800;line-height:28px;mso-line-height-rule:exactly;">01</td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td align="center" valign="middle" width="28" height="28" bgcolor="#37105F" style="width:28px;height:28px;background-color:#5B2A86;border-radius:14px;color:#FFFFFF;font-size:11px;font-weight:800;line-height:28px;mso-line-height-rule:exactly;">01</td></tr></table>
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:10px auto 0 auto;"><tr><td align="center">
-<svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="display:block;"><path d="M7 8a5 5 0 0 1 8.5-3.5M17 8a5 5 0 0 1-8.5 3.5" stroke="#542445" stroke-width="1.7" stroke-linecap="round"/><path d="M15.2 4.2l1.6.2-.2 1.6M8.8 11.6l-1.6-.2.2-1.6" stroke="#542445" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="display:block;"><path d="M7 8a5 5 0 0 1 8.5-3.5M17 8a5 5 0 0 1-8.5 3.5" stroke="#37105F" stroke-width="1.7" stroke-linecap="round"/><path d="M15.2 4.2l1.6.2-.2 1.6M8.8 11.6l-1.6-.2.2-1.6" stroke="#37105F" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </td></tr></table>
-<p style="margin:8px 0 0 0;padding:0;font-size:15px;font-weight:800;color:#222222;letter-spacing:-0.03em;line-height:1.3;">비우기</p>
-<p class="tengl-sol-desc" style="margin:4px 0 0 0;padding:0;height:32px;min-height:32px;font-size:11px;font-weight:500;color:#888888;letter-spacing:-0.02em;line-height:1.4;word-break:keep-all;">청소 시스템<br>&nbsp;</p>
-<div style="margin:12px auto 10px auto;width:70%;border-top:1px solid #eee8f3;font-size:0;line-height:0;">&nbsp;</div>
-<p class="tengl-sol-ings" style="margin:0 0 12px 0;padding:0;height:32px;min-height:32px;font-size:11px;font-weight:700;color:#542445;letter-spacing:-0.03em;line-height:1.4;word-break:keep-all;">스페르미딘 · 피세틴<br>&nbsp;</p>
+<p style="margin:8px 0 0 0;padding:0;font-size:15px;font-weight:800;color:#37105F;letter-spacing:-0.03em;line-height:1.3;">비우기</p>
+<p class="tengl-sol-desc" style="margin:4px 0 0 0;padding:0;height:32px;min-height:32px;font-size:11px;font-weight:500;color:#2F2F2F;letter-spacing:-0.02em;line-height:1.4;word-break:keep-all;">청소 시스템<br>&nbsp;</p>
+<div style="margin:12px auto 10px auto;width:70%;border-top:1px solid #E5E0D9;font-size:0;line-height:0;">&nbsp;</div>
+<p class="tengl-sol-ings" style="margin:0 0 12px 0;padding:0;height:32px;min-height:32px;font-size:11px;font-weight:700;color:#37105F;letter-spacing:-0.03em;line-height:1.4;word-break:keep-all;">스페르미딘 · 피세틴<br>&nbsp;</p>
 </td>
 </tr>
 <tr>
 <td style="line-height:0;font-size:0;padding:0;">
-<svg width="180" height="86" viewBox="0 0 180 86" style="display:block;width:100%;height:auto;"><rect width="180" height="86" fill="#f3e8ff"/><g fill="#d8bff2" stroke="#c7a6e8" stroke-width="0.7"><polygon points="8,64 20,57 32,64 32,78 20,85 8,78"/><polygon points="32,64 44,57 56,64 56,78 44,85 32,78"/><polygon points="56,64 68,57 80,64 80,78 68,85 56,78"/><polygon points="80,64 92,57 104,64 104,78 92,85 80,78"/><polygon points="104,64 116,57 128,64 128,78 116,85 104,78"/><polygon points="128,64 140,57 152,64 152,78 140,85 128,78"/><polygon points="152,64 164,57 176,64 176,78 164,85 152,78"/><polygon points="20,50 32,43 44,50 44,64 32,71 20,64" fill="#e4d0f8"/><polygon points="68,50 80,43 92,50 92,64 80,71 68,64" fill="#e4d0f8"/><polygon points="116,50 128,43 140,50 140,64 128,71 116,64" fill="#e4d0f8"/></g><circle cx="90" cy="30" r="23" fill="#c9a6ef" fill-opacity="0.42"/><circle cx="90" cy="30" r="16" fill="#9b6ad8" fill-opacity="0.55"/><circle cx="90" cy="30" r="8" fill="#6f3db8" fill-opacity="0.5"/><circle cx="81" cy="22" r="6" fill="#ffffff" fill-opacity="0.45"/><circle cx="68" cy="16" r="4.5" fill="#d7c2f3"/><circle cx="112" cy="14" r="5" fill="#c9a6ef" fill-opacity="0.85"/><circle cx="120" cy="34" r="3.5" fill="#b48ae4"/><circle cx="58" cy="32" r="3" fill="#e0c8f6"/></svg>
+<svg width="180" height="86" viewBox="0 0 180 86" style="display:block;width:100%;height:auto;"><rect width="180" height="86" fill="#F4EEFA"/><g fill="#D7C2F3" stroke="#C8B1ED" stroke-width="0.7"><polygon points="8,64 20,57 32,64 32,78 20,85 8,78"/><polygon points="32,64 44,57 56,64 56,78 44,85 32,78"/><polygon points="56,64 68,57 80,64 80,78 68,85 56,78"/><polygon points="80,64 92,57 104,64 104,78 92,85 80,78"/><polygon points="104,64 116,57 128,64 128,78 116,85 104,78"/><polygon points="128,64 140,57 152,64 152,78 140,85 128,78"/><polygon points="152,64 164,57 176,64 176,78 164,85 152,78"/><polygon points="20,50 32,43 44,50 44,64 32,71 20,64" fill="#E5D7F7"/><polygon points="68,50 80,43 92,50 92,64 80,71 68,64" fill="#E5D7F7"/><polygon points="116,50 128,43 140,50 140,64 128,71 116,64" fill="#E5D7F7"/></g><circle cx="90" cy="30" r="23" fill="#D7C2F3" fill-opacity="0.42"/><circle cx="90" cy="30" r="16" fill="#5B2A86" fill-opacity="0.55"/><circle cx="90" cy="30" r="8" fill="#E6007E" fill-opacity="0.5"/><circle cx="81" cy="22" r="6" fill="#FFFFFF" fill-opacity="0.45"/><circle cx="68" cy="16" r="4.5" fill="#E6D8F8"/><circle cx="112" cy="14" r="5" fill="#D7C2F3" fill-opacity="0.85"/><circle cx="120" cy="34" r="3.5" fill="#E6007E"/><circle cx="58" cy="32" r="3" fill="#E5D7F7"/></svg>
 </td>
 </tr>
 </table>
 </td>
 <td class="tengl-sol-arrow" width="3.5%" align="center" valign="middle" style="width:3.5%;padding:0;text-align:center;vertical-align:middle;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td align="center" valign="middle" width="22" height="22" bgcolor="#542445" style="width:22px;height:22px;background-color:#542445;border-radius:11px;color:#ffffff;font-size:12px;font-weight:700;line-height:22px;mso-line-height-rule:exactly;font-family:Arial,Helvetica,sans-serif;">&gt;</td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td align="center" valign="middle" width="22" height="22" bgcolor="#37105F" style="width:22px;height:22px;background-color:#5B2A86;border-radius:11px;color:#FFFFFF;font-size:12px;font-weight:700;line-height:22px;mso-line-height-rule:exactly;font-family:Arial,Helvetica,sans-serif;">&gt;</td></tr></table>
 </td>
-<td class="tengl-sol-col" width="31%" valign="top" style="width:31%;padding:0 3px;vertical-align:top;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width:100%;background-color:#ffffff;border-radius:14px;border:1px solid #ede6ea;overflow:hidden;box-shadow:0 2px 10px rgba(84,36,69,0.08);">
+<td class="tengl-sol-col tengl-sol-col-focus" width="31%" valign="top" style="width:31%;padding:0 3px;vertical-align:top;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;background-color:#FFFFFF;border-radius:14px;border:1px solid #E5E0D9;overflow:hidden;box-shadow:0 2px 10px rgba(47,47,47,0.06);">
 <tr>
 <td align="center" valign="top" style="padding:18px 14px 0 14px;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td align="center" valign="middle" width="28" height="28" bgcolor="#542445" style="width:28px;height:28px;background-color:#542445;border-radius:14px;color:#ffffff;font-size:11px;font-weight:800;line-height:28px;mso-line-height-rule:exactly;">02</td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td align="center" valign="middle" width="28" height="28" bgcolor="#37105F" style="width:28px;height:28px;background-color:#5B2A86;border-radius:14px;color:#FFFFFF;font-size:11px;font-weight:800;line-height:28px;mso-line-height-rule:exactly;">02</td></tr></table>
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:10px auto 0 auto;"><tr><td align="center">
-<svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="display:block;"><path d="M12 3.5C12 3.5 6.5 10 6.5 14.2a5.5 5.5 0 0 0 11 0C17.5 10 12 3.5 12 3.5z" stroke="#542445" stroke-width="1.7" stroke-linejoin="round"/></svg>
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="display:block;"><path d="M12 3.5C12 3.5 6.5 10 6.5 14.2a5.5 5.5 0 0 0 11 0C17.5 10 12 3.5 12 3.5z" stroke="#37105F" stroke-width="1.7" stroke-linejoin="round"/></svg>
 </td></tr></table>
-<p style="margin:8px 0 0 0;padding:0;font-size:15px;font-weight:800;color:#222222;letter-spacing:-0.03em;line-height:1.3;">채우기</p>
-<p class="tengl-sol-desc" style="margin:4px 0 0 0;padding:0;height:32px;min-height:32px;font-size:11px;font-weight:500;color:#888888;letter-spacing:-0.02em;line-height:1.4;word-break:keep-all;">손상된 피부를 회복하는<br>재생 단계</p>
-<div style="margin:12px auto 10px auto;width:70%;border-top:1px solid #eee8f3;font-size:0;line-height:0;">&nbsp;</div>
-<p class="tengl-sol-ings" style="margin:0 0 12px 0;padding:0;height:32px;min-height:32px;font-size:11px;font-weight:700;color:#542445;letter-spacing:-0.03em;line-height:1.4;word-break:keep-all;">NMN · PDRN<br>콜라겐 · 엘라스틴</p>
+<p style="margin:8px 0 0 0;padding:0;font-size:15px;font-weight:800;color:#37105F;letter-spacing:-0.03em;line-height:1.3;">채우기</p>
+<p class="tengl-sol-desc" style="margin:4px 0 0 0;padding:0;height:32px;min-height:32px;font-size:11px;font-weight:500;color:#2F2F2F;letter-spacing:-0.02em;line-height:1.4;word-break:keep-all;">손상된 피부를 회복하는<br>재생 단계</p>
+<div style="margin:12px auto 10px auto;width:70%;border-top:1px solid #E8DDF3;font-size:0;line-height:0;">&nbsp;</div>
+<p class="tengl-sol-ings" style="margin:0 0 12px 0;padding:0;height:32px;min-height:32px;font-size:11px;font-weight:700;color:#37105F;letter-spacing:-0.03em;line-height:1.4;word-break:keep-all;">NMN · PDRN<br>콜라겐 · 엘라스틴</p>
 </td>
 </tr>
 <tr>
 <td style="line-height:0;font-size:0;padding:0;">
-<svg width="180" height="86" viewBox="0 0 180 86" style="display:block;width:100%;height:auto;"><rect width="180" height="86" fill="#fbf0f5"/><ellipse cx="90" cy="78" rx="86" ry="20" fill="#f0c4d4" fill-opacity="0.55"/><ellipse cx="90" cy="72" rx="70" ry="10" fill="#ffffff" fill-opacity="0.28"/><circle cx="50" cy="36" r="17" fill="#f0a8c4"/><circle cx="50" cy="36" r="8" fill="#ffffff" fill-opacity="0.22"/><path d="M50 26l3 7 7 1-5 5 1 7-6-4-6 4 1-7-5-5 7-1z" fill="#ffffff" fill-opacity="0.28"/><circle cx="90" cy="30" r="19" fill="#c9a6ef"/><circle cx="90" cy="30" r="9" fill="#ffffff" fill-opacity="0.2"/><path d="M90 19l4 8 9 1-7 6 2 8-8-4-8 4 2-8-7-6 9-1z" fill="#ffffff" fill-opacity="0.22"/><circle cx="130" cy="38" r="16" fill="#e8b07a"/><circle cx="130" cy="38" r="7" fill="#ffffff" fill-opacity="0.28"/><path d="M130 29l3 6 7 1-5 4 1 6-6-3-6 3 1-6-5-4 7-1z" fill="#ffffff" fill-opacity="0.3"/><g stroke="#ffffff" stroke-opacity="0.4" stroke-width="0.8" fill="none"><circle cx="90" cy="30" r="13"/><circle cx="50" cy="36" r="11"/><circle cx="130" cy="38" r="10"/></g></svg>
+<svg width="180" height="86" viewBox="0 0 180 86" style="display:block;width:100%;height:auto;"><rect width="180" height="86" fill="#FAF7FD"/><ellipse cx="90" cy="78" rx="86" ry="20" fill="#F1C7E2" fill-opacity="0.55"/><ellipse cx="90" cy="72" rx="70" ry="10" fill="#FFFFFF" fill-opacity="0.28"/><circle cx="50" cy="36" r="17" fill="#EC168C"/><circle cx="50" cy="36" r="8" fill="#FFFFFF" fill-opacity="0.22"/><path d="M50 26l3 7 7 1-5 5 1 7-6-4-6 4 1-7-5-5 7-1z" fill="#FFFFFF" fill-opacity="0.28"/><circle cx="90" cy="30" r="19" fill="#D7C2F3"/><circle cx="90" cy="30" r="9" fill="#FFFFFF" fill-opacity="0.2"/><path d="M90 19l4 8 9 1-7 6 2 8-8-4-8 4 2-8-7-6 9-1z" fill="#FFFFFF" fill-opacity="0.22"/><circle cx="130" cy="38" r="16" fill="#CDADEB"/><circle cx="130" cy="38" r="7" fill="#FFFFFF" fill-opacity="0.28"/><path d="M130 29l3 6 7 1-5 4 1 6-6-3-6 3 1-6-5-4 7-1z" fill="#FFFFFF" fill-opacity="0.3"/><g stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="0.8" fill="none"><circle cx="90" cy="30" r="13"/><circle cx="50" cy="36" r="11"/><circle cx="130" cy="38" r="10"/></g></svg>
 </td>
 </tr>
 </table>
 </td>
 <td class="tengl-sol-arrow" width="3.5%" align="center" valign="middle" style="width:3.5%;padding:0;text-align:center;vertical-align:middle;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td align="center" valign="middle" width="22" height="22" bgcolor="#542445" style="width:22px;height:22px;background-color:#542445;border-radius:11px;color:#ffffff;font-size:12px;font-weight:700;line-height:22px;mso-line-height-rule:exactly;font-family:Arial,Helvetica,sans-serif;">&gt;</td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td align="center" valign="middle" width="22" height="22" bgcolor="#37105F" style="width:22px;height:22px;background-color:#5B2A86;border-radius:11px;color:#FFFFFF;font-size:12px;font-weight:700;line-height:22px;mso-line-height-rule:exactly;font-family:Arial,Helvetica,sans-serif;">&gt;</td></tr></table>
 </td>
 <td class="tengl-sol-col" width="31%" valign="top" style="width:31%;padding:0 3px;vertical-align:top;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width:100%;background-color:#ffffff;border-radius:14px;border:1px solid #ede6ea;overflow:hidden;box-shadow:0 2px 10px rgba(84,36,69,0.08);">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;background-color:#FFFFFF;border-radius:14px;border:1px solid #E8DDF3;overflow:hidden;box-shadow:0 2px 10px rgba(75,33,124,0.08);">
 <tr>
 <td align="center" valign="top" style="padding:18px 14px 0 14px;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
-<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td align="center" valign="middle" width="28" height="28" bgcolor="#542445" style="width:28px;height:28px;background-color:#542445;border-radius:14px;color:#ffffff;font-size:11px;font-weight:800;line-height:28px;mso-line-height-rule:exactly;">03</td></tr></table>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td align="center" valign="middle" width="28" height="28" bgcolor="#37105F" style="width:28px;height:28px;background-color:#5B2A86;border-radius:14px;color:#FFFFFF;font-size:11px;font-weight:800;line-height:28px;mso-line-height-rule:exactly;">03</td></tr></table>
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:10px auto 0 auto;"><tr><td align="center">
-<svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="display:block;"><path d="M12 3.5l7 3v5.4c0 4.2-2.9 7.5-7 9-4.1-1.5-7-4.8-7-9V6.5l7-3z" stroke="#542445" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 8.5v6M9.2 11.5h5.6" stroke="#542445" stroke-width="1.7" stroke-linecap="round"/></svg>
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="display:block;"><path d="M12 3.5l7 3v5.4c0 4.2-2.9 7.5-7 9-4.1-1.5-7-4.8-7-9V6.5l7-3z" stroke="#37105F" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 8.5v6M9.2 11.5h5.6" stroke="#37105F" stroke-width="1.7" stroke-linecap="round"/></svg>
 </td></tr></table>
-<p style="margin:8px 0 0 0;padding:0;font-size:15px;font-weight:800;color:#222222;letter-spacing:-0.03em;line-height:1.3;">보호하기</p>
-<p class="tengl-sol-desc" style="margin:4px 0 0 0;padding:0;height:32px;min-height:32px;font-size:11px;font-weight:500;color:#888888;letter-spacing:-0.02em;line-height:1.4;word-break:keep-all;">피부 탄력 및<br>장벽 강화</p>
-<div style="margin:12px auto 10px auto;width:70%;border-top:1px solid #eee8f3;font-size:0;line-height:0;">&nbsp;</div>
-<p class="tengl-sol-ings" style="margin:0 0 12px 0;padding:0;height:32px;min-height:32px;font-size:11px;font-weight:700;color:#542445;letter-spacing:-0.03em;line-height:1.4;word-break:keep-all;">밀크세라마이드<br>· 히알루론산</p>
+<p style="margin:8px 0 0 0;padding:0;font-size:15px;font-weight:800;color:#37105F;letter-spacing:-0.03em;line-height:1.3;">보호하기</p>
+<p class="tengl-sol-desc" style="margin:4px 0 0 0;padding:0;height:32px;min-height:32px;font-size:11px;font-weight:500;color:#2F2F2F;letter-spacing:-0.02em;line-height:1.4;word-break:keep-all;">피부 탄력 및<br>장벽 강화</p>
+<div style="margin:12px auto 10px auto;width:70%;border-top:1px solid #E8DDF3;font-size:0;line-height:0;">&nbsp;</div>
+<p class="tengl-sol-ings" style="margin:0 0 12px 0;padding:0;height:32px;min-height:32px;font-size:11px;font-weight:700;color:#37105F;letter-spacing:-0.03em;line-height:1.4;word-break:keep-all;">밀크세라마이드<br>· 히알루론산</p>
 </td>
 </tr>
 <tr>
 <td style="line-height:0;font-size:0;padding:0;">
-<svg width="180" height="86" viewBox="0 0 180 86" style="display:block;width:100%;height:auto;"><rect width="180" height="86" fill="#e8f5fb"/><g fill="#b6def2" stroke="#9fd0ea" stroke-width="0.7"><polygon points="8,64 20,57 32,64 32,78 20,85 8,78"/><polygon points="32,64 44,57 56,64 56,78 44,85 32,78"/><polygon points="56,64 68,57 80,64 80,78 68,85 56,78"/><polygon points="80,64 92,57 104,64 104,78 92,85 80,78"/><polygon points="104,64 116,57 128,64 128,78 116,85 104,78"/><polygon points="128,64 140,57 152,64 152,78 140,85 128,78"/><polygon points="152,64 164,57 176,64 176,78 164,85 152,78"/><polygon points="20,50 32,43 44,50 44,64 32,71 20,64" fill="#d2ebf7"/><polygon points="68,50 80,43 92,50 92,64 80,71 68,64" fill="#d2ebf7"/><polygon points="116,50 128,43 140,50 140,64 128,71 116,64" fill="#d2ebf7"/></g><circle cx="92" cy="30" r="22" fill="#9fd4ee" fill-opacity="0.55"/><circle cx="92" cy="30" r="14" fill="#ffffff" fill-opacity="0.28"/><path d="M92 20c0 0-6.2 7.2-6.2 11.2a6.2 6.2 0 0 0 12.4 0C98.2 27.2 92 20 92 20z" fill="#3e9ccb"/><circle cx="86" cy="23" r="3.2" fill="#ffffff" fill-opacity="0.55"/><circle cx="68" cy="18" r="4.5" fill="#c5e6f6"/><circle cx="118" cy="14" r="4" fill="#d4eef8"/><circle cx="126" cy="36" r="3.2" fill="#b9dff2"/><circle cx="58" cy="34" r="3" fill="#cfeaf6"/></svg>
+<svg width="180" height="86" viewBox="0 0 180 86" style="display:block;width:100%;height:auto;"><rect width="180" height="86" fill="#F7F2FC"/><g fill="#D7C2F3" stroke="#C8B1ED" stroke-width="0.7"><polygon points="8,64 20,57 32,64 32,78 20,85 8,78"/><polygon points="32,64 44,57 56,64 56,78 44,85 32,78"/><polygon points="56,64 68,57 80,64 80,78 68,85 56,78"/><polygon points="80,64 92,57 104,64 104,78 92,85 80,78"/><polygon points="104,64 116,57 128,64 128,78 116,85 104,78"/><polygon points="128,64 140,57 152,64 152,78 140,85 128,78"/><polygon points="152,64 164,57 176,64 176,78 164,85 152,78"/><polygon points="20,50 32,43 44,50 44,64 32,71 20,64" fill="#E5D7F7"/><polygon points="68,50 80,43 92,50 92,64 80,71 68,64" fill="#E5D7F7"/><polygon points="116,50 128,43 140,50 140,64 128,71 116,64" fill="#E5D7F7"/></g><circle cx="92" cy="30" r="22" fill="#CDADEB" fill-opacity="0.55"/><circle cx="92" cy="30" r="14" fill="#FFFFFF" fill-opacity="0.28"/><path d="M92 20c0 0-6.2 7.2-6.2 11.2a6.2 6.2 0 0 0 12.4 0C98.2 27.2 92 20 92 20z" fill="#8656C5"/><circle cx="86" cy="23" r="3.2" fill="#FFFFFF" fill-opacity="0.55"/><circle cx="68" cy="18" r="4.5" fill="#E5D7F7"/><circle cx="118" cy="14" r="4" fill="#EFE6FA"/><circle cx="126" cy="36" r="3.2" fill="#DCCAF4"/><circle cx="58" cy="34" r="3" fill="#EADFF8"/></svg>
 </td>
 </tr>
 </table>
@@ -2844,45 +2842,45 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
 <table role="presentation" class="hwal-section-gap" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
 
 <!-- INGREDIENT QUALITY -->
-<table role="presentation" class="tengl-iq-section" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;background-color:#fff4f7;">
+<table role="presentation" class="tengl-iq-section" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;background-color:#F7F5F2;">
 <tr>
-<td class="tengl-iq-pad" style="padding:36px 22px 32px 22px;background-color:#fff4f7;">
+<td class="tengl-iq-pad" style="padding:36px 22px 32px 22px;background-color:#F7F5F2;">
 
 <table role="presentation" class="hwal-chapter-split" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;margin:0 0 10px 0;">
 <tr valign="middle">
-<td class="hwal-chapter-split-line" width="18%" style="width:18%;padding:0 0 0 4px;vertical-align:middle;"><div style="border-top:1px solid #ede6ea;font-size:0;line-height:0;">&nbsp;</div></td>
-<td class="hwal-chapter-split-title" valign="middle" align="center" style="padding:0 10px;vertical-align:middle;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:15px;font-weight:700;color:#542445;letter-spacing:0.06em;line-height:1.4;white-space:nowrap;">INGREDIENT QUALITY</td>
-<td class="hwal-chapter-split-line" width="18%" style="width:18%;padding:0 4px 0 0;vertical-align:middle;"><div style="border-top:1px solid #ede6ea;font-size:0;line-height:0;">&nbsp;</div></td>
+<td class="hwal-chapter-split-line" width="18%" style="width:18%;padding:0 0 0 4px;vertical-align:middle;"><div style="border-top:1px solid #E8DDF3;font-size:0;line-height:0;">&nbsp;</div></td>
+<td class="hwal-chapter-split-title" valign="middle" align="center" style="padding:0 10px;vertical-align:middle;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:15px;font-weight:800;color:#1F1F1F;letter-spacing:0.11em;line-height:1.4;white-space:nowrap;">INGREDIENT QUALITY</td>
+<td class="hwal-chapter-split-line" width="18%" style="width:18%;padding:0 4px 0 0;vertical-align:middle;"><div style="border-top:1px solid #E8DDF3;font-size:0;line-height:0;">&nbsp;</div></td>
 </tr>
 </table>
-<p class="tengl-iq-title tengl-sec-lead" style="margin:0 0 28px 0;padding:0;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:17px;font-weight:700;color:#2d2a32;letter-spacing:-0.03em;line-height:1.45;word-break:keep-all;">피부를 위한 고른 원료, 원산지와 품질까지 꼼꼼하게</p>
+<p class="tengl-iq-title tengl-sec-lead" style="margin:0 0 28px 0;padding:0;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:18px;font-weight:700;color:#1F1F1F;letter-spacing:-0.03em;line-height:1.5;word-break:keep-all;">피부를 위한 고른 원료, 원산지와 품질까지 꼼꼼하게</p>
 
 <table class="tengl-iq-cols" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;margin:0 auto;">
 <tr>
 <td class="tengl-iq-item" width="50%" valign="top" align="center" style="width:50%;padding:0 8px 0 0;vertical-align:top;text-align:center;">
-<table class="tengl-iq-panel" role="presentation" width="100%" height="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width:100%;height:100%;background-color:#ffffff;border-radius:14px;border:1px solid #ede6ea;overflow:hidden;box-shadow:0 2px 10px rgba(84,36,69,0.08);">
+<table class="tengl-iq-panel" role="presentation" width="100%" height="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;height:100%;background-color:#FFFFFF;border-radius:14px;border:1px solid #E5E0D9;overflow:hidden;box-shadow:0 2px 10px rgba(47,47,47,0.06);">
 <tr>
 <td class="tengl-iq-card-pad" align="center" valign="top" style="padding:20px 16px 16px 16px;vertical-align:top;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
 <table class="tengl-iq-rows" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;">
 <tr>
 <td class="tengl-iq-row tengl-iq-row-1" height="46" valign="bottom" align="center" style="height:46px;padding:0;vertical-align:bottom;text-align:center;">
-<p class="tengl-iq-h" style="margin:0;padding:0;font-size:17px;font-weight:700;color:#542445;letter-spacing:-0.03em;line-height:1.35;text-align:center;word-break:keep-all;">300Da 초저분자 피쉬콜라겐</p>
+<p class="tengl-iq-h" style="margin:0;padding:0;font-size:17px;font-weight:700;color:#37105F;letter-spacing:-0.03em;line-height:1.35;text-align:center;word-break:keep-all;"><span class="tengl-iq-num">300Da</span> 초저분자 피쉬콜라겐</p>
 </td>
 </tr>
 <tr>
 <td class="tengl-iq-row tengl-iq-row-2" height="38" valign="middle" align="center" style="height:38px;padding:0;vertical-align:middle;text-align:center;">
 <table class="tengl-iq-badges" role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
 <tr>
-<td class="tengl-iq-badge tengl-iq-badge-fill" style="padding:6px 14px;background-color:#fde8ee;border:1px solid #fde8ee;border-radius:999px;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:12px;font-weight:700;color:#542445;letter-spacing:-0.02em;line-height:1.3;white-space:nowrap;">캐나다</td>
+<td class="tengl-iq-badge tengl-iq-badge-fill" style="padding:6px 14px;background-color:#FFFFFF;border:1px solid #E5E0D9;border-radius:999px;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:12px;font-weight:700;color:#000000;letter-spacing:-0.02em;line-height:1.3;white-space:nowrap;">캐나다</td>
 <td width="8" style="width:8px;font-size:0;line-height:0;">&nbsp;</td>
-<td class="tengl-iq-badge tengl-iq-badge-line" style="padding:6px 14px;background-color:#ffffff;border:1px solid #e04b78;border-radius:999px;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:12px;font-weight:700;color:#e04b78;letter-spacing:-0.02em;line-height:1.3;white-space:nowrap;">1,000mg</td>
+<td class="tengl-iq-badge tengl-iq-badge-line" style="padding:6px 14px;background-color:#FFFFFF;border:1px solid #E5E0D9;border-radius:999px;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:14px;font-weight:800;color:#000000;letter-spacing:-0.02em;line-height:1.3;white-space:nowrap;">1,000mg</td>
 </tr>
 </table>
 </td>
 </tr>
 <tr>
 <td class="tengl-iq-row tengl-iq-row-3" height="28" valign="middle" align="center" style="height:28px;padding:0;vertical-align:middle;text-align:center;">
-<p class="tengl-iq-point" style="margin:0;padding:0;font-size:12px;font-weight:500;color:#6b6570;letter-spacing:-0.04em;line-height:1.45;text-align:center;white-space:nowrap;word-break:keep-all;">일반 콜라겐 대비 <span class="tengl-iq-em" style="color:#e04b78;font-weight:700;">최대 200배</span> 높은 흡수율</p>
+<p class="tengl-iq-point" style="margin:0;padding:0;font-size:12px;font-weight:500;color:#6B6B6B;letter-spacing:-0.04em;line-height:1.45;text-align:center;white-space:nowrap;word-break:keep-all;">일반 콜라겐 대비 <span class="tengl-iq-em" style="color:#2F2F2F;font-weight:700;">최대 200배</span> 높은 흡수율</p>
 </td>
 </tr>
 <tr>
@@ -2896,19 +2894,19 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
 </table>
 </td>
 <td class="tengl-iq-item tengl-iq-item-fill" width="50%" valign="top" align="center" height="1" style="width:50%;height:1px;padding:0 0 0 8px;vertical-align:top;text-align:center;">
-<div class="tengl-iq-clip" style="height:100%;overflow:hidden;position:relative;border-radius:14px;border:1px solid #ede6ea;background-color:#ffffff;box-shadow:0 2px 10px rgba(84,36,69,0.08);">
-<table class="tengl-iq-panel" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width:100%;height:auto;background-color:transparent;border:0;border-radius:0;box-shadow:none;">
+<div class="tengl-iq-clip" style="height:100%;overflow:hidden;position:relative;border-radius:14px;border:1px solid #E5E0D9;background-color:#FFFFFF;box-shadow:0 2px 10px rgba(47,47,47,0.06);">
+<table class="tengl-iq-panel" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;height:auto;background-color:transparent;border:0;border-radius:0;box-shadow:none;">
 <tr>
 <td class="tengl-iq-card-pad" align="center" valign="top" style="padding:20px 16px 16px 16px;vertical-align:top;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
 <table class="tengl-iq-rows" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;">
 <tr>
 <td class="tengl-iq-row tengl-iq-row-1" height="46" valign="bottom" align="center" style="height:46px;padding:0;vertical-align:bottom;text-align:center;">
-<p class="tengl-iq-h" style="margin:0;padding:0;font-size:17px;font-weight:700;color:#542445;letter-spacing:0.04em;line-height:1.35;text-align:center;word-break:keep-all;">CLEAN FORMULA</p>
+<p class="tengl-iq-h" style="margin:0;padding:0;font-size:17px;font-weight:700;color:#37105F;letter-spacing:0.04em;line-height:1.35;text-align:center;word-break:keep-all;">CLEAN FORMULA</p>
 </td>
 </tr>
 <tr>
 <td class="tengl-iq-row tengl-iq-row-2" height="38" valign="middle" align="center" style="height:38px;padding:0;vertical-align:middle;text-align:center;">
-<p class="tengl-iq-point tengl-iq-point-pink" style="margin:0;padding:0;font-size:12px;font-weight:600;color:#e04b78;letter-spacing:-0.04em;line-height:1.45;text-align:center;white-space:nowrap;word-break:keep-all;"><span class="tengl-iq-no" style="color:#e04b78;font-weight:700;">NO</span> 화학방부제 · <span class="tengl-iq-no" style="color:#e04b78;font-weight:700;">NO</span> 인공감미료 · <span class="tengl-iq-no" style="color:#e04b78;font-weight:700;">NO</span> 인공향료</p>
+<p class="tengl-iq-point tengl-iq-point-pink" style="margin:0;padding:0;font-size:12px;font-weight:600;color:#000000;letter-spacing:-0.04em;line-height:1.45;text-align:center;white-space:nowrap;word-break:keep-all;"><span class="tengl-iq-no" style="color:#E6007E;font-weight:700;">NO</span> 화학방부제 · <span class="tengl-iq-no" style="color:#E6007E;font-weight:700;">NO</span> 인공감미료 · <span class="tengl-iq-no" style="color:#E6007E;font-weight:700;">NO</span> 인공향료</p>
 </td>
 </tr>
 <tr>
@@ -2935,40 +2933,40 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
 <table role="presentation" class="hwal-section-gap" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding:0;font-size:0;line-height:0;">&nbsp;</td></tr></table>
 
 <!-- 챕터: 이런 분께 추천드려요 · 체크리스트 2열 -->
-<table role="presentation" class="hwal-recommend-section" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;background-color:#fff4f7;">
-<tr><td style="padding:8px 22px 24px 22px;background-color:#fff4f7;">
-<table role="presentation" class="hwal-chapter-split hwal-chapter-split-recommend" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 8px 0;">
+<table role="presentation" class="hwal-recommend-section" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;background-color:#FFFFFF;">
+<tr><td style="padding:36px 22px 32px 22px;background-color:#FFFFFF;">
+<table role="presentation" class="hwal-chapter-split hwal-chapter-split-recommend" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 10px 0;">
 <tr valign="middle">
-<td class="hwal-chapter-split-line" width="32%" style="width:32%;padding:0 0 0 4px;vertical-align:middle;"><div style="border-top:1px solid #ede6ea;font-size:0;line-height:0;">&nbsp;</div></td>
-<td class="hwal-chapter-split-title" valign="middle" align="center" style="padding:0 10px;vertical-align:middle;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:15px;font-weight:700;color:#542445;letter-spacing:0.06em;line-height:1.4;">RECOMMENDED FOR</td>
-<td class="hwal-chapter-split-line" width="32%" style="width:32%;padding:0 4px 0 0;vertical-align:middle;"><div style="border-top:1px solid #ede6ea;font-size:0;line-height:0;">&nbsp;</div></td>
+<td class="hwal-chapter-split-line" width="32%" style="width:32%;padding:0 0 0 4px;vertical-align:middle;"><div style="border-top:1px solid #E8DDF3;font-size:0;line-height:0;">&nbsp;</div></td>
+<td class="hwal-chapter-split-title" valign="middle" align="center" style="padding:0 10px;vertical-align:middle;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:15px;font-weight:800;color:#1F1F1F;letter-spacing:0.11em;line-height:1.4;">RECOMMENDED FOR</td>
+<td class="hwal-chapter-split-line" width="32%" style="width:32%;padding:0 4px 0 0;vertical-align:middle;"><div style="border-top:1px solid #E8DDF3;font-size:0;line-height:0;">&nbsp;</div></td>
 </tr>
 </table>
-<p class="tengl-sec-lead" style="margin:0 0 24px 0;padding:0;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:17px;font-weight:700;color:#2d2a32;letter-spacing:-0.03em;line-height:1.45;word-break:keep-all;">이런분께 추천해요!</p>
-<table class="hwal-recommend-panel" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width:100%;background-color:#ffffff;border:1px solid #ede6ea;border-radius:14px;">
+<p class="tengl-sec-lead" style="margin:0 0 28px 0;padding:0;text-align:center;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:18px;font-weight:700;color:#1F1F1F;letter-spacing:-0.03em;line-height:1.5;word-break:keep-all;">이런분께 추천해요!</p>
+<table class="hwal-recommend-panel" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;background-color:#FFFFFF;border:1px solid #E5E0D9;border-radius:14px;">
 <tr><td style="padding:20px 20px 18px 20px;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;">
 <table class="hwal-recommend-layout" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;width:100%;">
 <tr>
-<td class="hwal-recommend-check-col" width="50%" valign="top" style="width:50%;padding:0 12px 0 0;vertical-align:top;border-right:1px solid #ede6ea;">
+<td class="hwal-recommend-check-col" width="50%" valign="top" style="width:50%;padding:0 12px 0 0;vertical-align:top;border-right:1px solid #E5E0D9;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr class="hwal-recommend-check-row"><td width="22" valign="middle" style="width:22px;padding:8px 0;vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" width="16" height="16" bgcolor="#542445" style="width:16px;height:16px;min-width:16px;background-color:#542445;border-radius:3px;font-size:10px;line-height:16px;mso-line-height-rule:exactly;color:#ffffff;font-weight:700;text-align:center;">✓</td></tr></table></td><td class="hwal-recommend-check-text" valign="middle" style="padding:0 0 0 8px;font-size:13px;font-weight:500;color:#2f2f2f;line-height:1.48;letter-spacing:-0.02em;vertical-align:middle;word-break:keep-all;">화장품만으로는 관리가 아쉬운 분</td></tr>
+<tr class="hwal-recommend-check-row"><td width="22" valign="middle" style="width:22px;padding:8px 0;vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" width="16" height="16" bgcolor="#2F2F2F" style="width:16px;height:16px;min-width:16px;background-color:#2F2F2F;border-radius:3px;font-size:10px;line-height:16px;mso-line-height-rule:exactly;color:#FFFFFF;font-weight:700;text-align:center;">✓</td></tr></table></td><td class="hwal-recommend-check-text" valign="middle" style="padding:0 0 0 8px;font-size:13px;font-weight:500;color:#2F2F2F;line-height:1.48;letter-spacing:-0.02em;vertical-align:middle;word-break:keep-all;">화장품만으로는 관리가 아쉬운 분</td></tr>
 </table>
 </td>
 <td class="hwal-recommend-check-col" width="50%" valign="top" style="width:50%;padding:0 0 0 12px;vertical-align:top;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr class="hwal-recommend-check-row"><td width="22" valign="middle" style="width:22px;padding:8px 0;vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" width="16" height="16" bgcolor="#542445" style="width:16px;height:16px;min-width:16px;background-color:#542445;border-radius:3px;font-size:10px;line-height:16px;mso-line-height-rule:exactly;color:#ffffff;font-weight:700;text-align:center;">✓</td></tr></table></td><td class="hwal-recommend-check-text" valign="middle" style="padding:0 0 0 8px;font-size:13px;font-weight:500;color:#2f2f2f;line-height:1.48;letter-spacing:-0.02em;vertical-align:middle;word-break:keep-all;">건조하고 푸석한 피부가 고민인 분</td></tr>
+<tr class="hwal-recommend-check-row"><td width="22" valign="middle" style="width:22px;padding:8px 0;vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" width="16" height="16" bgcolor="#2F2F2F" style="width:16px;height:16px;min-width:16px;background-color:#2F2F2F;border-radius:3px;font-size:10px;line-height:16px;mso-line-height-rule:exactly;color:#FFFFFF;font-weight:700;text-align:center;">✓</td></tr></table></td><td class="hwal-recommend-check-text" valign="middle" style="padding:0 0 0 8px;font-size:13px;font-weight:500;color:#2F2F2F;line-height:1.48;letter-spacing:-0.02em;vertical-align:middle;word-break:keep-all;">건조하고 푸석한 피부가 고민인 분</td></tr>
 </table>
 </td>
 </tr>
 <tr>
-<td class="hwal-recommend-check-col" width="50%" valign="top" style="width:50%;padding:0 12px 0 0;vertical-align:top;border-right:1px solid #ede6ea;">
+<td class="hwal-recommend-check-col" width="50%" valign="top" style="width:50%;padding:0 12px 0 0;vertical-align:top;border-right:1px solid #E8DDF3;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr class="hwal-recommend-check-row"><td width="22" valign="middle" style="width:22px;padding:8px 0;vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" width="16" height="16" bgcolor="#542445" style="width:16px;height:16px;min-width:16px;background-color:#542445;border-radius:3px;font-size:10px;line-height:16px;mso-line-height-rule:exactly;color:#ffffff;font-weight:700;text-align:center;">✓</td></tr></table></td><td class="hwal-recommend-check-text" valign="middle" style="padding:0 0 0 8px;font-size:13px;font-weight:500;color:#2f2f2f;line-height:1.48;letter-spacing:-0.02em;vertical-align:middle;word-break:keep-all;">피부 탄력 저하가 신경 쓰이는 분</td></tr>
+<tr class="hwal-recommend-check-row"><td width="22" valign="middle" style="width:22px;padding:8px 0;vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" width="16" height="16" bgcolor="#2F2F2F" style="width:16px;height:16px;min-width:16px;background-color:#2F2F2F;border-radius:3px;font-size:10px;line-height:16px;mso-line-height-rule:exactly;color:#FFFFFF;font-weight:700;text-align:center;">✓</td></tr></table></td><td class="hwal-recommend-check-text" valign="middle" style="padding:0 0 0 8px;font-size:13px;font-weight:500;color:#2F2F2F;line-height:1.48;letter-spacing:-0.02em;vertical-align:middle;word-break:keep-all;">피부 탄력 저하가 신경 쓰이는 분</td></tr>
 </table>
 </td>
 <td class="hwal-recommend-check-col" width="50%" valign="top" style="width:50%;padding:0 0 0 12px;vertical-align:top;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr class="hwal-recommend-check-row"><td width="22" valign="middle" style="width:22px;padding:8px 0;vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" width="16" height="16" bgcolor="#542445" style="width:16px;height:16px;min-width:16px;background-color:#542445;border-radius:3px;font-size:10px;line-height:16px;mso-line-height-rule:exactly;color:#ffffff;font-weight:700;text-align:center;">✓</td></tr></table></td><td class="hwal-recommend-check-text" valign="middle" style="padding:0 0 0 8px;font-size:13px;font-weight:500;color:#2f2f2f;line-height:1.48;letter-spacing:-0.02em;vertical-align:middle;word-break:keep-all;">간편한 이너뷰티 루틴을 찾는 분</td></tr>
+<tr class="hwal-recommend-check-row"><td width="22" valign="middle" style="width:22px;padding:8px 0;vertical-align:middle;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" width="16" height="16" bgcolor="#2F2F2F" style="width:16px;height:16px;min-width:16px;background-color:#2F2F2F;border-radius:3px;font-size:10px;line-height:16px;mso-line-height-rule:exactly;color:#FFFFFF;font-weight:700;text-align:center;">✓</td></tr></table></td><td class="hwal-recommend-check-text" valign="middle" style="padding:0 0 0 8px;font-size:13px;font-weight:500;color:#2F2F2F;line-height:1.48;letter-spacing:-0.02em;vertical-align:middle;word-break:keep-all;">간편한 이너뷰티 루틴을 찾는 분</td></tr>
 </table>
 </td>
 </tr>
@@ -2979,26 +2977,26 @@ table[data-aowa="flow-icons"] td[bgcolor="#ffffff"] {
 </table>
 
 <!-- 샘플 신청 CTA -->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="width:100%;background-color:#ffffff;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="width:100%;background-color:#FFFFFF;">
 <tr>
-<td class="hwal-cta-pad" align="center" bgcolor="#ffffff" style="padding:36px 22px 36px 22px;text-align:center;background-color:#ffffff;border-top:1px solid #ede6ea;">
-<a class="hwal-cta-pill" href="https://www.connectsell.co.kr/form?product=%EA%B0%80%EA%BE%B8%EA%B8%B0%20%ED%85%90%EA%B8%80%EC%8A%A4%ED%82%A8%EB%B6%80%EC%8A%A4%ED%84%B0%EC%83%B7" style="display:inline-block;max-width:100%;box-sizing:border-box;padding:14px 36px 15px 36px;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:15px;font-weight:700;letter-spacing:-0.01em;line-height:1.4;color:#ffffff !important;text-decoration:none !important;border-radius:999px;background-color:#542445;border:1px solid #3d1a32;box-shadow:0 2px 8px rgba(84,36,69,0.18);">제품 체험 신청하기 →</a>
+<td class="hwal-cta-pad" align="center" bgcolor="#FFFFFF" style="padding:36px 22px 36px 22px;text-align:center;background-color:#FFFFFF;border-top:1px solid #E5E0D9;">
+<a class="hwal-cta-pill" href="https://www.connectsell.co.kr/form?product=%EA%B0%80%EA%BE%B8%EA%B8%B0%20%ED%85%90%EA%B8%80%EC%8A%A4%ED%82%A8%EB%B6%80%EC%8A%A4%ED%84%B0%EC%83%B7" style="display:inline-block;max-width:100%;box-sizing:border-box;padding:14px 36px 15px 36px;font-family:'Malgun Gothic','Apple SD Gothic Neo','Segoe UI',system-ui,sans-serif;font-size:15px;font-weight:700;letter-spacing:-0.01em;line-height:1.4;color:#FFFFFF !important;text-decoration:none !important;border-radius:999px;background-color:#471869;border:1px solid #3D145F;box-shadow:0 2px 8px rgba(71,24,105,0.12);">제품 체험 신청하기 →</a>
 </td>
 </tr>
 </table>
 
 <table role="presentation" class="hwal-footer" width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr>
-<td align="center" style="padding:0 28px 6px 28px;font-size:15px;line-height:1.65;color:#6b6b6b;font-weight:700;"><strong>ConnectSell</strong> | <a href="../../../" style="color:#542445;text-decoration:none;font-weight:700;">connectsell.co.kr</a></td>
+<td align="center" style="padding:0 28px 6px 28px;font-size:15px;line-height:1.65;color:#6B6B6B;font-weight:700;"><strong>ConnectSell</strong> | <a href="../../../" style="color:#2F2F2F;text-decoration:none;font-weight:700;">connectsell.co.kr</a></td>
 </tr>
 <tr>
-<td align="center" style="padding:0 28px 6px 28px;font-size:15px;line-height:1.65;color:#2f2f2f;">서울특별시 마포구 마포대로 2, 13층 1328호</td>
+<td align="center" style="padding:0 28px 6px 28px;font-size:15px;line-height:1.65;color:#2F2F2F;">서울특별시 마포구 마포대로 2, 13층 1328호</td>
 </tr>
 <tr>
-<td align="center" style="padding:0 28px 4px 28px;font-size:13px;line-height:1.5;color:#6b6b6b;">© 2026 ConnectSell. All rights reserved.</td>
+<td align="center" style="padding:0 28px 4px 28px;font-size:13px;line-height:1.5;color:#6B6B6B;">© 2026 ConnectSell. All rights reserved.</td>
 </tr>
 <tr>
-<td align="center" style="padding:0 28px 0 28px;font-size:13px;line-height:1.5;color:#6b6b6b;">Created by ConnectSell</td>
+<td align="center" style="padding:0 28px 0 28px;font-size:13px;line-height:1.5;color:#6B6B6B;">Created by ConnectSell</td>
 </tr>
 </table>
 
